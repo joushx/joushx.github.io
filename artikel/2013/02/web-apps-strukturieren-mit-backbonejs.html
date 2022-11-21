@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="Johannes Mittendorfer, Mittendorfer, Blog, Informatik, Student, Entwicklung, Security">
+    <meta name="description" content="Der Blog von Informatik-Student Johannes Mittendorfer über das Leben im Studium, Software-Entwicklung, IT-Security und das Internet">
+    <meta name="author" content="Johannes Mittendorfer">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <meta name="application-name" content="Johannes Mittendorfer"/>
+    <meta name="msapplication-TileColor" content="#f9fbf4"/>
+    <meta http-equiv="imagetoolbar" content="false" />
+    <meta property="fb:admins" content="100000063853580" />
+    <meta name="Content-Language" content="de" />
+    <!-- resources -->
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+    <link rel="canoncial" href="https://blog.johannes-mittendorfer.com/artikel/2013/02/web-apps-strukturieren-mit-backbonejs">
+    <!-- styles -->
+    <link rel="stylesheet" href="/assets/css/styles.css"/>
+    <!-- title -->
+    <title>Web-Apps strukturieren mit Backbone.js</title>
+    <!-- page specific resources -->
+  </head>
+  <body itemscope itemtype="http://schema.org/WebSite">
+    <!-- menu bar -->
+    <nav id="bar">
+      <section class="container">
+        <a class="title" itemprop="url" href="/">
+          <h1 itemprop="name">Johannes Mittendorfer</h1>
+        </a>
+        <ul>
+          <li>
+            <a href="/">
+              Start
+            </a>
+          </li>
+          <li>
+            <a itemprop="about" href="/ueber-mich" title="Über">
+              Über
+            </a>
+          </li>
+          <li>
+            <a href="/astronomie" title="Astronomie">
+              Astronomie
+            </a>
+          </li>
+          <li>
+            <a href="/impressum" title="Impressum">
+              Impressum
+            </a>
+          </li>
+        </ul>
+      </section>
+    </nav>
+    <!-- main content -->
+    <div class="container">
+      <main>
+        <!-- semantic description -->
+        <script type="application/ld+json">
+          {
+            "@context": "http://schema.org",
+            "@type": "BlogPosting",
+            "@id": "https://blog.johannes-mittendorfer.com/artikel/2013/02/web-apps-strukturieren-mit-backbonejs",
+            "headline": "Web-Apps strukturieren mit Backbone.js",
+            "description": "",
+            "datePublished": "2013-02-02 00:00:00 +0100",
+            "dateModified": "2013-02-02 00:00:00 +0100",
+            "author": {
+              "@type": "Person",
+              "name": "Johannes Mittendorfer"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Johannes Mittendorfer",
+              "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://blog.johannes-mittendorfer.com/assets/favicon.ico",
+                  "width": 16,
+                  "height": 16
+              }
+            },
+          
+            "mainEntityOfPage": {
+              "@id": "https://blog.johannes-mittendorfer.com/artikel/2013/02/web-apps-strukturieren-mit-backbonejs"
+            }
+          }
+        </script>
+        <script type="application/ld+json">
+          {
+            "@context": "http://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@id": "https://blog.johannes-mittendorfer.com/artikel",
+                "name": "Artikel"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@id": "https://blog.johannes-mittendorfer.com/artikel/2013",
+                "name": "2013"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@id": "https://blog.johannes-mittendorfer.com/artikel/2013/02",
+                "name": "02"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "item": {
+                "@id": "https://blog.johannes-mittendorfer.com/artikel/2013/02/web-apps-strukturieren-mit-backbonejs",
+                "name": "Web-Apps strukturieren mit Backbone.js"
+              }
+            }]
+          }
+        </script>
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+          <header>
+            <div class="meta">
+              <span class="category">Entwicklung</span> &ndash; 
+              <time itemprop="datePublished" datetime="2013-02-02T00:00:00+01:00" class="date">02.02.2013</time> &ndash;
+              <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+            </div>
+            <h1 itemprop="headline">Web-Apps strukturieren mit Backbone.js</h1>
+            <div class="warning">
+              Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+            </div>
+          </header>
+          <div itemprop="articleBody">
+            <p>Mit <a href="http://backbonejs.org/">Backbone.js</a> ist es möglich JavaScript-Web-Apps nach dem MVC-Prinzip aufzubauen. Dadurch kann die komplette Verwaltung der Daten von diesem Framework erledigt werden und es kümmert sich zudem auch darum #-URLs (Fragmentbezeichner heißt das Ding) auszuliefern.</p>
+            <h2 id="model">Model</h2>
+            <p>Über das Model wird die Struktur der Daten definiert. Außerdem wird die Adresse festgelegt, an die die Ajax-Anfragen gerichtet werden. Im Objekt <code class="highlighter-rouge">defaults</code> werden die Standardwerte, oder, wenn diese leer bleiben, die Existenz der Felder definiert.</p>
+            <figure class="highlight">
+              <pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">UserModel</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">Model</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+    <span class="na">urlRoot</span><span class="p">:</span> <span class="dl">'</span><span class="s1">data/users</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">defaults</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">username</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span>
+        <span class="na">name</span><span class="p">:</span> <span class="dl">''</span>
+    <span class="p">}</span>
+<span class="p">});</span></code></pre>
+            </figure>
+            <h2 id="collection">Collection</h2>
+            <p>Mit Sammlungen (Collections) werden mehrere Einheiten eines Models gespeichert. Hierbei wird das Model der Daten angegeben und wiederum die URL, unter der mit Ajax die Liste der Daten abgerufen werden können.</p>
+            <figure class="highlight">
+              <pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">UsersCollection</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">Collection</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+    <span class="na">model</span><span class="p">:</span> <span class="nx">UserModel</span><span class="p">,</span>
+    <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">data/users</span><span class="dl">'</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">users</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">UsersCollection</span><span class="p">();</span></code></pre>
+            </figure>
+            <p>Über die <code class="highlighter-rouge">fetch</code> - Funktion können die Daten abgerufen werden.Die Daten können dann in der <code class="highlighter-rouge">success</code> - Funktion verarbeitet werden.Über <code class="highlighter-rouge">.get("&lt;feld&gt;")</code>
+              lässt sich der Wert eines Feldes abrufen.</p>
+            <figure class="highlight">
+              <pre><code class="language-js" data-lang="js"><span class="nx">users</span><span class="p">.</span><span class="nx">fetch</span><span class="p">({</span>
+    <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">items</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">items</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">username</span><span class="dl">"</span><span class="p">));</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+<span class="p">});</span></code></pre>
+            </figure>
+            <h2 id="router">Router</h2>
+            <p>Über so genannte Router lassen sich die verschiedenen URLs definieren und mit dem gewünschten JavaScript-Code verbinden. Mit <code class="highlighter-rouge">Backbone.history.start()</code> stellt man sicher, dass die URLs auch im Verlauf des Browsers auftauchen.</p>
+            <figure class="highlight">
+              <pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">AppRouter</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">Router</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+    <span class="na">routes</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">:user</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">user</span><span class="dl">"</span><span class="p">,</span> <span class="c1">// Ein Benutzer (/muster)</span>
+        <span class="dl">""</span><span class="p">:</span> <span class="dl">"</span><span class="s2">users</span><span class="dl">"</span> <span class="c1">// Alle Benutzer (/)</span>
+    <span class="p">},</span>
+
+    <span class="na">user</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// magic</span>
+    <span class="p">},</span>
+
+    <span class="na">users</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// other magic</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">Backbone</span><span class="p">.</span><span class="nx">history</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span></code></pre>
+            </figure>
+            <h2 id="views">Views</h2>
+            <p>Backbone.js ermöglicht es Views mit Templates zu laden. Dazu definiert man einen <code class="highlighter-rouge">script</code>-Tag mit dem <code class="highlighter-rouge">type</code>-Attribut <code class="highlighter-rouge">text/template</code>. Darin kann man Platzhalter für Variablen einfügen, die zwischen <code class="highlighter-rouge">&lt;%=</code> und <code class="highlighter-rouge">%&gt;</code> stehen.</p>
+            <figure class="highlight">
+              <pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/template"</span> <span class="na">id=</span><span class="s">"template-user"</span><span class="nt">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;&lt;%=</span> <span class="nx">username</span> <span class="o">%&gt;&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span><span class="nt">&lt;/script&gt;</span></code></pre>
+            </figure>
+            <p>Den eigentlichen View erzeugt man wie folgt:</p>
+            <figure class="highlight">
+              <pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">UserView</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">View</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+
+    <span class="na">initialize</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">template</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">template</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#template-user</span><span class="dl">"</span><span class="p">).</span><span class="nx">html</span><span class="p">());</span>
+    <span class="p">},</span>
+
+    <span class="na">render</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">eventName</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="na">test</span><span class="p">:</span> <span class="dl">"</span><span class="s2">abc</span><span class="dl">"</span>
+        <span class="p">}</span>
+
+        <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">el</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">template</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">UserView</span><span class="p">({</span>
+    <span class="na">model</span><span class="p">:</span> <span class="nx">User</span>
+<span class="p">});</span>
+
+<span class="nx">user</span><span class="p">.</span><span class="nx">render</span><span class="p">();</span></code></pre>
+            </figure>
+            <p>Dabei wird in der <code class="highlighter-rouge">initialize</code>-Funktion das Template aus dem Script-Tag geladen und in der Variable <code class="highlighter-rouge">this.template</code> gespeichert. In der Funktion <code class="highlighter-rouge">render</code> wird das Template befüllt und anschließend zur Seite hinzugefügt. Die Daten werden direkt aus dem Model geholt, das auch bei der Konstruktion des Views angegeben wird.</p>
+            <p>Es können jedoch auch erst in der Render-Funktion Template-Variablen deklariert werden, die in als Objekt, in diesem Beispiel <code class="highlighter-rouge">data</code>, das der <code class="highlighter-rouge">this.template()</code>-Funktion übergeben wird.</p>
+            <h2 id="fazit">Fazit</h2>
+            <p>Das Backbone.js Framework stellt eine große Erleichterung dar und macht es möglich sich auf die eigentliche Entwicklung einer App zu konzentrieren, anstatt sich mit wiederkehrenden Aufgaben und Problemen befassen zu müssen. Vor allem der Umgang mit den Daten ist so klar strukturiert und macht keine Programmierung der oft umfangreichen Ajax-Anfragen nötig.</p>
+            <p>Als Voraussetzung ist die jQuery-Bibliothek vonnöten, die jedoch in vielen Fällen bereits verwendet wird und sich bereits zu einem Quasi-Standard etabliert hat.</p>
+          </div>
+          <footer>
+            <div id="share">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://blog.johannes-mittendorfer.com/artikel/2013/02/web-apps-strukturieren-mit-backbonejs" class="share-icon facebook"><i class="fa fa-facebook"></i> Facebook</a>
+              <a href="https://twitter.com/intent/tweet?original_referer=https://johannes-mittendorfer.com&source=tweetbuttont&url=https://blog.johannes-mittendorfer.com/artikel/2013/02/web-apps-strukturieren-mit-backbonejs" class="share-icon twitter"><i class="fa fa-twitter"></i> Twitter</a>
+              <a href="https://plus.google.com/share?url=https://blog.johannes-mittendorfer.com/artikel/2013/02/web-apps-strukturieren-mit-backbonejs&hl=de" class="share-icon googleplus"><i class="fa fa-google-plus"></i> Google+</a>
+              <a href="https://flattr.com/submit/auto?user_id=joushx&url=https://blog.johannes-mittendorfer.com/artikel/2013/02/web-apps-strukturieren-mit-backbonejs&title=Web-Apps%20strukturieren%20mit%20Backbone.js" class="share-icon flattr">Flattr</a>
+            </div>
+          </footer>
+        </article>
+      </main>
+    </div>
+  </body>
+</html>

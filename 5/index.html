@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="Johannes Mittendorfer, Mittendorfer, Blog, Informatik, Student, Entwicklung, Security">
+    <meta name="description" content="Der Blog von Informatik-Student Johannes Mittendorfer über das Leben im Studium, Software-Entwicklung, IT-Security und das Internet">
+    <meta name="author" content="Johannes Mittendorfer">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <meta name="application-name" content="Johannes Mittendorfer"/>
+    <meta name="msapplication-TileColor" content="#f9fbf4"/>
+    <meta http-equiv="imagetoolbar" content="false" />
+    <meta property="fb:admins" content="100000063853580" />
+    <meta name="Content-Language" content="de" />
+    <!-- resources -->
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+    <link rel="canoncial" href="https://blog.johannes-mittendorfer.com/5/">
+    <!-- styles -->
+    <link rel="stylesheet" href="/assets/css/styles.css"/>
+    <!-- title -->
+    <title>Johannes Mittendorfer - Informatikstudent</title>
+    <!-- page specific resources -->
+  </head>
+  <body itemscope itemtype="http://schema.org/WebSite">
+    <!-- menu bar -->
+    <nav id="bar">
+      <section class="container">
+        <a class="title" itemprop="url" href="/">
+          <h1 itemprop="name">Johannes Mittendorfer</h1>
+        </a>
+        <ul>
+          <li>
+            <a href="/">
+              Start
+            </a>
+          </li>
+          <li>
+            <a itemprop="about" href="/ueber-mich" title="Über">
+              Über
+            </a>
+          </li>
+          <li>
+            <a href="/astronomie" title="Astronomie">
+              Astronomie
+            </a>
+          </li>
+          <li>
+            <a href="/impressum" title="Impressum">
+              Impressum
+            </a>
+          </li>
+        </ul>
+      </section>
+    </nav>
+    <!-- main content -->
+    <div class="container">
+      <main>
+        <div id="article-list" itemscope itemtype="http://schema.org/Blog">
+          <meta itemprop="description" content="Blog von Johannes Mittendorfer"/>
+          <meta itemprop="about" content="https://johannes-mittendorfer.com/ueber-mich"/>
+          <meta itemprop="author" content="https://johannes-mittendorfer.com/ueber-mich"/>
+          <article itemscope itemtype="http://schema.org/BlogPosting">
+            <header>
+              <div class="meta">
+                <span class="category">Anderes</span> &ndash; 
+                <time itemprop="datePublished" datetime="2014-04-25T00:00:00+02:00" class="date">25.04.2014</time> &ndash;
+                <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+              </div>
+              <a href="/artikel/2014/04/ein-fragwurdiges-geschaftsmodelle-mit-email-adress">
+                <h2 itemprop="headline">Ein fragwürdiges Geschäftsmodell mit Email-Adressen</h2>
+              </a>
+              <div class="warning">
+                Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+              </div>
+            </header>
+            <div itemprop="articleBody">
+              <p>Auf ein sehr fragwürdiges Geschäftsmodell bin ich heute gestoßen: Es gibt doch tatsächlich eine Website, die die verpflichtend eingetragenen Email-Adressen für Domains aufsammelt und auf ihrer Website ungeschützt anzeigt. Das sieht dann so aus:</p>
+              <p><img src="/assets/img/picture_105.png" alt="Startseite" /></p>
+              <p>Alleine das ist schon sehr komisch, aber es wird noch besser wenn man den Link klickt, hinter dem man angeblich seine Email verbergern lassen kann:</p>
+              <p><img src="/assets/img/picture_106.png" alt="Zahlungsaufforderung" /></p>
+              <p>Diese Ach-so-tolle-Website erlaubt es für nur 9,95 USD meine Email-Adresse nicht mehr bei Ihnen anzuzeigen! Das ist schon ein <strike>gutes</strike> tolles Angebot!</p>
+              <p>Aber Spaß beiseite: Man muss eine Email-Adresse angeben, wenn man eine Domain registriert. Diese ist jedoch in den Domain-Informationen gespeichert und wird so nicht irgendwelchen Email-Bots vorgeworfen.</p>
+              <p>Dürfen die das? Ich bin kein Jurist, aber ich schätze schon, wenn auch das ganze Angebot doch sehr fragwürdig ist.</p>
+              <p>Das ganze passiert auf www.ipaddressden.com (Absichtlich kein Link)</p>
+            </div>
+          </article>
+          <article itemscope itemtype="http://schema.org/BlogPosting">
+            <header>
+              <div class="meta">
+                <span class="category">Entwicklung</span> &ndash; 
+                <time itemprop="datePublished" datetime="2014-04-22T00:00:00+02:00" class="date">22.04.2014</time> &ndash;
+                <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+              </div>
+              <a href="/artikel/2014/04/linux-kernelmodule-teil-1">
+                <h2 itemprop="headline">Linux-Kernelmodule - Teil 1</h2>
+              </a>
+              <div class="warning">
+                Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+              </div>
+            </header>
+            <div itemprop="articleBody">
+              <p>Auch wenn es sich bei Linux um ein monolithisches Betriebssystem handelt, sind viele Teile davon in Modulen aufgebaut. Diese Kernelmodule können zur Laufzeit geladen und auch wieder entladen werden. Wie man so ein Modul entwickelt und zum Laufen bringt möchte ich hier kurz zeigen.</p>
+              <h2 id="c-code">C-Code</h2>
+              <p>Linux wird in C entwickelt und darum werden auch Kernel-Module in C geschrieben. Sie bestehen im Grunde aus zwei Funktionen: Eine, die beim Laden ausgeführt wird und eine, die beim Entladen ausgeführt wird.</p>
+              <p>Beginnen wir mit einem einfachen Hello-World-Beispiel:</p>
+              <p>Zuerst brauchen wir eine Bibliothek, die wir brauchen um ein Modul laden zu können:</p>
+              <figure class="highlight">
+                <pre><code class="language-c" data-lang="c"><span class="cp">#include &lt;linux/module.h&gt;
+#include &lt;linux/init.h&gt;</span></code></pre>
+              </figure>
+              <p>Die Header-Datei <code class="highlighter-rouge">module.h</code> wird von jedem Modul benötigt und die Datei <code class="highlighter-rouge">init.h</code> stellt Makros zur Verfügung, die wir brauchen um die Funktionen zu registrieren, was wir jetzt auch machen:</p>
+              <figure class="highlight">
+                <pre><code class="language-c" data-lang="c"><span class="cp">#include &lt;linux/module.h&gt;
+#include &lt;linux/init.h&gt;
+</span>
+<span class="c1">// Methode, die beim Laden ausgeführt wird</span>
+<span class="k">static</span> <span class="kt">int</span> <span class="n">__init</span> <span class="nf">hello_init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Methode, die beim Entladen ausgeführt wird</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="n">__exit</span> <span class="nf">hello_exit</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="p">}</span>
+
+<span class="c1">// Registrieren der Methoden</span>
+<span class="n">module_init</span><span class="p">(</span><span class="n">hello_init</span><span class="p">);</span>
+<span class="n">module_exit</span><span class="p">(</span><span class="n">hello_exit</span><span class="p">);</span></code></pre>
+              </figure>
+              <p>An dieser Stellen wurden zwei Funktionen eingebaut, die jeweils entweder beim Laden oder Entladen ausgeführt werden. Mit <code class="highlighter-rouge">module_init</code> und <code class="highlighter-rouge">module_exit</code> wird dem Betriebssystem mitgeteilt, welche es sind.</p>
+              <p>Das alles sieht zwar nett aus, tut aber noch nichts. Darum soll das Modul das berühmte “Hello world” ins syslog schreiben:</p>
+              <figure class="highlight">
+                <pre><code class="language-c" data-lang="c"><span class="cp">#include &lt;linux/module.h&gt;
+#include &lt;linux/init.h&gt;
+#include &lt;linux/kernel.h&gt;
+</span>
+<span class="c1">// Methode, die beim Laden ausgeführt wird</span>
+<span class="k">static</span> <span class="kt">int</span> <span class="n">__init</span> <span class="nf">hello_init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">printk</span><span class="p">(</span><span class="n">KERN_DEBUG</span>  <span class="s">"Hello World!"</span><span class="p">);</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Methode, die beim Entladen ausgeführt wird</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="n">__exit</span> <span class="nf">hello_exit</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">printk</span><span class="p">(</span><span class="n">KERN_DEBUG</span>  <span class="s">"Bye World!"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Registrieren der Methoden</span>
+<span class="n">module_init</span><span class="p">(</span><span class="n">hello_init</span><span class="p">);</span>
+<span class="n">module_exit</span><span class="p">(</span><span class="n">hello_exit</span><span class="p">);</span></code></pre>
+              </figure>
+              <p>Mit <code class="highlighter-rouge">printk(&lt;loglevel&gt;,&lt;text&gt;)</code> lässt sich das bewerkstelligen. Um das Loglevel angeben zu können, benötigen wir aber noch zusätzlich die Datei <code class="highlighter-rouge">kernel.h</code>.</p>
+              <p>Wenn man das Module so ausführt wird Linux übrigens sofort über die fehlende Lizenzangabe jammern. An dieser Stelle sollte man aber auch gleich noch Informationen über den Autor angeben:</p>
+              <figure class="highlight">
+                <pre><code class="language-c" data-lang="c"><span class="cp">#include &lt;linux/module.h&gt;
+#include &lt;linux/init.h&gt;
+#include &lt;linux/kernel.h&gt;
+</span>
+<span class="cp">#define DRIVER_AUTHOR "Johannes Mittendorfer &lt;...@... .com&gt;"
+#define DRIVER_DESC "Hello world"
+</span>
+<span class="c1">// Methode, die beim Laden ausgeführt wird</span>
+<span class="k">static</span> <span class="kt">int</span> <span class="n">__init</span> <span class="nf">hello_init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">printk</span><span class="p">(</span><span class="n">KERN_DEBUG</span>  <span class="s">"Hello World!"</span><span class="p">);</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Methode, die beim Entladen ausgeführt wird</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="n">__exit</span> <span class="nf">hello_exit</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">printk</span><span class="p">(</span><span class="n">KERN_DEBUG</span>  <span class="s">"Bye World!"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Registrieren der Methoden</span>
+<span class="n">module_init</span><span class="p">(</span><span class="n">hello_init</span><span class="p">);</span>
+<span class="n">module_exit</span><span class="p">(</span><span class="n">hello_exit</span><span class="p">);</span>
+
+<span class="n">MODULE_LICENSE</span><span class="p">(</span><span class="s">"GPL"</span><span class="p">);</span>
+<span class="n">MODULE_AUTHOR</span><span class="p">(</span><span class="n">DRIVER_AUTHOR</span><span class="p">);</span>
+<span class="n">MODULE_DESCRIPTION</span><span class="p">(</span><span class="n">DRIVER_DESC</span><span class="p">);</span></code></pre>
+              </figure>
+              <p>In diesem Beispiel habe ich den Autor und den Titel oben definiert und unterhalb samt Lizenz, in diesem Fall GPL, angegeben.</p>
+              <p>Jetzt kann man das Modul ausführen. Aber wie eigentlich? Dazu braucht man ein…</p>
+              <h2 id="makefile">Makefile</h2>
+              <p>Das Makefile gibt an, wie der Code kompiliert werden soll. Alles was man dazu braucht ist eine Datei namens <code class="highlighter-rouge">Makefile</code> mit folgendem Inhalt:</p>
+              <figure class="highlight">
+                <pre><code class="language-text" data-lang="text">obj-m += helloworld.o</code></pre>
+              </figure>
+              <p>Wenn man jetzt im Verzeichnis <code class="highlighter-rouge">make</code> ausführt, dann sollte in etwa so etwas erscheinen:</p>
+              <figure class="highlight">
+                <pre><code class="language-text" data-lang="text">make -C /lib/modules/3.11.0-19-generic/build M=/home/johannes/Schreibtisch/kernel modules
+make[1]: Betrete Verzeichnis '/usr/src/linux-headers-3.11.0-19-generic'
+  CC [M]  /home/johannes/Schreibtisch/kernel/helloworld.o
+  Building modules, stage 2.
+  MODPOST 1 modules
+  CC      /home/johannes/Schreibtisch/kernel/helloworld.mod.o
+  LD [M]  /home/johannes/Schreibtisch/kernel/helloworld.ko
+make[1]: Verlasse Verzeichnis '/usr/src/linux-headers-3.11.0-19-generic'</code></pre>
+              </figure>
+              <p>Außerdem sollte im Verzeichnis eine Datei namens <code class="highlighter-rouge">helloworld.ko</code> entstanden sein. Das ist das fertige Modul. Das  muss aber jetzt noch an einen vorgesehenen Platz.</p>
+              <h2 id="installation">Installation</h2>
+              <p>Die ko-Datei muss unterhalb des Ordners <code class="highlighter-rouge">/lib/modules/&lt;kernel-version&gt;/kernel/</code> kopiert werden. Die Kernelversion lässt sich durch den Befehl <code class="highlighter-rouge">uname -r</code> herausfinden. Um die Module neu einzulesen braucht es dann den Befehl <code class="highlighter-rouge">sudo depmod -a</code> und schließlich zum Laden des Modules <code class="highlighter-rouge">modprobe helloworld</code>.</p>
+              <p>Wenn alles geklappt hat, sollte man jetzt im Syslog ein “Hello world” sehen!</p>
+              <p>(Das sieht man zum Beispiel durch <code class="highlighter-rouge">tail -f /var/log/syslog</code>)</p>
+              <p>Teil 2 kommt dann irgendwann, wenn ich Zeit habe. ;)</p>
+            </div>
+          </article>
+          <article itemscope itemtype="http://schema.org/BlogPosting">
+            <header>
+              <div class="meta">
+                <span class="category">Eigenes Projekt</span> &ndash; 
+                <time itemprop="datePublished" datetime="2014-04-12T00:00:00+02:00" class="date">12.04.2014</time> &ndash;
+                <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+              </div>
+              <a href="/artikel/2014/04/abfahrt-meine-erste-android-app-ist-da">
+                <h2 itemprop="headline">Abfahrt - Meine erste Android-App ist da!</h2>
+              </a>
+              <div class="warning">
+                Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+              </div>
+            </header>
+            <div itemprop="articleBody">
+              <p>Endlich ist es soweit: Meine erste Android-App <a href="https://play.google.com/store/apps/details?id=com.johannes_mittendorfer.abfahrt">Abfahrt</a> ist im Play Store!</p>
+              <p><img src="/assets/img/picture_104.png" alt="Screenshot" /></p>
+              <p>Damit soll das Benutzen von öffentlichen Verkehrsmittel leichter werden und das Verspassen des Zuges der Vergangenheit angehören. Weitere Informationen gibt es auf der <a href="http://abfahrtapp.at.tf">eigenen Website</a>.</p>
+            </div>
+          </article>
+          <article itemscope itemtype="http://schema.org/BlogPosting">
+            <header>
+              <div class="meta">
+                <span class="category">Security</span> &ndash; 
+                <time itemprop="datePublished" datetime="2014-04-10T00:00:00+02:00" class="date">10.04.2014</time> &ndash;
+                <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+              </div>
+              <a href="/artikel/2014/04/heartbleed-oder-wie-das-internet-unsicher-wurde">
+                <h2 itemprop="headline">Heartbleed - Oder wie das Internet unsicher wurde</h2>
+              </a>
+              <div class="warning">
+                Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+              </div>
+            </header>
+            <div itemprop="articleBody">
+              <p>Die Aufregung war groß, als die Sicherheitslücke <a href="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-0160">CVE-2014-0160</a>, genannt Heartbleed, am 7. April bekannt wurde. Nach Schätzungen von Experten sind oder waren bis zu 75% der Server im Internet betroffen.</p>
+              <h2 id="wieso">Wieso?</h2>
+              <p>Durch diesen Fehler in der Open Source Software OpenSSL war, und ist es zum Teil immer noch möglich, einen Teil des Arbeitsspeichers eines Servers, der diese Software verwendet, auszulesen und so die Anfragen anderer Benutzer zu sehen.</p>
+              <p><img src="/assets/img/picture_103.png" alt="Heartbleed-Logo" /></p>
+              <p>Diese Anfragen können auch den Benutzernamen und das Passwort beinhalten, die durch SSL eigentlich sicher übertragen werden sollen. Ein weiteres Problem ist zudem, dass man so auch an den privaten Schlüssel, also das Herzstück nahezu aller modernen Verschlüsselungen, kommen kann.</p>
+              <p>Der Bug, der diese Sicherheitslücke ausgelöst hat, steckt in einem Stück Code, das für einen sogenannten <em>Heartbeat</em> zuständig ist. Es handelt sich dabei um eine Methode um festzustellen, ob der Client, der sich mit einem durch SSL geschützten Webserver verbunden hat, immer noch aktiv ist oder man die Verbindung trennen kann. Wenn hier der Client jedoch eine besondere Antwort schickt, antwortet der Server mit bis zu 64 kbyte seines Hauptspeichers.</p>
+              <p>Betroffen waren unter anderem die Server großer Konzerne und stark frequentierte Webseiten wie yahoo.com, mail.de und sparkasse.at. Es ist also davon auszugehen, dass alle Logins seit Bekanntwerden der Lücke mitgelesen wurden. Bei Seiten, die keinen <a href="http://de.wikipedia.org/wiki/Elliptic_Curve_Cryptography">ECC</a>-Algorithmus verwenden, ist es zudem möglich alle bisherigen Verbindungen, wenn diese aufgezeichnet wurden, zu entschlüsseln.</p>
+              <p>Auch meine Website war eine Zeit lang verwundbar, da mein Hoster <a href="http://uberspace.de">Uberspace</a> auch OpenSSL verwendet. Dieser hat jedoch vorbildlich mit umfangreicher Information <a href="http://twitter.com/ubernauten">reagiert</a>.</p>
+              <h2 id="was-jetzt">Was jetzt?</h2>
+              <p>Zunächst ist es jetzt wichtig zu wissen, ob ein Dienst den man verwendet für die Lücke anfällig ist oder war. Im Zweifel sollte man dazu den Betreiber kontaktieren. Wenn man nun festgestellt hat, dass dies so ist, sollte man umgehend das Passwort ändern. Wenn man das gleiche Passwort auch auf anderen Seiten verwendet, sollte es auch dort geändert werden.</p>
+              <p>Ich denke, dass OpenSSL nicht schlecht ist. Bis jetzt hat es gut funktioniert, es ist gratis und open source. Natürlich ist es immer möglich, dass sich Fehler einschleichen, aber das ist bei einem kommerziellen Produkt auch möglich.</p>
+              <p>Gerade weil es open source ist, war es überhaupt möglich die Lücke zu finden. Ich möchte lieber nicht wissen, wie viele derartiger Bugs sich in kommerzieller Software befinden, aber noch nicht gefunden wurden.</p>
+              <p>Weitere Informationen über die Lücke gibt es übrigens auf <a href="http://heartbleed.com/">der eigens dafür eingerichteten Website</a>.</p>
+            </div>
+          </article>
+          <article itemscope itemtype="http://schema.org/BlogPosting">
+            <header>
+              <div class="meta">
+                <span class="category">Entwicklung</span> &ndash; 
+                <time itemprop="datePublished" datetime="2014-03-16T00:00:00+01:00" class="date">16.03.2014</time> &ndash;
+                <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+              </div>
+              <a href="/artikel/2014/03/wenn-grunt-nichts-mehr-tut">
+                <h2 itemprop="headline">Wenn grunt nichts mehr tut</h2>
+              </a>
+              <div class="warning">
+                Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+              </div>
+            </header>
+            <div itemprop="articleBody">
+              <p>Was tun, wenn <a href="http://gruntjs.com">grunt</a> nichts mehr tut, also keinerlei mehr Ausgabe liefert?</p>
+              <p>Es liegt meist am Paket <code class="highlighter-rouge">node</code>. Es hat überhaupt nichts mit nodejs zu tun und kann weg. Das heißt: <code class="highlighter-rouge">sudo apt-get remove node</code> löst das Problem.</p>
+              <p>Schon sollte dem fröhlichen Automatisieren nichts mehr im Wege stehen!</p>
+            </div>
+          </article>
+        </div>
+        <nav id="pagenav">
+          <span id="left">
+            <a href="/4/" rel="prev">&laquo; NEUER</a>
+          </span>
+          <span id="pages">
+            <a  href="/">1</a>
+            <a  href="/2">2</a>
+            <a  href="/3">3</a>
+            <a  href="/4">4</a>
+            <a class="active" href="/5">5</a>
+            <a  href="/6">6</a>
+            <a  href="/7">7</a>
+            <a  href="/8">8</a>
+            <a  href="/9">9</a>
+            <a  href="/10">10</a>
+            <a  href="/11">11</a>
+            <a  href="/12">12</a>
+            <a  href="/13">13</a>
+            <a  href="/14">14</a>
+            <a  href="/15">15</a>
+            <a  href="/16">16</a>
+            <a  href="/17">17</a>
+            <a  href="/18">18</a>
+            <a  href="/19">19</a>
+            <a  href="/20">20</a>
+            <a  href="/21">21</a>
+            <a  href="/22">22</a>
+            <a  href="/23">23</a>
+            <a  href="/24">24</a>
+            <a  href="/25">25</a>
+            <a  href="/26">26</a>
+            <a  href="/27">27</a>
+          </span>
+          <span id="right">
+            <a href="/6/" rel="next">ÄLTER &raquo;</a>
+          </span>
+        </nav>
+      </main>
+    </div>
+  </body>
+</html>

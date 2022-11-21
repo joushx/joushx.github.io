@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="Johannes Mittendorfer, Mittendorfer, Blog, Informatik, Student, Entwicklung, Security">
+    <meta name="description" content="Der Blog von Informatik-Student Johannes Mittendorfer über das Leben im Studium, Software-Entwicklung, IT-Security und das Internet">
+    <meta name="author" content="Johannes Mittendorfer">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <meta name="application-name" content="Johannes Mittendorfer"/>
+    <meta name="msapplication-TileColor" content="#f9fbf4"/>
+    <meta http-equiv="imagetoolbar" content="false" />
+    <meta property="fb:admins" content="100000063853580" />
+    <meta name="Content-Language" content="de" />
+    <!-- resources -->
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+    <link rel="canoncial" href="https://blog.johannes-mittendorfer.com/21/">
+    <!-- styles -->
+    <link rel="stylesheet" href="/assets/css/styles.css"/>
+    <!-- title -->
+    <title>Johannes Mittendorfer - Informatikstudent</title>
+    <!-- page specific resources -->
+  </head>
+  <body itemscope itemtype="http://schema.org/WebSite">
+    <!-- menu bar -->
+    <nav id="bar">
+      <section class="container">
+        <a class="title" itemprop="url" href="/">
+          <h1 itemprop="name">Johannes Mittendorfer</h1>
+        </a>
+        <ul>
+          <li>
+            <a href="/">
+              Start
+            </a>
+          </li>
+          <li>
+            <a itemprop="about" href="/ueber-mich" title="Über">
+              Über
+            </a>
+          </li>
+          <li>
+            <a href="/astronomie" title="Astronomie">
+              Astronomie
+            </a>
+          </li>
+          <li>
+            <a href="/impressum" title="Impressum">
+              Impressum
+            </a>
+          </li>
+        </ul>
+      </section>
+    </nav>
+    <!-- main content -->
+    <div class="container">
+      <main>
+        <div id="article-list" itemscope itemtype="http://schema.org/Blog">
+          <meta itemprop="description" content="Blog von Johannes Mittendorfer"/>
+          <meta itemprop="about" content="https://johannes-mittendorfer.com/ueber-mich"/>
+          <meta itemprop="author" content="https://johannes-mittendorfer.com/ueber-mich"/>
+          <article itemscope itemtype="http://schema.org/BlogPosting">
+            <header>
+              <div class="meta">
+                <span class="category">Entwicklung</span> &ndash; 
+                <time itemprop="datePublished" datetime="2012-08-19T00:00:00+02:00" class="date">19.08.2012</time> &ndash;
+                <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+              </div>
+              <a href="/artikel/2012/08/objektorientierte-programmierung-fur-anfanger-am-b">
+                <h2 itemprop="headline">Objektorientierte Programmierung für Anfänger am Beispiel PHP</h2>
+              </a>
+              <div class="warning">
+                Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+              </div>
+            </header>
+            <div itemprop="articleBody">
+              <p>Da viele immer wieder Probleme beim Verständnis der objektorientierten Programmierung haben, habe ich eine kleine Erklärung dazu verfasst:</p>
+              <p><a href="/assets/files/oop.pdf">Objektorientierte Programmierung für Anfänger am Beispiel PHP</a> (PDF, 127 kB)</p>
+            </div>
+          </article>
+          <article itemscope itemtype="http://schema.org/BlogPosting">
+            <header>
+              <div class="meta">
+                <span class="category">Entwicklung</span> &ndash; 
+                <time itemprop="datePublished" datetime="2012-08-12T00:00:00+02:00" class="date">12.08.2012</time> &ndash;
+                <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+              </div>
+              <a href="/artikel/2012/08/das-model-view-controller-modell-am-beispiel-cakep">
+                <h2 itemprop="headline">Das Model-View-Controller-Modell am Beispiel CakePHP</h2>
+              </a>
+              <div class="warning">
+                Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+              </div>
+            </header>
+            <div itemprop="articleBody">
+              <p>Model, View und Controller: Begriffe, mit denen man nicht sofort etwas anfangen kann. Auch trotz vieler Erklärungen schreckt das, auf den ersten Blick komplizierte, Modell viele Menschen davon ab sich daran zu versuchen. Auch ich habe es erst nach drei Versuchen geschafft, was jedoch wahrscheinlich vorher an meiner Ungeduld scheiterte.</p>
+              <h2 id="cakephp">CakePHP</h2>
+              <p><img src="/assets/img/picture_56.png" alt="CakePHP Logo" /></p>
+              <p>Ich habe für diese Erklärung das Framework <a href="http://cakephp.org">CakePHP</a> benutzt, um einen Praxisbezug herzustellen und weil ich es gerade ausgiebig benutze. CakePHP ist ein offenes Web-Framework, das an <a href="http://rubyonrails.org">Ruby on Rails</a> angelehnt wurde. Die Prinzipien davon sind:</p>
+              <ul>
+                <li>Don’t repeat yourself (Nichts zweimal programmieren)</li>
+                <li>Convention before configuration (Lieber alles nach einem festgelegten Muster benennen, als etwas einzustellen.)</li>
+              </ul>
+              <h2 id="model">Model</h2>
+              <figure><img src="/assets/img/picture_57.png" alt="Model View Controller Prinzip" />
+                <figcaption>Model View Controller Prinzip (via Wikimedia Commons)</figcaption>
+              </figure>
+              <p>Das Model gibt die grundlegende Beziehung der Daten zueinander an. Es legt also das Datenmodell fest, in ihm wird der Name der Klasse festgelegt und hier wenden auch SQL-Joins  definiert. Zudem stehen auch Aktionen, die vor dem Speichern in die Datenbank auszuführen sind, im Model.</p>
+              <p>Noch einmal am Beispiel einer CakePHP-Anwendung zur Arbeitserfassung von verschiedenen Benutzern:</p>
+              <figure class="highlight">
+                <pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="kd">class</span> <span class="nc">User</span> <span class="kd">extends</span> <span class="nc">AppModel</span><span class="p">{</span>
+	<span class="c1">// Name der Klasse festlegen</span>
+	<span class="k">var</span> <span class="nv">$name</span> <span class="o">=</span> <span class="s1">'User'</span><span class="p">;</span>
+
+	<span class="c1">// Mit einem Join Tabellen verbinden</span>
+	<span class="k">var</span> <span class="nv">$hasAndBelongsToMany</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+	    <span class="s1">'Work'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+		<span class="s1">'className'</span> <span class="o">=&gt;</span> <span class="s1">'Work'</span>
+	    <span class="p">)</span>
+	<span class="p">);</span>
+	 
+	<span class="c1">// Passwörter vor dem Speichern hashen</span>
+	<span class="k">function</span> <span class="n">beforeSave</span><span class="p">(</span><span class="nv">$options</span><span class="p">)</span> <span class="p">{</span>
+	    <span class="k">if</span> <span class="p">(</span><span class="k">isset</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">[</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">alias</span><span class="p">][</span><span class="s1">'password'</span><span class="p">]))</span> <span class="p">{</span>
+		<span class="nv">$this</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">[</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">alias</span><span class="p">][</span><span class="s1">'password'</span><span class="p">]</span> <span class="o">=</span> <span class="nc">AuthComponent</span><span class="o">::</span><span class="nf">password</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">[</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">alias</span><span class="p">][</span><span class="s1">'password'</span><span class="p">]);</span>
+	    <span class="p">}</span>
+	    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cp">?&gt;</span></code></pre>
+              </figure>
+              <h2 id="view">View</h2>
+              <p>Der View stellt die Seite dar, die der Benutzer schließlich zu Gesicht bekommt. Es wird damit die Anzeige der Daten in HTML und PHP formuliert. Für (fast) jede Aktion im Controller (unten) muss ein View vorhanden sein.</p>
+              <p>Auch dazu wieder ein Beispiel:</p>
+              <figure class="highlight">
+                <pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-header"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;h1&gt;</span>Benutzer<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table table-striped"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;tr&gt;</span>
+		<span class="nt">&lt;th&gt;</span>Id<span class="nt">&lt;/th&gt;</span>
+		<span class="nt">&lt;th&gt;</span>Benutzername<span class="nt">&lt;/th&gt;</span>
+		<span class="nt">&lt;th&gt;</span>Vorname<span class="nt">&lt;/th&gt;</span>
+		<span class="nt">&lt;th&gt;</span>Nachname<span class="nt">&lt;/th&gt;</span>
+		<span class="nt">&lt;th&gt;</span>Aktionen<span class="nt">&lt;/th&gt;</span>
+	<span class="nt">&lt;/tr&gt;</span><span class="cp">&lt;?php foreach ($users as $user): ?&gt;</span>
+	<span class="nt">&lt;tr&gt;</span>
+		<span class="nt">&lt;td&gt;</span><span class="cp">&lt;?php echo h($user['User']['id']); ?&gt;</span><span class="nt">&lt;/td&gt;</span>
+		<span class="nt">&lt;td&gt;</span><span class="cp">&lt;?php echo h($this-&gt;Html-&gt;link($user['User']['username'], "/users/view/".$user['User']['id'])); ?&gt;</span><span class="nt">&lt;/td&gt;</span>
+		<span class="nt">&lt;td&gt;</span><span class="cp">&lt;?php echo h($user['User']['firstname']); ?&gt;</span><span class="nt">&lt;/td&gt;</span>
+		<span class="nt">&lt;td&gt;</span><span class="cp">&lt;?php echo h($user['User']['lastname']); ?&gt;</span><span class="nt">&lt;/td&gt;</span>
+		<span class="nt">&lt;td&gt;</span><span class="cp">&lt;?php echo h("&lt;a href='" . $this-&gt;Html-&gt;Url(array('action' =&gt; 'edit', $user['User']['id'])) . "'&gt;&lt;i class='icon-pencil'&gt;&lt;/i&gt;&lt;/a&gt;"); ?&gt;</span><span class="ni">&amp;nbsp;</span> <span class="cp">&lt;?php echo h("&lt;a href='" . $this-&gt;Html-&gt;Url(array('action' =&gt; 'delete', $user['User']['id'])) . "'&gt;&lt;i class='icon-trash'&gt;&lt;/i&gt;&lt;/a&gt;"); ?&gt;</span><span class="nt">&lt;/td&gt;</span>
+	<span class="nt">&lt;/tr&gt;</span><span class="cp">&lt;?php endforeach; ?&gt;</span>
+<span class="nt">&lt;/table&gt;</span></code></pre>
+              </figure>
+              <h2 id="controller">Controller</h2>
+              <p>Der Controller definiert schließlich die verschiedenen Aktionen der Klasse. Das sind zum Beispiel <code class="highlighter-rouge">users/index</code>, <code class="highlighter-rouge">users/view/2</code> und <code class="highlighter-rouge">users/add</code>, die als URL in der Anwendung erscheinen. Diese werden über gleichnamige Funktionen im Controller erstellt. In den Funktionen werden auch Daten aus der Datenbank gelesen und geschrieben. Ebenfalls im Controller findet die Überprüfung von Formulardaten statt.</p>
+              <p>Beispiel:</p>
+              <figure class="highlight">
+                <pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="kd">class</span> <span class="nc">UsersController</span> <span class="kd">extends</span> <span class="nc">AppController</span>
+
+<span class="p">{</span>
+	<span class="k">var</span> <span class="nv">$name</span> <span class="o">=</span> <span class="s1">'Users'</span><span class="p">;</span>
+
+	<span class="c1">// Überprüfung des Passwortes</span>
+
+	<span class="k">public</span> <span class="nv">$validate</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+
+		<span class="s1">'password'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+			<span class="s1">'required'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+				<span class="s1">'rule'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+					<span class="s1">'minLength'</span><span class="p">,</span>
+					<span class="s1">'5'</span>
+				<span class="p">)</span> <span class="p">,</span>
+				<span class="s1">'message'</span> <span class="o">=&gt;</span> <span class="s1">'Ein Passwort mit mindestens 5 Stellen wird benötigt'</span>
+			<span class="p">)</span>
+		<span class="p">)</span>
+	<span class="p">);</span>
+
+	<span class="c1">// Alle Benutzer auflisten, $users steht in View "index" zu Verfügung</span>
+
+	<span class="k">function</span> <span class="n">index</span><span class="p">()</span>
+	<span class="p">{</span>
+		<span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">set</span><span class="p">(</span><span class="s1">'users'</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nc">User</span><span class="o">-&gt;</span><span class="nf">paginate</span><span class="p">(</span><span class="s2">"all"</span><span class="p">));</span>
+	<span class="p">}</span>
+
+	<span class="c1">// Einen Benutzer anzeigen, $user steht in View "view" zu Verfügung</span>
+
+	<span class="k">function</span> <span class="n">view</span><span class="p">(</span><span class="nv">$id</span> <span class="o">=</span> <span class="kc">null</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="nv">$this</span><span class="o">-&gt;</span><span class="nc">User</span><span class="o">-&gt;</span><span class="n">id</span> <span class="o">=</span> <span class="nv">$id</span><span class="p">;</span>
+		<span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">set</span><span class="p">(</span><span class="s1">'user'</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nc">User</span><span class="o">-&gt;</span><span class="nf">read</span><span class="p">());</span>
+		<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="nc">User</span><span class="o">-&gt;</span><span class="nf">exists</span><span class="p">())</span> <span class="p">{</span>
+			<span class="k">throw</span> <span class="k">new</span> <span class="nc">NotFoundException</span><span class="p">(</span><span class="nf">__</span><span class="p">(</span><span class="s1">'Benutzer nicht gefunden!'</span><span class="p">));</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cp">?&gt;</span></code></pre>
+              </figure>
+              <h2 id="zusammenfassung">Zusammenfassung</h2>
+              <p>Man kann zusammenfassend sagen, dass das Modell nicht so kompliziert ist wie sein Name. Wenn man es einmal verstanden und angewendet hat, kann man mit wenig Aufwand und schnell dynamische Webanwendungen schreiben, die beliebig erweiterbar sind.</p>
+              <p>Noch einmal kurz die drei Begriffe und ihre Bedeutung:</p>
+              <ul>
+                <li>Model: Beziehung der Daten</li>
+                <li>View: Anzeige der Daten</li>
+                <li>Controller: Verarbeitung der Daten</li>
+              </ul>
+              <p><strong>edit:</strong> Artikel bearbeitet nach Hinweisen von ‘mar’.</p>
+            </div>
+          </article>
+          <article itemscope itemtype="http://schema.org/BlogPosting">
+            <header>
+              <div class="meta">
+                <span class="category">Anderes</span> &ndash; 
+                <time itemprop="datePublished" datetime="2012-07-30T00:00:00+02:00" class="date">30.07.2012</time> &ndash;
+                <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+              </div>
+              <a href="/artikel/2012/07/was-sonst-noch-war-wieso-drm-ein-unding-ist">
+                <h2 itemprop="headline">Was sonst noch war: Wieso DRM ein Unding ist</h2>
+              </a>
+              <div class="warning">
+                Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+              </div>
+            </header>
+            <div itemprop="articleBody">
+              <h2 id="was-ist-drm">Was ist DRM?</h2>
+              <p><strong>Digital Rights Management</strong>, abgekürzt <strong>DRM</strong>, was soviel heißt wie Digitale Rechtverwaltung, ist ein Verfahren mit dem man die Nutzung und Weitergabe digitaler Medien kontrollieren kann. Man kann damit zum Beispiel festlegen, dass ein digital vorliegendes Musikstück nicht kopiert werden oder nur eine bestimmte Zeit wiedergegeben werden darf.</p>
+              <p>Jetzt werden Sie sich denken: “Gut, die Künstler müssen ja schließlich auch Geld verdienen!”, aber Musik ist leider nicht der einzige Einsatzort.</p>
+              <h2 id="ein-gedankenexperiment">Ein Gedankenexperiment</h2>
+              <p><img src="/assets/img/picture_38.jpeg" alt="Fernseher" /></p>
+              <p>Stellen Sie sich vor: Sie haben einen neuen Fernseher der schicke Full-HD Sendungen anzeigen und diese sogar auf einer angehängten USB-Festplatte aufzeichnen kann. Dazu wird die Festplatte in einem nur von Linux zu lesenden Dateisystem formatiert und die Aufnahmen selbst noch einmal verschlüsselt.</p>
+              <p>Man kann in diesem Fall also wirklich davon ausgehen, dass diese Sendung außerhalb des Fernsehers niemand zu Gesicht bekommt.</p>
+              <p>Nach einer Weile setzen Sie sich vor den Fernseher und wollen eine Naturdoku von letzter Woche ansehen, die Sie auf die Festplatte aufgenommen haben. Sie stellen jedoch fest, dass sich diese gar nicht mehr abspielen lässt. DRM verbietet Ihnen diese Aufnahme nach dem Zeitraum von ein paar Tagen anzusehen. Sie haben die Sendung auf der Festplatte, dürfen sie aber nicht ansehen.</p>
+              <p>Nehmen Sie jetzt einen antiken Videorecorder und legen Sie eine VHS-Kasette von vor fünf Jahren ein. Und ja: Es funktioniert. Die Qualität ist zwar eher mittelmäßig, aber Sie dürfen das wenigstens.</p>
+              <p>Sie finden das abartig? Ja, ich auch. Gegen die <a href="http://de.wikipedia.org/wiki/Robotergesetze">Robotergesetze</a> verstößt es übrigens auch.</p>
+              <p>Was denken Sie darüber?</p>
+            </div>
+          </article>
+          <article itemscope itemtype="http://schema.org/BlogPosting">
+            <header>
+              <div class="meta">
+                <span class="category">Eigenes Projekt</span> &ndash; 
+                <time itemprop="datePublished" datetime="2012-07-26T00:00:00+02:00" class="date">26.07.2012</time> &ndash;
+                <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+              </div>
+              <a href="/artikel/2012/07/rgb-led-bibliothek-fur-arduino">
+                <h2 itemprop="headline">RGB-LED Bibliothek für Arduino</h2>
+              </a>
+              <div class="warning">
+                Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+              </div>
+            </header>
+            <div itemprop="articleBody">
+              <p>Während meiner Arbeit mit meinem neuen Arduino-Microcontroller habe ich eine Bibliothek für die Verwendung einer RGB-Led erstellt. Damit ist es möglich die Farbe der LED zu setzen und in einer bestimmten Zeitspanne die Farbe der LED langsam zu ändern.</p>
+              <p>Zur Verwendung muss man nur das zip-Paket herunterladen und im Arduino-Verzeichnis unter libraries abspeichern.</p>
+              <h2 id="farbe-setzen">Farbe setzen</h2>
+              <p>Um die Farbe zu ändern verwendet man die Methode <code class="highlighter-rouge">setColor()</code> wie folgt:</p>
+              <figure class="highlight">
+                <pre><code class="language-cpp" data-lang="cpp"><span class="cp">#include &lt;RGBTools.h&gt;
+</span>
+<span class="c1">// Pins von Rot, Grün und Blau an der LED setzen</span>
+<span class="n">RGBTools</span> <span class="nf">rgb</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">);</span>
+
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">(){</span>
+	<span class="n">rgb</span><span class="p">.</span><span class="n">setColor</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">(){</span>
+	<span class="c1">// nothing to loop</span>
+<span class="p">}</span></code></pre>
+              </figure>
+              <h2 id="farbe-fließend-ändern">Farbe fließend ändern</h2>
+              <p>Um die Farbe über einen bestimmten Zeitraum hinweg fließend zu ändern verwendet man die Methode <code class="highlighter-rouge">fadeTo()</code>:</p>
+              <figure class="highlight">
+                <pre><code class="language-cpp" data-lang="cpp"><span class="cp">#include &lt;RGBTools.h&gt;
+</span>
+<span class="c1">// Pins von Rot, Grün und Blau an der LED setzen</span>
+<span class="n">RGBTools</span> <span class="nf">rgb</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">);</span>
+
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">(){</span>
+	<span class="n">rgb</span><span class="p">.</span><span class="n">fadeTo</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">3000</span><span class="p">);</span> <span class="c1">// zu Rot in 50 Schritten + 3 Sekunden</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">(){</span>
+	<span class="c1">// nothing to loop</span>
+<span class="p">}</span></code></pre>
+              </figure>
+              <p>Anregungen für weitere Funktionen nehme ich gerne entgegen!</p>
+              <h2 id="download">Download</h2>
+              <p><strong>Update:</strong> Bitte vom <a href="https://github.com/joushx/Arduino-RGB-Tools">Github-Repository</a> downloaden.</p>
+            </div>
+          </article>
+          <article itemscope itemtype="http://schema.org/BlogPosting">
+            <header>
+              <div class="meta">
+                <span class="category">Entwicklung</span> &ndash; 
+                <time itemprop="datePublished" datetime="2012-07-04T00:00:00+02:00" class="date">04.07.2012</time> &ndash;
+                <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+              </div>
+              <a href="/artikel/2012/07/ampelschaltung-mit-arduino">
+                <h2 itemprop="headline">Ampelschaltung mit Arduino</h2>
+              </a>
+              <div class="warning">
+                Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+              </div>
+            </header>
+            <div itemprop="articleBody">
+              <p>Da ich mich jetzt im Besitz eines Arduino Mikrocontroller-Boardes befinde, nun ein erster Artikel über dieses faszinierende Stück Technik. Mit einem Arduino kann man einfach Elektronik ansteuern, wie zum Beispiel LEDs, Servos, Temperatursensoren usw., indem man ein Programm am Computer programmiert und dann über ein USB-Kabel auf das Board überträgt.</p>
+              <p>Für meinen ersten Artikel über dieses Thema habe ich mich für eine Ampelschaltung entschieden. Zwei Seiten einer Ampel, zum Beispiel bei einer Baustelle, sollen gesteuert werden. Wie bei einer österreichischen Straßenampel soll die Ampel außerdem grün blinken können.</p>
+              <h2 id="hardware">Hardware</h2>
+              <p>Ich habe dazu einen Arduino Uno und folgenden Aufbau verwendet:</p>
+              <p><img src="/assets/img/picture_58.png" alt="Schaltbild" /></p>
+              <p><strong>Achtung:</strong> Ich habe in diesem Aufbau die Widerstände für die Einfachheit weggelassen! Bitte LEDs nie ohne Vorwiderstand betreiben!</p>
+              <p>Jede LED ist dabei einzeln über einen Digitalport ansteuerbar. Ich habe aus Platzgründen die Ports 2,3,4,5,7 und 8 dafür verwendet.</p>
+              <h2 id="programmierung">Programmierung</h2>
+              <p>Wie bei jedem Arduino-Sketch beginnt auch dieses Programm mit den beiden wohlbekannten Funktionen:</p>
+              <figure class="highlight">
+                <pre><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">setup</span><span class="p">(){</span>
+
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">(){</span>
+
+<span class="p">}</span></code></pre>
+              </figure>
+              <p>Als nächstes definieren wir nun am Beginn die digitalen Ausgänge der LEDs:</p>
+              <figure class="highlight">
+                <pre><code class="language-cpp" data-lang="cpp"><span class="c1">// Seite 1</span>
+<span class="kt">int</span> <span class="n">g_1</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>    <span class="c1">// Grün</span>
+<span class="kt">int</span> <span class="n">y_1</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>    <span class="c1">// Gelb</span>
+<span class="kt">int</span> <span class="n">r_1</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>    <span class="c1">// Rot</span>
+
+<span class="c1">// Seite 2</span>
+<span class="kt">int</span> <span class="n">g_2</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>    <span class="c1">// Grün</span>
+<span class="kt">int</span> <span class="n">y_2</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>    <span class="c1">// Gelb</span>
+<span class="kt">int</span> <span class="n">r_2</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>    <span class="c1">// Rot</span></code></pre>
+              </figure>
+              <p>Im Setup-Teil des Programms werden dazu mittel <code class="highlighter-rouge">pinMode( )</code> die Typen der Pins definiert:</p>
+              <figure class="highlight">
+                <pre><code class="language-cpp" data-lang="cpp"><span class="n">pinMode</span><span class="p">(</span><span class="n">g_1</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+<span class="n">pinMode</span><span class="p">(</span><span class="n">y_1</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+<span class="n">pinMode</span><span class="p">(</span><span class="n">r_1</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+
+<span class="n">pinMode</span><span class="p">(</span><span class="n">g_2</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+<span class="n">pinMode</span><span class="p">(</span><span class="n">y_2</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+<span class="n">pinMode</span><span class="p">(</span><span class="n">r_2</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span></code></pre>
+              </figure>
+              <p>Kommen wir nun zum eigentlichen Ampel-Programm. Dieser Teil des Codes befindet sich, damit er sich am Ende wiederholt, im <code class="highlighter-rouge">loop( )</code>-Teil. Ich habe dazu einfach nacheinander, unterbrochen mit <code class="highlighter-rouge">delay( )</code> Aufrufen, die Vorgänge der Ampelschaltung prozedural programmiert. Natürlich wäre der Code mit OOP wesentlich übersichtlicher, dafür auch für den Anfang schwerer zu verstehen.</p>
+              <figure class="highlight">
+                <pre><code class="language-cpp" data-lang="cpp"><span class="c1">// Starteinstellung</span>
+<span class="n">digitalWrite</span><span class="p">(</span><span class="n">r_1</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>    <span class="c1">// Rot auf 1 ein</span>
+<span class="n">digitalWrite</span><span class="p">(</span><span class="n">g_2</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>    <span class="c1">// Grün auf 2 ein</span>
+
+<span class="c1">// Grünphase von 2</span>
+<span class="n">delay</span><span class="p">(</span><span class="mi">5000</span><span class="p">);</span>                <span class="c1">// Ampelphase mit z.B. 5 Sekunden Länge</span>
+
+<span class="c1">// Ende der Grünphase von 2</span>
+<span class="n">blink</span><span class="p">(</span><span class="n">g_2</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>                <span class="c1">// Blinken am Ende der Grünphase</span>
+<span class="n">digitalWrite</span><span class="p">(</span><span class="n">g_2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>        <span class="c1">// Gründe Licht aus</span>
+<span class="n">digitalWrite</span><span class="p">(</span><span class="n">y_2</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>    <span class="c1">// Gelbes Licht ein</span>
+<span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>                
+<span class="n">digitalWrite</span><span class="p">(</span><span class="n">y_2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>        <span class="c1">// Gelbes Licht aus</span>
+<span class="n">digitalWrite</span><span class="p">(</span><span class="n">r_2</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>    <span class="c1">// Rotes Licht ein</span>
+
+<span class="c1">// Beginn der Grünphase von 1</span>
+<span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="n">digitalWrite</span><span class="p">(</span><span class="n">y_1</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+<span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="n">digitalWrite</span><span class="p">(</span><span class="n">r_1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+<span class="n">digitalWrite</span><span class="p">(</span><span class="n">y_1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+<span class="n">digitalWrite</span><span class="p">(</span><span class="n">g_1</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+
+<span class="c1">// Grünphase von 1</span>
+<span class="n">delay</span><span class="p">(</span><span class="mi">5000</span><span class="p">);</span>
+
+<span class="c1">// Ende der Grünphase von 1</span>
+<span class="n">blink</span><span class="p">(</span><span class="n">g_1</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+<span class="n">digitalWrite</span><span class="p">(</span><span class="n">g_1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+<span class="n">digitalWrite</span><span class="p">(</span><span class="n">y_1</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+<span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="n">digitalWrite</span><span class="p">(</span><span class="n">y_1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+<span class="n">digitalWrite</span><span class="p">(</span><span class="n">r_1</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+<span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+
+<span class="c1">// Beginn der Grünphase von 2</span>
+<span class="n">digitalWrite</span><span class="p">(</span><span class="n">y_2</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+<span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="n">digitalWrite</span><span class="p">(</span><span class="n">r_2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+<span class="n">digitalWrite</span><span class="p">(</span><span class="n">y_2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span></code></pre>
+              </figure>
+              <p>Zum Blinken der Ampel habe ich eine Funktion namens <code class="highlighter-rouge">blink( )</code> verwendet. Diese stellt das Blinken der grünen Lampe am Ende der Grünphase in Österreich nach.</p>
+              <figure class="highlight">
+                <pre><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="nf">blink</span><span class="p">(</span><span class="kt">int</span> <span class="n">pin</span><span class="p">,</span> <span class="kt">int</span> <span class="n">times</span><span class="p">){</span>
+	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">times</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+		<span class="n">digitalWrite</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+		<span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+		<span class="n">digitalWrite</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+		<span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="p">}</span></code></pre>
+              </figure>
+              <h2 id="zusammenfassung">Zusammenfassung</h2>
+              <p>Mit diesem Code kann man nun bereits die “Ampelanlage” steuern. Sie sollte sich wie bei echten Vorbild verhalten. Hier nochmal der gesamte Code des Programmes:</p>
+              <figure class="highlight">
+                <pre><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">g_1</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">y_1</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">r_1</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">g_2</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">y_2</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">r_2</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+	<span class="n">pinMode</span><span class="p">(</span><span class="n">g_1</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+	<span class="n">pinMode</span><span class="p">(</span><span class="n">y_1</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+	<span class="n">pinMode</span><span class="p">(</span><span class="n">r_1</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+
+	<span class="n">pinMode</span><span class="p">(</span><span class="n">g_2</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+	<span class="n">pinMode</span><span class="p">(</span><span class="n">y_2</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+	<span class="n">pinMode</span><span class="p">(</span><span class="n">r_2</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">(){</span>
+	<span class="n">digitalWrite</span><span class="p">(</span><span class="n">r_1</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+	<span class="n">digitalWrite</span><span class="p">(</span><span class="n">g_2</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+	<span class="n">delay</span><span class="p">(</span><span class="mi">5000</span><span class="p">);</span>
+	<span class="n">blink</span><span class="p">(</span><span class="n">g_2</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+	<span class="n">digitalWrite</span><span class="p">(</span><span class="n">g_2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+	<span class="n">digitalWrite</span><span class="p">(</span><span class="n">y_2</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+	<span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+	<span class="n">digitalWrite</span><span class="p">(</span><span class="n">y_2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+	<span class="n">digitalWrite</span><span class="p">(</span><span class="n">r_2</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+	<span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+	<span class="n">digitalWrite</span><span class="p">(</span><span class="n">y_1</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+	<span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+	<span class="n">digitalWrite</span><span class="p">(</span><span class="n">r_1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+	<span class="n">digitalWrite</span><span class="p">(</span><span class="n">y_1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+	<span class="n">digitalWrite</span><span class="p">(</span><span class="n">g_1</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+	<span class="n">delay</span><span class="p">(</span><span class="mi">5000</span><span class="p">);</span>
+	<span class="n">blink</span><span class="p">(</span><span class="n">g_1</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+	<span class="n">digitalWrite</span><span class="p">(</span><span class="n">g_1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+	<span class="n">digitalWrite</span><span class="p">(</span><span class="n">y_1</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+	<span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+	<span class="n">digitalWrite</span><span class="p">(</span><span class="n">y_1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+	<span class="n">digitalWrite</span><span class="p">(</span><span class="n">r_1</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+	<span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+	<span class="n">digitalWrite</span><span class="p">(</span><span class="n">y_2</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+	<span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+	<span class="n">digitalWrite</span><span class="p">(</span><span class="n">r_2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+	<span class="n">digitalWrite</span><span class="p">(</span><span class="n">y_2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">blink</span><span class="p">(</span><span class="kt">int</span> <span class="n">pin</span><span class="p">,</span> <span class="kt">int</span> <span class="n">times</span><span class="p">){</span>
+	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">times</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+		<span class="n">digitalWrite</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+		<span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+		<span class="n">digitalWrite</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+		<span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="p">}</span></code></pre>
+              </figure>
+              <p>Natürlich kann man das typisch österreichische Ampelblinken auch weglassen und das Programm objektorient neu schreiben, aber an diesem Beispiel sieht man recht deutlich wie einfach und schnell sich so eine eigentlich komplexe Schaltung mittels Arduino verwirklichen lässt.</p>
+              <p>Der gesamte Code dieses Beispiels steht unter der <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>-Lizenz.</p>
+            </div>
+          </article>
+        </div>
+        <nav id="pagenav">
+          <span id="left">
+            <a href="/20/" rel="prev">&laquo; NEUER</a>
+          </span>
+          <span id="pages">
+            <a  href="/">1</a>
+            <a  href="/2">2</a>
+            <a  href="/3">3</a>
+            <a  href="/4">4</a>
+            <a  href="/5">5</a>
+            <a  href="/6">6</a>
+            <a  href="/7">7</a>
+            <a  href="/8">8</a>
+            <a  href="/9">9</a>
+            <a  href="/10">10</a>
+            <a  href="/11">11</a>
+            <a  href="/12">12</a>
+            <a  href="/13">13</a>
+            <a  href="/14">14</a>
+            <a  href="/15">15</a>
+            <a  href="/16">16</a>
+            <a  href="/17">17</a>
+            <a  href="/18">18</a>
+            <a  href="/19">19</a>
+            <a  href="/20">20</a>
+            <a class="active" href="/21">21</a>
+            <a  href="/22">22</a>
+            <a  href="/23">23</a>
+            <a  href="/24">24</a>
+            <a  href="/25">25</a>
+            <a  href="/26">26</a>
+            <a  href="/27">27</a>
+          </span>
+          <span id="right">
+            <a href="/22/" rel="next">ÄLTER &raquo;</a>
+          </span>
+        </nav>
+      </main>
+    </div>
+  </body>
+</html>

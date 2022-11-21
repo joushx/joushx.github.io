@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="Johannes Mittendorfer, Mittendorfer, Blog, Informatik, Student, Entwicklung, Security">
+    <meta name="description" content="Der Blog von Informatik-Student Johannes Mittendorfer über das Leben im Studium, Software-Entwicklung, IT-Security und das Internet">
+    <meta name="author" content="Johannes Mittendorfer">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <meta name="application-name" content="Johannes Mittendorfer"/>
+    <meta name="msapplication-TileColor" content="#f9fbf4"/>
+    <meta http-equiv="imagetoolbar" content="false" />
+    <meta property="fb:admins" content="100000063853580" />
+    <meta name="Content-Language" content="de" />
+    <!-- resources -->
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+    <link rel="canoncial" href="https://blog.johannes-mittendorfer.com/artikel/2013/08/uberspace-plus-php-plus-pgsql">
+    <!-- styles -->
+    <link rel="stylesheet" href="/assets/css/styles.css"/>
+    <!-- title -->
+    <title>Uberspace + PHP + PgSQL</title>
+    <!-- page specific resources -->
+  </head>
+  <body itemscope itemtype="http://schema.org/WebSite">
+    <!-- menu bar -->
+    <nav id="bar">
+      <section class="container">
+        <a class="title" itemprop="url" href="/">
+          <h1 itemprop="name">Johannes Mittendorfer</h1>
+        </a>
+        <ul>
+          <li>
+            <a href="/">
+              Start
+            </a>
+          </li>
+          <li>
+            <a itemprop="about" href="/ueber-mich" title="Über">
+              Über
+            </a>
+          </li>
+          <li>
+            <a href="/astronomie" title="Astronomie">
+              Astronomie
+            </a>
+          </li>
+          <li>
+            <a href="/impressum" title="Impressum">
+              Impressum
+            </a>
+          </li>
+        </ul>
+      </section>
+    </nav>
+    <!-- main content -->
+    <div class="container">
+      <main>
+        <!-- semantic description -->
+        <script type="application/ld+json">
+          {
+            "@context": "http://schema.org",
+            "@type": "BlogPosting",
+            "@id": "https://blog.johannes-mittendorfer.com/artikel/2013/08/uberspace-plus-php-plus-pgsql",
+            "headline": "Uberspace + PHP + PgSQL",
+            "description": "",
+            "datePublished": "2013-08-03 00:00:00 +0200",
+            "dateModified": "2013-08-03 00:00:00 +0200",
+            "author": {
+              "@type": "Person",
+              "name": "Johannes Mittendorfer"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Johannes Mittendorfer",
+              "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://blog.johannes-mittendorfer.com/assets/favicon.ico",
+                  "width": 16,
+                  "height": 16
+              }
+            },
+          
+            "mainEntityOfPage": {
+              "@id": "https://blog.johannes-mittendorfer.com/artikel/2013/08/uberspace-plus-php-plus-pgsql"
+            }
+          }
+        </script>
+        <script type="application/ld+json">
+          {
+            "@context": "http://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@id": "https://blog.johannes-mittendorfer.com/artikel",
+                "name": "Artikel"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@id": "https://blog.johannes-mittendorfer.com/artikel/2013",
+                "name": "2013"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@id": "https://blog.johannes-mittendorfer.com/artikel/2013/08",
+                "name": "08"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "item": {
+                "@id": "https://blog.johannes-mittendorfer.com/artikel/2013/08/uberspace-plus-php-plus-pgsql",
+                "name": "Uberspace + PHP + PgSQL"
+              }
+            }]
+          }
+        </script>
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+          <header>
+            <div class="meta">
+              <span class="category">Entwicklung</span> &ndash; 
+              <time itemprop="datePublished" datetime="2013-08-03T00:00:00+02:00" class="date">03.08.2013</time> &ndash;
+              <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+            </div>
+            <h1 itemprop="headline">Uberspace + PHP + PgSQL</h1>
+            <div class="warning">
+              Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+            </div>
+          </header>
+          <div itemprop="articleBody">
+            <p>Da ich kürzlich auf einen PgSQL-Server umgestiegen bin, stand ich vor dem Problem, dass die laufende PHP-Version auf meinen <a href="http://uberspace.de">Uberspace</a> nicht mit der Option <code class="highlighter-rouge">--with-pgsql</code> kompiliert worden ist.</p>
+            <p>Dabei stehen die Funktionen, die nötig sind, um sich mit der Datenbank zu verbinden in PHP nicht zur Verfügung, was sich in dieser Fehlermeldung äußert:</p>
+            <figure class="highlight">
+              <pre><code class="language-text" data-lang="text">Call to undefined function: pg_connect()</code></pre>
+            </figure>
+            <p>Da der Uberspace-Support aber auch das Unmögliche möglich machen kann, habe ich mich an <a href="mailto:hallo@uberspace.de">hallo@uberspace.de</a> gewannt. <a href="http://jonaspasche.de">Jonas</a> hat mir dann tatsächlich eine Anleitung dazu geben können, deren Umsetung ich an dieser Stelle beschreiben möchte.</p>
+            <h2 id="quellcode-downloaden">Quellcode downloaden</h2>
+            <p>Als Erstes muss man den Quellcode der Erweiterung downloaden. Da diese bereits in PHP enthalten ist, gibt es diesen im <a href="https://github.com/php/php-src">Github-Repository</a> von PHP, welches man am besten gleich als zip-Datei herunterlädt.</p>
+            <p>Das kann man gleich auf dem Uberspace mittels <code class="highlighter-rouge">wget</code> erledigen.</p>
+            <h2 id="kompilieren">Kompilieren</h2>
+            <p>Als Nächstes entpackt man den Inhalt der Datei in ein beliebiges Verzeichnis auf dem Server.</p>
+            <p>Nach dem Wechsel in das Verzeichnis <code class="highlighter-rouge">ext/pgsql</code> führt man die folgenden Befehle nacheinander aus:</p>
+            <figure class="highlight">
+              <pre><code class="language-text" data-lang="text">phpize
+./configure
+make</code></pre>
+            </figure>
+            <p>Nun sollte sich im Unterordner <code class="highlighter-rouge">lib</code> eine Datei namens <code class="highlighter-rouge">pgsql.so</code> befinden.</p>
+            <h2 id="installation">Installation</h2>
+            <p>Ich habe diese Datei einfach in meinem Homeverzeichnis in den Ordner <code class="highlighter-rouge">pecl</code> verschoben und in der <code class="highlighter-rouge">php.ini</code> unter <code class="highlighter-rouge">/etc</code> Folgendes ergänzt:</p>
+            <figure class="highlight">
+              <pre><code class="language-text" data-lang="text">extension=pgsql.so</code></pre>
+            </figure>
+            <p>Nach einem Neustart des PHP-Intepreters mittels</p>
+            <figure class="highlight">
+              <pre><code class="language-text" data-lang="text">killall -u $USER php-cgi</code></pre>
+            </figure>
+            <p>sollte alles für die Benützung eingerichtet sein.</p>
+            <p>An dieser Stelle möchte ich nocheinmal darauf hinweisen, dass die Jungs von Uberspace einfach “awesome” sind!</p>
+          </div>
+          <footer>
+            <div id="share">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://blog.johannes-mittendorfer.com/artikel/2013/08/uberspace-plus-php-plus-pgsql" class="share-icon facebook"><i class="fa fa-facebook"></i> Facebook</a>
+              <a href="https://twitter.com/intent/tweet?original_referer=https://johannes-mittendorfer.com&source=tweetbuttont&url=https://blog.johannes-mittendorfer.com/artikel/2013/08/uberspace-plus-php-plus-pgsql" class="share-icon twitter"><i class="fa fa-twitter"></i> Twitter</a>
+              <a href="https://plus.google.com/share?url=https://blog.johannes-mittendorfer.com/artikel/2013/08/uberspace-plus-php-plus-pgsql&hl=de" class="share-icon googleplus"><i class="fa fa-google-plus"></i> Google+</a>
+              <a href="https://flattr.com/submit/auto?user_id=joushx&url=https://blog.johannes-mittendorfer.com/artikel/2013/08/uberspace-plus-php-plus-pgsql&title=Uberspace%20+%20PHP%20+%20PgSQL" class="share-icon flattr">Flattr</a>
+            </div>
+          </footer>
+        </article>
+      </main>
+    </div>
+  </body>
+</html>

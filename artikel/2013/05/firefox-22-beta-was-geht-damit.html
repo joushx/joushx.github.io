@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="Johannes Mittendorfer, Mittendorfer, Blog, Informatik, Student, Entwicklung, Security">
+    <meta name="description" content="Der Blog von Informatik-Student Johannes Mittendorfer über das Leben im Studium, Software-Entwicklung, IT-Security und das Internet">
+    <meta name="author" content="Johannes Mittendorfer">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <meta name="application-name" content="Johannes Mittendorfer"/>
+    <meta name="msapplication-TileColor" content="#f9fbf4"/>
+    <meta http-equiv="imagetoolbar" content="false" />
+    <meta property="fb:admins" content="100000063853580" />
+    <meta name="Content-Language" content="de" />
+    <!-- resources -->
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+    <link rel="canoncial" href="https://blog.johannes-mittendorfer.com/artikel/2013/05/firefox-22-beta-was-geht-damit">
+    <!-- styles -->
+    <link rel="stylesheet" href="/assets/css/styles.css"/>
+    <!-- title -->
+    <title>Firefox 22 Beta: Was geht damit?</title>
+    <!-- page specific resources -->
+  </head>
+  <body itemscope itemtype="http://schema.org/WebSite">
+    <!-- menu bar -->
+    <nav id="bar">
+      <section class="container">
+        <a class="title" itemprop="url" href="/">
+          <h1 itemprop="name">Johannes Mittendorfer</h1>
+        </a>
+        <ul>
+          <li>
+            <a href="/">
+              Start
+            </a>
+          </li>
+          <li>
+            <a itemprop="about" href="/ueber-mich" title="Über">
+              Über
+            </a>
+          </li>
+          <li>
+            <a href="/astronomie" title="Astronomie">
+              Astronomie
+            </a>
+          </li>
+          <li>
+            <a href="/impressum" title="Impressum">
+              Impressum
+            </a>
+          </li>
+        </ul>
+      </section>
+    </nav>
+    <!-- main content -->
+    <div class="container">
+      <main>
+        <!-- semantic description -->
+        <script type="application/ld+json">
+          {
+            "@context": "http://schema.org",
+            "@type": "BlogPosting",
+            "@id": "https://blog.johannes-mittendorfer.com/artikel/2013/05/firefox-22-beta-was-geht-damit",
+            "headline": "Firefox 22 Beta: Was geht damit?",
+            "description": "",
+            "datePublished": "2013-05-16 00:00:00 +0200",
+            "dateModified": "2013-05-16 00:00:00 +0200",
+            "author": {
+              "@type": "Person",
+              "name": "Johannes Mittendorfer"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Johannes Mittendorfer",
+              "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://blog.johannes-mittendorfer.com/assets/favicon.ico",
+                  "width": 16,
+                  "height": 16
+              }
+            },
+          
+            "mainEntityOfPage": {
+              "@id": "https://blog.johannes-mittendorfer.com/artikel/2013/05/firefox-22-beta-was-geht-damit"
+            }
+          }
+        </script>
+        <script type="application/ld+json">
+          {
+            "@context": "http://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@id": "https://blog.johannes-mittendorfer.com/artikel",
+                "name": "Artikel"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@id": "https://blog.johannes-mittendorfer.com/artikel/2013",
+                "name": "2013"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@id": "https://blog.johannes-mittendorfer.com/artikel/2013/05",
+                "name": "05"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "item": {
+                "@id": "https://blog.johannes-mittendorfer.com/artikel/2013/05/firefox-22-beta-was-geht-damit",
+                "name": "Firefox 22 Beta: Was geht damit?"
+              }
+            }]
+          }
+        </script>
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+          <header>
+            <div class="meta">
+              <span class="category">Software</span> &ndash; 
+              <time itemprop="datePublished" datetime="2013-05-16T00:00:00+02:00" class="date">16.05.2013</time> &ndash;
+              <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+            </div>
+            <h1 itemprop="headline">Firefox 22 Beta: Was geht damit?</h1>
+            <div class="warning">
+              Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+            </div>
+          </header>
+          <div itemprop="articleBody">
+            <p>Heute hat Mozilla die Betaversion auf Firefox 22 veröffentlicht und stellt mit dieser Version <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/22">eine große Anzahl von Neuheiten</a> bereit. Unter anderem unterstützt der Browser nun auch WebRTC komplett. Außerdem sind WebNotifications, Clipboard API und asm.js-Unterstützung in den Fuchs eingezogen.</p>
+            <p>Im Folgenden möchte ich kurz die wichtigsten Neuerungen mit einem kurzen Beispiel vorstellen:</p>
+            <h2 id="webrtc">WebRTC</h2>
+            <p>WebRTC ermöglicht den Zugriff auf Kamera und Mikrofon und macht es möglich direkte Verbindungen zwischen Browsern herzustellen, um zum Beispiel einen Videochat zu realisieren.</p>
+            <div>
+              <video width="300" height="200" autoplay="" id="video-webrtc"></video>
+              <br />
+              <button id="button-webrtc">Zugriff auf Kamera testen</button>
+              <script type="text/javascript">
+                var button = document.getElementById("button-webrtc");
+                var video = document.getElementById("video-webrtc");
+                
+                button.addEventListener("click", function(){
+                navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+                
+                navigator.getUserMedia({video: true, audio: true}, function(stream) {
+                    video.src = window.URL.createObjectURL(stream);
+                  }, function(){
+                    alert("Fehler! Womöglich wird Ihr Browser (noch) nicht unterstützt!");
+                  });
+                
+                }, false);
+              </script>
+            </div>
+            <p>Das geschieht durch folgenden Code:</p>
+            <figure class="highlight">
+              <pre><code class="language-html" data-lang="html"><span class="nt">&lt;video</span> <span class="na">width=</span><span class="s">"300"</span> <span class="na">height=</span><span class="s">"200"</span> <span class="na">autoplay</span> <span class="na">id=</span><span class="s">"video-webrtc"</span><span class="nt">&gt;&lt;/video&gt;</span>
+<span class="nt">&lt;br/&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"button-webrtc"</span><span class="nt">&gt;</span>Zugriff auf Kamera testen<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+  <span class="kd">var</span> <span class="nx">button</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">button-webrtc</span><span class="dl">"</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">video</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">video-webrtc</span><span class="dl">"</span><span class="p">);</span>
+  
+  <span class="nx">button</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+  <span class="nb">navigator</span><span class="p">.</span><span class="nx">getUserMedia</span> <span class="o">=</span> <span class="nb">navigator</span><span class="p">.</span><span class="nx">getUserMedia</span> <span class="o">||</span> <span class="nb">navigator</span><span class="p">.</span><span class="nx">webkitGetUserMedia</span> <span class="o">||</span> <span class="nb">navigator</span><span class="p">.</span><span class="nx">mozGetUserMedia</span> <span class="o">||</span> <span class="nb">navigator</span><span class="p">.</span><span class="nx">msGetUserMedia</span><span class="p">;</span>
+  
+  <span class="nb">navigator</span><span class="p">.</span><span class="nx">getUserMedia</span><span class="p">({</span><span class="na">video</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="na">audio</span><span class="p">:</span> <span class="kc">true</span><span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">stream</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">video</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">URL</span><span class="p">.</span><span class="nx">createObjectURL</span><span class="p">(</span><span class="nx">stream</span><span class="p">);</span>
+    <span class="p">},</span> <span class="kd">function</span><span class="p">(){</span>
+      <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Fehler! Womöglich wird Ihr Browser (noch) nicht unterstützt!</span><span class="dl">"</span><span class="p">);</span>
+    <span class="p">});</span>
+  
+  <span class="p">},</span> <span class="kc">false</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span></code></pre>
+            </figure>
+            <h2 id="webnotifications">WebNotifications</h2>
+            <p>Durch diese API ist es möglich Benachrichtigungen auf dem Desktop des Benutzers auszugeben, auch wenn dieser die Webseite in einem anderen Tab oder Fenster geöffnet hat. Gedacht ist es vor allem für das Anzeigen von neuen Nachrichten oder Ähnlichem.</p>
+            <div>
+              <button id="button-webnotifications-allow">erlauben</button>
+              <button id="button-webnotifications-show">anzeigen</button>
+              <script type="text/javascript">
+                var button_allow = document.getElementById("button-webnotifications-allow");
+                var button_show = document.getElementById("button-webnotifications-show");
+                
+                button_allow.addEventListener("click", function(){
+                window.Notification.requestPermission();
+                }, false);
+                
+                button_show.addEventListener("click", function(){
+                new window.Notification("Hallo", {"body":"Welt!"});
+                }, false);
+              </script>
+            </div>
+            <p>Dazu bedarf es folgendem Code:</p>
+            <figure class="highlight">
+              <pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"button-webnotifications-allow"</span><span class="nt">&gt;</span>erlauben<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"button-webnotifications-show"</span><span class="nt">&gt;</span>anzeigen<span class="nt">&lt;/button&gt;</span>
+
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+  <span class="kd">var</span> <span class="nx">button_allow</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">button-webnotifications-allow</span><span class="dl">"</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">button_show</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">button-webnotifications-show</span><span class="dl">"</span><span class="p">);</span>
+
+  <span class="nx">button_allow</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">Notification</span><span class="p">.</span><span class="nx">requestPermission</span><span class="p">();</span>
+  <span class="p">},</span> <span class="kc">false</span><span class="p">);</span>
+
+  <span class="nx">button_show</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">click</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+  <span class="k">new</span> <span class="nb">window</span><span class="p">.</span><span class="nx">Notification</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hallo</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span><span class="dl">"</span><span class="s2">body</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Welt!</span><span class="dl">"</span><span class="p">});</span>
+  <span class="p">},</span> <span class="kc">false</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span></code></pre>
+            </figure>
+          </div>
+          <footer>
+            <div id="share">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://blog.johannes-mittendorfer.com/artikel/2013/05/firefox-22-beta-was-geht-damit" class="share-icon facebook"><i class="fa fa-facebook"></i> Facebook</a>
+              <a href="https://twitter.com/intent/tweet?original_referer=https://johannes-mittendorfer.com&source=tweetbuttont&url=https://blog.johannes-mittendorfer.com/artikel/2013/05/firefox-22-beta-was-geht-damit" class="share-icon twitter"><i class="fa fa-twitter"></i> Twitter</a>
+              <a href="https://plus.google.com/share?url=https://blog.johannes-mittendorfer.com/artikel/2013/05/firefox-22-beta-was-geht-damit&hl=de" class="share-icon googleplus"><i class="fa fa-google-plus"></i> Google+</a>
+              <a href="https://flattr.com/submit/auto?user_id=joushx&url=https://blog.johannes-mittendorfer.com/artikel/2013/05/firefox-22-beta-was-geht-damit&title=Firefox%2022%20Beta:%20Was%20geht%20damit?" class="share-icon flattr">Flattr</a>
+            </div>
+          </footer>
+        </article>
+      </main>
+    </div>
+  </body>
+</html>

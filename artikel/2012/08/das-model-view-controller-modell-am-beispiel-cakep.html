@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="Johannes Mittendorfer, Mittendorfer, Blog, Informatik, Student, Entwicklung, Security">
+    <meta name="description" content="Der Blog von Informatik-Student Johannes Mittendorfer über das Leben im Studium, Software-Entwicklung, IT-Security und das Internet">
+    <meta name="author" content="Johannes Mittendorfer">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <meta name="application-name" content="Johannes Mittendorfer"/>
+    <meta name="msapplication-TileColor" content="#f9fbf4"/>
+    <meta http-equiv="imagetoolbar" content="false" />
+    <meta property="fb:admins" content="100000063853580" />
+    <meta name="Content-Language" content="de" />
+    <!-- resources -->
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+    <link rel="canoncial" href="https://blog.johannes-mittendorfer.com/artikel/2012/08/das-model-view-controller-modell-am-beispiel-cakep">
+    <!-- styles -->
+    <link rel="stylesheet" href="/assets/css/styles.css"/>
+    <!-- title -->
+    <title>Das Model-View-Controller-Modell am Beispiel CakePHP</title>
+    <!-- page specific resources -->
+  </head>
+  <body itemscope itemtype="http://schema.org/WebSite">
+    <!-- menu bar -->
+    <nav id="bar">
+      <section class="container">
+        <a class="title" itemprop="url" href="/">
+          <h1 itemprop="name">Johannes Mittendorfer</h1>
+        </a>
+        <ul>
+          <li>
+            <a href="/">
+              Start
+            </a>
+          </li>
+          <li>
+            <a itemprop="about" href="/ueber-mich" title="Über">
+              Über
+            </a>
+          </li>
+          <li>
+            <a href="/astronomie" title="Astronomie">
+              Astronomie
+            </a>
+          </li>
+          <li>
+            <a href="/impressum" title="Impressum">
+              Impressum
+            </a>
+          </li>
+        </ul>
+      </section>
+    </nav>
+    <!-- main content -->
+    <div class="container">
+      <main>
+        <!-- semantic description -->
+        <script type="application/ld+json">
+          {
+            "@context": "http://schema.org",
+            "@type": "BlogPosting",
+            "@id": "https://blog.johannes-mittendorfer.com/artikel/2012/08/das-model-view-controller-modell-am-beispiel-cakep",
+            "headline": "Das Model-View-Controller-Modell am Beispiel CakePHP",
+            "description": "",
+            "datePublished": "2012-08-12 00:00:00 +0200",
+            "dateModified": "2012-08-12 00:00:00 +0200",
+            "author": {
+              "@type": "Person",
+              "name": "Johannes Mittendorfer"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Johannes Mittendorfer",
+              "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://blog.johannes-mittendorfer.com/assets/favicon.ico",
+                  "width": 16,
+                  "height": 16
+              }
+            },
+          
+            "mainEntityOfPage": {
+              "@id": "https://blog.johannes-mittendorfer.com/artikel/2012/08/das-model-view-controller-modell-am-beispiel-cakep"
+            }
+          }
+        </script>
+        <script type="application/ld+json">
+          {
+            "@context": "http://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@id": "https://blog.johannes-mittendorfer.com/artikel",
+                "name": "Artikel"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@id": "https://blog.johannes-mittendorfer.com/artikel/2012",
+                "name": "2012"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@id": "https://blog.johannes-mittendorfer.com/artikel/2012/08",
+                "name": "08"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "item": {
+                "@id": "https://blog.johannes-mittendorfer.com/artikel/2012/08/das-model-view-controller-modell-am-beispiel-cakep",
+                "name": "Das Model-View-Controller-Modell am Beispiel CakePHP"
+              }
+            }]
+          }
+        </script>
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+          <header>
+            <div class="meta">
+              <span class="category">Entwicklung</span> &ndash; 
+              <time itemprop="datePublished" datetime="2012-08-12T00:00:00+02:00" class="date">12.08.2012</time> &ndash;
+              <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+            </div>
+            <h1 itemprop="headline">Das Model-View-Controller-Modell am Beispiel CakePHP</h1>
+            <div class="warning">
+              Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+            </div>
+          </header>
+          <div itemprop="articleBody">
+            <p>Model, View und Controller: Begriffe, mit denen man nicht sofort etwas anfangen kann. Auch trotz vieler Erklärungen schreckt das, auf den ersten Blick komplizierte, Modell viele Menschen davon ab sich daran zu versuchen. Auch ich habe es erst nach drei Versuchen geschafft, was jedoch wahrscheinlich vorher an meiner Ungeduld scheiterte.</p>
+            <h2 id="cakephp">CakePHP</h2>
+            <p><img src="/assets/img/picture_56.png" alt="CakePHP Logo" /></p>
+            <p>Ich habe für diese Erklärung das Framework <a href="http://cakephp.org">CakePHP</a> benutzt, um einen Praxisbezug herzustellen und weil ich es gerade ausgiebig benutze. CakePHP ist ein offenes Web-Framework, das an <a href="http://rubyonrails.org">Ruby on Rails</a> angelehnt wurde. Die Prinzipien davon sind:</p>
+            <ul>
+              <li>Don’t repeat yourself (Nichts zweimal programmieren)</li>
+              <li>Convention before configuration (Lieber alles nach einem festgelegten Muster benennen, als etwas einzustellen.)</li>
+            </ul>
+            <h2 id="model">Model</h2>
+            <figure><img src="/assets/img/picture_57.png" alt="Model View Controller Prinzip" />
+              <figcaption>Model View Controller Prinzip (via Wikimedia Commons)</figcaption>
+            </figure>
+            <p>Das Model gibt die grundlegende Beziehung der Daten zueinander an. Es legt also das Datenmodell fest, in ihm wird der Name der Klasse festgelegt und hier wenden auch SQL-Joins  definiert. Zudem stehen auch Aktionen, die vor dem Speichern in die Datenbank auszuführen sind, im Model.</p>
+            <p>Noch einmal am Beispiel einer CakePHP-Anwendung zur Arbeitserfassung von verschiedenen Benutzern:</p>
+            <figure class="highlight">
+              <pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="kd">class</span> <span class="nc">User</span> <span class="kd">extends</span> <span class="nc">AppModel</span><span class="p">{</span>
+	<span class="c1">// Name der Klasse festlegen</span>
+	<span class="k">var</span> <span class="nv">$name</span> <span class="o">=</span> <span class="s1">'User'</span><span class="p">;</span>
+
+	<span class="c1">// Mit einem Join Tabellen verbinden</span>
+	<span class="k">var</span> <span class="nv">$hasAndBelongsToMany</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+	    <span class="s1">'Work'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+		<span class="s1">'className'</span> <span class="o">=&gt;</span> <span class="s1">'Work'</span>
+	    <span class="p">)</span>
+	<span class="p">);</span>
+	 
+	<span class="c1">// Passwörter vor dem Speichern hashen</span>
+	<span class="k">function</span> <span class="n">beforeSave</span><span class="p">(</span><span class="nv">$options</span><span class="p">)</span> <span class="p">{</span>
+	    <span class="k">if</span> <span class="p">(</span><span class="k">isset</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">[</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">alias</span><span class="p">][</span><span class="s1">'password'</span><span class="p">]))</span> <span class="p">{</span>
+		<span class="nv">$this</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">[</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">alias</span><span class="p">][</span><span class="s1">'password'</span><span class="p">]</span> <span class="o">=</span> <span class="nc">AuthComponent</span><span class="o">::</span><span class="nf">password</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">[</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">alias</span><span class="p">][</span><span class="s1">'password'</span><span class="p">]);</span>
+	    <span class="p">}</span>
+	    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cp">?&gt;</span></code></pre>
+            </figure>
+            <h2 id="view">View</h2>
+            <p>Der View stellt die Seite dar, die der Benutzer schließlich zu Gesicht bekommt. Es wird damit die Anzeige der Daten in HTML und PHP formuliert. Für (fast) jede Aktion im Controller (unten) muss ein View vorhanden sein.</p>
+            <p>Auch dazu wieder ein Beispiel:</p>
+            <figure class="highlight">
+              <pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-header"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;h1&gt;</span>Benutzer<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table table-striped"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;tr&gt;</span>
+		<span class="nt">&lt;th&gt;</span>Id<span class="nt">&lt;/th&gt;</span>
+		<span class="nt">&lt;th&gt;</span>Benutzername<span class="nt">&lt;/th&gt;</span>
+		<span class="nt">&lt;th&gt;</span>Vorname<span class="nt">&lt;/th&gt;</span>
+		<span class="nt">&lt;th&gt;</span>Nachname<span class="nt">&lt;/th&gt;</span>
+		<span class="nt">&lt;th&gt;</span>Aktionen<span class="nt">&lt;/th&gt;</span>
+	<span class="nt">&lt;/tr&gt;</span><span class="cp">&lt;?php foreach ($users as $user): ?&gt;</span>
+	<span class="nt">&lt;tr&gt;</span>
+		<span class="nt">&lt;td&gt;</span><span class="cp">&lt;?php echo h($user['User']['id']); ?&gt;</span><span class="nt">&lt;/td&gt;</span>
+		<span class="nt">&lt;td&gt;</span><span class="cp">&lt;?php echo h($this-&gt;Html-&gt;link($user['User']['username'], "/users/view/".$user['User']['id'])); ?&gt;</span><span class="nt">&lt;/td&gt;</span>
+		<span class="nt">&lt;td&gt;</span><span class="cp">&lt;?php echo h($user['User']['firstname']); ?&gt;</span><span class="nt">&lt;/td&gt;</span>
+		<span class="nt">&lt;td&gt;</span><span class="cp">&lt;?php echo h($user['User']['lastname']); ?&gt;</span><span class="nt">&lt;/td&gt;</span>
+		<span class="nt">&lt;td&gt;</span><span class="cp">&lt;?php echo h("&lt;a href='" . $this-&gt;Html-&gt;Url(array('action' =&gt; 'edit', $user['User']['id'])) . "'&gt;&lt;i class='icon-pencil'&gt;&lt;/i&gt;&lt;/a&gt;"); ?&gt;</span><span class="ni">&amp;nbsp;</span> <span class="cp">&lt;?php echo h("&lt;a href='" . $this-&gt;Html-&gt;Url(array('action' =&gt; 'delete', $user['User']['id'])) . "'&gt;&lt;i class='icon-trash'&gt;&lt;/i&gt;&lt;/a&gt;"); ?&gt;</span><span class="nt">&lt;/td&gt;</span>
+	<span class="nt">&lt;/tr&gt;</span><span class="cp">&lt;?php endforeach; ?&gt;</span>
+<span class="nt">&lt;/table&gt;</span></code></pre>
+            </figure>
+            <h2 id="controller">Controller</h2>
+            <p>Der Controller definiert schließlich die verschiedenen Aktionen der Klasse. Das sind zum Beispiel <code class="highlighter-rouge">users/index</code>, <code class="highlighter-rouge">users/view/2</code> und <code class="highlighter-rouge">users/add</code>, die als URL in der Anwendung erscheinen. Diese werden über gleichnamige Funktionen im Controller erstellt. In den Funktionen werden auch Daten aus der Datenbank gelesen und geschrieben. Ebenfalls im Controller findet die Überprüfung von Formulardaten statt.</p>
+            <p>Beispiel:</p>
+            <figure class="highlight">
+              <pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="kd">class</span> <span class="nc">UsersController</span> <span class="kd">extends</span> <span class="nc">AppController</span>
+
+<span class="p">{</span>
+	<span class="k">var</span> <span class="nv">$name</span> <span class="o">=</span> <span class="s1">'Users'</span><span class="p">;</span>
+
+	<span class="c1">// Überprüfung des Passwortes</span>
+
+	<span class="k">public</span> <span class="nv">$validate</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+
+		<span class="s1">'password'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+			<span class="s1">'required'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+				<span class="s1">'rule'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+					<span class="s1">'minLength'</span><span class="p">,</span>
+					<span class="s1">'5'</span>
+				<span class="p">)</span> <span class="p">,</span>
+				<span class="s1">'message'</span> <span class="o">=&gt;</span> <span class="s1">'Ein Passwort mit mindestens 5 Stellen wird benötigt'</span>
+			<span class="p">)</span>
+		<span class="p">)</span>
+	<span class="p">);</span>
+
+	<span class="c1">// Alle Benutzer auflisten, $users steht in View "index" zu Verfügung</span>
+
+	<span class="k">function</span> <span class="n">index</span><span class="p">()</span>
+	<span class="p">{</span>
+		<span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">set</span><span class="p">(</span><span class="s1">'users'</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nc">User</span><span class="o">-&gt;</span><span class="nf">paginate</span><span class="p">(</span><span class="s2">"all"</span><span class="p">));</span>
+	<span class="p">}</span>
+
+	<span class="c1">// Einen Benutzer anzeigen, $user steht in View "view" zu Verfügung</span>
+
+	<span class="k">function</span> <span class="n">view</span><span class="p">(</span><span class="nv">$id</span> <span class="o">=</span> <span class="kc">null</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="nv">$this</span><span class="o">-&gt;</span><span class="nc">User</span><span class="o">-&gt;</span><span class="n">id</span> <span class="o">=</span> <span class="nv">$id</span><span class="p">;</span>
+		<span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">set</span><span class="p">(</span><span class="s1">'user'</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nc">User</span><span class="o">-&gt;</span><span class="nf">read</span><span class="p">());</span>
+		<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="nc">User</span><span class="o">-&gt;</span><span class="nf">exists</span><span class="p">())</span> <span class="p">{</span>
+			<span class="k">throw</span> <span class="k">new</span> <span class="nc">NotFoundException</span><span class="p">(</span><span class="nf">__</span><span class="p">(</span><span class="s1">'Benutzer nicht gefunden!'</span><span class="p">));</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cp">?&gt;</span></code></pre>
+            </figure>
+            <h2 id="zusammenfassung">Zusammenfassung</h2>
+            <p>Man kann zusammenfassend sagen, dass das Modell nicht so kompliziert ist wie sein Name. Wenn man es einmal verstanden und angewendet hat, kann man mit wenig Aufwand und schnell dynamische Webanwendungen schreiben, die beliebig erweiterbar sind.</p>
+            <p>Noch einmal kurz die drei Begriffe und ihre Bedeutung:</p>
+            <ul>
+              <li>Model: Beziehung der Daten</li>
+              <li>View: Anzeige der Daten</li>
+              <li>Controller: Verarbeitung der Daten</li>
+            </ul>
+            <p><strong>edit:</strong> Artikel bearbeitet nach Hinweisen von ‘mar’.</p>
+          </div>
+          <footer>
+            <div id="share">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://blog.johannes-mittendorfer.com/artikel/2012/08/das-model-view-controller-modell-am-beispiel-cakep" class="share-icon facebook"><i class="fa fa-facebook"></i> Facebook</a>
+              <a href="https://twitter.com/intent/tweet?original_referer=https://johannes-mittendorfer.com&source=tweetbuttont&url=https://blog.johannes-mittendorfer.com/artikel/2012/08/das-model-view-controller-modell-am-beispiel-cakep" class="share-icon twitter"><i class="fa fa-twitter"></i> Twitter</a>
+              <a href="https://plus.google.com/share?url=https://blog.johannes-mittendorfer.com/artikel/2012/08/das-model-view-controller-modell-am-beispiel-cakep&hl=de" class="share-icon googleplus"><i class="fa fa-google-plus"></i> Google+</a>
+              <a href="https://flattr.com/submit/auto?user_id=joushx&url=https://blog.johannes-mittendorfer.com/artikel/2012/08/das-model-view-controller-modell-am-beispiel-cakep&title=Das%20Model-View-Controller-Modell%20am%20Beispiel%20CakePHP" class="share-icon flattr">Flattr</a>
+            </div>
+          </footer>
+        </article>
+      </main>
+    </div>
+  </body>
+</html>

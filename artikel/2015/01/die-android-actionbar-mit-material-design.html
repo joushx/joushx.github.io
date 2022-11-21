@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="Johannes Mittendorfer, Mittendorfer, Blog, Informatik, Student, Entwicklung, Security">
+    <meta name="description" content="Der Blog von Informatik-Student Johannes Mittendorfer über das Leben im Studium, Software-Entwicklung, IT-Security und das Internet">
+    <meta name="author" content="Johannes Mittendorfer">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <meta name="application-name" content="Johannes Mittendorfer"/>
+    <meta name="msapplication-TileColor" content="#f9fbf4"/>
+    <meta http-equiv="imagetoolbar" content="false" />
+    <meta property="fb:admins" content="100000063853580" />
+    <meta name="Content-Language" content="de" />
+    <!-- resources -->
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+    <link rel="canoncial" href="https://blog.johannes-mittendorfer.com/artikel/2015/01/die-android-actionbar-mit-material-design">
+    <!-- styles -->
+    <link rel="stylesheet" href="/assets/css/styles.css"/>
+    <!-- title -->
+    <title>Die Android Actionbar mit Material Design</title>
+    <!-- page specific resources -->
+  </head>
+  <body itemscope itemtype="http://schema.org/WebSite">
+    <!-- menu bar -->
+    <nav id="bar">
+      <section class="container">
+        <a class="title" itemprop="url" href="/">
+          <h1 itemprop="name">Johannes Mittendorfer</h1>
+        </a>
+        <ul>
+          <li>
+            <a href="/">
+              Start
+            </a>
+          </li>
+          <li>
+            <a itemprop="about" href="/ueber-mich" title="Über">
+              Über
+            </a>
+          </li>
+          <li>
+            <a href="/astronomie" title="Astronomie">
+              Astronomie
+            </a>
+          </li>
+          <li>
+            <a href="/impressum" title="Impressum">
+              Impressum
+            </a>
+          </li>
+        </ul>
+      </section>
+    </nav>
+    <!-- main content -->
+    <div class="container">
+      <main>
+        <!-- semantic description -->
+        <script type="application/ld+json">
+          {
+            "@context": "http://schema.org",
+            "@type": "BlogPosting",
+            "@id": "https://blog.johannes-mittendorfer.com/artikel/2015/01/die-android-actionbar-mit-material-design",
+            "headline": "Die Android Actionbar mit Material Design",
+            "description": "In der API-Version 21 von Android, genannt Lollipop, ist die Actionbar, wie man sie aus früherern Versionen kennt, als veraltet markiert. In die Bresche springt hier die neue Toolbar, die man wie jedes andere Layout-Element einbauen kann.",
+            "datePublished": "2015-01-08 00:00:00 +0100",
+            "dateModified": "2015-01-08 00:00:00 +0100",
+            "author": {
+              "@type": "Person",
+              "name": "Johannes Mittendorfer"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Johannes Mittendorfer",
+              "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://blog.johannes-mittendorfer.com/assets/favicon.ico",
+                  "width": 16,
+                  "height": 16
+              }
+            },
+          
+            "mainEntityOfPage": {
+              "@id": "https://blog.johannes-mittendorfer.com/artikel/2015/01/die-android-actionbar-mit-material-design"
+            }
+          }
+        </script>
+        <script type="application/ld+json">
+          {
+            "@context": "http://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@id": "https://blog.johannes-mittendorfer.com/artikel",
+                "name": "Artikel"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@id": "https://blog.johannes-mittendorfer.com/artikel/2015",
+                "name": "2015"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@id": "https://blog.johannes-mittendorfer.com/artikel/2015/01",
+                "name": "01"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "item": {
+                "@id": "https://blog.johannes-mittendorfer.com/artikel/2015/01/die-android-actionbar-mit-material-design",
+                "name": "Die Android Actionbar mit Material Design"
+              }
+            }]
+          }
+        </script>
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+          <header>
+            <div class="meta">
+              <span class="category">Entwicklung</span> &ndash; 
+              <time itemprop="datePublished" datetime="2015-01-08T00:00:00+01:00" class="date">08.01.2015</time> &ndash;
+              <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+            </div>
+            <h1 itemprop="headline">Die Android Actionbar mit Material Design</h1>
+            <div class="warning">
+              Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+            </div>
+            <div itemprop="description" class="description">In der API-Version 21 von Android, genannt Lollipop, ist die Actionbar, wie man sie aus früherern Versionen kennt, als veraltet markiert. In die Bresche springt hier die neue Toolbar, die man wie jedes andere Layout-Element einbauen kann.</div>
+          </header>
+          <div itemprop="articleBody">
+            <p>Um die alte Actionbar in einer ActionbarActivity auszublenden, bietet sich an, folgendes als Style zum Beispiel in der <code class="highlighter-rouge">themes.xml</code> anzugeben:</p>
+            <figure class="highlight">
+              <pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;resources&gt;</span>
+	<span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"BaseTheme"</span> <span class="na">parent=</span><span class="s">"Theme.AppCompat.Light"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"windowActionBar"</span><span class="nt">&gt;</span>false<span class="nt">&lt;/item&gt;</span>
+	<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;/resources&gt;</span></code></pre>
+            </figure>
+            <p>Die Toolbar muss natürlich anschließend in jeder Activity eingebaut werden:</p>
+            <figure class="highlight">
+              <pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;LinearLayout</span>
+	<span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+	<span class="na">xmlns:tools=</span><span class="s">"http://schemas.android.com/tools"</span>
+	<span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+	<span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+	<span class="na">tools:context=</span><span class="s">MainActivity"</span><span class="nt">&gt;</span>
+
+	<span class="nt">&lt;include</span> <span class="na">layout=</span><span class="s">"@layout/toolbar_transparent"</span><span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/LinearLayout&gt;</span></code></pre>
+            </figure>
+            <p><br />
+            </p>
+            <figure class="highlight">
+              <pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;android.support.v7.widget.Toolbar</span>
+    <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">android:id=</span><span class="s">"@+id/toolbar"</span>
+    <span class="na">android:theme=</span><span class="s">"@style/Exoplanets.Actionbar.Color"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span><span class="nt">/&gt;</span></code></pre>
+            </figure>
+            <p>Die aktuell benutzte Toolbar muss dann noch in der Activity gesetzt werden:</p>
+            <figure class="highlight">
+              <pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainActivity</span> <span class="kd">extends</span> <span class="nc">ActionBarActivity</span> <span class="o">{</span>
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="nc">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+		<span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+		<span class="c1">// set view</span>
+		<span class="n">setContentView</span><span class="o">(</span><span class="no">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_main</span><span class="o">);</span>
+		<span class="c1">// get toolbar</span>
+		<span class="n">toolbar</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Toolbar</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="no">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">toolbar</span><span class="o">);</span>
+		<span class="c1">// setup action bar</span>
+		<span class="n">setSupportActionBar</span><span class="o">(</span><span class="n">toolbar</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span></code></pre>
+            </figure>
+            <p>Ich habe hier die Android-Support-Bibliothek verwendet.</p>
+          </div>
+          <footer>
+            <div id="share">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://blog.johannes-mittendorfer.com/artikel/2015/01/die-android-actionbar-mit-material-design" class="share-icon facebook"><i class="fa fa-facebook"></i> Facebook</a>
+              <a href="https://twitter.com/intent/tweet?original_referer=https://johannes-mittendorfer.com&source=tweetbuttont&url=https://blog.johannes-mittendorfer.com/artikel/2015/01/die-android-actionbar-mit-material-design" class="share-icon twitter"><i class="fa fa-twitter"></i> Twitter</a>
+              <a href="https://plus.google.com/share?url=https://blog.johannes-mittendorfer.com/artikel/2015/01/die-android-actionbar-mit-material-design&hl=de" class="share-icon googleplus"><i class="fa fa-google-plus"></i> Google+</a>
+              <a href="https://flattr.com/submit/auto?user_id=joushx&url=https://blog.johannes-mittendorfer.com/artikel/2015/01/die-android-actionbar-mit-material-design&title=Die%20Android%20Actionbar%20mit%20Material%20Design" class="share-icon flattr">Flattr</a>
+            </div>
+          </footer>
+        </article>
+      </main>
+    </div>
+  </body>
+</html>

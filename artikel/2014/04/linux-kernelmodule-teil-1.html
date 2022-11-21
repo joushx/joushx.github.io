@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="Johannes Mittendorfer, Mittendorfer, Blog, Informatik, Student, Entwicklung, Security">
+    <meta name="description" content="Der Blog von Informatik-Student Johannes Mittendorfer über das Leben im Studium, Software-Entwicklung, IT-Security und das Internet">
+    <meta name="author" content="Johannes Mittendorfer">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <meta name="application-name" content="Johannes Mittendorfer"/>
+    <meta name="msapplication-TileColor" content="#f9fbf4"/>
+    <meta http-equiv="imagetoolbar" content="false" />
+    <meta property="fb:admins" content="100000063853580" />
+    <meta name="Content-Language" content="de" />
+    <!-- resources -->
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+    <link rel="canoncial" href="https://blog.johannes-mittendorfer.com/artikel/2014/04/linux-kernelmodule-teil-1">
+    <!-- styles -->
+    <link rel="stylesheet" href="/assets/css/styles.css"/>
+    <!-- title -->
+    <title>Linux-Kernelmodule - Teil 1</title>
+    <!-- page specific resources -->
+  </head>
+  <body itemscope itemtype="http://schema.org/WebSite">
+    <!-- menu bar -->
+    <nav id="bar">
+      <section class="container">
+        <a class="title" itemprop="url" href="/">
+          <h1 itemprop="name">Johannes Mittendorfer</h1>
+        </a>
+        <ul>
+          <li>
+            <a href="/">
+              Start
+            </a>
+          </li>
+          <li>
+            <a itemprop="about" href="/ueber-mich" title="Über">
+              Über
+            </a>
+          </li>
+          <li>
+            <a href="/astronomie" title="Astronomie">
+              Astronomie
+            </a>
+          </li>
+          <li>
+            <a href="/impressum" title="Impressum">
+              Impressum
+            </a>
+          </li>
+        </ul>
+      </section>
+    </nav>
+    <!-- main content -->
+    <div class="container">
+      <main>
+        <!-- semantic description -->
+        <script type="application/ld+json">
+          {
+            "@context": "http://schema.org",
+            "@type": "BlogPosting",
+            "@id": "https://blog.johannes-mittendorfer.com/artikel/2014/04/linux-kernelmodule-teil-1",
+            "headline": "Linux-Kernelmodule - Teil 1",
+            "description": "",
+            "datePublished": "2014-04-22 00:00:00 +0200",
+            "dateModified": "2014-04-22 00:00:00 +0200",
+            "author": {
+              "@type": "Person",
+              "name": "Johannes Mittendorfer"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Johannes Mittendorfer",
+              "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://blog.johannes-mittendorfer.com/assets/favicon.ico",
+                  "width": 16,
+                  "height": 16
+              }
+            },
+          
+            "mainEntityOfPage": {
+              "@id": "https://blog.johannes-mittendorfer.com/artikel/2014/04/linux-kernelmodule-teil-1"
+            }
+          }
+        </script>
+        <script type="application/ld+json">
+          {
+            "@context": "http://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@id": "https://blog.johannes-mittendorfer.com/artikel",
+                "name": "Artikel"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@id": "https://blog.johannes-mittendorfer.com/artikel/2014",
+                "name": "2014"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@id": "https://blog.johannes-mittendorfer.com/artikel/2014/04",
+                "name": "04"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "item": {
+                "@id": "https://blog.johannes-mittendorfer.com/artikel/2014/04/linux-kernelmodule-teil-1",
+                "name": "Linux-Kernelmodule - Teil 1"
+              }
+            }]
+          }
+        </script>
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+          <header>
+            <div class="meta">
+              <span class="category">Entwicklung</span> &ndash; 
+              <time itemprop="datePublished" datetime="2014-04-22T00:00:00+02:00" class="date">22.04.2014</time> &ndash;
+              <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+            </div>
+            <h1 itemprop="headline">Linux-Kernelmodule - Teil 1</h1>
+            <div class="warning">
+              Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+            </div>
+          </header>
+          <div itemprop="articleBody">
+            <p>Auch wenn es sich bei Linux um ein monolithisches Betriebssystem handelt, sind viele Teile davon in Modulen aufgebaut. Diese Kernelmodule können zur Laufzeit geladen und auch wieder entladen werden. Wie man so ein Modul entwickelt und zum Laufen bringt möchte ich hier kurz zeigen.</p>
+            <h2 id="c-code">C-Code</h2>
+            <p>Linux wird in C entwickelt und darum werden auch Kernel-Module in C geschrieben. Sie bestehen im Grunde aus zwei Funktionen: Eine, die beim Laden ausgeführt wird und eine, die beim Entladen ausgeführt wird.</p>
+            <p>Beginnen wir mit einem einfachen Hello-World-Beispiel:</p>
+            <p>Zuerst brauchen wir eine Bibliothek, die wir brauchen um ein Modul laden zu können:</p>
+            <figure class="highlight">
+              <pre><code class="language-c" data-lang="c"><span class="cp">#include &lt;linux/module.h&gt;
+#include &lt;linux/init.h&gt;</span></code></pre>
+            </figure>
+            <p>Die Header-Datei <code class="highlighter-rouge">module.h</code> wird von jedem Modul benötigt und die Datei <code class="highlighter-rouge">init.h</code> stellt Makros zur Verfügung, die wir brauchen um die Funktionen zu registrieren, was wir jetzt auch machen:</p>
+            <figure class="highlight">
+              <pre><code class="language-c" data-lang="c"><span class="cp">#include &lt;linux/module.h&gt;
+#include &lt;linux/init.h&gt;
+</span>
+<span class="c1">// Methode, die beim Laden ausgeführt wird</span>
+<span class="k">static</span> <span class="kt">int</span> <span class="n">__init</span> <span class="nf">hello_init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Methode, die beim Entladen ausgeführt wird</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="n">__exit</span> <span class="nf">hello_exit</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="p">}</span>
+
+<span class="c1">// Registrieren der Methoden</span>
+<span class="n">module_init</span><span class="p">(</span><span class="n">hello_init</span><span class="p">);</span>
+<span class="n">module_exit</span><span class="p">(</span><span class="n">hello_exit</span><span class="p">);</span></code></pre>
+            </figure>
+            <p>An dieser Stellen wurden zwei Funktionen eingebaut, die jeweils entweder beim Laden oder Entladen ausgeführt werden. Mit <code class="highlighter-rouge">module_init</code> und <code class="highlighter-rouge">module_exit</code> wird dem Betriebssystem mitgeteilt, welche es sind.</p>
+            <p>Das alles sieht zwar nett aus, tut aber noch nichts. Darum soll das Modul das berühmte “Hello world” ins syslog schreiben:</p>
+            <figure class="highlight">
+              <pre><code class="language-c" data-lang="c"><span class="cp">#include &lt;linux/module.h&gt;
+#include &lt;linux/init.h&gt;
+#include &lt;linux/kernel.h&gt;
+</span>
+<span class="c1">// Methode, die beim Laden ausgeführt wird</span>
+<span class="k">static</span> <span class="kt">int</span> <span class="n">__init</span> <span class="nf">hello_init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">printk</span><span class="p">(</span><span class="n">KERN_DEBUG</span>  <span class="s">"Hello World!"</span><span class="p">);</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Methode, die beim Entladen ausgeführt wird</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="n">__exit</span> <span class="nf">hello_exit</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">printk</span><span class="p">(</span><span class="n">KERN_DEBUG</span>  <span class="s">"Bye World!"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Registrieren der Methoden</span>
+<span class="n">module_init</span><span class="p">(</span><span class="n">hello_init</span><span class="p">);</span>
+<span class="n">module_exit</span><span class="p">(</span><span class="n">hello_exit</span><span class="p">);</span></code></pre>
+            </figure>
+            <p>Mit <code class="highlighter-rouge">printk(&lt;loglevel&gt;,&lt;text&gt;)</code> lässt sich das bewerkstelligen. Um das Loglevel angeben zu können, benötigen wir aber noch zusätzlich die Datei <code class="highlighter-rouge">kernel.h</code>.</p>
+            <p>Wenn man das Module so ausführt wird Linux übrigens sofort über die fehlende Lizenzangabe jammern. An dieser Stelle sollte man aber auch gleich noch Informationen über den Autor angeben:</p>
+            <figure class="highlight">
+              <pre><code class="language-c" data-lang="c"><span class="cp">#include &lt;linux/module.h&gt;
+#include &lt;linux/init.h&gt;
+#include &lt;linux/kernel.h&gt;
+</span>
+<span class="cp">#define DRIVER_AUTHOR "Johannes Mittendorfer &lt;...@... .com&gt;"
+#define DRIVER_DESC "Hello world"
+</span>
+<span class="c1">// Methode, die beim Laden ausgeführt wird</span>
+<span class="k">static</span> <span class="kt">int</span> <span class="n">__init</span> <span class="nf">hello_init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">printk</span><span class="p">(</span><span class="n">KERN_DEBUG</span>  <span class="s">"Hello World!"</span><span class="p">);</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Methode, die beim Entladen ausgeführt wird</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="n">__exit</span> <span class="nf">hello_exit</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">printk</span><span class="p">(</span><span class="n">KERN_DEBUG</span>  <span class="s">"Bye World!"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Registrieren der Methoden</span>
+<span class="n">module_init</span><span class="p">(</span><span class="n">hello_init</span><span class="p">);</span>
+<span class="n">module_exit</span><span class="p">(</span><span class="n">hello_exit</span><span class="p">);</span>
+
+<span class="n">MODULE_LICENSE</span><span class="p">(</span><span class="s">"GPL"</span><span class="p">);</span>
+<span class="n">MODULE_AUTHOR</span><span class="p">(</span><span class="n">DRIVER_AUTHOR</span><span class="p">);</span>
+<span class="n">MODULE_DESCRIPTION</span><span class="p">(</span><span class="n">DRIVER_DESC</span><span class="p">);</span></code></pre>
+            </figure>
+            <p>In diesem Beispiel habe ich den Autor und den Titel oben definiert und unterhalb samt Lizenz, in diesem Fall GPL, angegeben.</p>
+            <p>Jetzt kann man das Modul ausführen. Aber wie eigentlich? Dazu braucht man ein…</p>
+            <h2 id="makefile">Makefile</h2>
+            <p>Das Makefile gibt an, wie der Code kompiliert werden soll. Alles was man dazu braucht ist eine Datei namens <code class="highlighter-rouge">Makefile</code> mit folgendem Inhalt:</p>
+            <figure class="highlight">
+              <pre><code class="language-text" data-lang="text">obj-m += helloworld.o</code></pre>
+            </figure>
+            <p>Wenn man jetzt im Verzeichnis <code class="highlighter-rouge">make</code> ausführt, dann sollte in etwa so etwas erscheinen:</p>
+            <figure class="highlight">
+              <pre><code class="language-text" data-lang="text">make -C /lib/modules/3.11.0-19-generic/build M=/home/johannes/Schreibtisch/kernel modules
+make[1]: Betrete Verzeichnis '/usr/src/linux-headers-3.11.0-19-generic'
+  CC [M]  /home/johannes/Schreibtisch/kernel/helloworld.o
+  Building modules, stage 2.
+  MODPOST 1 modules
+  CC      /home/johannes/Schreibtisch/kernel/helloworld.mod.o
+  LD [M]  /home/johannes/Schreibtisch/kernel/helloworld.ko
+make[1]: Verlasse Verzeichnis '/usr/src/linux-headers-3.11.0-19-generic'</code></pre>
+            </figure>
+            <p>Außerdem sollte im Verzeichnis eine Datei namens <code class="highlighter-rouge">helloworld.ko</code> entstanden sein. Das ist das fertige Modul. Das  muss aber jetzt noch an einen vorgesehenen Platz.</p>
+            <h2 id="installation">Installation</h2>
+            <p>Die ko-Datei muss unterhalb des Ordners <code class="highlighter-rouge">/lib/modules/&lt;kernel-version&gt;/kernel/</code> kopiert werden. Die Kernelversion lässt sich durch den Befehl <code class="highlighter-rouge">uname -r</code> herausfinden. Um die Module neu einzulesen braucht es dann den Befehl <code class="highlighter-rouge">sudo depmod -a</code> und schließlich zum Laden des Modules <code class="highlighter-rouge">modprobe helloworld</code>.</p>
+            <p>Wenn alles geklappt hat, sollte man jetzt im Syslog ein “Hello world” sehen!</p>
+            <p>(Das sieht man zum Beispiel durch <code class="highlighter-rouge">tail -f /var/log/syslog</code>)</p>
+            <p>Teil 2 kommt dann irgendwann, wenn ich Zeit habe. ;)</p>
+          </div>
+          <footer>
+            <div id="share">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://blog.johannes-mittendorfer.com/artikel/2014/04/linux-kernelmodule-teil-1" class="share-icon facebook"><i class="fa fa-facebook"></i> Facebook</a>
+              <a href="https://twitter.com/intent/tweet?original_referer=https://johannes-mittendorfer.com&source=tweetbuttont&url=https://blog.johannes-mittendorfer.com/artikel/2014/04/linux-kernelmodule-teil-1" class="share-icon twitter"><i class="fa fa-twitter"></i> Twitter</a>
+              <a href="https://plus.google.com/share?url=https://blog.johannes-mittendorfer.com/artikel/2014/04/linux-kernelmodule-teil-1&hl=de" class="share-icon googleplus"><i class="fa fa-google-plus"></i> Google+</a>
+              <a href="https://flattr.com/submit/auto?user_id=joushx&url=https://blog.johannes-mittendorfer.com/artikel/2014/04/linux-kernelmodule-teil-1&title=Linux-Kernelmodule%20-%20Teil%201" class="share-icon flattr">Flattr</a>
+            </div>
+          </footer>
+        </article>
+      </main>
+    </div>
+  </body>
+</html>

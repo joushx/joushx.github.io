@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="Johannes Mittendorfer, Mittendorfer, Blog, Informatik, Student, Entwicklung, Security">
+    <meta name="description" content="Der Blog von Informatik-Student Johannes Mittendorfer über das Leben im Studium, Software-Entwicklung, IT-Security und das Internet">
+    <meta name="author" content="Johannes Mittendorfer">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <meta name="application-name" content="Johannes Mittendorfer"/>
+    <meta name="msapplication-TileColor" content="#f9fbf4"/>
+    <meta http-equiv="imagetoolbar" content="false" />
+    <meta property="fb:admins" content="100000063853580" />
+    <meta name="Content-Language" content="de" />
+    <!-- resources -->
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+    <link rel="canoncial" href="https://blog.johannes-mittendorfer.com/artikel/2013/06/apps-fur-samsung-smart-tvs-analysieren">
+    <!-- styles -->
+    <link rel="stylesheet" href="/assets/css/styles.css"/>
+    <!-- title -->
+    <title>Apps für Samsung Smart TVs analysieren</title>
+    <!-- page specific resources -->
+  </head>
+  <body itemscope itemtype="http://schema.org/WebSite">
+    <!-- menu bar -->
+    <nav id="bar">
+      <section class="container">
+        <a class="title" itemprop="url" href="/">
+          <h1 itemprop="name">Johannes Mittendorfer</h1>
+        </a>
+        <ul>
+          <li>
+            <a href="/">
+              Start
+            </a>
+          </li>
+          <li>
+            <a itemprop="about" href="/ueber-mich" title="Über">
+              Über
+            </a>
+          </li>
+          <li>
+            <a href="/astronomie" title="Astronomie">
+              Astronomie
+            </a>
+          </li>
+          <li>
+            <a href="/impressum" title="Impressum">
+              Impressum
+            </a>
+          </li>
+        </ul>
+      </section>
+    </nav>
+    <!-- main content -->
+    <div class="container">
+      <main>
+        <!-- semantic description -->
+        <script type="application/ld+json">
+          {
+            "@context": "http://schema.org",
+            "@type": "BlogPosting",
+            "@id": "https://blog.johannes-mittendorfer.com/artikel/2013/06/apps-fur-samsung-smart-tvs-analysieren",
+            "headline": "Apps für Samsung Smart TVs analysieren",
+            "description": "",
+            "datePublished": "2013-06-06 00:00:00 +0200",
+            "dateModified": "2013-06-06 00:00:00 +0200",
+            "author": {
+              "@type": "Person",
+              "name": "Johannes Mittendorfer"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Johannes Mittendorfer",
+              "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://blog.johannes-mittendorfer.com/assets/favicon.ico",
+                  "width": 16,
+                  "height": 16
+              }
+            },
+          
+            "mainEntityOfPage": {
+              "@id": "https://blog.johannes-mittendorfer.com/artikel/2013/06/apps-fur-samsung-smart-tvs-analysieren"
+            }
+          }
+        </script>
+        <script type="application/ld+json">
+          {
+            "@context": "http://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@id": "https://blog.johannes-mittendorfer.com/artikel",
+                "name": "Artikel"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@id": "https://blog.johannes-mittendorfer.com/artikel/2013",
+                "name": "2013"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@id": "https://blog.johannes-mittendorfer.com/artikel/2013/06",
+                "name": "06"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "item": {
+                "@id": "https://blog.johannes-mittendorfer.com/artikel/2013/06/apps-fur-samsung-smart-tvs-analysieren",
+                "name": "Apps für Samsung Smart TVs analysieren"
+              }
+            }]
+          }
+        </script>
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+          <header>
+            <div class="meta">
+              <span class="category">Security</span> &ndash; 
+              <time itemprop="datePublished" datetime="2013-06-06T00:00:00+02:00" class="date">06.06.2013</time> &ndash;
+              <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+            </div>
+            <h1 itemprop="headline">Apps für Samsung Smart TVs analysieren</h1>
+            <div class="warning">
+              Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+            </div>
+          </header>
+          <div itemprop="articleBody">
+            <p>Zurzeit sind Fernseher groß in Mode, die sich mit dem Internet verbinden können und die reine Verwendung als Fernseher um weitere Dienste erweitern.</p>
+            <p>Auch Apps kann man auf diesen Geräten installieren und so zum Beispiel Videos aus Mediatheken abrufen oder auf Online-Konten zugreifen.</p>
+            <p>Doch, was machen diese Apps eigentlich genau? Senden sie gar Informationen über mich im Hintergrund an der Hersteller? Ist es sogar Malware?</p>
+            <p><img src="/assets/img/picture_62.jpeg" alt="Ein Samsung Smart TV" /></p>
+            <p>In so einem Fall analysiert man normalerweise die Anwendung per Reverse-Engineering, doch das ist in diesem Fall, zumindest beim Hersteller Samsung, nicht nötig, denn diese Anwendung werden mit HTML und Javascript erstellt.</p>
+            <p>Das Problem stellt eher dar, an die Anwendung selbst zu kommen. Normalerweiße lädt sie der TV automatisch herunter und installiert sie, ohne dass man Zugriff darauf hat.</p>
+            <p>Ich habe kurzerhand den Netzwerkverkehr auf einem Linux-Router mitgeschnitten. Dazu habe ich mich per SSH verbunden und folgenden Befehl laufen lassen:</p>
+            <figure class="highlight">
+              <pre><code class="language-text" data-lang="text">tcpdump -i br0 -s 65535 -w smarttv.dump</code></pre>
+            </figure>
+            <p>Am Fernseher habe ich die App ausgewählt und <em>Tools &gt; Erneut installieren</em> ausgeführt.</p>
+            <p>Dannach kann man in Wireshark den Abbruf der App beobachten und über den Link die zugehörige  zip-Datei für einen begrenzten Zeitraum downloaden, die man dann bequem am Computer durchsehen kann.</p>
+          </div>
+          <footer>
+            <div id="share">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://blog.johannes-mittendorfer.com/artikel/2013/06/apps-fur-samsung-smart-tvs-analysieren" class="share-icon facebook"><i class="fa fa-facebook"></i> Facebook</a>
+              <a href="https://twitter.com/intent/tweet?original_referer=https://johannes-mittendorfer.com&source=tweetbuttont&url=https://blog.johannes-mittendorfer.com/artikel/2013/06/apps-fur-samsung-smart-tvs-analysieren" class="share-icon twitter"><i class="fa fa-twitter"></i> Twitter</a>
+              <a href="https://plus.google.com/share?url=https://blog.johannes-mittendorfer.com/artikel/2013/06/apps-fur-samsung-smart-tvs-analysieren&hl=de" class="share-icon googleplus"><i class="fa fa-google-plus"></i> Google+</a>
+              <a href="https://flattr.com/submit/auto?user_id=joushx&url=https://blog.johannes-mittendorfer.com/artikel/2013/06/apps-fur-samsung-smart-tvs-analysieren&title=Apps%20f%C3%BCr%20Samsung%20Smart%20TVs%20analysieren" class="share-icon flattr">Flattr</a>
+            </div>
+          </footer>
+        </article>
+      </main>
+    </div>
+  </body>
+</html>

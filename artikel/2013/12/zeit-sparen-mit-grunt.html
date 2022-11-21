@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="Johannes Mittendorfer, Mittendorfer, Blog, Informatik, Student, Entwicklung, Security">
+    <meta name="description" content="Der Blog von Informatik-Student Johannes Mittendorfer über das Leben im Studium, Software-Entwicklung, IT-Security und das Internet">
+    <meta name="author" content="Johannes Mittendorfer">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <meta name="application-name" content="Johannes Mittendorfer"/>
+    <meta name="msapplication-TileColor" content="#f9fbf4"/>
+    <meta http-equiv="imagetoolbar" content="false" />
+    <meta property="fb:admins" content="100000063853580" />
+    <meta name="Content-Language" content="de" />
+    <!-- resources -->
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+    <link rel="canoncial" href="https://blog.johannes-mittendorfer.com/artikel/2013/12/zeit-sparen-mit-grunt">
+    <!-- styles -->
+    <link rel="stylesheet" href="/assets/css/styles.css"/>
+    <!-- title -->
+    <title>Zeit sparen mit Grunt</title>
+    <!-- page specific resources -->
+  </head>
+  <body itemscope itemtype="http://schema.org/WebSite">
+    <!-- menu bar -->
+    <nav id="bar">
+      <section class="container">
+        <a class="title" itemprop="url" href="/">
+          <h1 itemprop="name">Johannes Mittendorfer</h1>
+        </a>
+        <ul>
+          <li>
+            <a href="/">
+              Start
+            </a>
+          </li>
+          <li>
+            <a itemprop="about" href="/ueber-mich" title="Über">
+              Über
+            </a>
+          </li>
+          <li>
+            <a href="/astronomie" title="Astronomie">
+              Astronomie
+            </a>
+          </li>
+          <li>
+            <a href="/impressum" title="Impressum">
+              Impressum
+            </a>
+          </li>
+        </ul>
+      </section>
+    </nav>
+    <!-- main content -->
+    <div class="container">
+      <main>
+        <!-- semantic description -->
+        <script type="application/ld+json">
+          {
+            "@context": "http://schema.org",
+            "@type": "BlogPosting",
+            "@id": "https://blog.johannes-mittendorfer.com/artikel/2013/12/zeit-sparen-mit-grunt",
+            "headline": "Zeit sparen mit Grunt",
+            "description": "",
+            "datePublished": "2013-12-28 00:00:00 +0100",
+            "dateModified": "2013-12-28 00:00:00 +0100",
+            "author": {
+              "@type": "Person",
+              "name": "Johannes Mittendorfer"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Johannes Mittendorfer",
+              "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://blog.johannes-mittendorfer.com/assets/favicon.ico",
+                  "width": 16,
+                  "height": 16
+              }
+            },
+          
+            "mainEntityOfPage": {
+              "@id": "https://blog.johannes-mittendorfer.com/artikel/2013/12/zeit-sparen-mit-grunt"
+            }
+          }
+        </script>
+        <script type="application/ld+json">
+          {
+            "@context": "http://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@id": "https://blog.johannes-mittendorfer.com/artikel",
+                "name": "Artikel"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@id": "https://blog.johannes-mittendorfer.com/artikel/2013",
+                "name": "2013"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@id": "https://blog.johannes-mittendorfer.com/artikel/2013/12",
+                "name": "12"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "item": {
+                "@id": "https://blog.johannes-mittendorfer.com/artikel/2013/12/zeit-sparen-mit-grunt",
+                "name": "Zeit sparen mit Grunt"
+              }
+            }]
+          }
+        </script>
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+          <header>
+            <div class="meta">
+              <span class="category">Software</span> &ndash; 
+              <time itemprop="datePublished" datetime="2013-12-28T00:00:00+01:00" class="date">28.12.2013</time> &ndash;
+              <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+            </div>
+            <h1 itemprop="headline">Zeit sparen mit Grunt</h1>
+            <div class="warning">
+              Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+            </div>
+          </header>
+          <div itemprop="articleBody">
+            <p>Mit dem Tool <a href="http://gruntjs.com/">Grunt</a> ist es möglich wiederkehrende Aufgaben beim Entwickeln von JavaScript-Bibliotheken zu automatisieren.</p>
+            <p><img src="/assets/img/picture_101.png" alt="Grunt-Logo" /></p>
+            <p>Beim Entwickeln meiner <a href="https://github.com/joushx/jQuery.EAN13">Strichcode-Bibliothek</a> bin ich auf Grunt gestoßen und will es jetzt nicht mehr missen.</p>
+            <h2 id="installation">Installation</h2>
+            <p>Unter der Voraussetzung von <a href="http://nodejs.org">Node.js</a> kann man Grunt einfach mit dem folgenden Befehl installieren:</p>
+            <figure class="highlight">
+              <pre><code class="language-js" data-lang="js"><span class="nx">npm</span> <span class="nx">install</span> <span class="o">-</span><span class="nx">g</span> <span class="nx">grunt</span><span class="o">-</span><span class="nx">cli</span></code></pre>
+            </figure>
+            <h2 id="konfigurationsdatei">Konfigurationsdatei</h2>
+            <p>Zur Konfiguration wird eine Datei namens Gruntfile.js angelegt, in der die Aufgaben definiert werden. Hier ist ein Beispiel einer Konfigurationsdatei, wie ich sie aktuell in meiner Strichcode-Bibliothek verwende:</p>
+            <figure class="highlight">
+              <pre><code class="language-js" data-lang="js"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">grunt</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="c1">// Project configuration</span>
+    <span class="nx">grunt</span><span class="p">.</span><span class="nx">initConfig</span><span class="p">({</span>
+        <span class="na">pkg</span><span class="p">:</span> <span class="nx">grunt</span><span class="p">.</span><span class="nx">file</span><span class="p">.</span><span class="nx">readJSON</span><span class="p">(</span><span class="dl">'</span><span class="s1">package.json</span><span class="dl">'</span><span class="p">),</span>
+        <span class="na">uglify</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">options</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">banner</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/*</span><span class="se">\n</span><span class="s1">* Copyright (c) &lt;%= grunt.template.today("yyyy") %&gt; Johannes Mittendorfer (http://johannes-mittendorfer.com)</span><span class="se">\n</span><span class="s1">* Licensed under the MIT License (LICENSE.txt).</span><span class="se">\n</span><span class="s1">*</span><span class="se">\n</span><span class="s1">* Version &lt;%= pkg.version %&gt; &lt;%= grunt.template.today("yyyy-mm-dd") %&gt; </span><span class="se">\n</span><span class="s1">*/</span><span class="se">\n\n</span><span class="dl">'</span>
+            <span class="p">},</span>
+            <span class="na">build</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">src</span><span class="p">:</span> <span class="dl">'</span><span class="s1">src/&lt;%= pkg.name %&gt;.js</span><span class="dl">'</span><span class="p">,</span>
+                <span class="na">dest</span><span class="p">:</span> <span class="dl">'</span><span class="s1">dist/&lt;%= pkg.name %&gt;.min.js</span><span class="dl">'</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="na">coffeelint</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">app</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">src/&lt;%= pkg.name %&gt;.coffee</span><span class="dl">'</span><span class="p">],</span>
+            <span class="na">options</span><span class="p">:</span> <span class="p">{</span>
+                <span class="dl">'</span><span class="s1">max_line_length</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="dl">'</span><span class="s1">level</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">ignore</span><span class="dl">'</span>
+                <span class="p">},</span>
+                <span class="dl">'</span><span class="s1">arrow_spacing</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="dl">'</span><span class="s1">level</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">warning</span><span class="dl">'</span>
+                <span class="p">},</span>
+                <span class="dl">'</span><span class="s1">line_endings</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="dl">'</span><span class="s1">level</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">warning</span><span class="dl">'</span>
+                <span class="p">},</span>
+                <span class="dl">'</span><span class="s1">no_empty_param_list</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="dl">'</span><span class="s1">level</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">warning</span><span class="dl">'</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="na">jshint</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">options</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">curly</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="na">eqeqeq</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="na">eqnull</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="na">browser</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="na">globals</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="na">jQuery</span><span class="p">:</span> <span class="kc">true</span>
+                <span class="p">},</span>
+            <span class="p">},</span>
+            <span class="na">uses_defaults</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">src/**/*.js</span><span class="dl">'</span><span class="p">],</span>
+        <span class="p">},</span>
+        <span class="na">qunit</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">all</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">tests/**/*.html</span><span class="dl">'</span><span class="p">]</span>
+        <span class="p">},</span>
+        <span class="na">jquerymanifest</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">options</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">source</span><span class="p">:</span> <span class="nx">grunt</span><span class="p">.</span><span class="nx">file</span><span class="p">.</span><span class="nx">readJSON</span><span class="p">(</span><span class="dl">'</span><span class="s1">package.json</span><span class="dl">'</span><span class="p">),</span>
+                <span class="na">overrides</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ean13</span><span class="dl">"</span><span class="p">,</span>
+                    <span class="na">title</span><span class="p">:</span> <span class="dl">"</span><span class="s2">jQuery EAN 13</span><span class="dl">"</span><span class="p">,</span>
+                    <span class="na">author</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Johannes Mittendorfer</span><span class="dl">"</span><span class="p">,</span>
+                        <span class="na">url</span><span class="p">:</span> <span class="dl">"</span><span class="s2">http://johannes-mittendorfer.com</span><span class="dl">"</span>
+                    <span class="p">},</span>
+                    <span class="na">homepage</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://github.com/joushx/jQuery.EAN13</span><span class="dl">"</span><span class="p">,</span>
+                    <span class="na">demo</span><span class="p">:</span> <span class="dl">"</span><span class="s2">http://demo.johannes-mittendorfer.com/jquery-ean13</span><span class="dl">"</span><span class="p">,</span>
+                    <span class="na">docs</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://github.com/joushx/jQuery.EAN13/blob/master/README.md</span><span class="dl">"</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="na">coffee</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">compile</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">files</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="dl">'</span><span class="s1">dist/&lt;%= pkg.name %&gt;.js</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">src/&lt;%= pkg.name %&gt;.coffee</span><span class="dl">'</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+
+    <span class="c1">// Load the plugin that provides the "uglify" task.</span>
+    <span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="dl">'</span><span class="s1">grunt-contrib-uglify</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="dl">'</span><span class="s1">grunt-contrib-jshint</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="dl">'</span><span class="s1">grunt-contrib-qunit</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="dl">'</span><span class="s1">grunt-jquerymanifest</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="dl">'</span><span class="s1">grunt-contrib-coffee</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="dl">'</span><span class="s1">grunt-coffeelint</span><span class="dl">'</span><span class="p">);</span>
+
+    <span class="c1">// Default task(s).</span>
+    <span class="nx">grunt</span><span class="p">.</span><span class="nx">registerTask</span><span class="p">(</span><span class="dl">'</span><span class="s1">default</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span><span class="dl">'</span><span class="s1">coffeelint</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">coffee</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">jshint</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">qunit</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">uglify</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">jquerymanifest</span><span class="dl">'</span><span class="p">]);</span>
+
+<span class="p">};</span></code></pre>
+            </figure>
+            <p>Dadurch wird die Coffeescript-Datei mit coffeelint überprüft, in Javascript umgewandelt, diese Datei geprüft, verkleinert und mit den Copyright-Headern ausgestattet. Außerdem werden die definierten Unit-Tests ausgeführt und eine Konfigurationsdatei für das jQuery-Plugin-Verzeichnis erstellt.</p>
+            <h2 id="ausführen">Ausführen</h2>
+            <p>Ausführen lassen sich die Aufgaben anschließend einfach mit</p>
+            <figure class="highlight">
+              <pre><code class="language-js" data-lang="js"><span class="nx">grunt</span></code></pre>
+            </figure>
+          </div>
+          <footer>
+            <div id="share">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://blog.johannes-mittendorfer.com/artikel/2013/12/zeit-sparen-mit-grunt" class="share-icon facebook"><i class="fa fa-facebook"></i> Facebook</a>
+              <a href="https://twitter.com/intent/tweet?original_referer=https://johannes-mittendorfer.com&source=tweetbuttont&url=https://blog.johannes-mittendorfer.com/artikel/2013/12/zeit-sparen-mit-grunt" class="share-icon twitter"><i class="fa fa-twitter"></i> Twitter</a>
+              <a href="https://plus.google.com/share?url=https://blog.johannes-mittendorfer.com/artikel/2013/12/zeit-sparen-mit-grunt&hl=de" class="share-icon googleplus"><i class="fa fa-google-plus"></i> Google+</a>
+              <a href="https://flattr.com/submit/auto?user_id=joushx&url=https://blog.johannes-mittendorfer.com/artikel/2013/12/zeit-sparen-mit-grunt&title=Zeit%20sparen%20mit%20Grunt" class="share-icon flattr">Flattr</a>
+            </div>
+          </footer>
+        </article>
+      </main>
+    </div>
+  </body>
+</html>

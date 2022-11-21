@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="Johannes Mittendorfer, Mittendorfer, Blog, Informatik, Student, Entwicklung, Security">
+    <meta name="description" content="Der Blog von Informatik-Student Johannes Mittendorfer über das Leben im Studium, Software-Entwicklung, IT-Security und das Internet">
+    <meta name="author" content="Johannes Mittendorfer">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <meta name="application-name" content="Johannes Mittendorfer"/>
+    <meta name="msapplication-TileColor" content="#f9fbf4"/>
+    <meta http-equiv="imagetoolbar" content="false" />
+    <meta property="fb:admins" content="100000063853580" />
+    <meta name="Content-Language" content="de" />
+    <!-- resources -->
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+    <link rel="canoncial" href="https://blog.johannes-mittendorfer.com/artikel/2012/07/rgb-led-bibliothek-fur-arduino">
+    <!-- styles -->
+    <link rel="stylesheet" href="/assets/css/styles.css"/>
+    <!-- title -->
+    <title>RGB-LED Bibliothek für Arduino</title>
+    <!-- page specific resources -->
+  </head>
+  <body itemscope itemtype="http://schema.org/WebSite">
+    <!-- menu bar -->
+    <nav id="bar">
+      <section class="container">
+        <a class="title" itemprop="url" href="/">
+          <h1 itemprop="name">Johannes Mittendorfer</h1>
+        </a>
+        <ul>
+          <li>
+            <a href="/">
+              Start
+            </a>
+          </li>
+          <li>
+            <a itemprop="about" href="/ueber-mich" title="Über">
+              Über
+            </a>
+          </li>
+          <li>
+            <a href="/astronomie" title="Astronomie">
+              Astronomie
+            </a>
+          </li>
+          <li>
+            <a href="/impressum" title="Impressum">
+              Impressum
+            </a>
+          </li>
+        </ul>
+      </section>
+    </nav>
+    <!-- main content -->
+    <div class="container">
+      <main>
+        <!-- semantic description -->
+        <script type="application/ld+json">
+          {
+            "@context": "http://schema.org",
+            "@type": "BlogPosting",
+            "@id": "https://blog.johannes-mittendorfer.com/artikel/2012/07/rgb-led-bibliothek-fur-arduino",
+            "headline": "RGB-LED Bibliothek für Arduino",
+            "description": "",
+            "datePublished": "2012-07-26 00:00:00 +0200",
+            "dateModified": "2012-07-26 00:00:00 +0200",
+            "author": {
+              "@type": "Person",
+              "name": "Johannes Mittendorfer"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Johannes Mittendorfer",
+              "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://blog.johannes-mittendorfer.com/assets/favicon.ico",
+                  "width": 16,
+                  "height": 16
+              }
+            },
+          
+            "mainEntityOfPage": {
+              "@id": "https://blog.johannes-mittendorfer.com/artikel/2012/07/rgb-led-bibliothek-fur-arduino"
+            }
+          }
+        </script>
+        <script type="application/ld+json">
+          {
+            "@context": "http://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@id": "https://blog.johannes-mittendorfer.com/artikel",
+                "name": "Artikel"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@id": "https://blog.johannes-mittendorfer.com/artikel/2012",
+                "name": "2012"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@id": "https://blog.johannes-mittendorfer.com/artikel/2012/07",
+                "name": "07"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "item": {
+                "@id": "https://blog.johannes-mittendorfer.com/artikel/2012/07/rgb-led-bibliothek-fur-arduino",
+                "name": "RGB-LED Bibliothek für Arduino"
+              }
+            }]
+          }
+        </script>
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+          <header>
+            <div class="meta">
+              <span class="category">Eigenes Projekt</span> &ndash; 
+              <time itemprop="datePublished" datetime="2012-07-26T00:00:00+02:00" class="date">26.07.2012</time> &ndash;
+              <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+            </div>
+            <h1 itemprop="headline">RGB-LED Bibliothek für Arduino</h1>
+            <div class="warning">
+              Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+            </div>
+          </header>
+          <div itemprop="articleBody">
+            <p>Während meiner Arbeit mit meinem neuen Arduino-Microcontroller habe ich eine Bibliothek für die Verwendung einer RGB-Led erstellt. Damit ist es möglich die Farbe der LED zu setzen und in einer bestimmten Zeitspanne die Farbe der LED langsam zu ändern.</p>
+            <p>Zur Verwendung muss man nur das zip-Paket herunterladen und im Arduino-Verzeichnis unter libraries abspeichern.</p>
+            <h2 id="farbe-setzen">Farbe setzen</h2>
+            <p>Um die Farbe zu ändern verwendet man die Methode <code class="highlighter-rouge">setColor()</code> wie folgt:</p>
+            <figure class="highlight">
+              <pre><code class="language-cpp" data-lang="cpp"><span class="cp">#include &lt;RGBTools.h&gt;
+</span>
+<span class="c1">// Pins von Rot, Grün und Blau an der LED setzen</span>
+<span class="n">RGBTools</span> <span class="nf">rgb</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">);</span>
+
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">(){</span>
+	<span class="n">rgb</span><span class="p">.</span><span class="n">setColor</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">(){</span>
+	<span class="c1">// nothing to loop</span>
+<span class="p">}</span></code></pre>
+            </figure>
+            <h2 id="farbe-fließend-ändern">Farbe fließend ändern</h2>
+            <p>Um die Farbe über einen bestimmten Zeitraum hinweg fließend zu ändern verwendet man die Methode <code class="highlighter-rouge">fadeTo()</code>:</p>
+            <figure class="highlight">
+              <pre><code class="language-cpp" data-lang="cpp"><span class="cp">#include &lt;RGBTools.h&gt;
+</span>
+<span class="c1">// Pins von Rot, Grün und Blau an der LED setzen</span>
+<span class="n">RGBTools</span> <span class="nf">rgb</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">);</span>
+
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">(){</span>
+	<span class="n">rgb</span><span class="p">.</span><span class="n">fadeTo</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">3000</span><span class="p">);</span> <span class="c1">// zu Rot in 50 Schritten + 3 Sekunden</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">(){</span>
+	<span class="c1">// nothing to loop</span>
+<span class="p">}</span></code></pre>
+            </figure>
+            <p>Anregungen für weitere Funktionen nehme ich gerne entgegen!</p>
+            <h2 id="download">Download</h2>
+            <p><strong>Update:</strong> Bitte vom <a href="https://github.com/joushx/Arduino-RGB-Tools">Github-Repository</a> downloaden.</p>
+          </div>
+          <footer>
+            <div id="share">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://blog.johannes-mittendorfer.com/artikel/2012/07/rgb-led-bibliothek-fur-arduino" class="share-icon facebook"><i class="fa fa-facebook"></i> Facebook</a>
+              <a href="https://twitter.com/intent/tweet?original_referer=https://johannes-mittendorfer.com&source=tweetbuttont&url=https://blog.johannes-mittendorfer.com/artikel/2012/07/rgb-led-bibliothek-fur-arduino" class="share-icon twitter"><i class="fa fa-twitter"></i> Twitter</a>
+              <a href="https://plus.google.com/share?url=https://blog.johannes-mittendorfer.com/artikel/2012/07/rgb-led-bibliothek-fur-arduino&hl=de" class="share-icon googleplus"><i class="fa fa-google-plus"></i> Google+</a>
+              <a href="https://flattr.com/submit/auto?user_id=joushx&url=https://blog.johannes-mittendorfer.com/artikel/2012/07/rgb-led-bibliothek-fur-arduino&title=RGB-LED%20Bibliothek%20f%C3%BCr%20Arduino" class="share-icon flattr">Flattr</a>
+            </div>
+          </footer>
+        </article>
+      </main>
+    </div>
+  </body>
+</html>

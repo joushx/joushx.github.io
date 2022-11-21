@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="Johannes Mittendorfer, Mittendorfer, Blog, Informatik, Student, Entwicklung, Security">
+    <meta name="description" content="Der Blog von Informatik-Student Johannes Mittendorfer über das Leben im Studium, Software-Entwicklung, IT-Security und das Internet">
+    <meta name="author" content="Johannes Mittendorfer">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <meta name="application-name" content="Johannes Mittendorfer"/>
+    <meta name="msapplication-TileColor" content="#f9fbf4"/>
+    <meta http-equiv="imagetoolbar" content="false" />
+    <meta property="fb:admins" content="100000063853580" />
+    <meta name="Content-Language" content="de" />
+    <!-- resources -->
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+    <link rel="canoncial" href="https://blog.johannes-mittendorfer.com/11/">
+    <!-- styles -->
+    <link rel="stylesheet" href="/assets/css/styles.css"/>
+    <!-- title -->
+    <title>Johannes Mittendorfer - Informatikstudent</title>
+    <!-- page specific resources -->
+  </head>
+  <body itemscope itemtype="http://schema.org/WebSite">
+    <!-- menu bar -->
+    <nav id="bar">
+      <section class="container">
+        <a class="title" itemprop="url" href="/">
+          <h1 itemprop="name">Johannes Mittendorfer</h1>
+        </a>
+        <ul>
+          <li>
+            <a href="/">
+              Start
+            </a>
+          </li>
+          <li>
+            <a itemprop="about" href="/ueber-mich" title="Über">
+              Über
+            </a>
+          </li>
+          <li>
+            <a href="/astronomie" title="Astronomie">
+              Astronomie
+            </a>
+          </li>
+          <li>
+            <a href="/impressum" title="Impressum">
+              Impressum
+            </a>
+          </li>
+        </ul>
+      </section>
+    </nav>
+    <!-- main content -->
+    <div class="container">
+      <main>
+        <div id="article-list" itemscope itemtype="http://schema.org/Blog">
+          <meta itemprop="description" content="Blog von Johannes Mittendorfer"/>
+          <meta itemprop="about" content="https://johannes-mittendorfer.com/ueber-mich"/>
+          <meta itemprop="author" content="https://johannes-mittendorfer.com/ueber-mich"/>
+          <article itemscope itemtype="http://schema.org/BlogPosting">
+            <header>
+              <div class="meta">
+                <span class="category">Link</span> &ndash; 
+                <time itemprop="datePublished" datetime="2013-06-12T00:00:00+02:00" class="date">12.06.2013</time> &ndash;
+                <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+              </div>
+              <a href="/artikel/2013/06/ein-kostenloser-ubuntu-server-fur-eine-halbe-stund">
+                <h2 itemprop="headline">Ein kostenloser Ubuntu-Server für eine halbe Stunde</h2>
+              </a>
+              <div class="warning">
+                Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+              </div>
+            </header>
+            <div itemprop="articleBody">
+              <p>Auf der Seite <a href="http://instantserver.io">instantserver.io</a> kann man einen Ubuntu-Server für eine halbe Stunde über SSH benutzen. Dieser Service ist kostenlos und funktioniert ohne Registrierung.</p>
+              <p><img src="/assets/img/picture_61.png" alt="Website von &quot;Instant Server&quot;" /></p>
+              <p>Der Dienst ist vor allem dazu gedacht, die Funktion des eigenen Dienstes zu testen, ein Tool zu testen oder etwas auf einem frischem System testen zu können.</p>
+              <p>Natürlich würde ich nicht empfehlen private Informationen damit zu nutzen, aber zum Zwecke des Testens erscheint mir dieses Angebot durchaus nützlich.</p>
+              <p>Eine Verlängerung der Server-Zeit lässt sich übrigens gegen eine Bezahlung erreichen.</p>
+            </div>
+          </article>
+          <article itemscope itemtype="http://schema.org/BlogPosting">
+            <header>
+              <div class="meta">
+                <span class="category">Security</span> &ndash; 
+                <time itemprop="datePublished" datetime="2013-06-06T00:00:00+02:00" class="date">06.06.2013</time> &ndash;
+                <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+              </div>
+              <a href="/artikel/2013/06/apps-fur-samsung-smart-tvs-analysieren">
+                <h2 itemprop="headline">Apps für Samsung Smart TVs analysieren</h2>
+              </a>
+              <div class="warning">
+                Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+              </div>
+            </header>
+            <div itemprop="articleBody">
+              <p>Zurzeit sind Fernseher groß in Mode, die sich mit dem Internet verbinden können und die reine Verwendung als Fernseher um weitere Dienste erweitern.</p>
+              <p>Auch Apps kann man auf diesen Geräten installieren und so zum Beispiel Videos aus Mediatheken abrufen oder auf Online-Konten zugreifen.</p>
+              <p>Doch, was machen diese Apps eigentlich genau? Senden sie gar Informationen über mich im Hintergrund an der Hersteller? Ist es sogar Malware?</p>
+              <p><img src="/assets/img/picture_62.jpeg" alt="Ein Samsung Smart TV" /></p>
+              <p>In so einem Fall analysiert man normalerweise die Anwendung per Reverse-Engineering, doch das ist in diesem Fall, zumindest beim Hersteller Samsung, nicht nötig, denn diese Anwendung werden mit HTML und Javascript erstellt.</p>
+              <p>Das Problem stellt eher dar, an die Anwendung selbst zu kommen. Normalerweiße lädt sie der TV automatisch herunter und installiert sie, ohne dass man Zugriff darauf hat.</p>
+              <p>Ich habe kurzerhand den Netzwerkverkehr auf einem Linux-Router mitgeschnitten. Dazu habe ich mich per SSH verbunden und folgenden Befehl laufen lassen:</p>
+              <figure class="highlight">
+                <pre><code class="language-text" data-lang="text">tcpdump -i br0 -s 65535 -w smarttv.dump</code></pre>
+              </figure>
+              <p>Am Fernseher habe ich die App ausgewählt und <em>Tools &gt; Erneut installieren</em> ausgeführt.</p>
+              <p>Dannach kann man in Wireshark den Abbruf der App beobachten und über den Link die zugehörige  zip-Datei für einen begrenzten Zeitraum downloaden, die man dann bequem am Computer durchsehen kann.</p>
+            </div>
+          </article>
+          <article itemscope itemtype="http://schema.org/BlogPosting">
+            <header>
+              <div class="meta">
+                <span class="category">Software</span> &ndash; 
+                <time itemprop="datePublished" datetime="2013-05-28T00:00:00+02:00" class="date">28.05.2013</time> &ndash;
+                <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+              </div>
+              <a href="/artikel/2013/05/ein-weiterer-versuch-tiny-tiny-rss">
+                <h2 itemprop="headline">Ein weiterer Versuch: Tiny Tiny RSS</h2>
+              </a>
+              <div class="warning">
+                Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+              </div>
+            </header>
+            <div itemprop="articleBody">
+              <p>Ein weiterer Versuch den Google-Reader zu ersetzen: <a href="http://tt-rss.org">Tiny Tiny RSS</a>.</p>
+              <p>Dieser Feedreader lässt sich sehr genau auf seine Wünsche einstellen und hat zudem den Vorteil selbgehostet zu sein. Außerdem ist eine JSON-API vorhanden, die es möglich macht selbst Anwendungen zu entwickeln.</p>
+              <p><img src="/assets/img/picture_63.png" alt="TTRSS Oberfläche" /></p>
+              <p>Die Installation ist zwar etwas langwierig, weil ein Daemon eingerichtet werden muss, wird aber <a href="https://uberspace.de/dokuwiki/cool:ttrss">hier</a> von den fleißigen Uberspace-Leuten ausführlich beschrieben.</p>
+            </div>
+          </article>
+          <article itemscope itemtype="http://schema.org/BlogPosting">
+            <header>
+              <div class="meta">
+                <span class="category">Link</span> &ndash; 
+                <time itemprop="datePublished" datetime="2013-05-27T00:00:00+02:00" class="date">27.05.2013</time> &ndash;
+                <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+              </div>
+              <a href="/artikel/2013/05/the-old-reader-alternative-zu-google-reader">
+                <h2 itemprop="headline">The old Reader: Alternative zu Google Reader</h2>
+              </a>
+              <div class="warning">
+                Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+              </div>
+            </header>
+            <div itemprop="articleBody">
+              <p>Da die Abschaltung des <a href="http://reader.google.com">Google-Readers</a> immer näher kommt, habe ich mich auch nach einer Alternative dafür umgesehen und <a href="http://theoldreader.com/">The Old Reader</a> entdeckt.</p>
+              <p>Dieser Service versucht die Funktionen des Google-Reader nachzuahmen, wodurch keine große Umgewöhnung nötig ist. Bis ich etwas besseres gefunden habe, ist das nun mein aktueller Feedreader.</p>
+              <p>Tipps zu Feedreadern werden übrigens per Kommentar akzeptiert!</p>
+            </div>
+          </article>
+          <article itemscope itemtype="http://schema.org/BlogPosting">
+            <header>
+              <div class="meta">
+                <span class="category">Entwicklung</span> &ndash; 
+                <time itemprop="datePublished" datetime="2013-05-26T00:00:00+02:00" class="date">26.05.2013</time> &ndash;
+                <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+              </div>
+              <a href="/artikel/2013/05/fibonacci-folge-in-go">
+                <h2 itemprop="headline">Fibonacci-Folge in Go</h2>
+              </a>
+              <div class="warning">
+                Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+              </div>
+            </header>
+            <div itemprop="articleBody">
+              <p>Um die Programmiersprache <a href="http://golang.org">Go</a> zu erlernen, habe ich versucht die sogenannte <a href="https://de.wikipedia.org/wiki/Fibonacci-Folge">Fibonacci-Folge</a> zu programmieren. Und hier ist das Ergebnis:</p>
+              <figure class="highlight">
+                <pre><code class="language-go" data-lang="go"><span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="s">"fmt"</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">fibonacci</span><span class="p">(</span><span class="m">20</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">count</span> <span class="kt">int</span><span class="p">)</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{</span>
+	
+	<span class="c">// Leeres Slice erzeugen</span>
+	<span class="n">data</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">}</span>
+
+	<span class="c">// For-Schleife</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="o">:=</span> <span class="m">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">count</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span> <span class="p">{</span>
+
+		<span class="c">// Vorhergehende Elemente aufrufen</span>
+        <span class="k">var</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="kt">int</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="m">2</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="m">1</span><span class="p">]</span>
+
+        <span class="c">// Elemente addieren und zum Slice hinzufügen</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="nb">append</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">data</span>
+<span class="p">}</span></code></pre>
+              </figure>
+              <p>Anfangs ist dieses Programmiersprache etwas gewöhnungsbedürftig, aber nach kuzer Zeit erkennt man die nützlichen Besonderheiten.</p>
+            </div>
+          </article>
+        </div>
+        <nav id="pagenav">
+          <span id="left">
+            <a href="/10/" rel="prev">&laquo; NEUER</a>
+          </span>
+          <span id="pages">
+            <a  href="/">1</a>
+            <a  href="/2">2</a>
+            <a  href="/3">3</a>
+            <a  href="/4">4</a>
+            <a  href="/5">5</a>
+            <a  href="/6">6</a>
+            <a  href="/7">7</a>
+            <a  href="/8">8</a>
+            <a  href="/9">9</a>
+            <a  href="/10">10</a>
+            <a class="active" href="/11">11</a>
+            <a  href="/12">12</a>
+            <a  href="/13">13</a>
+            <a  href="/14">14</a>
+            <a  href="/15">15</a>
+            <a  href="/16">16</a>
+            <a  href="/17">17</a>
+            <a  href="/18">18</a>
+            <a  href="/19">19</a>
+            <a  href="/20">20</a>
+            <a  href="/21">21</a>
+            <a  href="/22">22</a>
+            <a  href="/23">23</a>
+            <a  href="/24">24</a>
+            <a  href="/25">25</a>
+            <a  href="/26">26</a>
+            <a  href="/27">27</a>
+          </span>
+          <span id="right">
+            <a href="/12/" rel="next">ÄLTER &raquo;</a>
+          </span>
+        </nav>
+      </main>
+    </div>
+  </body>
+</html>

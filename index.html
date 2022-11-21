@@ -1,1 +1,648 @@
-Hello world
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="Johannes Mittendorfer, Mittendorfer, Blog, Informatik, Student, Entwicklung, Security">
+    <meta name="description" content="Der Blog von Informatik-Student Johannes Mittendorfer über das Leben im Studium, Software-Entwicklung, IT-Security und das Internet">
+    <meta name="author" content="Johannes Mittendorfer">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <meta name="application-name" content="Johannes Mittendorfer"/>
+    <meta name="msapplication-TileColor" content="#f9fbf4"/>
+    <meta http-equiv="imagetoolbar" content="false" />
+    <meta property="fb:admins" content="100000063853580" />
+    <meta name="Content-Language" content="de" />
+    <!-- resources -->
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+    <link rel="canoncial" href="https://blog.johannes-mittendorfer.com/">
+    <!-- styles -->
+    <link rel="stylesheet" href="/assets/css/styles.css"/>
+    <!-- title -->
+    <title>Johannes Mittendorfer - Informatikstudent</title>
+    <!-- page specific resources -->
+  </head>
+  <body itemscope itemtype="http://schema.org/WebSite">
+    <!-- menu bar -->
+    <nav id="bar">
+      <section class="container">
+        <a class="title" itemprop="url" href="/">
+          <h1 itemprop="name">Johannes Mittendorfer</h1>
+        </a>
+        <ul>
+          <li>
+            <a href="/">
+              Start
+            </a>
+          </li>
+          <li>
+            <a itemprop="about" href="/ueber-mich" title="Über">
+              Über
+            </a>
+          </li>
+          <li>
+            <a href="/astronomie" title="Astronomie">
+              Astronomie
+            </a>
+          </li>
+          <li>
+            <a href="/impressum" title="Impressum">
+              Impressum
+            </a>
+          </li>
+        </ul>
+      </section>
+    </nav>
+    <!-- main content -->
+    <div class="container">
+      <main>
+        <div id="article-list" itemscope itemtype="http://schema.org/Blog">
+          <meta itemprop="description" content="Blog von Johannes Mittendorfer"/>
+          <meta itemprop="about" content="https://johannes-mittendorfer.com/ueber-mich"/>
+          <meta itemprop="author" content="https://johannes-mittendorfer.com/ueber-mich"/>
+          <article itemscope itemtype="http://schema.org/BlogPosting">
+            <header>
+              <div class="meta">
+                <span class="category">Anderes</span> &ndash; 
+                <time itemprop="datePublished" datetime="2020-10-17T00:00:00+02:00" class="date">17.10.2020</time> &ndash;
+                <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+              </div>
+              <a href="/artikel/2020/10/my-toothbrush-streams-gyroscope-data">
+                <h2 itemprop="headline">My toothbrush streams gyroscope data</h2>
+              </a>
+            </header>
+            <div itemprop="articleBody">
+              <p>Since a few month I own an electrical toothbrush from Phillips called <a href="https://www.google.com/search?q=Sonicare+HX992B">Sonicare HX992B</a>. It connects to <a href="https://play.google.com/store/apps/details?id=com.philips.cdp.ohc.tuscany" title="App">an mobile App</a> using Bluetooth that tells you how well you brushed your teeth, shows the orientation in real-time, and also notifies you when to change the brush for a new one.</p>
+              <p><img src="/assets/img/sonicare-image.jpeg" alt="Phillips Sonicare" /></p>
+              <p>I was curious how this exactly works. Since the application uses Bluetooth Low Energy (BLE), I used the <a href="https://play.google.com/store/apps/details?id=no.nordicsemi.android.mcp">nRF Connect</a> app for Android to get a list of advertised services.</p>
+              <p><img src="/assets/img/whatsapp-image-2020-10-09-at-19-34-24.jpeg" alt="Screenshot of nRF connect" title="Screenshot of nRF connect" /></p>
+              <p>Now I had a list of 12 BLE services of which only four are <a href="https://www.bluetooth.com/de/specifications/gatt/" title="List of common services">standard services described on bluetooth.com</a>. In addition to well-known services like Generic Access, Generic Attribute, Device Information and Battery Service, also eight custom services exist, that were created by the manufacturer. Every one of the first seven service UUIDs starts with <code class="highlighter-rouge">477ea600-a260-11e4-ae37-0002a5d5000</code> and ends with a number from 1 to 8 with number 3 missing. An additional eight service has a completely different prefix than the others.</p>
+              <table>
+                <thead>
+                  <tr>
+                    <th>UUID</th>
+                    <th>Service</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>0x1800</td>
+                    <td>Generic Access</td>
+                  </tr>
+                  <tr>
+                    <td>0x1801</td>
+                    <td>Generic Attribute</td>
+                  </tr>
+                  <tr>
+                    <td>0x180a</td>
+                    <td>Device Information</td>
+                  </tr>
+                  <tr>
+                    <td>0x180f</td>
+                    <td>Battery Service</td>
+                  </tr>
+                  <tr>
+                    <td>477ea600-a260-11e4-ae37-0002a5d50001</td>
+                    <td>Unknown Service 1</td>
+                  </tr>
+                  <tr>
+                    <td>477ea600-a260-11e4-ae37-0002a5d50002</td>
+                    <td>Unknown Service 2</td>
+                  </tr>
+                  <tr>
+                    <td>477ea600-a260-11e4-ae37-0002a5d50004</td>
+                    <td>Unknown Service 4</td>
+                  </tr>
+                  <tr>
+                    <td>477ea600-a260-11e4-ae37-0002a5d50005</td>
+                    <td>Unknown Service 5</td>
+                  </tr>
+                  <tr>
+                    <td>477ea600-a260-11e4-ae37-0002a5d50006</td>
+                    <td>Unknown Service 6</td>
+                  </tr>
+                  <tr>
+                    <td>477ea600-a260-11e4-ae37-0002a5d50007</td>
+                    <td>Unknown Service 7</td>
+                  </tr>
+                  <tr>
+                    <td>477ea600-a260-11e4-ae37-0002a5d50008</td>
+                    <td>Unknown Service 8</td>
+                  </tr>
+                  <tr>
+                    <td>a651fff1-4074-4131-bce9-56d4261bc7b1</td>
+                    <td>Unknown Other Service</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>By switching the device on and off, changing the strength and mode and also by changing the brush back and forth, I was able to identify some of the characteristics of the six services. By reverse engineering the code of the Android app using <a href="https://github.com/skylot/jadx">jadx</a> I found information about the session storage and many other things.</p>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Service</th>
+                    <th>Suffix</th>
+                    <th>Actions</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Handle (1)</td>
+                    <td>4010</td>
+                    <td>RWN</td>
+                    <td>Handle State: Off(0), Standby(1), Run(2),Charge(3), Shutdown(4) Validate(6), LightsOut(7)</td>
+                  </tr>
+                  <tr>
+                    <td> </td>
+                    <td>4020</td>
+                    <td>R–</td>
+                    <td>?</td>
+                  </tr>
+                  <tr>
+                    <td> </td>
+                    <td>4022</td>
+                    <td>R–</td>
+                    <td>?</td>
+                  </tr>
+                  <tr>
+                    <td> </td>
+                    <td>4030</td>
+                    <td>R-N</td>
+                    <td>?</td>
+                  </tr>
+                  <tr>
+                    <td> </td>
+                    <td>4040</td>
+                    <td>RW-</td>
+                    <td>?</td>
+                  </tr>
+                  <tr>
+                    <td> </td>
+                    <td>4050</td>
+                    <td>RW-</td>
+                    <td>Current Time (Unix Timestamp)</td>
+                  </tr>
+                  <tr>
+                    <td>Brushing (2)</td>
+                    <td>4070</td>
+                    <td>R-N</td>
+                    <td>Current session id</td>
+                  </tr>
+                  <tr>
+                    <td> </td>
+                    <td>4080</td>
+                    <td>R–</td>
+                    <td>Mode (0x0=Clean, 0x2=White+, …)</td>
+                  </tr>
+                  <tr>
+                    <td> </td>
+                    <td>4082</td>
+                    <td>RWN</td>
+                    <td>State (0=Ready, 1=Active, 2=Resume)</td>
+                  </tr>
+                  <tr>
+                    <td> </td>
+                    <td>4090</td>
+                    <td>R-N</td>
+                    <td>Active time in seconds</td>
+                  </tr>
+                  <tr>
+                    <td> </td>
+                    <td>4091</td>
+                    <td>R-N</td>
+                    <td>Mode 2 (0x78=Clean, 0xa0=White+, 0xc8=Gum Health, 0xb4=Deep Clean+)</td>
+                  </tr>
+                  <tr>
+                    <td> </td>
+                    <td>40a0</td>
+                    <td>R-N</td>
+                    <td>?</td>
+                  </tr>
+                  <tr>
+                    <td> </td>
+                    <td>40b0</td>
+                    <td>R-N</td>
+                    <td>Strength (0,1,2)</td>
+                  </tr>
+                  <tr>
+                    <td> </td>
+                    <td>40c0</td>
+                    <td>R-N</td>
+                    <td>?</td>
+                  </tr>
+                  <tr>
+                    <td>Session Storage (4)</td>
+                    <td>40d0</td>
+                    <td>R-N</td>
+                    <td>Last session id (e.g. 0x2c05 = 1324)</td>
+                  </tr>
+                  <tr>
+                    <td> </td>
+                    <td>40d2</td>
+                    <td>R–</td>
+                    <td>?</td>
+                  </tr>
+                  <tr>
+                    <td> </td>
+                    <td>40d5</td>
+                    <td>RW-</td>
+                    <td>Session Type</td>
+                  </tr>
+                  <tr>
+                    <td> </td>
+                    <td>40e0</td>
+                    <td>-WN</td>
+                    <td>Request session (write session id, write 0x00 to 4110, get notification with data here and at 4100)</td>
+                  </tr>
+                  <tr>
+                    <td> </td>
+                    <td>4100</td>
+                    <td>–N</td>
+                    <td>?</td>
+                  </tr>
+                  <tr>
+                    <td> </td>
+                    <td>4110</td>
+                    <td>-WN</td>
+                    <td>Session Access Control Point</td>
+                  </tr>
+                  <tr>
+                    <td>Orientation (5)</td>
+                    <td>4120</td>
+                    <td>RW-</td>
+                    <td>?</td>
+                  </tr>
+                  <tr>
+                    <td> </td>
+                    <td>4130</td>
+                    <td>–N</td>
+                    <td>Gyroscope Data</td>
+                  </tr>
+                  <tr>
+                    <td> </td>
+                    <td>4140</td>
+                    <td>-WN</td>
+                    <td>?</td>
+                  </tr>
+                  <tr>
+                    <td>Brush (6)</td>
+                    <td>4210</td>
+                    <td>R–</td>
+                    <td>NFC Tag Version</td>
+                  </tr>
+                  <tr>
+                    <td> </td>
+                    <td>4220</td>
+                    <td>R–</td>
+                    <td>? INT8</td>
+                  </tr>
+                  <tr>
+                    <td> </td>
+                    <td>4230</td>
+                    <td>R-N</td>
+                    <td>Brush Serial</td>
+                  </tr>
+                  <tr>
+                    <td> </td>
+                    <td>4240</td>
+                    <td>R–</td>
+                    <td>Brush Manufacturing Date?</td>
+                  </tr>
+                  <tr>
+                    <td> </td>
+                    <td>4250</td>
+                    <td>R–</td>
+                    <td>?</td>
+                  </tr>
+                  <tr>
+                    <td> </td>
+                    <td>4254</td>
+                    <td>R–</td>
+                    <td>?</td>
+                  </tr>
+                  <tr>
+                    <td> </td>
+                    <td>4260</td>
+                    <td>R–</td>
+                    <td>?</td>
+                  </tr>
+                  <tr>
+                    <td> </td>
+                    <td>4270</td>
+                    <td>R–</td>
+                    <td>?</td>
+                  </tr>
+                  <tr>
+                    <td> </td>
+                    <td>4280</td>
+                    <td>R–</td>
+                    <td>Brush Lifetime (Seconds)</td>
+                  </tr>
+                  <tr>
+                    <td> </td>
+                    <td>4290</td>
+                    <td>R–</td>
+                    <td>Brush Usage (Seconds)</td>
+                  </tr>
+                  <tr>
+                    <td> </td>
+                    <td>42a0</td>
+                    <td>R–</td>
+                    <td>Brush Type (None, Adaptive Clean, Adaptive White, Tongue Care, Adaptive Gums)</td>
+                  </tr>
+                  <tr>
+                    <td> </td>
+                    <td>42a2</td>
+                    <td>R–</td>
+                    <td>?</td>
+                  </tr>
+                  <tr>
+                    <td> </td>
+                    <td>42a4</td>
+                    <td>R–</td>
+                    <td>?</td>
+                  </tr>
+                  <tr>
+                    <td> </td>
+                    <td>42a6</td>
+                    <td>RWN</td>
+                    <td>?</td>
+                  </tr>
+                  <tr>
+                    <td> </td>
+                    <td>42b0</td>
+                    <td>R–</td>
+                    <td>NFC Payload (always phillips.com)</td>
+                  </tr>
+                  <tr>
+                    <td> </td>
+                    <td>42c0</td>
+                    <td>R–</td>
+                    <td>? INT16</td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td>4310</td>
+                    <td>R–</td>
+                    <td>? INT16</td>
+                  </tr>
+                  <tr>
+                    <td> </td>
+                    <td>4320</td>
+                    <td>R–</td>
+                    <td>? INT16</td>
+                  </tr>
+                  <tr>
+                    <td> </td>
+                    <td>4330</td>
+                    <td>R–</td>
+                    <td>?</td>
+                  </tr>
+                  <tr>
+                    <td> </td>
+                    <td>4360</td>
+                    <td>R–</td>
+                    <td>? (Only uses second byte)</td>
+                  </tr>
+                  <tr>
+                    <td>8</td>
+                    <td>4410</td>
+                    <td>RW-</td>
+                    <td>? INT16</td>
+                  </tr>
+                  <tr>
+                    <td> </td>
+                    <td>4420</td>
+                    <td>RW-</td>
+                    <td>? INT32</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>According to the application sources, the last unknown service is called “Moonshine Streaming” and is used to update the firmware. I agreed with myself to not touch this one, since I could damage the firmware and would need to brush my teeth by hand again.</p>
+              <p>Since I could see a very course orientation displayed in the app during a cleaning session, I expected orientation data somewhere in the characteristics. I found them in the service <code class="highlighter-rouge">5</code>. Once you enable notifications for the <code class="highlighter-rouge">4130</code> service, you get a data stream to byte arrays. It turns out, these are indeed the values of the gyroscope.</p>
+              <p><img src="/assets/img/sonicare-gyro.png" alt="Gyroscrope" title="Gyroscope" /></p>
+              <p>I created a python library to interface with the toothbrush in Python. Feel free to experiment, find the meaning of the missing services and submit pull requests: <a href="https://github.com/joushx/python-sonicare">https://github.com/joushx/python-sonicare</a></p>
+            </div>
+          </article>
+          <article itemscope itemtype="http://schema.org/BlogPosting">
+            <header>
+              <div class="meta">
+                <span class="category">Security</span> &ndash; 
+                <time itemprop="datePublished" datetime="2016-07-03T00:00:00+02:00" class="date">03.07.2016</time> &ndash;
+                <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+              </div>
+              <a href="/artikel/2016/07/die-komische-geschichte-mit-der-privaten-vorratsda">
+                <h2 itemprop="headline">Die komische Geschichte mit der "privaten Vorratsdatenspeicherung"</h2>
+              </a>
+              <div class="warning">
+                Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+              </div>
+              <img itemprop="image" itemscope itemtype="http://schema.org/ImageObject" src="/assets/img/picture_204.png" alt="Die komische Geschichte mit der \"privaten Vorratsdatenspeicherung\""/>
+              <div itemprop="description" class="description">Seit kurzer Zeit gibt es Berichte darüber, dass Android-Telefone bei jedem Anruf Daten an Google-Server übertragen. Die Redakteure der Seite mobilsicher.de haben dies festgestellt und schüren jetzt Angst vor Überwachung.</div>
+            </header>
+            <div itemprop="articleBody">
+              <p>mobilsicher.de hat <a href="https://mobilsicher.de/aktuelles/googles-private-vorratsdatenspeicherung">einen Artikel veröffentlicht</a>, über den auch <a href="http://www.heise.de/newsticker/meldung/Google-Wirbel-um-private-Vorratsdatenspeicherung-mit-Android-3252902.html">heise online berichtet</a>. Darin wird berichtet, dass Mobiltelefone mit dem Android Betriebssystem von Google bei Anrufen Daten an einen Google-Server übertragen.</p>
+              <p>Sogleich wird darüber spekuliert, ob Google eine Art “private Vorratsdatenspeicherung” durchführt, also speichert wer wen wann anruft. In der Datenschutzerklärung weißt Google zwar darauf hin, dass das Unternehmen diese Daten speichern kann, die Redakteure konnten jedoch nicht überprüfen, ob eine solche Übertragung auch tatsächlich stattfindet.</p>
+              <p>Dann mache ich das eben.</p>
+              <p>Dazu brauchen wir die Android-App <a href="https://play.google.com/store/apps/details?id=app.greyshirts.sslcapture">Packet capture</a> aus dem Play store. Diese baut ein virtuelles VPN-Netz auf, das nur dazu dient, TLS geschützte Verbindungen auszulesen. Diese App wird einfach gestartet und ein Telefongespräch aufgebaut. Und schon sehen wir die Verbindung in Klartext, die von den Experten von mobilsicher.de (und wie es aussieht auch von denen von heise.de) nicht gelesen werden konnte.</p>
+              <p>Bei mir ging die Verbindung an die IP 216.58.214.232, die augenscheinlich zu Google gehört. Eine HTTP-Post Anfrage an den Pfad <code class="highlighter-rouge">/batch</code> schickt dabei eine gzip komprimierte Nachricht an den Server hinter der Adresse. Der User-Agent enthält übrigens “GoogleAnalytics”. Es handelt sich nämlich einfach um ein Event, das durch das Google Analytics SDK für Android ausgelöst wird.</p>
+              <figure><img src="/assets/img/picture_129.jpeg" alt="Die Nachricht" />
+                <figcaption>Die Nachricht an den Google-Server</figcaption>
+              </figure>
+              <p>Wie man im Bild sehen kann, ist keine Ziel-Nummer enthalten und andere Informationen zum Gespräch kommen auch nicht vor. Google erfährt nur, dass ich eine Schnellwahl-Schaltfläche betätigt habe.</p>
+              <p>Also kein Grund zur Aufregung, aber anscheinend forschen manche Redakteure nicht so gerne nach.</p>
+            </div>
+          </article>
+          <article itemscope itemtype="http://schema.org/BlogPosting">
+            <header>
+              <div class="meta">
+                <span class="category">Anderes</span> &ndash; 
+                <time itemprop="datePublished" datetime="2016-04-17T00:00:00+02:00" class="date">17.04.2016</time> &ndash;
+                <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+              </div>
+              <a href="/artikel/2016/04/tensorflow-im-browser-ausprobieren">
+                <h2 itemprop="headline">TensorFlow im Browser ausprobieren</h2>
+              </a>
+              <div class="warning">
+                Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+              </div>
+              <img itemprop="image" itemscope itemtype="http://schema.org/ImageObject" src="/assets/img/picture_203.png" alt="TensorFlow im Browser ausprobieren"/>
+              <div itemprop="description" class="description">Wem neuronale Netzwerke immer zu kompliziert und abstrakt waren, der kann jetzt auch im Browser damit spielen.</div>
+            </header>
+            <div itemprop="articleBody">
+              <p><a href="https://www.tensorflow.org/">TensorFlow</a>, die machine learning Bibliothek von Google kann man jetzt auch <a href="http://playground.tensorflow.org">direkt im Browser probieren</a>. Ohne Expertenwissen ist es möglich mit mehreren Beispielen zu experimentieren und dabei die Parameter des Netzwerkes zu ändern oder Features hinzuzufügen oder wegzulassen.</p>
+              <p>Die Seite steht zudem als Open Source <a href="https://github.com/tensorflow/playground">auf github bereit</a>.</p>
+            </div>
+          </article>
+          <article itemscope itemtype="http://schema.org/BlogPosting">
+            <header>
+              <div class="meta">
+                <span class="category">Entwicklung</span> &ndash; 
+                <time itemprop="datePublished" datetime="2015-12-08T00:00:00+01:00" class="date">08.12.2015</time> &ndash;
+                <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+              </div>
+              <a href="/artikel/2015/12/was-die-nsa-im-http2-connection-preface-macht">
+                <h2 itemprop="headline">Was die NSA im HTTP/2 connection preface macht</h2>
+              </a>
+              <div class="warning">
+                Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+              </div>
+              <img itemprop="image" itemscope itemtype="http://schema.org/ImageObject" src="/assets/img/picture_202.png" alt="Was die NSA im HTTP/2 connection preface macht"/>
+              <div itemprop="description" class="description">Beim Verbindungsaufbau in HTTP/2 gibt es einen Hinweis auf die National Security Agency und ihre Tätigkeiten</div>
+            </header>
+            <div itemprop="articleBody">
+              <p>Der Verbindungaufbau mit HTTP/2 unterscheidet sich in großen Teilen von dem bisher mit HTTP/1.1 verwendeten Vorgang. Bei cleartext Verbindungen wird das HTTP upgrade Verfahren benutzt und bei verschlüsselten Verbindungen werden bestimmte Werte innerhalb des TLS Handshakes übertragen.</p>
+              <p>Was beide Arten der Verbindung gemeinsam haben: Bevor wirklich Anwendungsdaten fließen können, muss von jedem der Teilnehmer ein sogenannter Preface verschickt werden. Ein kleines Datenpaket, das Parameter für die Verbindung festlegt. Und genau in diesem Preface findet sich Kritik an den Überwachungsprogrammen der NSA.</p>
+              <blockquote>
+                <p>In HTTP/2, each endpoint is required to send a connection preface as
+                  a final confirmation of the protocol in use and to establish the
+                  initial settings for the HTTP/2 connection.  The client and server
+                  each send a different connection preface.</p>
+                <p>The client connection preface starts with a sequence of 24 octets,
+                  which in hex notation is:</p>
+                <p>0x505249202a20485454502f322e300d0a0d0a534d0d0a0d0a</p>
+                <p>That is, the connection preface starts with the string “PRI *
+                  HTTP/2.0\r\n\r\nSM\r\n\r\n”).  This sequence MUST be followed by a
+                  SETTINGS frame (Section 6.5), which MAY be empty.  The client sends
+                  the client connection preface immediately upon receipt of a 101
+                  (Switching Protocols) response (indicating a successful upgrade) or
+                  as the first application data octets of a TLS connection.  If
+                  starting an HTTP/2 connection with prior knowledge of server support
+                  for the protocol, the client connection preface is sent upon
+                  connection establishment.</p>
+              </blockquote>
+              <p>Ich habe zwar erst kürzlich ein Paper zu HTTP/2 geschrieben, mir ist aber auch nicht aufgefallen, dass da “Prism” steht. Der <a href="https://github.com/http2/http2-spec/commit/ac468f3fab9f7092a430eedfd69ee1fb2e23c944">commit ist von 14. Juni 2013</a> und hat anscheinend auch den Autoren viel Spaß gemacht.</p>
+              <p>Gefunden wurde dieser kleine Spaß von <a href="http://blog.jgc.org/">John Graham-Cumming</a> und dann auf Hackernews bekannt gemacht.</p>
+            </div>
+          </article>
+          <article itemscope itemtype="http://schema.org/BlogPosting">
+            <header>
+              <div class="meta">
+                <span class="category">Entwicklung</span> &ndash; 
+                <time itemprop="datePublished" datetime="2015-07-20T00:00:00+02:00" class="date">20.07.2015</time> &ndash;
+                <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+              </div>
+              <a href="/artikel/2015/07/wieso-mein-feedreader-jetzt-selbst-denken-kann">
+                <h2 itemprop="headline">Wieso mein Feedreader jetzt selbst denken kann</h2>
+              </a>
+              <div class="warning">
+                Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+              </div>
+              <img itemprop="image" itemscope itemtype="http://schema.org/ImageObject" src="/assets/img/picture_201.png" alt="Wieso mein Feedreader jetzt selbst denken kann"/>
+              <div itemprop="description" class="description">Nach dem Ende der Prüfungsphase an der Uni habe ich jetzt endlich Zeit gefunden die angesammelten Artikel in meinem Feedreader nachzulesen. Das würde sogar Spaß machen, wären da nicht inzwischen zu viele davon und dabei nur etwa ein Viertel oder die Hälfte, die mich auch wirklich interessiert.</div>
+            </header>
+            <div itemprop="articleBody">
+              <p>Will ich mir das wirklich antun? Aber was, wenn ich die interessanten Dinge dabei verpasse? Könnte nicht ein Computer die Themen auswählen, die ich lesen will? - Kann er.</p>
+              <p>Möglich ist das zum Beispiel mit einem Filter, der nach dem Satz von Bayes arbeitet und mit statistischen Methoden die Wahrscheinlichkeit berechnet. Das klingt aber nicht sehr aufregend. Deshalb habe ich mich für den derzeitigen Super-Star des Computerlernens entschieden: Einem <strong>künstlichen neuronalen Netzwerk</strong>.</p>
+              <h2 id="künstliche-neuronale-netzwerke">Künstliche Neuronale Netzwerke</h2>
+              <figure><img src="/assets/img/picture_126.png" alt="Neuronales Netzwerk" />
+                <figcaption>Aufbau eines künstlichen neuronalen Netzwerkes (Dake, Mysid [<a href="http://creativecommons.org/licenses/by/1.0">CC BY 1.0</a>], <a href="https://commons.wikimedia.org/wiki/File%3ANeural_network.svg">via Wikimedia Commons</a>)</figcaption>
+              </figure>
+              <p>Dabei werden Neuroen verwendet, also Nervenzellen, wie sie auch bei uns im Gehirn vorkommen. Diese werden eingeteilt in eine Eingabeschicht, eine Ausgabeschicht und verdeckte Schichten (engl. hidden layers) dazwischen.</p>
+              <p>Die Verbindungen zwischen den Schichten sind gewichtet und beschreiben die Weiterleitung eines Reizes bzw. eines Signals, wodurch dann das Ergebnis entsteht. Diese Werte werden anschließend durch eine Funktion in den Bereich zwischen 0 und 1 gemappt.</p>
+              <p>Durch das Vergleiches mit den Ergebnissen aus den Trainingsdaten kann sich das Netzwerk mit dem Backpropagation-Algorithmus selbst ständig verbessern.</p>
+              <p>Wer sich noch weiter mit der Theorie beschäftigen möchte, der findet im zugehörigen Wikipedia-Artikel alles, was er braucht: <a href="https://de.wikipedia.org/wiki/K%C3%BCnstliches_neuronales_Netz">Künstliches neuronales Netz</a></p>
+              <h2 id="pybrain">pybrain</h2>
+              <p>Um das Netzwerk umzusetzen, habe ich Python verwendet und die <a href="http://pybrain.org/">pybrain Bibliothek</a>. Darin sind bereits alle Algorithmen enthalten und der Aufbau fällt relativ leicht. Mit der folgenden Zeile lässt sich zum Beispiel ein Netzwerk mit fünf Eingabeneuronen und 2 Ausgabeneuronen erzeugen:</p>
+              <figure class="highlight">
+                <pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">pybrain.tools.shortcuts</span> <span class="kn">import</span> <span class="n">buildNetwork</span>
+<span class="kn">from</span> <span class="nn">pybrain.structure.modules</span> <span class="kn">import</span> <span class="n">SoftmaxLayer</span>
+
+<span class="n">net</span> <span class="o">=</span> <span class="n">buildNetwork</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">outclass</span><span class="o">=</span><span class="n">SoftmaxLayer</span><span class="p">)</span></code></pre>
+              </figure>
+              <p>Als nächstes lädt man die Trainingsdaten in einer Form, die vom Netzwerk gelernt werden kann:</p>
+              <figure class="highlight">
+                <pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">pybrain.datasets</span> <span class="kn">import</span> <span class="n">SupervisedDataSet</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">SupervisedDataSet</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span></code></pre>
+              </figure>
+              <p>Wichtig ist dabei, die gleiche Anzahl an Neuronen wie beim Aufbau des Netzes zu verwenden!</p>
+              <p>Mit der <code class="highlighter-rouge">addSample</code> Methoden werden anschließend die Beispiele hinzugefügt.</p>
+              <figure class="highlight">
+                <pre><code class="language-python" data-lang="python"><span class="n">ds</span><span class="p">.</span><span class="n">addSample</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>  <span class="c1"># nur ein dummes Beispiel</span></code></pre>
+              </figure>
+              <p>Trainiert wird dann so:</p>
+              <figure class="highlight">
+                <pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">pybrain.supervised.trainers</span> <span class="kn">import</span> <span class="n">BackpropTrainer</span>
+
+<span class="n">trainer</span> <span class="o">=</span> <span class="n">BackpropTrainer</span><span class="p">(</span><span class="n">net</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">):</span>   <span class="c1"># so viel man will
+</span>  <span class="n">trainer</span><span class="p">.</span><span class="n">train</span><span class="p">()</span></code></pre>
+              </figure>
+              <p>Und schon bekommt man mit etwas Glück ein zufriedenstellendes Ergebnis:</p>
+              <figure class="highlight">
+                <pre><code class="language-python" data-lang="python"><span class="k">print</span> <span class="n">net</span><span class="p">.</span><span class="n">activate</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]);</span></code></pre>
+              </figure>
+              <h2 id="meine-artikel">Meine Artikel</h2>
+              <p>Ich möchte also den Titel eines Artikels als Eingabe definieren und dann einen Wert erhalten, der angibt, wie wahrscheinlich mich der Artikel interessiert. Das erste Problem ist, Trainingsdaten zu bekommen. Dazu habe ich ein Plugin für meinen Feedreader geschrieben, der durch Drücken auf den Knopf “Interessant” oder “Langweilig” den Titel und die Berwertung protokolliert.</p>
+              <p>Leider erwartet so ein Netzwerk aber immer die gleiche Anzahl von Eingaben und diese sollten zudem Zahlen sein. Beides erfüllen Titel von Artikeln eher selten. Die Lösung ist ein Wörterbuch aufzubauen, in dem jedes Wort mit einem Index verbunden ist. Dann wird für jedes Wort im Wörterbuch die Häufigkeit des Vorkommens im Titel angegeben. Ich brauche also so viele Eingabeneuronen, wie ich Wörter im Wörterbuch habe. Füllwörter habe ich vorher entfernt.</p>
+              <p>So sollte es also gehen. Tut es aber nicht, denn das Netzwerk will einfach nicht lernen.</p>
+              <figure class="highlight">
+                <pre><code class="language-text" data-lang="text">Total error: 0.32
+Total error: 0.32
+Total error: 0.32
+Total error: 0.32
+Total error: 0.32
+Total error: 0.32
+[...]</code></pre>
+              </figure>
+              <p>Das liegt daran, dass ich zuerst nur ein Ausgabeneuron verwendet habe. Es ist aber so, dass für jede Klasse der Klassifizierung ein eigenes Ausgabeneuron vorhanden sein muss. Also brauch ich davon zwei. Und schon geht es.</p>
+              <p>Noch schnell alles in eine flask-Anwendung verpacken und per fastcgi deployen, dann ist es einsatzbereit.</p>
+              <figure><img src="/assets/img/picture_127.png" alt="Eingabefeld des Netzwerkes" />
+                <figcaption>Eine Überschrift eingeben...</figcaption>
+              </figure>
+              <figure><img src="/assets/img/picture_128.png" alt="Ausgabe des Netzwerks" />
+                <figcaption>...und ein Ergebnis erhalten. Aktienkurse interessieren mich nicht wirklich.</figcaption>
+              </figure>
+              <p>Manchmal liegt die AI noch ziemlich daneben, aber das liegt vermutlich daran, dass ich oft selbst nicht so genau weiß, was mich interessiert. Zurzeit zeigt mein Feedreader dieses Ergebnis nur unter dem Artikel an, aber in Zukunft hoffe ich dadurch die Feeds filtern oder zumindest sortieren zu können.</p>
+              <p>Eines ist es auf jeden Fall: Faszinierend. Faszinierend, wie es möglich ist, Computern etwas beizubringen, ohne sich einen Algorithmus zu überlegen, der nach genauen Regeln vorgeht, denn mit Neuronalen Netzwerken geht es fast von selbst!</p>
+              <p>PS: Auf das Thema gestoßen, bin ich aufgrund der Bachelorarbeit eines Freundes. Der geneigte Leser möge sich diese hier durchlesen: <a href="http://homepage.univie.ac.at/a1200595/bachelor/thesis.pdf">Recognizing Musical Notation using Artificial Neural Networks</a></p>
+              <p>PPS: Ich werde die entsprechende Vorlesung erst im nächsten Semester besuchen. Wenn Sie hier im Theorieteil auf Fehler oder Ungenauigkeiten stoßen: Lassen Sie es mich wissen!</p>
+            </div>
+          </article>
+        </div>
+        <nav id="pagenav">
+          <span id="left">
+          </span>
+          <span id="pages">
+            <a  href="/">1</a>
+            <a  href="/2">2</a>
+            <a  href="/3">3</a>
+            <a  href="/4">4</a>
+            <a  href="/5">5</a>
+            <a  href="/6">6</a>
+            <a  href="/7">7</a>
+            <a  href="/8">8</a>
+            <a  href="/9">9</a>
+            <a  href="/10">10</a>
+            <a  href="/11">11</a>
+            <a  href="/12">12</a>
+            <a  href="/13">13</a>
+            <a  href="/14">14</a>
+            <a  href="/15">15</a>
+            <a  href="/16">16</a>
+            <a  href="/17">17</a>
+            <a  href="/18">18</a>
+            <a  href="/19">19</a>
+            <a  href="/20">20</a>
+            <a  href="/21">21</a>
+            <a  href="/22">22</a>
+            <a  href="/23">23</a>
+            <a  href="/24">24</a>
+            <a  href="/25">25</a>
+            <a  href="/26">26</a>
+            <a  href="/27">27</a>
+          </span>
+          <span id="right">
+            <a href="/2/" rel="next">ÄLTER &raquo;</a>
+          </span>
+        </nav>
+      </main>
+    </div>
+  </body>
+</html>
