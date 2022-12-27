@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="de"><head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="Johannes Mittendorfer, Mittendorfer, Blog, Informatik, Entwicklung, Security">
+    <meta name="description" content="Der Blog von Johannes Mittendorfer über Software, IT-Security und das Internet">
+    <meta name="author" content="Johannes Mittendorfer">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <meta name="application-name" content="Johannes Mittendorfer"/>
+    <meta name="msapplication-TileColor" content="#f9fbf4"/>
+    <meta http-equiv="imagetoolbar" content="false" />
+    <meta property="fb:admins" content="100000063853580" />
+    <meta name="Content-Language" content="de" />
+    
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+    <link rel="canoncial" href="https://blog.johannes-mittendorfer.com/">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+    
+    
+    <link rel="stylesheet" href="https://blog.johannes-mittendorfer.com/styles.min.f93f4e51d7d393b46e7874802b06d820d7f22d0b5b68cecd9c431a0bb299bb42.css">
+    
+    
+    
+    <title>Johannes Mittendorfer | Elektronik über den LPT-Port steuern</title>
+    
+</head><body itemscope itemtype="http://schema.org/WebSite">
+<nav id="bar">
+    <section class="container">
+        <a class="title" itemprop="url" href="/">
+            <h1 itemprop="name">Johannes Mittendorfer</h1>
+        </a>
+        <ul>
+            
+            <li>
+                <a href="/">
+                    Start
+                </a>
+            </li>
+            
+            <li>
+                <a href="/ueber-mich">
+                    Über
+                </a>
+            </li>
+            
+            <li>
+                <a href="/astronomie">
+                    Astronomie
+                </a>
+            </li>
+            
+            <li>
+                <a href="/impressum">
+                    Impressum
+                </a>
+            </li>
+            
+        </ul>
+    </section>
+</nav>
+        <div class="container">
+            <main>
+<article itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        <div class="meta">
+            <span class="category">Entwicklung</span> &ndash; 
+            <time itemprop="datePublished" datetime="2012-01-05 00:00:00 &#43;0000 UTC" class="date">05.01.2012</time> &ndash;
+            <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+        </div>
+        <h1 itemprop="headline">Elektronik über den LPT-Port steuern</h1>
+
+        
+        <div class="warning">
+            Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+        </div>
+        
+    </header>
+    <div itemprop="articleBody">
+        <p>Öfters möchte man einen kleinen oder auch größeren Schaltkreis über den PC steuern, wäre da nicht die komplizierte Umsetzung mit einem geeigneten Mikrocontroller und der benötigten Software.</p>
+<p>Doch es geht viel einfacher: Der parellele Port, auch LPT-Port genannt, steht auf den meisten PC zur Verfügung und kann Kinderleicht dazu verwendet werden verschiedenen Pins einzeln mit Spannung zu versorgen.</p>
+<h2 id="hardware">Hardware</h2>
+<p><img src="/img/picture_73.png" alt="Port des parallelen Anschlusses"></p>
+<p>Dieser Anschluss, der vormals DER Standard für den Anschluss eines Druckers war, lässt sich für die Steuerung eines Schaltkreises verwenden indem man einen Draht in einen der Pins 2-9 und einen Draht in einen Pin von 18 bis 25 steckt.</p>
+<p>Die Pins 2 bis 9 können einzeln vom PC mit Spannung geschaltet werden und stellen eine (Steuer-)Spannung von ca. 5 V bereit. Diese Spannung <!-- raw HTML omitted -->kann<!-- raw HTML omitted --> sollte mit einem Transistor verwendet werden, um über einen Steuerstromkreis den Arbeitsstromkreis mit (nahezu) beliebiger Spannung zu betreiben.</p>
+<p>Außerdem kann über die Pins 10-13 ein Signal enpfangen werden, was in diesem Fall bedeutet, dass der Stromkreis geschlossen ist und Strom von den Pins 18-25 zu den Pins 10-13 fließt.</p>
+<p>Ein LPT-Kabel, das in meinem Fall einen alten Drucker mit Daten versorgte, verlegt den Anschluss bequem nach vorne und erspart einem so manchen Schlag mit dem Kopf gegen die Tischplatte.</p>
+<h2 id="software">Software</h2>
+<p>Beispiel eines TCP-Clients zum Steuern einer LED:</p>
+<p><img src="/img/picture_74.png" alt="Beispiel GUI"></p>
+<p>Für das einfache Anlegen einer Spannung auf einem Pin empfehle ich das Programme lptout.exe. Für komplexere Aufgaben ist jedoch die Klasse inpout32.dll bzw. inpout64.dll geeignet. Da ich keine Rechte für die genannten Programme besitze, möchte ich nicht auf einen Download verlinken, doch eine Google-Suche bringt einem schnell ans Ziel.</p>
+<p>Ich habe mir für leichtere Handhabung eine kleine C#-Klasse geschrieben:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#00f">using</span> <span style="color:#000">System</span>;
+</span></span><span style="display:flex;"><span><span style="color:#00f">using</span> <span style="color:#000">System.Collections.Generic</span>;
+</span></span><span style="display:flex;"><span><span style="color:#00f">using</span> <span style="color:#000">System.Linq</span>;
+</span></span><span style="display:flex;"><span><span style="color:#00f">using</span> <span style="color:#000">System.Text</span>;
+</span></span><span style="display:flex;"><span><span style="color:#00f">using</span> <span style="color:#000">System.Runtime.InteropServices</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">namespace</span> <span style="color:#000">WindowsFormsApplication1</span>{
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#00f">public</span> <span style="color:#00f">class</span> <span style="color:#000">LPTController</span>{
+</span></span><span style="display:flex;"><span><span style="color:#000">
+</span></span></span><span style="display:flex;"><span><span style="color:#000">		[DllImport(&#34;inpout32.dll&#34;)]</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#00f">private</span> <span style="color:#00f">static</span> <span style="color:#00f">extern</span> <span style="color:#000">UInt32</span> <span style="color:#000">IsInpOutDriverOpen</span>();
+</span></span><span style="display:flex;"><span><span style="color:#000">
+</span></span></span><span style="display:flex;"><span><span style="color:#000">		[DllImport(&#34;inpout32.dll&#34;)]</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#00f">private</span> <span style="color:#00f">static</span> <span style="color:#00f">extern</span> <span style="color:#00f">void</span> <span style="color:#000">Out32</span>(<span style="color:#00f">short</span> <span style="color:#000">PortAddress</span>, <span style="color:#00f">short</span> <span style="color:#000">Data</span>);
+</span></span><span style="display:flex;"><span><span style="color:#000">
+</span></span></span><span style="display:flex;"><span><span style="color:#000">		[DllImport(&#34;inpout32.dll&#34;)]</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#00f">private</span> <span style="color:#00f">static</span> <span style="color:#00f">extern</span> <span style="color:#00f">char</span> <span style="color:#000">Inp32</span>(<span style="color:#00f">short</span> <span style="color:#000">PortAddress</span>);
+</span></span><span style="display:flex;"><span><span style="color:#000">
+</span></span></span><span style="display:flex;"><span><span style="color:#000">		[DllImport(&#34;inpout32.dll&#34;)]</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#00f">private</span> <span style="color:#00f">static</span> <span style="color:#00f">extern</span> <span style="color:#00f">void</span> <span style="color:#000">DlPortWritePortUshort</span>(<span style="color:#00f">short</span> <span style="color:#000">PortAddress</span>, <span style="color:#00f">ushort</span> <span style="color:#000">Data</span>);
+</span></span><span style="display:flex;"><span><span style="color:#000">
+</span></span></span><span style="display:flex;"><span><span style="color:#000">		[DllImport(&#34;inpout32.dll&#34;)]</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#00f">private</span> <span style="color:#00f">static</span> <span style="color:#00f">extern</span> <span style="color:#00f">ushort</span> <span style="color:#000">DlPortReadPortUshort</span>(<span style="color:#00f">short</span> <span style="color:#000">PortAddress</span>);
+</span></span><span style="display:flex;"><span><span style="color:#000">
+</span></span></span><span style="display:flex;"><span><span style="color:#000">		[DllImport(&#34;inpout32.dll&#34;)]</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#00f">private</span> <span style="color:#00f">static</span> <span style="color:#00f">extern</span> <span style="color:#00f">void</span> <span style="color:#000">DlPortWritePortUlong</span>(<span style="color:#00f">int</span> <span style="color:#000">PortAddress</span>, <span style="color:#00f">uint</span> <span style="color:#000">Data</span>);
+</span></span><span style="display:flex;"><span><span style="color:#000">
+</span></span></span><span style="display:flex;"><span><span style="color:#000">		[DllImport(&#34;inpout32.dll&#34;)]</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#00f">private</span> <span style="color:#00f">static</span> <span style="color:#00f">extern</span> <span style="color:#00f">uint</span> <span style="color:#000">DlPortReadPortUlong</span>(<span style="color:#00f">int</span> <span style="color:#000">PortAddress</span>);
+</span></span><span style="display:flex;"><span><span style="color:#000">
+</span></span></span><span style="display:flex;"><span><span style="color:#000">		[DllImport(&#34;inpoutx64.dll&#34;)]</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#00f">private</span> <span style="color:#00f">static</span> <span style="color:#00f">extern</span> <span style="color:#00f">bool</span> <span style="color:#000">GetPhysLong</span>(<span style="color:#00f">ref</span> <span style="color:#00f">int</span> <span style="color:#000">PortAddress</span>, <span style="color:#00f">ref</span> <span style="color:#00f">uint</span> <span style="color:#000">Data</span>);
+</span></span><span style="display:flex;"><span><span style="color:#000">
+</span></span></span><span style="display:flex;"><span><span style="color:#000">		[DllImport(&#34;inpoutx64.dll&#34;)]</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#00f">private</span> <span style="color:#00f">static</span> <span style="color:#00f">extern</span> <span style="color:#00f">bool</span> <span style="color:#000">SetPhysLong</span>(<span style="color:#00f">ref</span> <span style="color:#00f">int</span> <span style="color:#000">PortAddress</span>, <span style="color:#00f">ref</span> <span style="color:#00f">uint</span> <span style="color:#000">Data</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#00f">private</span> <span style="color:#00f">bool</span> <span style="color:#000">_X64</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#00f">private</span> <span style="color:#00f">short</span> <span style="color:#000">_PortAddress</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#00f">public</span> <span style="color:#000">LPTController</span>(<span style="color:#00f">short</span> <span style="color:#000">PortAddress</span>){
+</span></span><span style="display:flex;"><span>			<span style="color:#000">_X64</span> = <span style="color:#00f">false</span>;
+</span></span><span style="display:flex;"><span>			<span style="color:#000">_PortAddress</span> = <span style="color:#000">PortAddress</span>;
+</span></span><span style="display:flex;"><span>		
+</span></span><span style="display:flex;"><span>			<span style="color:#00f">try</span>{
+</span></span><span style="display:flex;"><span>				<span style="color:#00f">uint</span> <span style="color:#000">nResult</span> = <span style="color:#3af">0</span>;
+</span></span><span style="display:flex;"><span>				<span style="color:#00f">try</span>{
+</span></span><span style="display:flex;"><span>					<span style="color:#000">nResult</span> = <span style="color:#000">IsInpOutDriverOpen</span>();
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>				<span style="color:#00f">catch</span> (<span style="color:#000">BadImageFormatException</span>){
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>				<span style="color:#00f">if</span> (<span style="color:#000">nResult</span> == <span style="color:#3af">0</span>){
+</span></span><span style="display:flex;"><span>					<span style="color:#00f">throw</span> <span style="color:#00f">new</span> <span style="color:#000">ArgumentException</span>(<span style="color:#5a2">&#34;Unable to open InpOut32 driver&#34;</span>);
+</span></span><span style="display:flex;"><span>				}
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			<span style="color:#00f">catch</span> (<span style="color:#000">DllNotFoundException</span>){
+</span></span><span style="display:flex;"><span>				<span style="color:#00f">throw</span> <span style="color:#00f">new</span> <span style="color:#000">ArgumentException</span>(<span style="color:#5a2">&#34;Unable to find InpOut32.dll&#34;</span>);
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		
+</span></span><span style="display:flex;"><span>		<span style="color:#00f">public</span> <span style="color:#00f">void</span> <span style="color:#000">Write</span>(<span style="color:#00f">short</span> <span style="color:#000">Data</span>){
+</span></span><span style="display:flex;"><span>			<span style="color:#000">Out32</span>(<span style="color:#000">_PortAddress</span>, <span style="color:#000">Data</span>);
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#00f">public</span> <span style="color:#00f">byte</span> <span style="color:#000">Read</span>(){
+</span></span><span style="display:flex;"><span>			<span style="color:#00f">return</span> (<span style="color:#00f">byte</span>)<span style="color:#000">Inp32</span>(<span style="color:#000">_PortAddress</span>);
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Mit dieser Klasse kann man einfach den Zustand Auslesen und ihn ändern:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#000">LPTController</span> <span style="color:#000">lpt</span> = <span style="color:#00f">new</span> <span style="color:#000">LPTController</span>(<span style="color:#3af">888</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">if</span>(<span style="color:#000">lpt</span>.<span style="color:#000">Read</span>() == <span style="color:#3af">255</span>){
+</span></span><span style="display:flex;"><span>	<span style="color:#000">lpt</span>.<span style="color:#000">Write</span>(<span style="color:#3af">0</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#00f">else</span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#000">lpt</span>.<span style="color:#000">Write</span>(<span style="color:#3af">255</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="hinweis">Hinweis</h2>
+<p>Natürlich geschieht das alles auf Ihre eigene Gefahr und ich übernehme keine Haftung für jedwede Schäden an Gerät und Gesundheit. 230V haben hier nichts verloren!!!</p>
+<p>Update 13.03.2016: Natürlich muss es der parallele und nicht der serielle Port.</p>
+
+    </div>
+</article>
+
+            </main>
+        </div>
+    </body>
+</html>

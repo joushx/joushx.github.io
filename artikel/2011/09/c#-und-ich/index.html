@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="de"><head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="Johannes Mittendorfer, Mittendorfer, Blog, Informatik, Entwicklung, Security">
+    <meta name="description" content="Der Blog von Johannes Mittendorfer über Software, IT-Security und das Internet">
+    <meta name="author" content="Johannes Mittendorfer">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <meta name="application-name" content="Johannes Mittendorfer"/>
+    <meta name="msapplication-TileColor" content="#f9fbf4"/>
+    <meta http-equiv="imagetoolbar" content="false" />
+    <meta property="fb:admins" content="100000063853580" />
+    <meta name="Content-Language" content="de" />
+    
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+    <link rel="canoncial" href="https://blog.johannes-mittendorfer.com/">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+    
+    
+    <link rel="stylesheet" href="https://blog.johannes-mittendorfer.com/styles.min.f93f4e51d7d393b46e7874802b06d820d7f22d0b5b68cecd9c431a0bb299bb42.css">
+    
+    
+    
+    <title>Johannes Mittendorfer | C# und Ich</title>
+    
+</head><body itemscope itemtype="http://schema.org/WebSite">
+<nav id="bar">
+    <section class="container">
+        <a class="title" itemprop="url" href="/">
+            <h1 itemprop="name">Johannes Mittendorfer</h1>
+        </a>
+        <ul>
+            
+            <li>
+                <a href="/">
+                    Start
+                </a>
+            </li>
+            
+            <li>
+                <a href="/ueber-mich">
+                    Über
+                </a>
+            </li>
+            
+            <li>
+                <a href="/astronomie">
+                    Astronomie
+                </a>
+            </li>
+            
+            <li>
+                <a href="/impressum">
+                    Impressum
+                </a>
+            </li>
+            
+        </ul>
+    </section>
+</nav>
+        <div class="container">
+            <main>
+<article itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        <div class="meta">
+            <span class="category">Entwicklung</span> &ndash; 
+            <time itemprop="datePublished" datetime="2011-09-20 00:00:00 &#43;0000 UTC" class="date">20.09.2011</time> &ndash;
+            <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+        </div>
+        <h1 itemprop="headline">C# und Ich</h1>
+
+        
+        <div class="warning">
+            Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+        </div>
+        
+    </header>
+    <div itemprop="articleBody">
+        <p>Mit der Zeit muss man sich auch wieder einmal an etwas Neuem versuchen. Genau das habe ich jetzt gemacht und somit habe ich angefangen C# zu lernen. Zu empfehlen ist dazu eine IDE, also eine integrierte Entwicklungsumgebung. Ich habe Microsoft Visual C# Express von Microsoft verwendet, das man <a href="http://www.microsoft.com/germany/express/download/default.aspx">hier</a> downloaden kann. Der Download und die Installation kann hierbei jedoch eine Weile dauern.</p>
+<p><img src="/img/picture_34.png" alt="C#"></p>
+<p>Was man also dazu braucht:</p>
+<ul>
+<li>Microsoft Visual C#</li>
+<li>Geduld</li>
+</ul>
+<p>Wenn man, so wie ich, von PHP kommt ist erst einmal zu beachten, dass man genau angeben muss welcher Typ in einer Variable abgespeichert wird. Zum Beispiel:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#000">String</span> <span style="color:#000">variable</span> = <span style="color:#5a2">&#34;Hallo Welt&#34;</span>;
+</span></span></code></pre></div><p>oder</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#000">Double</span> <span style="color:#000">result</span> = <span style="color:#3af">12</span> * <span style="color:#3af">234</span>;
+</span></span></code></pre></div><p>Natürlich gibt es noch weitere, aber so weit bin ich eben auch noch nicht.
+Man kann im Entwurfsfenster die Anordnung der Elemente verändern und sie auch umbenennen. Dann gibt man im Code, zu dem man durch einen Doppelklick kommt, den Namen des Elementes ein und es werden einem die verschiedenen Methoden und Eigenschaften vorgeschlagen. Den Text eines Textfeldes ruft man zum Beispiel so ab:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#000">String</span> <span style="color:#000">text</span> = <span style="color:#000">meinetextbox</span>.<span style="color:#000">Text</span>;
+</span></span></code></pre></div><p>Vielleicht kommen ja in nächster Zeit weitere Beiträge zu C#!</p>
+
+    </div>
+</article>
+
+            </main>
+        </div>
+    </body>
+</html>

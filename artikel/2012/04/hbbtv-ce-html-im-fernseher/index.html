@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="de"><head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="Johannes Mittendorfer, Mittendorfer, Blog, Informatik, Entwicklung, Security">
+    <meta name="description" content="Der Blog von Johannes Mittendorfer über Software, IT-Security und das Internet">
+    <meta name="author" content="Johannes Mittendorfer">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <meta name="application-name" content="Johannes Mittendorfer"/>
+    <meta name="msapplication-TileColor" content="#f9fbf4"/>
+    <meta http-equiv="imagetoolbar" content="false" />
+    <meta property="fb:admins" content="100000063853580" />
+    <meta name="Content-Language" content="de" />
+    
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+    <link rel="canoncial" href="https://blog.johannes-mittendorfer.com/">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+    
+    
+    <link rel="stylesheet" href="https://blog.johannes-mittendorfer.com/styles.min.f93f4e51d7d393b46e7874802b06d820d7f22d0b5b68cecd9c431a0bb299bb42.css">
+    
+    
+    
+    <title>Johannes Mittendorfer | HbbTV: CE-HTML im Fernseher</title>
+    
+</head><body itemscope itemtype="http://schema.org/WebSite">
+<nav id="bar">
+    <section class="container">
+        <a class="title" itemprop="url" href="/">
+            <h1 itemprop="name">Johannes Mittendorfer</h1>
+        </a>
+        <ul>
+            
+            <li>
+                <a href="/">
+                    Start
+                </a>
+            </li>
+            
+            <li>
+                <a href="/ueber-mich">
+                    Über
+                </a>
+            </li>
+            
+            <li>
+                <a href="/astronomie">
+                    Astronomie
+                </a>
+            </li>
+            
+            <li>
+                <a href="/impressum">
+                    Impressum
+                </a>
+            </li>
+            
+        </ul>
+    </section>
+</nav>
+        <div class="container">
+            <main>
+<article itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        <div class="meta">
+            <span class="category">Entwicklung</span> &ndash; 
+            <time itemprop="datePublished" datetime="2012-04-09 00:00:00 &#43;0000 UTC" class="date">09.04.2012</time> &ndash;
+            <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+        </div>
+        <h1 itemprop="headline">HbbTV: CE-HTML im Fernseher</h1>
+
+        
+        <div class="warning">
+            Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+        </div>
+        
+    </header>
+    <div itemprop="articleBody">
+        <p>Der Teletext (oder auch Videotext) mit seinen 23 Zeilen ist schon etwas in die Jahre gekommen und soll in den nächsten Jahren durch <a href="http://de.wikipedia.org/wiki/HbbTV" title="Wikipedia: HbbTV">HbbTV</a> ersetzt werden. Mit <em>Hybrid Broadcast Broadband TV</em> soll die Zukunft in die textbasierte Information am Fernseher Einzug halten. Nicht mehr über die Satelliten-Ausstrahlung, sondern über die Internetverbindungen sollen so Informationen abgerufen werden.</p>
+<p><img src="/img/picture_59.png" alt="HbbTV Logo"></p>
+<p>Mit dieser Technik ist es erstmals möglich hochaufgelöste Informationsseiten mit Videos und Interaktivität zur Verfügung zu stellen. Realisiert wird die durch Standard-Techniken aus der Websiten-Programmierung. So wird bei HbbTV CE-HTML eingesetzt. Das <em>Consumer Electronic</em>-HTML stellt eine Erweiterung der bestehenden Standards für die Einbindung von aktuellen Fernsehbildern und die Bedienung mit der Fernbedienung dar.</p>
+<h2 id="aufbau-eines-ce-html-dokumentes">Aufbau eines CE-HTML Dokumentes</h2>
+<p>Grundsätzlich ist ein Dokument mit CE-HTML genauso aufgebaut wie ein normales HTML-Dokument. Unterschiede gibt es lediglich im verwendeten MIME-Type und dem Doctype. So wird das Dokument mit dem <code>Content-Type</code>-Header <code>application/ce-html+xml</code> übertragen. Der Doctype sollte wie folgt lauten:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>&lt;!<span style="color:#000">DOCTYPE</span> <span style="color:#000">html</span> <span style="color:#000">PUBLIC</span> <span style="color:#5a2">&#34;-//W3C//DTD XHTML 1.0 Transitional//EN&#34;</span> <span style="color:#5a2">&#34;ce-html-1.0-transitional.dtd&#34;</span>&gt;
+</span></span></code></pre></div><p>Erwähnenswert ist auch noch folgende CSS-Regel, um die Seite transpartent über das TV-Bild legen zu können:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#000">body</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#00f">background-color</span>: <span style="color:#00f">transparent</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="steuerung">Steuerung</h2>
+<p>Gesteuert wird die Anwendung natürlich nicht über eine Maus, sondern über die Tasten der Fernbedienung. Hauptsächlich über die vier farbigen Tasten in Rot, Gelb, Grün und Blau und den Pfeiltasten. Bei der Benützung einer der Tasten auf der Fernbedienung wird ein <em>keydown</em>-Event mit dem entspechenden <em>keyCode</em>-Wert ausgelöst. Über einen <em>EventListener</em> kann nun bei solch einer Aktion der Code der Taste ausgewertet werden. Die Werte der einzelnen Tasten sind in den Konstanten <code>VK_RED</code>, <code>VK_BLUE</code>, usw. gespeichert und müssen nur mehr mit dem übergebenen Code verglichen werden.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#000">document</span>.<span style="color:#000">body</span>.<span style="color:#000">addEventListener</span>(<span style="color:#5a2">&#34;keydown&#34;</span>, <span style="color:#00f">function</span>(<span style="color:#000">e</span>){
+</span></span><span style="display:flex;"><span>   <span style="color:#00f">switch</span>(<span style="color:#000">e</span>.<span style="color:#000">keyCode</span>){
+</span></span><span style="display:flex;"><span>       <span style="color:#00f">case</span> <span style="color:#000">VK_RED</span>:
+</span></span><span style="display:flex;"><span>           <span style="color:#000">alert</span>(<span style="color:#5a2">&#34;rot&#34;</span>);
+</span></span><span style="display:flex;"><span>       <span style="color:#00f">break</span>;
+</span></span><span style="display:flex;"><span>       <span style="color:#00f">case</span> <span style="color:#000">VK_BLUE</span>:
+</span></span><span style="display:flex;"><span>           <span style="color:#000">alert</span>(<span style="color:#5a2">&#34;blau&#34;</span>);
+</span></span><span style="display:flex;"><span>       <span style="color:#00f">break</span>;
+</span></span><span style="display:flex;"><span>       <span style="color:#00f">case</span> <span style="color:#000">VK_GREEN</span>:
+</span></span><span style="display:flex;"><span>           <span style="color:#000">alert</span>(<span style="color:#5a2">&#34;grün&#34;</span>);
+</span></span><span style="display:flex;"><span>       <span style="color:#00f">break</span>;
+</span></span><span style="display:flex;"><span>       <span style="color:#00f">case</span> <span style="color:#000">VK_YELLOW</span>:
+</span></span><span style="display:flex;"><span>           <span style="color:#000">alert</span>(<span style="color:#5a2">&#34;gelb&#34;</span>);
+</span></span><span style="display:flex;"><span>       <span style="color:#00f">break</span>;
+</span></span><span style="display:flex;"><span>       <span style="color:#00f">case</span> <span style="color:#000">VK_UP</span>:
+</span></span><span style="display:flex;"><span>           <span style="color:#000">alert</span>(<span style="color:#5a2">&#34;rauf&#34;</span>);
+</span></span><span style="display:flex;"><span>       <span style="color:#00f">break</span>;
+</span></span><span style="display:flex;"><span>       <span style="color:#00f">case</span> <span style="color:#000">VK_DOWN</span>:
+</span></span><span style="display:flex;"><span>           <span style="color:#000">alert</span>(<span style="color:#5a2">&#34;runter&#34;</span>);
+</span></span><span style="display:flex;"><span>       <span style="color:#00f">break</span>;
+</span></span><span style="display:flex;"><span>       <span style="color:#00f">case</span> <span style="color:#000">VK_LEFT</span>:
+</span></span><span style="display:flex;"><span>           <span style="color:#000">alert</span>(<span style="color:#5a2">&#34;links&#34;</span>);
+</span></span><span style="display:flex;"><span>       <span style="color:#00f">break</span>;
+</span></span><span style="display:flex;"><span>       <span style="color:#00f">case</span> <span style="color:#000">VK_RIGHT</span>:
+</span></span><span style="display:flex;"><span>           <span style="color:#000">alert</span>(<span style="color:#5a2">&#34;rechts&#34;</span>);
+</span></span><span style="display:flex;"><span>       <span style="color:#00f">break</span>;
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>Eine Liste mit allen Befehlen bekommt man zum Beispiel bei <a href="http://dev.opera.com/articles/view/functional-key-handling-in-opera-tv-store-applications/">Opera</a> oder durch Lektüre der <a href="http://www.etsi.org/deliver/etsi_ts/102700_102799/102796/01.01.01_60/ts_102796v010101p.pdf">Spezifikation</a> von HbbTV.</p>
+<p>Weitere Informationen über die Verwendung von Bildern, Videos, dem Applikations-Modell und den weiteren Funktionen, wie zum Beispiel Einstellungen und Lesezeichen, gibt es in der oben genannten Spezifikation.</p>
+
+    </div>
+</article>
+
+            </main>
+        </div>
+    </body>
+</html>

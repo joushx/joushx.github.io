@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="de"><head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="Johannes Mittendorfer, Mittendorfer, Blog, Informatik, Entwicklung, Security">
+    <meta name="description" content="Der Blog von Johannes Mittendorfer über Software, IT-Security und das Internet">
+    <meta name="author" content="Johannes Mittendorfer">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <meta name="application-name" content="Johannes Mittendorfer"/>
+    <meta name="msapplication-TileColor" content="#f9fbf4"/>
+    <meta http-equiv="imagetoolbar" content="false" />
+    <meta property="fb:admins" content="100000063853580" />
+    <meta name="Content-Language" content="de" />
+    
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+    <link rel="canoncial" href="https://blog.johannes-mittendorfer.com/">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+    
+    
+    <link rel="stylesheet" href="https://blog.johannes-mittendorfer.com/styles.min.f93f4e51d7d393b46e7874802b06d820d7f22d0b5b68cecd9c431a0bb299bb42.css">
+    
+    
+    
+    <title>Johannes Mittendorfer | Reguläre Ausdrücke - Eine Einführung</title>
+    
+</head><body itemscope itemtype="http://schema.org/WebSite">
+<nav id="bar">
+    <section class="container">
+        <a class="title" itemprop="url" href="/">
+            <h1 itemprop="name">Johannes Mittendorfer</h1>
+        </a>
+        <ul>
+            
+            <li>
+                <a href="/">
+                    Start
+                </a>
+            </li>
+            
+            <li>
+                <a href="/ueber-mich">
+                    Über
+                </a>
+            </li>
+            
+            <li>
+                <a href="/astronomie">
+                    Astronomie
+                </a>
+            </li>
+            
+            <li>
+                <a href="/impressum">
+                    Impressum
+                </a>
+            </li>
+            
+        </ul>
+    </section>
+</nav>
+        <div class="container">
+            <main>
+<article itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        <div class="meta">
+            <span class="category">Entwicklung</span> &ndash; 
+            <time itemprop="datePublished" datetime="2011-07-17 00:00:00 &#43;0000 UTC" class="date">17.07.2011</time> &ndash;
+            <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+        </div>
+        <h1 itemprop="headline">Reguläre Ausdrücke - Eine Einführung</h1>
+
+        
+        <div class="warning">
+            Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+        </div>
+        
+    </header>
+    <div itemprop="articleBody">
+        <p>Man braucht sie immer wieder und man ist froh wenn man sie einfach kann: Reguläre Ausdrücke (auch RegEx genannt). Einsatz finden Sie praktisch überall.</p>
+<p>Ob man jetzt Formulareingaben überprüfen will, Apache mod_rewrite benutzen oder beim Programmieren etwas in einer Zeichenkette erkennen will: Man braucht sie überall. Ich weiß, dass es eine &ldquo;zache&rdquo; Sache ist, aber wenn man es einmal kann ist es nicht mehr so schlimm.</p>
+<p>Beginnen wir einfach einmal mit den vorkommenden Zeichen und einem Beispiel:</p>
+<h2 id="beispiel-1">Beispiel 1</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>www\.[a-z_-]+\.[a-z]+
+</span></span></code></pre></div><p>Dieser reguläre Ausdruck erkennt Internetadressen, die mit www beginnen (und keine Subdomain sind). Ganz am Anfang steht natürlich &ldquo;www&rdquo;. Da dies in diesem Beispiel immer so sein muss können wir es einfach so lassen wie es ist.</p>
+<p>Als nächstes sehen wir für den Punkt <code>\.</code> stehen. Da der Punkt bei den regulären Ausdrücken ein Sonderzeichnen ist müssen wir ihn mit einem Backslash maskieren.</p>
+<p>Dann sehen wir <code>[a-z_-]+</code>. Hier dürfen (Klein)buchstaben von a-z vorkommen, sowie Unterstriche und Bindestriche. Ohne das Plus am Ende würde aber nur ein Zeichen erkannt werden. Das Plus bedeutet, dass der vorherige Ausdruck einmal oder öfter vorkommen darf.</p>
+<p>Dann kommt noch einmal ein Punkt und dann die Top-Level-Domain, deren Buchstaben, hier vereinfacht, beliebig oft vorkommen dürfen.</p>
+<p>Und so haben wir einen regulären Ausdruck erstellt, denn wir jetzt auch zum Beispiel mit Hilfe von HTML5 einsetzen können, und zwar so:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>&lt;<span style="color:#000">input</span> <span style="color:#000">type</span>=<span style="color:#5a2">&#34;text&#34;</span> <span style="color:#000">pattern</span>=<span style="color:#5a2">&#34;www\.[a-z_-]+\.[a-z]+&#34;</span> /&gt;
+</span></span></code></pre></div><p>Um auch etwas davon zu merken kann man auch eine CSS-Regel einführen:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>&lt;<span style="color:#000">style</span>&gt;
+</span></span><span style="display:flex;"><span>	:<span style="color:#000">valid</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#00f">background-color</span>: <span style="color:#00f">lime</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#000">style</span>&gt;
+</span></span></code></pre></div><h2 id="beispiel-2">Beispiel 2</h2>
+<p>Ein weiteres Beispiel wären zum Beispiel Telfonnummern, die in ein Formular eingegeben werden. So eine Nummer könnte zum Beispiel so aussehen:</p>
+<p><code>07612/1434</code> oder <code>046121264</code> oder auch so: <code>07623 1134</code></p>
+<p>Beginnen wir einfach einmal mit der Null: Wir können sie genauso lassen, da sie ja immer vorkommt.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>0
+</span></span></code></pre></div><p>Als nächstes haben wir vier Zahlen. Dass sie genau vier Mal vorkommen sollen drückt man mit <code>{4}</code> aus:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>[0-9]{4}
+</span></span></code></pre></div><p>Dann kommt ein Schrägstrich, oder nichts oder ein Leerzeichen. In der Klammer steht ein oder-Ausdruck: Entweder ein Schrägstrich oder ein Leerzeichen. Dahinter steht ein Fragezeichen, was bedeutet, dass der vorherige Ausdruck (die Klammer) nicht vorkommen muss.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(/| )?
+</span></span></code></pre></div><p>Dannach haben wir noch einmal vier Zahlen:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>[0-9]{4}
+</span></span></code></pre></div><p>Und so haben wir:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>0[0-9]{4}(/| )?[0-9]{4}
+</span></span></code></pre></div><h2 id="links">Links</h2>
+<p>Weitere Informationen und weitere Zeichen bei <a href="http://de.wikipedia.org/wiki/Regul%C3%A4rer_Ausdruck#Syntax">Wikipedia</a></p>
+
+    </div>
+</article>
+
+            </main>
+        </div>
+    </body>
+</html>

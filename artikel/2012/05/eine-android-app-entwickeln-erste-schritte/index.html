@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="de"><head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="Johannes Mittendorfer, Mittendorfer, Blog, Informatik, Entwicklung, Security">
+    <meta name="description" content="Der Blog von Johannes Mittendorfer über Software, IT-Security und das Internet">
+    <meta name="author" content="Johannes Mittendorfer">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <meta name="application-name" content="Johannes Mittendorfer"/>
+    <meta name="msapplication-TileColor" content="#f9fbf4"/>
+    <meta http-equiv="imagetoolbar" content="false" />
+    <meta property="fb:admins" content="100000063853580" />
+    <meta name="Content-Language" content="de" />
+    
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+    <link rel="canoncial" href="https://blog.johannes-mittendorfer.com/">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+    
+    
+    <link rel="stylesheet" href="https://blog.johannes-mittendorfer.com/styles.min.f93f4e51d7d393b46e7874802b06d820d7f22d0b5b68cecd9c431a0bb299bb42.css">
+    
+    
+    
+    <title>Johannes Mittendorfer | Eine Android-App entwickeln - Erste Schritte</title>
+    
+</head><body itemscope itemtype="http://schema.org/WebSite">
+<nav id="bar">
+    <section class="container">
+        <a class="title" itemprop="url" href="/">
+            <h1 itemprop="name">Johannes Mittendorfer</h1>
+        </a>
+        <ul>
+            
+            <li>
+                <a href="/">
+                    Start
+                </a>
+            </li>
+            
+            <li>
+                <a href="/ueber-mich">
+                    Über
+                </a>
+            </li>
+            
+            <li>
+                <a href="/astronomie">
+                    Astronomie
+                </a>
+            </li>
+            
+            <li>
+                <a href="/impressum">
+                    Impressum
+                </a>
+            </li>
+            
+        </ul>
+    </section>
+</nav>
+        <div class="container">
+            <main>
+<article itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        <div class="meta">
+            <span class="category">Entwicklung</span> &ndash; 
+            <time itemprop="datePublished" datetime="2012-05-09 00:00:00 &#43;0000 UTC" class="date">09.05.2012</time> &ndash;
+            <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+        </div>
+        <h1 itemprop="headline">Eine Android-App entwickeln - Erste Schritte</h1>
+
+        
+        <div class="warning">
+            Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+        </div>
+        
+    </header>
+    <div itemprop="articleBody">
+        <p>Eine Smartphone-App ist meist ein sehr umfangreiches Projekt, das sich über lange Zeit hinziehen kann und eine große Menge an Zeit für die Entwicklung beansprucht. Genau das kann Ihnen dieser Artikel auch nicht abnehmen, aber ich möchte beim Einstieg in die Entwicklungsumgebung und die Erstellung einer ersten, einfachen Anwendung helfen.</p>
+<p><img src="/img/picture_82.jpeg" alt="Android Logo"></p>
+<p>Von Google selbst wird die Verwendung der Eclipse-IDE empfohlen. In Verbindung dem Android-SDK vom Suchmaschinenriesen selbst ist damit die nahtlose Entwicklung innerhalb der IDE von der ersten Programmzeile bis zur fertig kompillierten App möglich.</p>
+<p>Zur Programmierung wird Java verwendet.</p>
+<h2 id="die-ide">Die IDE</h2>
+<p>Zur Installation von Eclipse lädt man sich zu Beginn die <a href="http://www.eclipse.org/downloads">aktuelle Version</a> von der offiziellen Webseite herunter. Ich empfehle für den vorliegenden Zweck die Verwendung von „Eclipse Classic“. Nach dem Download entpackt man einfach die zip-Datei und die Entwicklungsumgebung darin in einem beliebigen Ordner starten.</p>
+<h2 id="android-sdk">Android-SDK</h2>
+<p>Das SDK-Paket erhält man <a href="http://developer.android.com/sdk/index.html">hier</a>. Darin enthalten ist der Android-Emulator, der es ermöglicht die Apps auf dem Computer zu testen, auch wenn man kein Android-Smartphone besitzt, und die Komponenten zur Erstellung am Ende der Entwicklung. Diese Komponente wird durch einen Assistenen installiert.</p>
+<p><img src="/img/picture_83.png" alt="Device Manager"></p>
+<p>An dieser Stelle empfehle ich bereits eine neue AVM (Android Virtual Machine) zu erstellen. Dazu muss vorher die entsprechende Version von Android heruntergeladen werden.</p>
+<h2 id="adt-plugin">ADT-Plugin</h2>
+<p>Um das Android-SDK mit der Eclipse-IDE zu verbinden ist es nötig das ADT-Plugin von Google zu installieren. Dazu startet man die Entwicklungsumgebung mit <em>eclipse.exe</em>. Wenn das Arbeitsverzeichnis festgelegt wurde, darin wird der Code und alle Ressourcen gespeichert, geht man auf <em>Help &gt; Install New Software&hellip;</em>. Über <em>Add</em> kann man eine neue Quelle für Pakete hinzufügen. Geben Sie dem neuen Eintrag einen beliebigen Namen und tragen Sie bei der Adresse ein:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>https://dl-ssl.google.com/android/eclipse/
+</span></span></code></pre></div><p>Wählen Sie im erscheinden Baum <em>Developer Tool</em> und installieren Sie das Paket.</p>
+<p><img src="/img/picture_84.png" alt="Software Quellen"></p>
+<p>Nach einem Neustart von Eclipse sollte das Plugin fertig installiert sein, jedoch muss unter <em>Window &gt; Preferences</em> unter <em>Android</em> noch der Pfad zum Android-SDK angegeben werden.</p>
+<h2 id="projekt-erstellen">Projekt erstellen</h2>
+<p>Um eine neue Android-App zu erstellen wählen Sie <em>File &gt; New &gt; Project&hellip;</em>. Dort wählen Sie im Ordner <em>Android</em> den Punkt <em>Android Project</em>.</p>
+<p><img src="/img/picture_85.png" alt="Projekttyp"></p>
+<p>Im folgenden Fenster geben Sie dem Projekt einen Namen, im nächsten geben Sie die Zielversion von Android an.</p>
+<p><img src="/img/picture_86.png" alt="Neues Projekt"></p>
+<p><img src="/img/picture_87.png" alt="Build Target"></p>
+<p>Im letzten Fenster müssen Sie dem Paket noch einen Namen geben, eine <em>Activity</em> anlegen und auswählen in welcher Version von Android Ihr Programm unterstützt wird.</p>
+<p><img src="/img/picture_88.png" alt="App Infos"></p>
+<p>Der Paketname sollte eindeutig sein und irgendwie auf Sie und Ihre App hinweisen. Es darf auch ruhig Ihre echte Domain beeinhalten. Die <em>Activity</em> ist sozusagen die Hauptfunktion bzw. der Bildschirm, der bei Start der App aufgerufen wird.</p>
+<p>Klicken Sie auf <em>Finish</em>, um die App einzurichten. Jetzt müsste alles für die Programmierung bereitstehen.</p>
+<h2 id="allgemeine-einstellungen">Allgemeine Einstellungen</h2>
+<p>Öffnen Sie den Baum auf der linken Seite und doppelklicken Sie auf <em>res/AndroidManifest.xml</em>. In dieser Datei werden die Haupteinstellungen der App angegeben, wie der angezeigte Namen, das Icon und die Rechte, die für die Benutzung erforderlich sind. Texteinträge sollten jedoch in der Datei <em>res/values/strings.xml</em> angegeben und hierhin verlinkt werden. Alle Einstellungen erreichen Sie über Tabs am unteren Rand.</p>
+<p><img src="/img/picture_89.png" alt="Manifest"></p>
+<h2 id="layout">Layout</h2>
+<p>Öffnen Sie durch einen Doppelklick <em>res/layout/main.xml</em>. Daraufhin erschient der Startbildschirm der App, der nun durch Daraufziehen mit Bedienelementen versehen werden kann. Sie können hier Textfelder, Knöpfe, Bilder usw. hinzufügen. Zusätzlich kann das Layout auch über die Bearbeitung der XML-Datei bearbeitet werden.</p>
+<p><img src="/img/picture_90.png" alt="User Interface"></p>
+<h2 id="programmierung">Programmierung</h2>
+<p>Endlich kommen wir zum Hauptteil: Dem eigentlichen Programmieren. Die weitere Vorgehensweise hängt natürlich sehr stark davon ab, welche App sie erstellen wollen und so gibt es keine „Patentlösung“.</p>
+<p>Um den Quellcode zu öffnen, doppelklicken Sie auf <em>src/&lt;Paketname&gt;/&lt;Activity&gt;.java</em>. Vor Ihnen sollte nun etwa folgendes zu sehen sein:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#00f">package</span> <span style="color:#000">test.abc</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">import</span> <span style="color:#000">android.app.Activity</span>;
+</span></span><span style="display:flex;"><span><span style="color:#00f">import</span> <span style="color:#000">android.os.Bundle</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">public</span> <span style="color:#00f">class</span> <span style="color:#000">AbcActivity</span> <span style="color:#00f">extends</span> <span style="color:#000">Activity</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#888;font-style:italic">/** Called when the activity is first created. */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#00f">public</span> <span style="color:#00f">void</span> <span style="color:#000">onCreate</span>(<span style="color:#000">Bundle</span> <span style="color:#000">savedInstanceState</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#00f">super</span>.<span style="color:#000">onCreate</span>(<span style="color:#000">savedInstanceState</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#000">setContentView</span>(<span style="color:#000">R</span>.<span style="color:#000">layout</span>.<span style="color:#000">main</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Ihre Aktivität erweitert also die Klasse <em>Activity</em> und ruft beim Starten der App durch</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#000">setContentView</span>(<span style="color:#000">R</span>.<span style="color:#000">layout</span>.<span style="color:#000">main</span>);
+</span></span></code></pre></div><p>den Startbildschirm auf.</p>
+<p>Um auf Benutzereingaben reagieren zu können sind natürlich noch Event-Handler nötig.</p>
+<p>Button submit = (Button) findViewById(R.id.button_login);</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#000">submit</span>.<span style="color:#000">setOnClickListener</span>(<span style="color:#00f">new</span> <span style="color:#000">OnClickListener</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#00f">public</span> <span style="color:#00f">void</span> <span style="color:#000">onClick</span>(<span style="color:#000">View</span> <span style="color:#000">v</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#888;font-style:italic">// do the magic
+</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>	}
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>Über die Methode <em>findViewById</em> können Sie Elemente des Layouts, die Sie vorher im Layout-Editor anlegen müssen, auswählen und in eine Variable speichern. Durch diese Variable kann ein EventListener, dieser hier reagiert auf Klicks, hinzugefügt werden.</p>
+<h2 id="testen-der-app">Testen der App</h2>
+<p>Jetzt ist es an der Zeit die App auch einmal „live“ auszuprobieren. Klicken Sie dazu auf den grünen Knopf oberhalb des Codes:</p>
+<p><img src="/img/picture_91.png" alt="Starten"></p>
+<p>Nun sollte der Android-Emulator starten. Bitte haben Sie dazu ein wenig Geduld, denn gerade beim ersten Start kann dieser Vorgang einige Minuten dauern. Nach einiger Zeit sollte jedoch der Lockscreen eines Android-Smartphones erscheinen und zum Entsperren auffordern. Unter den Programmen sollte nun Ihre App auftauchen und sich testen lassen.</p>
+<p><img src="/img/picture_92.png" alt="Test"></p>
+<h2 id="erstellen-einer-apk-datei">Erstellen einer .apk-Datei</h2>
+<p>Wenn Ihre App fertig ist, oder Sie sie einfach einmal auf einem echten Gerät testen wollen, sollte sie in eine apk-Datei exportiert werden. Klicken Sie dazu mit der rechten Maustaste auf Ihr Projekt und wählen Sie <em>Android Tools &gt; Export Unsigned Application Package</em>. Nun können Sie die Datei speichern und auf einem Gerät ausführen.</p>
+<h2 id="rechte">Rechte</h2>
+<p>Wenn Ihre App beispielsweise auf das Internet zugreifen will, müssen Sie vorher die Rechte dazu anfordern, die zudem bei der Installation vom Benutzer bestätigt werden müssen. Dies erfolgt in der <em>AndroidManifest</em>-Datei im Tab <em>Permissions</em>. Für den Internetzugriff ist zum Beispiel der <em>Uses Permission</em>-Eintrag <code>android.permission.INTERNET</code> erforderlich.</p>
+
+    </div>
+</article>
+
+            </main>
+        </div>
+    </body>
+</html>

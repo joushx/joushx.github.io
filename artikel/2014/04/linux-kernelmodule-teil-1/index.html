@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="de"><head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="Johannes Mittendorfer, Mittendorfer, Blog, Informatik, Entwicklung, Security">
+    <meta name="description" content="Der Blog von Johannes Mittendorfer über Software, IT-Security und das Internet">
+    <meta name="author" content="Johannes Mittendorfer">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <meta name="application-name" content="Johannes Mittendorfer"/>
+    <meta name="msapplication-TileColor" content="#f9fbf4"/>
+    <meta http-equiv="imagetoolbar" content="false" />
+    <meta property="fb:admins" content="100000063853580" />
+    <meta name="Content-Language" content="de" />
+    
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+    <link rel="canoncial" href="https://blog.johannes-mittendorfer.com/">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+    
+    
+    <link rel="stylesheet" href="https://blog.johannes-mittendorfer.com/styles.min.f93f4e51d7d393b46e7874802b06d820d7f22d0b5b68cecd9c431a0bb299bb42.css">
+    
+    
+    
+    <title>Johannes Mittendorfer | Linux-Kernelmodule - Teil 1</title>
+    
+</head><body itemscope itemtype="http://schema.org/WebSite">
+<nav id="bar">
+    <section class="container">
+        <a class="title" itemprop="url" href="/">
+            <h1 itemprop="name">Johannes Mittendorfer</h1>
+        </a>
+        <ul>
+            
+            <li>
+                <a href="/">
+                    Start
+                </a>
+            </li>
+            
+            <li>
+                <a href="/ueber-mich">
+                    Über
+                </a>
+            </li>
+            
+            <li>
+                <a href="/astronomie">
+                    Astronomie
+                </a>
+            </li>
+            
+            <li>
+                <a href="/impressum">
+                    Impressum
+                </a>
+            </li>
+            
+        </ul>
+    </section>
+</nav>
+        <div class="container">
+            <main>
+<article itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        <div class="meta">
+            <span class="category">Entwicklung</span> &ndash; 
+            <time itemprop="datePublished" datetime="2014-04-22 00:00:00 &#43;0000 UTC" class="date">22.04.2014</time> &ndash;
+            <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+        </div>
+        <h1 itemprop="headline">Linux-Kernelmodule - Teil 1</h1>
+
+        
+        <div class="warning">
+            Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+        </div>
+        
+    </header>
+    <div itemprop="articleBody">
+        <p>Auch wenn es sich bei Linux um ein monolithisches Betriebssystem handelt, sind viele Teile davon in Modulen aufgebaut. Diese Kernelmodule können zur Laufzeit geladen und auch wieder entladen werden. Wie man so ein Modul entwickelt und zum Laufen bringt möchte ich hier kurz zeigen.</p>
+<h2 id="c-code">C-Code</h2>
+<p>Linux wird in C entwickelt und darum werden auch Kernel-Module in C geschrieben. Sie bestehen im Grunde aus zwei Funktionen: Eine, die beim Laden ausgeführt wird und eine, die beim Entladen ausgeführt wird.</p>
+<p>Beginnen wir mit einem einfachen Hello-World-Beispiel:</p>
+<p>Zuerst brauchen wir eine Bibliothek, die wir brauchen um ein Modul laden zu können:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#888;font-style:italic">#include</span> <span style="color:#888;font-style:italic">&lt;linux/module.h&gt;</span><span style="color:#888;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">#include</span> <span style="color:#888;font-style:italic">&lt;linux/init.h&gt;</span><span style="color:#888;font-style:italic">
+</span></span></span></code></pre></div><p>Die Header-Datei <code>module.h</code> wird von jedem Modul benötigt und die Datei <code>init.h</code> stellt Makros zur Verfügung, die wir brauchen um die Funktionen zu registrieren, was wir jetzt auch machen:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#888;font-style:italic">#include</span> <span style="color:#888;font-style:italic">&lt;linux/module.h&gt;</span><span style="color:#888;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">#include</span> <span style="color:#888;font-style:italic">&lt;linux/init.h&gt;</span><span style="color:#888;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">// Methode, die beim Laden ausgeführt wird
+</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#00f">static</span> <span style="color:#00f">int</span> <span style="color:#000">__init</span> <span style="color:#000">hello_init</span>(<span style="color:#00f">void</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#00f">return</span> <span style="color:#3af">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">// Methode, die beim Entladen ausgeführt wird
+</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#00f">static</span> <span style="color:#00f">void</span> <span style="color:#000">__exit</span> <span style="color:#000">hello_exit</span>(<span style="color:#00f">void</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">// Registrieren der Methoden
+</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#000">module_init</span>(<span style="color:#000">hello_init</span>);
+</span></span><span style="display:flex;"><span><span style="color:#000">module_exit</span>(<span style="color:#000">hello_exit</span>);
+</span></span></code></pre></div><p>An dieser Stellen wurden zwei Funktionen eingebaut, die jeweils entweder beim Laden oder Entladen ausgeführt werden. Mit <code>module_init</code> und <code>module_exit</code> wird dem Betriebssystem mitgeteilt, welche es sind.</p>
+<p>Das alles sieht zwar nett aus, tut aber noch nichts. Darum soll das Modul das berühmte &ldquo;Hello world&rdquo; ins syslog schreiben:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#888;font-style:italic">#include</span> <span style="color:#888;font-style:italic">&lt;linux/module.h&gt;</span><span style="color:#888;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">#include</span> <span style="color:#888;font-style:italic">&lt;linux/init.h&gt;</span><span style="color:#888;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">#include</span> <span style="color:#888;font-style:italic">&lt;linux/kernel.h&gt;</span><span style="color:#888;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">// Methode, die beim Laden ausgeführt wird
+</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#00f">static</span> <span style="color:#00f">int</span> <span style="color:#000">__init</span> <span style="color:#000">hello_init</span>(<span style="color:#00f">void</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#000">printk</span>(<span style="color:#000">KERN_DEBUG</span>  <span style="color:#5a2">&#34;Hello World!&#34;</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#00f">return</span> <span style="color:#3af">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">// Methode, die beim Entladen ausgeführt wird
+</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#00f">static</span> <span style="color:#00f">void</span> <span style="color:#000">__exit</span> <span style="color:#000">hello_exit</span>(<span style="color:#00f">void</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#000">printk</span>(<span style="color:#000">KERN_DEBUG</span>  <span style="color:#5a2">&#34;Bye World!&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">// Registrieren der Methoden
+</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#000">module_init</span>(<span style="color:#000">hello_init</span>);
+</span></span><span style="display:flex;"><span><span style="color:#000">module_exit</span>(<span style="color:#000">hello_exit</span>);
+</span></span></code></pre></div><p>Mit <code>printk(&lt;loglevel&gt;,&lt;text&gt;)</code> lässt sich das bewerkstelligen. Um das Loglevel angeben zu können, benötigen wir aber noch zusätzlich die Datei <code>kernel.h</code>.</p>
+<p>Wenn man das Module so ausführt wird Linux übrigens sofort über die fehlende Lizenzangabe jammern. An dieser Stelle sollte man aber auch gleich noch Informationen über den Autor angeben:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#888;font-style:italic">#include</span> <span style="color:#888;font-style:italic">&lt;linux/module.h&gt;</span><span style="color:#888;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">#include</span> <span style="color:#888;font-style:italic">&lt;linux/init.h&gt;</span><span style="color:#888;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">#include</span> <span style="color:#888;font-style:italic">&lt;linux/kernel.h&gt;</span><span style="color:#888;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">#define DRIVER_AUTHOR &#34;Johannes Mittendorfer &lt;...@... .com&gt;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">#define DRIVER_DESC &#34;Hello world&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">// Methode, die beim Laden ausgeführt wird
+</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#00f">static</span> <span style="color:#00f">int</span> <span style="color:#000">__init</span> <span style="color:#000">hello_init</span>(<span style="color:#00f">void</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#000">printk</span>(<span style="color:#000">KERN_DEBUG</span>  <span style="color:#5a2">&#34;Hello World!&#34;</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#00f">return</span> <span style="color:#3af">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">// Methode, die beim Entladen ausgeführt wird
+</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#00f">static</span> <span style="color:#00f">void</span> <span style="color:#000">__exit</span> <span style="color:#000">hello_exit</span>(<span style="color:#00f">void</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#000">printk</span>(<span style="color:#000">KERN_DEBUG</span>  <span style="color:#5a2">&#34;Bye World!&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">// Registrieren der Methoden
+</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#000">module_init</span>(<span style="color:#000">hello_init</span>);
+</span></span><span style="display:flex;"><span><span style="color:#000">module_exit</span>(<span style="color:#000">hello_exit</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000">MODULE_LICENSE</span>(<span style="color:#5a2">&#34;GPL&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#000">MODULE_AUTHOR</span>(<span style="color:#000">DRIVER_AUTHOR</span>);
+</span></span><span style="display:flex;"><span><span style="color:#000">MODULE_DESCRIPTION</span>(<span style="color:#000">DRIVER_DESC</span>);
+</span></span></code></pre></div><p>In diesem Beispiel habe ich den Autor und den Titel oben definiert und unterhalb samt Lizenz, in diesem Fall GPL, angegeben.</p>
+<p>Jetzt kann man das Modul ausführen. Aber wie eigentlich? Dazu braucht man ein&hellip;</p>
+<h2 id="makefile">Makefile</h2>
+<p>Das Makefile gibt an, wie der Code kompiliert werden soll. Alles was man dazu braucht ist eine Datei namens <code>Makefile</code> mit folgendem Inhalt:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>obj-m += helloworld.o
+</span></span></code></pre></div><p>Wenn man jetzt im Verzeichnis <code>make</code> ausführt, dann sollte in etwa so etwas erscheinen:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>make -C /lib/modules/3.11.0-19-generic/build M=/home/johannes/Schreibtisch/kernel modules
+</span></span><span style="display:flex;"><span>make[1]: Betrete Verzeichnis &#39;/usr/src/linux-headers-3.11.0-19-generic&#39;
+</span></span><span style="display:flex;"><span>  CC [M]  /home/johannes/Schreibtisch/kernel/helloworld.o
+</span></span><span style="display:flex;"><span>  Building modules, stage 2.
+</span></span><span style="display:flex;"><span>  MODPOST 1 modules
+</span></span><span style="display:flex;"><span>  CC      /home/johannes/Schreibtisch/kernel/helloworld.mod.o
+</span></span><span style="display:flex;"><span>  LD [M]  /home/johannes/Schreibtisch/kernel/helloworld.ko
+</span></span><span style="display:flex;"><span>make[1]: Verlasse Verzeichnis &#39;/usr/src/linux-headers-3.11.0-19-generic&#39;
+</span></span></code></pre></div><p>Außerdem sollte im Verzeichnis eine Datei namens <code>helloworld.ko</code> entstanden sein. Das ist das fertige Modul. Das  muss aber jetzt noch an einen vorgesehenen Platz.</p>
+<h2 id="installation">Installation</h2>
+<p>Die ko-Datei muss unterhalb des Ordners <code>/lib/modules/&lt;kernel-version&gt;/kernel/</code> kopiert werden. Die Kernelversion lässt sich durch den Befehl <code>uname -r</code> herausfinden. Um die Module neu einzulesen braucht es dann den Befehl <code>sudo depmod -a</code> und schließlich zum Laden des Modules <code>modprobe helloworld</code>.</p>
+<p>Wenn alles geklappt hat, sollte man jetzt im Syslog ein &ldquo;Hello world&rdquo; sehen!</p>
+<p>(Das sieht man zum Beispiel durch <code>tail -f /var/log/syslog</code>)</p>
+<p>Teil 2 kommt dann irgendwann, wenn ich Zeit habe. ;)</p>
+
+    </div>
+</article>
+
+            </main>
+        </div>
+    </body>
+</html>

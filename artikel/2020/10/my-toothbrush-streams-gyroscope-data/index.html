@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="de"><head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="Johannes Mittendorfer, Mittendorfer, Blog, Informatik, Entwicklung, Security">
+    <meta name="description" content="Der Blog von Johannes Mittendorfer über Software, IT-Security und das Internet">
+    <meta name="author" content="Johannes Mittendorfer">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <meta name="application-name" content="Johannes Mittendorfer"/>
+    <meta name="msapplication-TileColor" content="#f9fbf4"/>
+    <meta http-equiv="imagetoolbar" content="false" />
+    <meta property="fb:admins" content="100000063853580" />
+    <meta name="Content-Language" content="de" />
+    
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+    <link rel="canoncial" href="https://blog.johannes-mittendorfer.com/">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+    
+    
+    <link rel="stylesheet" href="https://blog.johannes-mittendorfer.com/styles.min.f93f4e51d7d393b46e7874802b06d820d7f22d0b5b68cecd9c431a0bb299bb42.css">
+    
+    
+    
+    <title>Johannes Mittendorfer | My toothbrush streams gyroscope data</title>
+    
+</head><body itemscope itemtype="http://schema.org/WebSite">
+<nav id="bar">
+    <section class="container">
+        <a class="title" itemprop="url" href="/">
+            <h1 itemprop="name">Johannes Mittendorfer</h1>
+        </a>
+        <ul>
+            
+            <li>
+                <a href="/">
+                    Start
+                </a>
+            </li>
+            
+            <li>
+                <a href="/ueber-mich">
+                    Über
+                </a>
+            </li>
+            
+            <li>
+                <a href="/astronomie">
+                    Astronomie
+                </a>
+            </li>
+            
+            <li>
+                <a href="/impressum">
+                    Impressum
+                </a>
+            </li>
+            
+        </ul>
+    </section>
+</nav>
+        <div class="container">
+            <main>
+<article itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        <div class="meta">
+            <span class="category">Anderes</span> &ndash; 
+            <time itemprop="datePublished" datetime="2020-10-17 00:00:00 &#43;0000 UTC" class="date">17.10.2020</time> &ndash;
+            <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+        </div>
+        <h1 itemprop="headline">My toothbrush streams gyroscope data</h1>
+
+        
+        <div class="warning">
+            Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+        </div>
+        
+    </header>
+    <div itemprop="articleBody">
+        <p>Since a few month I own an electrical toothbrush from Phillips called <a href="https://www.google.com/search?q=Sonicare+HX992B">Sonicare HX992B</a>. It connects to <a href="https://play.google.com/store/apps/details?id=com.philips.cdp.ohc.tuscany" title="App">an mobile App</a> using Bluetooth that tells you how well you brushed your teeth, shows the orientation in real-time, and also notifies you when to change the brush for a new one.</p>
+<p><img src="/img/sonicare-image.jpeg" alt="Phillips Sonicare"></p>
+<p>I was curious how this exactly works. Since the application uses Bluetooth Low Energy (BLE), I used the <a href="https://play.google.com/store/apps/details?id=no.nordicsemi.android.mcp">nRF Connect</a> app for Android to get a list of advertised services.</p>
+<p><img src="/img/whatsapp-image-2020-10-09-at-19-34-24.jpeg" alt="Screenshot of nRF connect" title="Screenshot of nRF connect"></p>
+<p>Now I had a list of 12 BLE services of which only four are <a href="https://www.bluetooth.com/de/specifications/gatt/" title="List of common services">standard services described on bluetooth.com</a>. In addition to well-known services like Generic Access, Generic Attribute, Device Information and Battery Service, also eight custom services exist, that were created by the manufacturer. Every one of the first seven service UUIDs starts with <code>477ea600-a260-11e4-ae37-0002a5d5000</code> and ends with a number from 1 to 8 with number 3 missing. An additional eight service has a completely different prefix than the others.</p>
+<table>
+<thead>
+<tr>
+<th>UUID</th>
+<th>Service</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0x1800</td>
+<td>Generic Access</td>
+</tr>
+<tr>
+<td>0x1801</td>
+<td>Generic Attribute</td>
+</tr>
+<tr>
+<td>0x180a</td>
+<td>Device Information</td>
+</tr>
+<tr>
+<td>0x180f</td>
+<td>Battery Service</td>
+</tr>
+<tr>
+<td>477ea600-a260-11e4-ae37-0002a5d50001</td>
+<td>Unknown Service 1</td>
+</tr>
+<tr>
+<td>477ea600-a260-11e4-ae37-0002a5d50002</td>
+<td>Unknown Service 2</td>
+</tr>
+<tr>
+<td>477ea600-a260-11e4-ae37-0002a5d50004</td>
+<td>Unknown Service 4</td>
+</tr>
+<tr>
+<td>477ea600-a260-11e4-ae37-0002a5d50005</td>
+<td>Unknown Service 5</td>
+</tr>
+<tr>
+<td>477ea600-a260-11e4-ae37-0002a5d50006</td>
+<td>Unknown Service 6</td>
+</tr>
+<tr>
+<td>477ea600-a260-11e4-ae37-0002a5d50007</td>
+<td>Unknown Service 7</td>
+</tr>
+<tr>
+<td>477ea600-a260-11e4-ae37-0002a5d50008</td>
+<td>Unknown Service 8</td>
+</tr>
+<tr>
+<td>a651fff1-4074-4131-bce9-56d4261bc7b1</td>
+<td>Unknown Other Service</td>
+</tr>
+</tbody>
+</table>
+<p>By switching the device on and off, changing the strength and mode and also by changing the brush back and forth, I was able to identify some of the characteristics of the six services. By reverse engineering the code of the Android app using <a href="https://github.com/skylot/jadx">jadx</a> I found information about the session storage and many other things.</p>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Suffix</th>
+<th>Actions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Handle (1)</td>
+<td>4010</td>
+<td>RWN</td>
+<td>Handle State: Off(0), Standby(1), Run(2),Charge(3), Shutdown(4) Validate(6), LightsOut(7)</td>
+</tr>
+<tr>
+<td></td>
+<td>4020</td>
+<td>R&ndash;</td>
+<td>?</td>
+</tr>
+<tr>
+<td></td>
+<td>4022</td>
+<td>R&ndash;</td>
+<td>?</td>
+</tr>
+<tr>
+<td></td>
+<td>4030</td>
+<td>R-N</td>
+<td>?</td>
+</tr>
+<tr>
+<td></td>
+<td>4040</td>
+<td>RW-</td>
+<td>?</td>
+</tr>
+<tr>
+<td></td>
+<td>4050</td>
+<td>RW-</td>
+<td>Current Time (Unix Timestamp)</td>
+</tr>
+<tr>
+<td>Brushing (2)</td>
+<td>4070</td>
+<td>R-N</td>
+<td>Current session id</td>
+</tr>
+<tr>
+<td></td>
+<td>4080</td>
+<td>R&ndash;</td>
+<td>Mode (0x0=Clean, 0x2=White+, &hellip;)</td>
+</tr>
+<tr>
+<td></td>
+<td>4082</td>
+<td>RWN</td>
+<td>State (0=Ready, 1=Active, 2=Resume)</td>
+</tr>
+<tr>
+<td></td>
+<td>4090</td>
+<td>R-N</td>
+<td>Active time in seconds</td>
+</tr>
+<tr>
+<td></td>
+<td>4091</td>
+<td>R-N</td>
+<td>Mode 2 (0x78=Clean, 0xa0=White+, 0xc8=Gum Health, 0xb4=Deep Clean+)</td>
+</tr>
+<tr>
+<td></td>
+<td>40a0</td>
+<td>R-N</td>
+<td>?</td>
+</tr>
+<tr>
+<td></td>
+<td>40b0</td>
+<td>R-N</td>
+<td>Strength (0,1,2)</td>
+</tr>
+<tr>
+<td></td>
+<td>40c0</td>
+<td>R-N</td>
+<td>?</td>
+</tr>
+<tr>
+<td>Session Storage (4)</td>
+<td>40d0</td>
+<td>R-N</td>
+<td>Last session id (e.g. 0x2c05 = 1324)</td>
+</tr>
+<tr>
+<td></td>
+<td>40d2</td>
+<td>R&ndash;</td>
+<td>?</td>
+</tr>
+<tr>
+<td></td>
+<td>40d5</td>
+<td>RW-</td>
+<td>Session Type</td>
+</tr>
+<tr>
+<td></td>
+<td>40e0</td>
+<td>-WN</td>
+<td>Request session (write session id, write 0x00 to 4110, get notification with data here and at 4100)</td>
+</tr>
+<tr>
+<td></td>
+<td>4100</td>
+<td>&ndash;N</td>
+<td>?</td>
+</tr>
+<tr>
+<td></td>
+<td>4110</td>
+<td>-WN</td>
+<td>Session Access Control Point</td>
+</tr>
+<tr>
+<td>Orientation (5)</td>
+<td>4120</td>
+<td>RW-</td>
+<td>?</td>
+</tr>
+<tr>
+<td></td>
+<td>4130</td>
+<td>&ndash;N</td>
+<td>Gyroscope Data</td>
+</tr>
+<tr>
+<td></td>
+<td>4140</td>
+<td>-WN</td>
+<td>?</td>
+</tr>
+<tr>
+<td>Brush (6)</td>
+<td>4210</td>
+<td>R&ndash;</td>
+<td>NFC Tag Version</td>
+</tr>
+<tr>
+<td></td>
+<td>4220</td>
+<td>R&ndash;</td>
+<td>? INT8</td>
+</tr>
+<tr>
+<td></td>
+<td>4230</td>
+<td>R-N</td>
+<td>Brush Serial</td>
+</tr>
+<tr>
+<td></td>
+<td>4240</td>
+<td>R&ndash;</td>
+<td>Brush Manufacturing Date?</td>
+</tr>
+<tr>
+<td></td>
+<td>4250</td>
+<td>R&ndash;</td>
+<td>?</td>
+</tr>
+<tr>
+<td></td>
+<td>4254</td>
+<td>R&ndash;</td>
+<td>?</td>
+</tr>
+<tr>
+<td></td>
+<td>4260</td>
+<td>R&ndash;</td>
+<td>?</td>
+</tr>
+<tr>
+<td></td>
+<td>4270</td>
+<td>R&ndash;</td>
+<td>?</td>
+</tr>
+<tr>
+<td></td>
+<td>4280</td>
+<td>R&ndash;</td>
+<td>Brush Lifetime (Seconds)</td>
+</tr>
+<tr>
+<td></td>
+<td>4290</td>
+<td>R&ndash;</td>
+<td>Brush Usage (Seconds)</td>
+</tr>
+<tr>
+<td></td>
+<td>42a0</td>
+<td>R&ndash;</td>
+<td>Brush Type (None, Adaptive Clean, Adaptive White, Tongue Care, Adaptive Gums)</td>
+</tr>
+<tr>
+<td></td>
+<td>42a2</td>
+<td>R&ndash;</td>
+<td>?</td>
+</tr>
+<tr>
+<td></td>
+<td>42a4</td>
+<td>R&ndash;</td>
+<td>?</td>
+</tr>
+<tr>
+<td></td>
+<td>42a6</td>
+<td>RWN</td>
+<td>?</td>
+</tr>
+<tr>
+<td></td>
+<td>42b0</td>
+<td>R&ndash;</td>
+<td>NFC Payload (always phillips.com)</td>
+</tr>
+<tr>
+<td></td>
+<td>42c0</td>
+<td>R&ndash;</td>
+<td>? INT16</td>
+</tr>
+<tr>
+<td>7</td>
+<td>4310</td>
+<td>R&ndash;</td>
+<td>? INT16</td>
+</tr>
+<tr>
+<td></td>
+<td>4320</td>
+<td>R&ndash;</td>
+<td>? INT16</td>
+</tr>
+<tr>
+<td></td>
+<td>4330</td>
+<td>R&ndash;</td>
+<td>?</td>
+</tr>
+<tr>
+<td></td>
+<td>4360</td>
+<td>R&ndash;</td>
+<td>? (Only uses second byte)</td>
+</tr>
+<tr>
+<td>8</td>
+<td>4410</td>
+<td>RW-</td>
+<td>? INT16</td>
+</tr>
+<tr>
+<td></td>
+<td>4420</td>
+<td>RW-</td>
+<td>? INT32</td>
+</tr>
+</tbody>
+</table>
+<p>According to the application sources, the last unknown service is called &ldquo;Moonshine Streaming&rdquo; and is used to update the firmware. I agreed with myself to not touch this one, since I could damage the firmware and would need to brush my teeth by hand again.</p>
+<p>Since I could see a very course orientation displayed in the app during a cleaning session, I expected orientation data somewhere in the characteristics. I found them in the service <code>5</code>. Once you enable notifications for the <code>4130</code> service, you get a data stream to byte arrays. It turns out, these are indeed the values of the gyroscope.</p>
+<p><img src="/img/sonicare-gyro.png" alt="Gyroscrope" title="Gyroscope"></p>
+<p>I created a python library to interface with the toothbrush in Python. Feel free to experiment, find the meaning of the missing services and submit pull requests: <a href="https://github.com/joushx/python-sonicare">https://github.com/joushx/python-sonicare</a></p>
+
+    </div>
+</article>
+
+            </main>
+        </div>
+    </body>
+</html>

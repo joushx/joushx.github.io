@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="de"><head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="Johannes Mittendorfer, Mittendorfer, Blog, Informatik, Entwicklung, Security">
+    <meta name="description" content="Der Blog von Johannes Mittendorfer über Software, IT-Security und das Internet">
+    <meta name="author" content="Johannes Mittendorfer">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <meta name="application-name" content="Johannes Mittendorfer"/>
+    <meta name="msapplication-TileColor" content="#f9fbf4"/>
+    <meta http-equiv="imagetoolbar" content="false" />
+    <meta property="fb:admins" content="100000063853580" />
+    <meta name="Content-Language" content="de" />
+    
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+    <link rel="canoncial" href="https://blog.johannes-mittendorfer.com/">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+    
+    
+    <link rel="stylesheet" href="https://blog.johannes-mittendorfer.com/styles.min.f93f4e51d7d393b46e7874802b06d820d7f22d0b5b68cecd9c431a0bb299bb42.css">
+    
+    
+    
+    <title>Johannes Mittendorfer | Erste Schritte in Processing</title>
+    
+</head><body itemscope itemtype="http://schema.org/WebSite">
+<nav id="bar">
+    <section class="container">
+        <a class="title" itemprop="url" href="/">
+            <h1 itemprop="name">Johannes Mittendorfer</h1>
+        </a>
+        <ul>
+            
+            <li>
+                <a href="/">
+                    Start
+                </a>
+            </li>
+            
+            <li>
+                <a href="/ueber-mich">
+                    Über
+                </a>
+            </li>
+            
+            <li>
+                <a href="/astronomie">
+                    Astronomie
+                </a>
+            </li>
+            
+            <li>
+                <a href="/impressum">
+                    Impressum
+                </a>
+            </li>
+            
+        </ul>
+    </section>
+</nav>
+        <div class="container">
+            <main>
+<article itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        <div class="meta">
+            <span class="category">Entwicklung</span> &ndash; 
+            <time itemprop="datePublished" datetime="2012-03-01 00:00:00 &#43;0000 UTC" class="date">01.03.2012</time> &ndash;
+            <a itemprop="author" href="https://blog.johannes-mittendorfer.com/ueber-mich">Johannes Mittendorfer</a>
+        </div>
+        <h1 itemprop="headline">Erste Schritte in Processing</h1>
+
+        
+        <div class="warning">
+            Dieser Artikel ist älter als zwei Jahre und womöglich veraltet!
+        </div>
+        
+    </header>
+    <div itemprop="articleBody">
+        <p>Processing stellt eine einfache Entwicklungsumgebung für den Einstieg in die Programmierung dar. Auch für fortgeschrittene Programmieren hält die IDE eine Möglichkeit für die rasche und einfache Umsetzung einer Idee bereit.</p>
+<h2 id="übersicht">Übersicht</h2>
+<p>Processing verwendet eine vereinfachte Syntax von Java und beeinhaltet eine simple IDE für die Entwicklung in dieser Sprache. Seine Stärken spielt die Sprache vor allem beim Erstellen von grafischen Programmen, also vor allem bei Zeichnungen und (auch interaktiven) Grafiken.</p>
+<p><img src="/img/picture_60.png" alt="Processing IDE"></p>
+<p>Das Ergebnis wird als exe-Datei ausgegeben, die auch außerhalb des verwendeten Systems lauffähig ist. Außerdem kann das Programm als Java-Applet exportiert werden. Da die Verwendung von Applets in Zeiten von HTML5 eher zu vermeiden ist, können die Programme auch mit <a href="http://processingjs.org">Processing.js</a> in JavaScript mit Hilfe des canvas-Elements dargestellt werden.</p>
+<p>Zusammen mit der IDE werden auch Beispiele für die Processing-Sprache mitgeliefert. Eines davon ist <a href="http://demo.johannes-mittendorfer.com/processing/circles.html">dieses Beispiel</a> in dem Kreise mit der Maus gezeichnet werden, oder auch <a href="http://demo.johannes-mittendorfer.com/processing/cube.html">dieser Würfel</a>.</p>
+<h2 id="download">Download</h2>
+<p>Die komplette IDE kann auf der <a href="http://processing.org">offiziellen Website</a> heruntergeladen werden und steht dort in Versionen für Windows, Mac OSX und Linux bereit. Wenn man bereits das Java SDK installiert hat, kann man auch die Version „Windows (Without Java)“ verwenden, was natürlich Größe einspart.</p>
+<p>Nach dem Download, das bei einer DSL-Leitung nur etwa 2 Minuten dauert, und dem Entpacken startet man die IDE ohne Installation durch Ausführen von processing.exe.</p>
+<h2 id="aufbau-eines-programmes">Aufbau eines Programmes</h2>
+<p>Ein Programm wird in Processing „Sketch“ genannt und besitzt immer die folgende Grundstruktur:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#00f">void</span> <span style="color:#000">setup</span>(){
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">void</span> <span style="color:#000">draw</span>(){
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Im Abschnitt „setup“ werden die grundlegenden Einstellungen wie die Fenstergröße oder Startwerte von Variablen einmalig angegeben. Dieser Abschnitt wird nur einmal am Anfang des Programmes ausgeführt.</p>
+<p>Der Teil namens „draw“ wird immer wieder für jeden Frame im Laufe des Programmes aufgerufen. Hier hinein wird auch der Hauptinhalt geschrieben, der das eigentliche Programm ausmacht. Um beispielsweiße eine einfache Linie von einer Ecke in die andere Ecke zeichnen zu lassen, braucht man folgendes:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#00f">void</span> <span style="color:#000">setup</span>(){
+</span></span><span style="display:flex;"><span>	<span style="color:#000">size</span>(<span style="color:#3af">200</span>,<span style="color:#3af">200</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#000">line</span>(<span style="color:#3af">0</span>,<span style="color:#3af">0</span>,<span style="color:#3af">200</span>,<span style="color:#3af">200</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">void</span> <span style="color:#000">draw</span>(){
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Mit &lsquo;size(200,200)&rsquo; wird die Größe des Fenster angegeben und mit &rsquo;line(0,0,200,200)&rsquo; die Linie gezeichnet. Die ersten beiden Werte geben die x und y-Position des Startpunktes an und die beiden letzten Zahlen die Korrdinaten des Endpunktes.</p>
+<h2 id="interaktivität">Interaktivität</h2>
+<p>Um ein Processing-Programm interaktiv zu machen kann man zum Beispiel die Position der Maus abrufen. In den Variablen &lsquo;mouseX&rsquo; und &lsquo;mouseY&rsquo; sind die aktuellen Koordinaten des Mauszeigers enthalten. Um nun die Linie an der Position der Maus starten zu lassen, muss die Position natürlich laufend abgerufen werden. Dazu muss diese Logik in den „draw“-Bereich wandern:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#00f">void</span> <span style="color:#000">setup</span>(){
+</span></span><span style="display:flex;"><span>	<span style="color:#000">size</span>(<span style="color:#3af">200</span>,<span style="color:#3af">200</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">void</span> <span style="color:#000">draw</span>(){
+</span></span><span style="display:flex;"><span>	<span style="color:#000">line</span>(<span style="color:#000">mouseX</span>,<span style="color:#000">mouseY</span>,<span style="color:#3af">200</span>,<span style="color:#3af">200</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Natürlich gibt es noch viel mehr Beispiele und Verwendungmöglichkeiten, doch die ersten Schritte mit der Programmiersprache und der IDE habe ich mit diesem Artikel hoffentlich leicht verständlich vermittelt.</p>
+
+    </div>
+</article>
+
+            </main>
+        </div>
+    </body>
+</html>
