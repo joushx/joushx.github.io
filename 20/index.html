@@ -94,14 +94,12 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Vor langer Zeit habe ich mir eine Konto bei GMX angelegt, jedoch benutze ich dieses Konto schon seit Jahren nicht mehr. Ich lasse mir aber Email von dort noch weiterleiten, um nicht doch etwas zu verpassen.</p>
-<p>Heute habe ich eine Email von GMX erhalten, die augenscheinlich an alle Benutzer des Dienstes ging:</p>
-<p><img src="/img/picture_40.jpeg" alt="GMX Hilfe"></p>
-<p>Darin wird erwähnt, dass sich Hacker Zugang zu den Benutzerkonten verschaffen konnten und man darum besser das Passswort ändern sollte. Was man daraus schließen kann: Auch GMX hielt es wohl bisher nicht für nötig Passwörter so zu verschlüsseln, dass es für Hacker unmöglich ist diese zu benutzen. Womöglich wurden die Passwörter sogar in Klartext in einer Datenbank abgelegt.</p>
-<p>Gerade im Angesicht immer neuer Hackerangriffe ist es verantwortungslos Passwörter so zu speichern, dass sie Hackern wie auf einem Silbertablett präsentiert werden. Ich habe jedenfalls eine Konsequenz aus der Sache gezogen und nicht mein Passwort geändert, sondern gleich meinen Account dort gelöscht.</p>
-<p>Dazu wieder einmal: <a href="http://johannes-mittendorfer.com/artikel/2011/06/unbequem-aber-sicher-das-seitenspezifische-passwort">Unbequem aber sicher: Das seitenspezifische Passwort</a></p>
-</p>
+            <p>Vor langer Zeit habe ich mir eine Konto bei GMX angelegt, jedoch benutze ich dieses Konto schon seit Jahren nicht mehr. Ich lasse mir aber Email von dort noch weiterleiten, um nicht doch etwas zu verpassen.
+Heute habe ich eine Email von GMX erhalten, die augenscheinlich an alle Benutzer des Dienstes ging:
+Darin wird erwähnt, dass sich Hacker Zugang zu den Benutzerkonten verschaffen konnten und man darum besser das Passswort ändern sollte.</p>
         </div>
+
+        <a href="/artikel/2012/09/was-sonst-noch-war-gmx-und-die-hacker/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -122,17 +120,11 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Immer wieder wird von Sicherheitslücken in den Plugins Flash und Java berichtet. Darüber können Internetseiten oft Schadcode in den Computer einschleusen und das System so mit eier bösartigen Software infizieren. Zumeist sind diese Angriffe auf der Webseite versteckt und nicht zu entdecken.</p>
-<p>Wäre es nicht sinnvoll diese Elemente erst zu laden, wenn man sie wirklich braucht und das auch aktiv zulässt? Genau das ist in Mozilla Firefox bereits eingebaut. Mit der Einstellung <em>click_to_play</em> wird ein Inhalt, der normalerweiße sofort über ein Plugin dargestellt wird, erst aktiviert, wenn man darauf geklickt hat.</p>
-<p><img src="/img/picture_41.jpeg" alt="Flash-Anzeige"></p>
-<p>Diese Verhalten lässt sich in Firefox über die Einstellungsseite <code>about:config</code> einschalten. Um zu dieser zu gelangen muss man nur about:config in Adressleiste eingeben.</p>
-<p>Hier erscheint eine Warnmeldung, bei der man versprechen muss vorsichtig zu sein, aber das ist man ja natürlich auch.</p>
-<p><img src="/img/picture_42.jpeg" alt="Warnung"></p>
-<p>Um nun die gewünschte Einstellungsmöglichkeit in der langen Liste zu suchen, gibt man <code>plugins.click</code> in die Suchleiste ein und erreicht so die Einstellung <code>plugins.click_to_play</code>. Durch einen Doppelklick darauf wird diese Einstellung aktiviert und Firefox fragt ab sofort bei Plugins den Benutzer.</p>
-<p><img src="/img/picture_43.jpeg" alt="Einstellung"></p>
-<p>Über einen Legostein links von der Adresse kann eine Domain bei vorhandensein von solchen Inhalten auch dauerhaft freigeschaltet werden.</p>
-</p>
+            <p>Immer wieder wird von Sicherheitslücken in den Plugins Flash und Java berichtet. Darüber können Internetseiten oft Schadcode in den Computer einschleusen und das System so mit eier bösartigen Software infizieren. Zumeist sind diese Angriffe auf der Webseite versteckt und nicht zu entdecken.
+Wäre es nicht sinnvoll diese Elemente erst zu laden, wenn man sie wirklich braucht und das auch aktiv zulässt? Genau das ist in Mozilla Firefox bereits eingebaut. Mit der Einstellung click_to_play wird ein Inhalt, der normalerweiße sofort über ein Plugin dargestellt wird, erst aktiviert, wenn man darauf geklickt hat.</p>
         </div>
+
+        <a href="/artikel/2012/09/firefox-mit-click-to-play-absichern/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -153,9 +145,10 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Es folgt kein Artikel über das neue iPhone:</p>
-</p>
+            <p>Es folgt kein Artikel über das neue iPhone:</p>
         </div>
+
+        <a href="/artikel/2012/09/kein-artikel-%C3%BCber-das-neue-iphone/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -176,19 +169,11 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#000">mysql_query</span>(<span style="color:#5a2">&#34;SELECT * FROM table WHERE id = &#34;</span> . <span style="color:#000">$_GET</span>[<span style="color:#5a2">&#34;id&#34;</span>]);
-</span></span></code></pre></div><p>Das ist schlichtweg der Albtraum für jeden, der sich schonmal mit Sicherheit in Datenbankanwendungen beschäftigt hat.</p>
-<p>Die unsichere Verwendung von HTTP-Paramtern, oder generell von Daten, die vom Benutzer kommen, stellt eine große Gefahr für die Sicherheit eines ganzen Systems dar. Mittels eines SQL-Injection Angriffes kann meist auf die gesamten Daten der Datenbank zugegriffen und dort zum Beispiel Passwörter gestohlen werden.</p>
-<p><img src="/img/picture_55.png" alt="Comic"></p>
-<p>In diesem Beispiel kann man an die zugehörige URL <code>http://site.com/article.php?id=56</code> auch noch ein zweiter Datenbankbefehl angehängt werden, denn die ID des Eintrages wird nicht überprüft: <code>http://site.com/article.php?id=56;SELECT...</code></p>
-<p>Die einfachste Lösung besteht darin einfach den PHP-Befehl <code>mysql_real_escape_string()</code> zu verwenden, und damit die Daten in der Abfrage zu filtern. Schon durch diesen einfachen Befehl ist es nahezu unmöglich die Website durch diesn Angriff zu übernehmen.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#000">mysql_query</span>(<span style="color:#5a2">&#34;SELECT * FROM table WHERE id = &#34;</span> . <span style="color:#000">mysql_real_escape_string</span>(<span style="color:#000">$_GET</span>[<span style="color:#5a2">&#34;id&#34;</span>]));
-</span></span></code></pre></div><p>Leider ist diese Erkenntnis nicht sehr weit verbreitet. So musste ich erst heute eine politische Partei in meiner Umgebung vor ihrer eigenen Website warnen, da hier eine offensichtliche und leicht zu erkennende Sicherheitslücke besteht.</p>
-<p>Später würde man wohl auf böse Hacker verweisen, die mit ihren hochkomplexen und auf keinen Fall vorhersehbaren Methoden Webseiten angreifen, die man einfach nicht besser schützen kann.</p>
-<p>Gerade in Zeiten mit Werkzeugen wie sqlmap ist es ein leichtes solche Angriffe durchzuführen, wenn man auch nur etwas Ahnung von der Materie hat.</p>
-<p><strong>Update:</strong> Heute ist der 11.09.2012 und die besagte Lücke besteht noch immer. Anscheinend besteht auf Seiten der FPÖ keinerlei Interesse daran Hackerangriffe abzuwehren.</p>
-</p>
+            <p>mysql_query(&#34;SELECT * FROM table WHERE id = &#34; . $_GET[&#34;id&#34;]); Das ist schlichtweg der Albtraum für jeden, der sich schonmal mit Sicherheit in Datenbankanwendungen beschäftigt hat.
+Die unsichere Verwendung von HTTP-Paramtern, oder generell von Daten, die vom Benutzer kommen, stellt eine große Gefahr für die Sicherheit eines ganzen Systems dar. Mittels eines SQL-Injection Angriffes kann meist auf die gesamten Daten der Datenbank zugegriffen und dort zum Beispiel Passwörter gestohlen werden.</p>
         </div>
+
+        <a href="/artikel/2012/08/sql-injections-vermeiden-das-kann-doch-nicht-so-schwer-sein/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -209,13 +194,11 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Da ich auch nach längerem Suchen keine passende und kostenlose Lösung dafür gefunden habe, habe ich mich selbst ans Werk gemacht und einen Erlagscheindrucker für neue österreischische Erlagscheine programmiert.</p>
-<p><img src="/img/picture_45.png" alt="Screenshot"></p>
-<!-- raw HTML omitted -->
-<p>Das Programm wird einfach mit den erforderlichen Daten gefüttert und druckt diese dann auf einen Erlagschein, der im Drucker plaziert wird. Zudem ist es möglich die eigenen Daten, wie Namen, Anschrift und Kontonummer für weitere Verwendungen zu speichern. Felder, die nicht beschriftet werden sollen, weil sie zum Beispiel schon ausgefüllt sind, kann man einfach leer lassen.</p>
-<p><!-- raw HTML omitted -->Keine Haftung für durch das Programm verursachte Schäden. Alle Daten sind vor der Benützung des Erlagscheines nocheinmal zu kontrollieren!<!-- raw HTML omitted --></p>
-</p>
+            <p>Da ich auch nach längerem Suchen keine passende und kostenlose Lösung dafür gefunden habe, habe ich mich selbst ans Werk gemacht und einen Erlagscheindrucker für neue österreischische Erlagscheine programmiert.
+Das Programm wird einfach mit den erforderlichen Daten gefüttert und druckt diese dann auf einen Erlagschein, der im Drucker plaziert wird. Zudem ist es möglich die eigenen Daten, wie Namen, Anschrift und Kontonummer für weitere Verwendungen zu speichern. Felder, die nicht beschriftet werden sollen, weil sie zum Beispiel schon ausgefüllt sind, kann man einfach leer lassen.</p>
         </div>
+
+        <a href="/artikel/2012/08/erlagscheindrucker-f%C3%BCr-%C3%B6sterreich/">mehr</a>
     </article>
     
 </div>

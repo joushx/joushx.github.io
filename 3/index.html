@@ -94,57 +94,11 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Der <a href="http://www.gnu.org/software/gdb/">GNU Debugger</a>, oder kurz gdb, der bereits in den meisten Linux-Distributionen enthalten ist, bietet eine einfache Möglichkeit in der Kommandozeile Programme zu debuggen. Gerade für Assembler-Anwendungen ist es damit einfach die Registerwerte auszulesen, den Speicher und den Stack zu begutachten.</p>
-<p>Dazu sollten Debug-Informationen in die ausführbare Datei gespeichert werden. Für den Assembler <code>as</code> ist zum Beispiel die Option <code>-g</code> nötig. Dann kann man gdb mit <code>gdb &lt;executable&gt;</code> starten. Es öffnet sich die gdb shell.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>johannes@ubuntu:~$ gdb executable
-</span></span><span style="display:flex;"><span>GNU gdb (Ubuntu 7.7-0ubuntu3.1) 7.7
-</span></span><span style="display:flex;"><span>Copyright (C) 2014 Free Software Foundation, Inc.
-</span></span><span style="display:flex;"><span>License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;
-</span></span><span style="display:flex;"><span>This is free software: you are free to change and redistribute it.
-</span></span><span style="display:flex;"><span>There is NO WARRANTY, to the extent permitted by law.  Type &#34;show copying&#34;
-</span></span><span style="display:flex;"><span>and &#34;show warranty&#34; for details.
-</span></span><span style="display:flex;"><span>This GDB was configured as &#34;x86_64-linux-gnu&#34;.
-</span></span><span style="display:flex;"><span>Type &#34;show configuration&#34; for configuration details.
-</span></span><span style="display:flex;"><span>For bug reporting instructions, please see:
-</span></span><span style="display:flex;"><span>&lt;http://www.gnu.org/software/gdb/bugs/&gt;.
-</span></span><span style="display:flex;"><span>Find the GDB manual and other documentation resources online at:
-</span></span><span style="display:flex;"><span>&lt;http://www.gnu.org/software/gdb/documentation/&gt;.
-</span></span><span style="display:flex;"><span>For help, type &#34;help&#34;.
-</span></span><span style="display:flex;"><span>Type &#34;apropos word&#34; to search for commands related to &#34;word&#34;...
-</span></span><span style="display:flex;"><span>Reading symbols from executable...done.
-</span></span><span style="display:flex;"><span>(gdb)
-</span></span></code></pre></div><p>Dort kann man einen Breakpoint auf eine Zeile setzen. <code>break 31</code> fügt ihm zum Beispiel auf Zeile 31 ein. Um das Programm zu starten, dann <code>run</code> eingeben und gdb sollte die Ausführung am ersten Breakpoint pausieren.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(gdb) break 31
-</span></span><span style="display:flex;"><span>Haltepunkt 1 at 0x8048074: file executable.s, line 31.
-</span></span><span style="display:flex;"><span>(gdb) run
-</span></span><span style="display:flex;"><span>Starting program: /home/johannes/executable 
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Breakpoint 1, _start () at executable.s:32
-</span></span><span style="display:flex;"><span>warning: Source file is more recent than executable.
-</span></span><span style="display:flex;"><span>32	    movl $0, %edi						# init counter
-</span></span><span style="display:flex;"><span>(gdb) 
-</span></span></code></pre></div><p>Um die Werte der Register anzusehen, dann einfach <code>info registers</code> oder kurz <code>i r</code> eingeben.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(gdb) i r
-</span></span><span style="display:flex;"><span>eax            0x0	0
-</span></span><span style="display:flex;"><span>ecx            0x0	0
-</span></span><span style="display:flex;"><span>edx            0x0	0
-</span></span><span style="display:flex;"><span>ebx            0x0	0
-</span></span><span style="display:flex;"><span>esp            0xffffcfb0	0xffffcfb0
-</span></span><span style="display:flex;"><span>ebp            0x0	0x0
-</span></span><span style="display:flex;"><span>esi            0x0	0
-</span></span><span style="display:flex;"><span>edi            0x0	0
-</span></span><span style="display:flex;"><span>eip            0x8048074	0x8048074 &lt;_start&gt;
-</span></span><span style="display:flex;"><span>eflags         0x202	[ IF ]
-</span></span><span style="display:flex;"><span>cs             0x23	35
-</span></span><span style="display:flex;"><span>ss             0x2b	43
-</span></span><span style="display:flex;"><span>ds             0x2b	43
-</span></span><span style="display:flex;"><span>es             0x2b	43
-</span></span><span style="display:flex;"><span>fs             0x0	0
-</span></span><span style="display:flex;"><span>gs             0x0	0
-</span></span><span style="display:flex;"><span>(gdb) 
-</span></span></code></pre></div><p>Mit <code>continue</code> oder <code>c</code> kann man die Ausführung fortsetzen.</p>
-</p>
+            <p>Der GNU Debugger, oder kurz gdb, der bereits in den meisten Linux-Distributionen enthalten ist, bietet eine einfache Möglichkeit in der Kommandozeile Programme zu debuggen. Gerade für Assembler-Anwendungen ist es damit einfach die Registerwerte auszulesen, den Speicher und den Stack zu begutachten.
+Dazu sollten Debug-Informationen in die ausführbare Datei gespeichert werden. Für den Assembler as ist zum Beispiel die Option -g nötig. Dann kann man gdb mit gdb &lt;executable&gt; starten. Es öffnet sich die gdb shell.</p>
         </div>
+
+        <a href="/artikel/2014/10/debuggen-mit-gdb/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -165,9 +119,10 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Was empfange ich eigentlich? Wer sich das fragt, dem sei diese Seite empfohlen: <a href="http://www.sigidwiki.com/wiki/Signal_Identification_Guide">Signal Identification Guide</a></p>
-</p>
+            <p>Was empfange ich eigentlich? Wer sich das fragt, dem sei diese Seite empfohlen: Signal Identification Guide</p>
         </div>
+
+        <a href="/artikel/2014/08/sammlung-von-radiosignalen/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -188,18 +143,11 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Vermutlich haben Sie <a href="http://www.salzburg.com/nachrichten/welt/chronik/sn/artikel/russische-hacker-erbeuten-12-milliarden-profildaten-116434/">es</a> <a href="http://diepresse.com/home/techscience/internet/3850868/Russische-Hacker_Der-bisher-grosste-Datenklau">schon</a> <a href="http://www.tagesschau.de/wirtschaft/hacker-100.html">gehört</a>: Russische Hacker sollen 1,2 Milliarden Zugangsdaten gestohlen haben. Das behauptet zumindest eine Sicherheitsfirma namens Hold Security. Auch große Portale seien betroffen.</p>
-<figure><img src="/img/picture_119.png"/><figcaption>
-            <h4>Ein weiteres dummes Symbolbild</h4>
-        </figcaption>
-</figure>
-
-<p>Die Medien sind sich nicht einig, ob es sich um Benutzernamen und Passwort handelt, Profildaten oder Einwahldaten (?). Auch über die Quelle hört man verschiedene Dinge: Von gehackten Websites aber auch von Botnetzen ist die Rede. So genau weiß es niemand. Auch die Sicherheitsfirma hüllt sich in Schweigen - Aus Geheimhaltungsgründen, wie es heißt.</p>
-<p>Obgleich ich die Wahrhaftigkeit natürlich schwer nachvollziehen kann, vermute ich doch, dass die meisten Passwörter von großen Internetseiten inzwischen als gesalzene Hashes gespeichert werden und somit unbrauchbar sind. Noch seltsamer ist jedoch die Geheimhaltung und das, inzwischen zurückgezogene, Angebot gegen eine Gebühr zu überprüfen, ob die eigene Email-Adresse unter den angeblich gehackten ist.</p>
-<p>Ich habe zumindest den Verdacht, dass es sich bei der ganzen Aktion um eine groß angelegte Panikmache der Firma in den Medien handelt, die in große Einnahmen zur Überprüfung der Daten und dem Verkauf von Sicherheitsprodukten münden soll. Gerade in Zeiten von groß angelegten Geheimdienstüberwachungen, Sicherheitslücken in OpenSSL und übertriebener Antiviren-Werbung können so unbedarfte Internetbenutzer sehr leicht zum Kauf angeregt werden.</p>
-<p><strong>Update:</strong> <a href="http://www.youarenotpayingattention.com/2014/08/08/the-lie-behind-1-2-billion-stolen-passwords/">Hier</a> wird die Sache auch kritisch gesehen und sehr ausführlich beschrieben.</p>
-</p>
+            <p>Vermutlich haben Sie es schon gehört: Russische Hacker sollen 1,2 Milliarden Zugangsdaten gestohlen haben. Das behauptet zumindest eine Sicherheitsfirma namens Hold Security. Auch große Portale seien betroffen.
+Ein weiteres dummes Symbolbild Die Medien sind sich nicht einig, ob es sich um Benutzernamen und Passwort handelt, Profildaten oder Einwahldaten (?). Auch über die Quelle hört man verschiedene Dinge: Von gehackten Websites aber auch von Botnetzen ist die Rede. So genau weiß es niemand.</p>
         </div>
+
+        <a href="/artikel/2014/08/12-milliarden-passw%C3%B6rter-gestohlen-oder-nicht/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -220,14 +168,13 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Ich habe soeben mit meinem <a href="http://johannes-mittendorfer.com/artikel/2014/07/flugzeuge-mit-einem-billigen-dvb-t-stick-verfolgen">RTL-SDR Stick</a> zum ersten Mal ein Satellitenbild empfangen.</p>
-<p>Mit Hilfe einer alten Fernsehantenne und dem Programm <code>wxtoimg</code> habe ich folgendes Bild erhalten:</p>
-<p><img src="/img/picture_117.png" alt="Satellitenbild"></p>
-<p>Der Satellit NOAA 19 hat es mit Hilfe des APT-Protokolls auf 137,9125 MHz gesendet.</p>
-<p>Update: Später habe ich auch noch eines von Westeuropa empfangen:</p>
-<p><img src="/img/picture_118.jpeg" alt="Satellitenbild"></p>
-</p>
+            <p>Ich habe soeben mit meinem RTL-SDR Stick zum ersten Mal ein Satellitenbild empfangen.
+Mit Hilfe einer alten Fernsehantenne und dem Programm wxtoimg habe ich folgendes Bild erhalten:
+Der Satellit NOAA 19 hat es mit Hilfe des APT-Protokolls auf 137,9125 MHz gesendet.
+Update: Später habe ich auch noch eines von Westeuropa empfangen:</p>
         </div>
+
+        <a href="/artikel/2014/07/satellitenbilder-mit-rtl-sdr/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -248,29 +195,11 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Bei der Benützung eines DVB-T Sticks <a href="http://rtlsdr.org/#history_and_discovery_of_rtlsdr">hat man festgestellt</a>, dass sich dieser auch als <a href="http://de.wikipedia.org/wiki/Software_Defined_Radio">Software Defined Radio</a> verwenden lässt, da die Rohdaten auf das angeschlossene Gerät übertragen werden. Es lassen sich mit Sticks mit dem Chip RTL2832U alle Frequenzen in einem bestimmten Bereich empfangen und <a href="http://www.rtl-sdr.com/">verschiedenste Dinge damit anstellen</a>.</p>
-<p>Eine interessante Verwendung ist zum Beispiel der Empfang von ADS-B Daten. Flugzeuge senden in der Regel jede Sekunde ihre aktuelle Position, Höhe und Kurs ungerichtet auf 1090 MHz ab. Da diese Daten unverschlüsselt sind kann man mit relativ wenig Aufwand diese auf einer Karte darstellen.</p>
-<p><img src="/img/picture_116.png" alt="Landkarte"></p>
-<p>Und genau so einen Stick habe ich mir vor Kurzem gekauft. (Ja, der USB-Stecker ist etwas schief. Eine Tür war im Weg.)</p>
-<p><img src="/img/picture_115.jpeg" alt="DVB-T Stick"></p>
-<p>Und so kommt man zu einer Flugzeugkarte:</p>
-<h2 id="treiber-ausschalten">Treiber ausschalten</h2>
-<p>Bevor man mit dem Empfang beginnen kann muss noch der Linux-Treiber weichen, der zum eigentlich Zweck des Fernsehens beitragen soll:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo modprobe -r dvb_usb_rtl28xxu
-</span></span></code></pre></div><p>Wieder laden kann man ihm ganz einfach mit dem Befehl</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo modprobe dvb_usb_rtl28xxu
-</span></span></code></pre></div><p>Wem dies nach jedem Neustart zu umständlich ist, der kann auch in der Datei <code>/etc/modprobe.d/blacklist.conf</code> folgende Ergänzung vornehmen, um den Treiber von vornherein nicht zu laden:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>blacklist dvb_usb_rtl28xxu
-</span></span></code></pre></div><h2 id="dump1090">dump1090</h2>
-<p>Es gibt mehrere Programme zur dekodierung der ADS-B Signale. Am zuverlässigsten hat sich aber <a href="https://github.com/antirez/dump1090">dump1090</a> erwiesen. Um den Quellcode zu erhalten, klont man einfach das Repository und kompiliert:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>git clone https://github.com/antirez/dump1090.git
-</span></span><span style="display:flex;"><span>cd dump1090
-</span></span><span style="display:flex;"><span>make
-</span></span></code></pre></div><p>Um nun die Flugzeuge anzuzeigen führt man in diesem Verzeichnis den folgenden Befehl aus:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>./dump1090 --net
-</span></span></code></pre></div><p>Wenn man jetzt in einem Browser die Adresse <code>http://localhost:8080</code> aufruft, sollte man eine Karte mit den Flugzeugen im Umkreis sehen!</p>
-</p>
+            <p>Bei der Benützung eines DVB-T Sticks hat man festgestellt, dass sich dieser auch als Software Defined Radio verwenden lässt, da die Rohdaten auf das angeschlossene Gerät übertragen werden. Es lassen sich mit Sticks mit dem Chip RTL2832U alle Frequenzen in einem bestimmten Bereich empfangen und verschiedenste Dinge damit anstellen.
+Eine interessante Verwendung ist zum Beispiel der Empfang von ADS-B Daten. Flugzeuge senden in der Regel jede Sekunde ihre aktuelle Position, Höhe und Kurs ungerichtet auf 1090 MHz ab.</p>
         </div>
+
+        <a href="/artikel/2014/07/flugzeuge-mit-einem-billigen-dvb-t-stick-verfolgen/">mehr</a>
     </article>
     
 </div>

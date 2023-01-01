@@ -94,10 +94,11 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Da viele immer wieder Probleme beim Verständnis der objektorientierten Programmierung haben, habe ich eine kleine Erklärung dazu verfasst:</p>
-<p><a href="/files/oop.pdf">Objektorientierte Programmierung für Anfänger am Beispiel PHP</a> (PDF, 127 kB)</p>
-</p>
+            <p>Da viele immer wieder Probleme beim Verständnis der objektorientierten Programmierung haben, habe ich eine kleine Erklärung dazu verfasst:
+Objektorientierte Programmierung für Anfänger am Beispiel PHP (PDF, 127 kB)</p>
         </div>
+
+        <a href="/artikel/2012/08/objektorientierte-programmierung-f%C3%BCr-anf%C3%A4nger-am-beispiel-php/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -118,124 +119,11 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Model, View und Controller: Begriffe, mit denen man nicht sofort etwas anfangen kann. Auch trotz vieler Erklärungen schreckt das, auf den ersten Blick komplizierte, Modell viele Menschen davon ab sich daran zu versuchen. Auch ich habe es erst nach drei Versuchen geschafft, was jedoch wahrscheinlich vorher an meiner Ungeduld scheiterte.</p>
-<h2 id="cakephp">CakePHP</h2>
-<p><img src="/img/picture_56.png" alt="CakePHP Logo"></p>
-<p>Ich habe für diese Erklärung das Framework <a href="http://cakephp.org">CakePHP</a> benutzt, um einen Praxisbezug herzustellen und weil ich es gerade ausgiebig benutze. CakePHP ist ein offenes Web-Framework, das an <a href="http://rubyonrails.org">Ruby on Rails</a> angelehnt wurde. Die Prinzipien davon sind:</p>
-<ul>
-<li>Don’t repeat yourself (Nichts zweimal programmieren)</li>
-<li>Convention before configuration (Lieber alles nach einem festgelegten Muster benennen, als etwas einzustellen.)</li>
-</ul>
-<h2 id="model">Model</h2>
-<figure><img src="/img/picture_57.png"/><figcaption>
-            <h4>Model View Controller Prinzip</h4>
-        </figcaption>
-</figure>
-
-<p>Das Model gibt die grundlegende Beziehung der Daten zueinander an. Es legt also das Datenmodell fest, in ihm wird der Name der Klasse festgelegt und hier wenden auch SQL-Joins  definiert. Zudem stehen auch Aktionen, die vor dem Speichern in die Datenbank auszuführen sind, im Model.</p>
-<p>Noch einmal am Beispiel einer CakePHP-Anwendung zur Arbeitserfassung von verschiedenen Benutzern:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>&lt;?<span style="color:#000">php</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#00f">class</span> <span style="color:#000">User</span> <span style="color:#00f">extends</span> <span style="color:#000">AppModel</span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#888;font-style:italic">// Name der Klasse festlegen
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>	<span style="color:#00f">var</span> <span style="color:#000">$name</span> = <span style="color:#5a2">&#39;User&#39;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#888;font-style:italic">// Mit einem Join Tabellen verbinden
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>	<span style="color:#00f">var</span> <span style="color:#000">$hasAndBelongsToMany</span> = <span style="color:#00f">array</span>(
-</span></span><span style="display:flex;"><span>	    <span style="color:#5a2">&#39;Work&#39;</span> =&gt; <span style="color:#00f">array</span>(
-</span></span><span style="display:flex;"><span>		<span style="color:#5a2">&#39;className&#39;</span> =&gt; <span style="color:#5a2">&#39;Work&#39;</span>
-</span></span><span style="display:flex;"><span>	    )
-</span></span><span style="display:flex;"><span>	);
-</span></span><span style="display:flex;"><span>	 
-</span></span><span style="display:flex;"><span>	<span style="color:#888;font-style:italic">// Passwörter vor dem Speichern hashen
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>	<span style="color:#00f">function</span> <span style="color:#000">beforeSave</span>(<span style="color:#000">$options</span>) {
-</span></span><span style="display:flex;"><span>	    <span style="color:#00f">if</span> (<span style="color:#000">isset</span>(<span style="color:#000">$this</span>-&gt;<span style="color:#000">data</span>[<span style="color:#000">$this</span>-&gt;<span style="color:#000">alias</span>][<span style="color:#5a2">&#39;password&#39;</span>])) {
-</span></span><span style="display:flex;"><span>		<span style="color:#000">$this</span>-&gt;<span style="color:#000">data</span>[<span style="color:#000">$this</span>-&gt;<span style="color:#000">alias</span>][<span style="color:#5a2">&#39;password&#39;</span>] = <span style="color:#000">AuthComponent</span>::<span style="color:#000">password</span>(<span style="color:#000">$this</span>-&gt;<span style="color:#000">data</span>[<span style="color:#000">$this</span>-&gt;<span style="color:#000">alias</span>][<span style="color:#5a2">&#39;password&#39;</span>]);
-</span></span><span style="display:flex;"><span>	    }
-</span></span><span style="display:flex;"><span>	    <span style="color:#00f">return</span> <span style="color:#00f">true</span>;
-</span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">?&gt;</span><span style="color:#f00">
-</span></span></span></code></pre></div><h2 id="view">View</h2>
-<p>Der View stellt die Seite dar, die der Benutzer schließlich zu Gesicht bekommt. Es wird damit die Anzeige der Daten in HTML und PHP formuliert. Für (fast) jede Aktion im Controller (unten) muss ein View vorhanden sein.</p>
-<p>Auch dazu wieder ein Beispiel:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>&lt;<span style="color:#000">div</span> <span style="color:#000">class</span>=<span style="color:#5a2">&#34;page-header&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>	&lt;<span style="color:#000">h1</span>&gt;<span style="color:#000">Benutzer</span>&lt;/<span style="color:#000">h1</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#000">div</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#000">table</span> <span style="color:#000">class</span>=<span style="color:#5a2">&#34;table table-striped&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>	&lt;<span style="color:#000">tr</span>&gt;
-</span></span><span style="display:flex;"><span>		&lt;<span style="color:#000">th</span>&gt;<span style="color:#000">Id</span>&lt;/<span style="color:#000">th</span>&gt;
-</span></span><span style="display:flex;"><span>		&lt;<span style="color:#000">th</span>&gt;<span style="color:#000">Benutzername</span>&lt;/<span style="color:#000">th</span>&gt;
-</span></span><span style="display:flex;"><span>		&lt;<span style="color:#000">th</span>&gt;<span style="color:#000">Vorname</span>&lt;/<span style="color:#000">th</span>&gt;
-</span></span><span style="display:flex;"><span>		&lt;<span style="color:#000">th</span>&gt;<span style="color:#000">Nachname</span>&lt;/<span style="color:#000">th</span>&gt;
-</span></span><span style="display:flex;"><span>		&lt;<span style="color:#000">th</span>&gt;<span style="color:#000">Aktionen</span>&lt;/<span style="color:#000">th</span>&gt;
-</span></span><span style="display:flex;"><span>	&lt;/<span style="color:#000">tr</span>&gt;&lt;?<span style="color:#000">php</span> <span style="color:#000">foreach</span> ($<span style="color:#000">users</span> <span style="color:#000">as</span> $<span style="color:#000">user</span>): ?&gt;
-</span></span><span style="display:flex;"><span>	&lt;<span style="color:#000">tr</span>&gt;
-</span></span><span style="display:flex;"><span>		&lt;<span style="color:#000">td</span>&gt;&lt;?<span style="color:#000">php</span> <span style="color:#000">echo</span> <span style="color:#000">h</span>($<span style="color:#000">user</span>[<span style="color:#5a2">&#39;User&#39;</span>][<span style="color:#5a2">&#39;id&#39;</span>]); ?&gt;&lt;/<span style="color:#000">td</span>&gt;
-</span></span><span style="display:flex;"><span>		&lt;<span style="color:#000">td</span>&gt;&lt;?<span style="color:#000">php</span> <span style="color:#000">echo</span> <span style="color:#000">h</span>($<span style="color:#000">this-</span>&gt;<span style="color:#000">Html-</span>&gt;<span style="color:#000">link</span>($<span style="color:#000">user</span>[<span style="color:#5a2">&#39;User&#39;</span>][<span style="color:#5a2">&#39;username&#39;</span>], <span style="color:#5a2">&#34;/users/view/&#34;</span>.$<span style="color:#000">user</span>[<span style="color:#5a2">&#39;User&#39;</span>][<span style="color:#5a2">&#39;id&#39;</span>])); ?&gt;&lt;/<span style="color:#000">td</span>&gt;
-</span></span><span style="display:flex;"><span>		&lt;<span style="color:#000">td</span>&gt;&lt;?<span style="color:#000">php</span> <span style="color:#000">echo</span> <span style="color:#000">h</span>($<span style="color:#000">user</span>[<span style="color:#5a2">&#39;User&#39;</span>][<span style="color:#5a2">&#39;firstname&#39;</span>]); ?&gt;&lt;/<span style="color:#000">td</span>&gt;
-</span></span><span style="display:flex;"><span>		&lt;<span style="color:#000">td</span>&gt;&lt;?<span style="color:#000">php</span> <span style="color:#000">echo</span> <span style="color:#000">h</span>($<span style="color:#000">user</span>[<span style="color:#5a2">&#39;User&#39;</span>][<span style="color:#5a2">&#39;lastname&#39;</span>]); ?&gt;&lt;/<span style="color:#000">td</span>&gt;
-</span></span><span style="display:flex;"><span>		&lt;<span style="color:#000">td</span>&gt;&lt;?<span style="color:#000">php</span> <span style="color:#000">echo</span> <span style="color:#000">h</span>(<span style="color:#5a2">&#34;&lt;a href=&#39;&#34;</span> . $<span style="color:#000">this-</span>&gt;<span style="color:#000">Html-</span>&gt;<span style="color:#000">Url</span>(<span style="color:#000">array</span>(<span style="color:#5a2">&#39;action&#39;</span> =&gt; <span style="color:#5a2">&#39;edit&#39;</span>, $<span style="color:#000">user</span>[<span style="color:#5a2">&#39;User&#39;</span>][<span style="color:#5a2">&#39;id&#39;</span>])) . <span style="color:#5a2">&#34;&#39;&gt;&lt;i class=&#39;icon-pencil&#39;&gt;&lt;/i&gt;&lt;/a&gt;&#34;</span>); ?&gt;&amp;<span style="color:#000">nbsp</span>; &lt;?<span style="color:#000">php</span> <span style="color:#000">echo</span> <span style="color:#000">h</span>(<span style="color:#5a2">&#34;&lt;a href=&#39;&#34;</span> . $<span style="color:#000">this-</span>&gt;<span style="color:#000">Html-</span>&gt;<span style="color:#000">Url</span>(<span style="color:#000">array</span>(<span style="color:#5a2">&#39;action&#39;</span> =&gt; <span style="color:#5a2">&#39;delete&#39;</span>, $<span style="color:#000">user</span>[<span style="color:#5a2">&#39;User&#39;</span>][<span style="color:#5a2">&#39;id&#39;</span>])) . <span style="color:#5a2">&#34;&#39;&gt;&lt;i class=&#39;icon-trash&#39;&gt;&lt;/i&gt;&lt;/a&gt;&#34;</span>); ?&gt;&lt;/<span style="color:#000">td</span>&gt;
-</span></span><span style="display:flex;"><span>	&lt;/<span style="color:#000">tr</span>&gt;&lt;?<span style="color:#000">php</span> <span style="color:#000">endforeach</span>; ?&gt;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#000">table</span>&gt;
-</span></span></code></pre></div><h2 id="controller">Controller</h2>
-<p>Der Controller definiert schließlich die verschiedenen Aktionen der Klasse. Das sind zum Beispiel <code>users/index</code>, <code>users/view/2</code> und <code>users/add</code>, die als URL in der Anwendung erscheinen. Diese werden über gleichnamige Funktionen im Controller erstellt. In den Funktionen werden auch Daten aus der Datenbank gelesen und geschrieben. Ebenfalls im Controller findet die Überprüfung von Formulardaten statt.</p>
-<p>Beispiel:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>&lt;?<span style="color:#000">php</span>
-</span></span><span style="display:flex;"><span><span style="color:#00f">class</span> <span style="color:#000">UsersController</span> <span style="color:#00f">extends</span> <span style="color:#000">AppController</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#00f">var</span> <span style="color:#000">$name</span> = <span style="color:#5a2">&#39;Users&#39;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#888;font-style:italic">// Überprüfung des Passwortes
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>
-</span></span><span style="display:flex;"><span>	<span style="color:#00f">public</span> <span style="color:#000">$validate</span> = <span style="color:#00f">array</span>(
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		<span style="color:#5a2">&#39;password&#39;</span> =&gt; <span style="color:#00f">array</span>(
-</span></span><span style="display:flex;"><span>			<span style="color:#5a2">&#39;required&#39;</span> =&gt; <span style="color:#00f">array</span>(
-</span></span><span style="display:flex;"><span>				<span style="color:#5a2">&#39;rule&#39;</span> =&gt; <span style="color:#00f">array</span>(
-</span></span><span style="display:flex;"><span>					<span style="color:#5a2">&#39;minLength&#39;</span>,
-</span></span><span style="display:flex;"><span>					<span style="color:#5a2">&#39;5&#39;</span>
-</span></span><span style="display:flex;"><span>				) ,
-</span></span><span style="display:flex;"><span>				<span style="color:#5a2">&#39;message&#39;</span> =&gt; <span style="color:#5a2">&#39;Ein Passwort mit mindestens 5 Stellen wird benötigt&#39;</span>
-</span></span><span style="display:flex;"><span>			)
-</span></span><span style="display:flex;"><span>		)
-</span></span><span style="display:flex;"><span>	);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#888;font-style:italic">// Alle Benutzer auflisten, $users steht in View &#34;index&#34; zu Verfügung
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>
-</span></span><span style="display:flex;"><span>	<span style="color:#00f">function</span> <span style="color:#000">index</span>()
-</span></span><span style="display:flex;"><span>	{
-</span></span><span style="display:flex;"><span>		<span style="color:#000">$this</span>-&gt;<span style="color:#000">set</span>(<span style="color:#5a2">&#39;users&#39;</span>, <span style="color:#000">$this</span>-&gt;<span style="color:#000">User</span>-&gt;<span style="color:#000">paginate</span>(<span style="color:#5a2">&#34;all&#34;</span>));
-</span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#888;font-style:italic">// Einen Benutzer anzeigen, $user steht in View &#34;view&#34; zu Verfügung
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>
-</span></span><span style="display:flex;"><span>	<span style="color:#00f">function</span> <span style="color:#000">view</span>(<span style="color:#000">$id</span> = <span style="color:#00f">null</span>)
-</span></span><span style="display:flex;"><span>	{
-</span></span><span style="display:flex;"><span>		<span style="color:#000">$this</span>-&gt;<span style="color:#000">User</span>-&gt;<span style="color:#000">id</span> = <span style="color:#000">$id</span>;
-</span></span><span style="display:flex;"><span>		<span style="color:#000">$this</span>-&gt;<span style="color:#000">set</span>(<span style="color:#5a2">&#39;user&#39;</span>, <span style="color:#000">$this</span>-&gt;<span style="color:#000">User</span>-&gt;<span style="color:#000">read</span>());
-</span></span><span style="display:flex;"><span>		<span style="color:#00f">if</span> (!<span style="color:#000">$this</span>-&gt;<span style="color:#000">User</span>-&gt;<span style="color:#000">exists</span>()) {
-</span></span><span style="display:flex;"><span>			<span style="color:#00f">throw</span> <span style="color:#00f">new</span> <span style="color:#000">NotFoundException</span>(<span style="color:#000">__</span>(<span style="color:#5a2">&#39;Benutzer nicht gefunden!&#39;</span>));
-</span></span><span style="display:flex;"><span>		}
-</span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">?&gt;</span><span style="color:#f00">
-</span></span></span></code></pre></div><h2 id="zusammenfassung">Zusammenfassung</h2>
-<p>Man kann zusammenfassend sagen, dass das Modell nicht so kompliziert ist wie sein Name. Wenn man es einmal verstanden und angewendet hat, kann man mit wenig Aufwand und schnell dynamische Webanwendungen schreiben, die beliebig erweiterbar sind.</p>
-<p>Noch einmal kurz die drei Begriffe und ihre Bedeutung:</p>
-<ul>
-<li>Model: Beziehung der Daten</li>
-<li>View: Anzeige der Daten</li>
-<li>Controller: Verarbeitung der Daten</li>
-</ul>
-<p><strong>edit:</strong> Artikel bearbeitet nach Hinweisen von &lsquo;mar&rsquo;.</p>
-</p>
+            <p>Model, View und Controller: Begriffe, mit denen man nicht sofort etwas anfangen kann. Auch trotz vieler Erklärungen schreckt das, auf den ersten Blick komplizierte, Modell viele Menschen davon ab sich daran zu versuchen. Auch ich habe es erst nach drei Versuchen geschafft, was jedoch wahrscheinlich vorher an meiner Ungeduld scheiterte.
+CakePHP Ich habe für diese Erklärung das Framework CakePHP benutzt, um einen Praxisbezug herzustellen und weil ich es gerade ausgiebig benutze.</p>
         </div>
+
+        <a href="/artikel/2012/08/das-model-view-controller-modell-am-beispiel-cakephp/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -256,19 +144,11 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><h2 id="was-ist-drm">Was ist DRM?</h2>
-<p><strong>Digital Rights Management</strong>, abgekürzt <strong>DRM</strong>, was soviel heißt wie Digitale Rechtverwaltung, ist ein Verfahren mit dem man die Nutzung und Weitergabe digitaler Medien kontrollieren kann. Man kann damit zum Beispiel festlegen, dass ein digital vorliegendes Musikstück nicht kopiert werden oder nur eine bestimmte Zeit wiedergegeben werden darf.</p>
-<p>Jetzt werden Sie sich denken: &ldquo;Gut, die Künstler müssen ja schließlich auch Geld verdienen!&rdquo;, aber Musik ist leider nicht der einzige Einsatzort.</p>
-<h2 id="ein-gedankenexperiment">Ein Gedankenexperiment</h2>
-<p><img src="/img/picture_38.jpeg" alt="Fernseher"></p>
-<p>Stellen Sie sich vor: Sie haben einen neuen Fernseher der schicke Full-HD Sendungen anzeigen und diese sogar auf einer angehängten USB-Festplatte aufzeichnen kann. Dazu wird die Festplatte in einem nur von Linux zu lesenden Dateisystem formatiert und die Aufnahmen selbst noch einmal verschlüsselt.</p>
-<p>Man kann in diesem Fall also wirklich davon ausgehen, dass diese Sendung außerhalb des Fernsehers niemand zu Gesicht bekommt.</p>
-<p>Nach einer Weile setzen Sie sich vor den Fernseher und wollen eine Naturdoku von letzter Woche ansehen, die Sie auf die Festplatte aufgenommen haben. Sie stellen jedoch fest, dass sich diese gar nicht mehr abspielen lässt. DRM verbietet Ihnen diese Aufnahme nach dem Zeitraum von ein paar Tagen anzusehen. Sie haben die Sendung auf der Festplatte, dürfen sie aber nicht ansehen.</p>
-<p>Nehmen Sie jetzt einen antiken Videorecorder und legen Sie eine VHS-Kasette von vor fünf Jahren ein. Und ja: Es funktioniert. Die Qualität ist zwar eher mittelmäßig, aber Sie dürfen das wenigstens.</p>
-<p>Sie finden das abartig? Ja, ich auch. Gegen die <a href="http://de.wikipedia.org/wiki/Robotergesetze">Robotergesetze</a> verstößt es übrigens auch.</p>
-<p>Was denken Sie darüber?</p>
-</p>
+            <p>Was ist DRM? Digital Rights Management, abgekürzt DRM, was soviel heißt wie Digitale Rechtverwaltung, ist ein Verfahren mit dem man die Nutzung und Weitergabe digitaler Medien kontrollieren kann. Man kann damit zum Beispiel festlegen, dass ein digital vorliegendes Musikstück nicht kopiert werden oder nur eine bestimmte Zeit wiedergegeben werden darf.
+Jetzt werden Sie sich denken: &ldquo;Gut, die Künstler müssen ja schließlich auch Geld verdienen!&rdquo;, aber Musik ist leider nicht der einzige Einsatzort.</p>
         </div>
+
+        <a href="/artikel/2012/07/was-sonst-noch-war-wieso-drm-ein-unding-ist/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -289,41 +169,13 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Während meiner Arbeit mit meinem neuen Arduino-Microcontroller habe ich eine Bibliothek für die Verwendung einer RGB-Led erstellt. Damit ist es möglich die Farbe der LED zu setzen und in einer bestimmten Zeitspanne die Farbe der LED langsam zu ändern.</p>
-<p>Zur Verwendung muss man nur das zip-Paket herunterladen und im Arduino-Verzeichnis unter libraries abspeichern.</p>
-<h2 id="farbe-setzen">Farbe setzen</h2>
-<p>Um die Farbe zu ändern verwendet man die Methode <code>setColor()</code> wie folgt:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#888;font-style:italic">#include</span> <span style="color:#888;font-style:italic">&lt;RGBTools.h&gt;</span><span style="color:#888;font-style:italic">
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>
-</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">// Pins von Rot, Grün und Blau an der LED setzen
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#000">RGBTools</span> <span style="color:#000">rgb</span>(<span style="color:#3af">9</span>,<span style="color:#3af">10</span>,<span style="color:#3af">11</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#00f">void</span> <span style="color:#000">setup</span>(){
-</span></span><span style="display:flex;"><span>	<span style="color:#000">rgb</span>.<span style="color:#000">setColor</span>(<span style="color:#3af">255</span>,<span style="color:#3af">0</span>,<span style="color:#3af">0</span>);
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#00f">void</span> <span style="color:#000">loop</span>(){
-</span></span><span style="display:flex;"><span>	<span style="color:#888;font-style:italic">// nothing to loop
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>}
-</span></span></code></pre></div><h2 id="farbe-fließend-ändern">Farbe fließend ändern</h2>
-<p>Um die Farbe über einen bestimmten Zeitraum hinweg fließend zu ändern verwendet man die Methode <code>fadeTo()</code>:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#888;font-style:italic">#include</span> <span style="color:#888;font-style:italic">&lt;RGBTools.h&gt;</span><span style="color:#888;font-style:italic">
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>
-</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">// Pins von Rot, Grün und Blau an der LED setzen
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#000">RGBTools</span> <span style="color:#000">rgb</span>(<span style="color:#3af">9</span>,<span style="color:#3af">10</span>,<span style="color:#3af">11</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#00f">void</span> <span style="color:#000">setup</span>(){
-</span></span><span style="display:flex;"><span>	<span style="color:#000">rgb</span>.<span style="color:#000">fadeTo</span>(<span style="color:#3af">255</span>,<span style="color:#3af">0</span>,<span style="color:#3af">0</span>,<span style="color:#3af">50</span>,<span style="color:#3af">3000</span>); <span style="color:#888;font-style:italic">// zu Rot in 50 Schritten + 3 Sekunden
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#00f">void</span> <span style="color:#000">loop</span>(){
-</span></span><span style="display:flex;"><span>	<span style="color:#888;font-style:italic">// nothing to loop
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>}
-</span></span></code></pre></div><p>Anregungen für weitere Funktionen nehme ich gerne entgegen!</p>
-<h2 id="download">Download</h2>
-<p><strong>Update:</strong> Bitte vom <a href="https://github.com/joushx/Arduino-RGB-Tools">Github-Repository</a> downloaden.</p>
-</p>
+            <p>Während meiner Arbeit mit meinem neuen Arduino-Microcontroller habe ich eine Bibliothek für die Verwendung einer RGB-Led erstellt. Damit ist es möglich die Farbe der LED zu setzen und in einer bestimmten Zeitspanne die Farbe der LED langsam zu ändern.
+Zur Verwendung muss man nur das zip-Paket herunterladen und im Arduino-Verzeichnis unter libraries abspeichern.
+Farbe setzen Um die Farbe zu ändern verwendet man die Methode setColor() wie folgt:
+#include &lt;RGBTools.h&gt; // Pins von Rot, Grün und Blau an der LED setzen RGBTools rgb(9,10,11); void setup(){ rgb.</p>
         </div>
+
+        <a href="/artikel/2012/07/rgb-led-bibliothek-f%C3%BCr-arduino/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -344,152 +196,11 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Da ich mich jetzt im Besitz eines Arduino Mikrocontroller-Boardes befinde, nun ein erster Artikel über dieses faszinierende Stück Technik. Mit einem Arduino kann man einfach Elektronik ansteuern, wie zum Beispiel LEDs, Servos, Temperatursensoren usw., indem man ein Programm am Computer programmiert und dann über ein USB-Kabel auf das Board überträgt.</p>
-<p>Für meinen ersten Artikel über dieses Thema habe ich mich für eine Ampelschaltung entschieden. Zwei Seiten einer Ampel, zum Beispiel bei einer Baustelle, sollen gesteuert werden. Wie bei einer österreichischen Straßenampel soll die Ampel außerdem grün blinken können.</p>
-<h2 id="hardware">Hardware</h2>
-<p>Ich habe dazu einen Arduino Uno und folgenden Aufbau verwendet:</p>
-<p><img src="/static/picture_58.png" alt="Schaltbild"></p>
-<p><strong>Achtung:</strong> Ich habe in diesem Aufbau die Widerstände für die Einfachheit weggelassen! Bitte LEDs nie ohne Vorwiderstand betreiben!</p>
-<p>Jede LED ist dabei einzeln über einen Digitalport ansteuerbar. Ich habe aus Platzgründen die Ports 2,3,4,5,7 und 8 dafür verwendet.</p>
-<h2 id="programmierung">Programmierung</h2>
-<p>Wie bei jedem Arduino-Sketch beginnt auch dieses Programm mit den beiden wohlbekannten Funktionen:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#00f">void</span> <span style="color:#000">setup</span>(){
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#00f">void</span> <span style="color:#000">loop</span>(){
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Als nächstes definieren wir nun am Beginn die digitalen Ausgänge der LEDs:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#888;font-style:italic">// Seite 1
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#00f">int</span> <span style="color:#000">g_1</span> = <span style="color:#3af">2</span>;    <span style="color:#888;font-style:italic">// Grün
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#00f">int</span> <span style="color:#000">y_1</span> = <span style="color:#3af">3</span>;    <span style="color:#888;font-style:italic">// Gelb
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#00f">int</span> <span style="color:#000">r_1</span> = <span style="color:#3af">4</span>;    <span style="color:#888;font-style:italic">// Rot
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>
-</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">// Seite 2
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#00f">int</span> <span style="color:#000">g_2</span> = <span style="color:#3af">8</span>;    <span style="color:#888;font-style:italic">// Grün
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#00f">int</span> <span style="color:#000">y_2</span> = <span style="color:#3af">7</span>;    <span style="color:#888;font-style:italic">// Gelb
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#00f">int</span> <span style="color:#000">r_2</span> = <span style="color:#3af">5</span>;    <span style="color:#888;font-style:italic">// Rot
-</span></span></span></code></pre></div><p>Im Setup-Teil des Programms werden dazu mittel <code>pinMode( )</code> die Typen der Pins definiert:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#000">pinMode</span>(<span style="color:#000">g_1</span>, <span style="color:#000">OUTPUT</span>);
-</span></span><span style="display:flex;"><span><span style="color:#000">pinMode</span>(<span style="color:#000">y_1</span>, <span style="color:#000">OUTPUT</span>);
-</span></span><span style="display:flex;"><span><span style="color:#000">pinMode</span>(<span style="color:#000">r_1</span>, <span style="color:#000">OUTPUT</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#000">pinMode</span>(<span style="color:#000">g_2</span>, <span style="color:#000">OUTPUT</span>);
-</span></span><span style="display:flex;"><span><span style="color:#000">pinMode</span>(<span style="color:#000">y_2</span>, <span style="color:#000">OUTPUT</span>);
-</span></span><span style="display:flex;"><span><span style="color:#000">pinMode</span>(<span style="color:#000">r_2</span>, <span style="color:#000">OUTPUT</span>);
-</span></span></code></pre></div><p>Kommen wir nun zum eigentlichen Ampel-Programm. Dieser Teil des Codes befindet sich, damit er sich am Ende wiederholt, im <code>loop( )</code>-Teil. Ich habe dazu einfach nacheinander, unterbrochen mit <code>delay( )</code> Aufrufen, die Vorgänge der Ampelschaltung prozedural programmiert. Natürlich wäre der Code mit OOP wesentlich übersichtlicher, dafür auch für den Anfang schwerer zu verstehen.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#888;font-style:italic">// Starteinstellung
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#000">digitalWrite</span>(<span style="color:#000">r_1</span>, <span style="color:#000">HIGH</span>);    <span style="color:#888;font-style:italic">// Rot auf 1 ein
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#000">digitalWrite</span>(<span style="color:#000">g_2</span>, <span style="color:#000">HIGH</span>);    <span style="color:#888;font-style:italic">// Grün auf 2 ein
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>
-</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">// Grünphase von 2
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#000">delay</span>(<span style="color:#3af">5000</span>);                <span style="color:#888;font-style:italic">// Ampelphase mit z.B. 5 Sekunden Länge
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>
-</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">// Ende der Grünphase von 2
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#000">blink</span>(<span style="color:#000">g_2</span>, <span style="color:#3af">4</span>);                <span style="color:#888;font-style:italic">// Blinken am Ende der Grünphase
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#000">digitalWrite</span>(<span style="color:#000">g_2</span>, <span style="color:#000">LOW</span>);        <span style="color:#888;font-style:italic">// Gründe Licht aus
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#000">digitalWrite</span>(<span style="color:#000">y_2</span>, <span style="color:#000">HIGH</span>);    <span style="color:#888;font-style:italic">// Gelbes Licht ein
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#000">delay</span>(<span style="color:#3af">1000</span>);                
-</span></span><span style="display:flex;"><span><span style="color:#000">digitalWrite</span>(<span style="color:#000">y_2</span>, <span style="color:#000">LOW</span>);        <span style="color:#888;font-style:italic">// Gelbes Licht aus
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#000">digitalWrite</span>(<span style="color:#000">r_2</span>, <span style="color:#000">HIGH</span>);    <span style="color:#888;font-style:italic">// Rotes Licht ein
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>
-</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">// Beginn der Grünphase von 1
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#000">delay</span>(<span style="color:#3af">1000</span>);
-</span></span><span style="display:flex;"><span><span style="color:#000">digitalWrite</span>(<span style="color:#000">y_1</span>, <span style="color:#000">HIGH</span>);
-</span></span><span style="display:flex;"><span><span style="color:#000">delay</span>(<span style="color:#3af">1000</span>);
-</span></span><span style="display:flex;"><span><span style="color:#000">digitalWrite</span>(<span style="color:#000">r_1</span>, <span style="color:#000">LOW</span>);
-</span></span><span style="display:flex;"><span><span style="color:#000">digitalWrite</span>(<span style="color:#000">y_1</span>, <span style="color:#000">LOW</span>);
-</span></span><span style="display:flex;"><span><span style="color:#000">digitalWrite</span>(<span style="color:#000">g_1</span>, <span style="color:#000">HIGH</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">// Grünphase von 1
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#000">delay</span>(<span style="color:#3af">5000</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">// Ende der Grünphase von 1
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#000">blink</span>(<span style="color:#000">g_1</span>, <span style="color:#3af">4</span>);
-</span></span><span style="display:flex;"><span><span style="color:#000">digitalWrite</span>(<span style="color:#000">g_1</span>, <span style="color:#000">LOW</span>);
-</span></span><span style="display:flex;"><span><span style="color:#000">digitalWrite</span>(<span style="color:#000">y_1</span>, <span style="color:#000">HIGH</span>);
-</span></span><span style="display:flex;"><span><span style="color:#000">delay</span>(<span style="color:#3af">1000</span>);
-</span></span><span style="display:flex;"><span><span style="color:#000">digitalWrite</span>(<span style="color:#000">y_1</span>, <span style="color:#000">LOW</span>);
-</span></span><span style="display:flex;"><span><span style="color:#000">digitalWrite</span>(<span style="color:#000">r_1</span>, <span style="color:#000">HIGH</span>);
-</span></span><span style="display:flex;"><span><span style="color:#000">delay</span>(<span style="color:#3af">1000</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">// Beginn der Grünphase von 2
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#000">digitalWrite</span>(<span style="color:#000">y_2</span>, <span style="color:#000">HIGH</span>);
-</span></span><span style="display:flex;"><span><span style="color:#000">delay</span>(<span style="color:#3af">1000</span>);
-</span></span><span style="display:flex;"><span><span style="color:#000">digitalWrite</span>(<span style="color:#000">r_2</span>, <span style="color:#000">LOW</span>);
-</span></span><span style="display:flex;"><span><span style="color:#000">digitalWrite</span>(<span style="color:#000">y_2</span>, <span style="color:#000">LOW</span>);
-</span></span></code></pre></div><p>Zum Blinken der Ampel habe ich eine Funktion namens <code>blink( )</code> verwendet. Diese stellt das Blinken der grünen Lampe am Ende der Grünphase in Österreich nach.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#00f">void</span> <span style="color:#000">blink</span>(<span style="color:#00f">int</span> <span style="color:#000">pin</span>, <span style="color:#00f">int</span> <span style="color:#000">times</span>){
-</span></span><span style="display:flex;"><span>	<span style="color:#00f">for</span>(<span style="color:#00f">int</span> <span style="color:#000">i</span> = <span style="color:#3af">0</span>; <span style="color:#000">i</span> &lt; <span style="color:#000">times</span>; <span style="color:#000">i</span>++){
-</span></span><span style="display:flex;"><span>		<span style="color:#000">digitalWrite</span>(<span style="color:#000">pin</span>, <span style="color:#000">LOW</span>);
-</span></span><span style="display:flex;"><span>		<span style="color:#000">delay</span>(<span style="color:#3af">500</span>);
-</span></span><span style="display:flex;"><span>		<span style="color:#000">digitalWrite</span>(<span style="color:#000">pin</span>, <span style="color:#000">HIGH</span>);
-</span></span><span style="display:flex;"><span>		<span style="color:#000">delay</span>(<span style="color:#3af">500</span>);
-</span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h2 id="zusammenfassung">Zusammenfassung</h2>
-<p>Mit diesem Code kann man nun bereits die &ldquo;Ampelanlage&rdquo; steuern. Sie sollte sich wie bei echten Vorbild verhalten. Hier nochmal der gesamte Code des Programmes:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#00f">int</span> <span style="color:#000">g_1</span> = <span style="color:#3af">2</span>;
-</span></span><span style="display:flex;"><span><span style="color:#00f">int</span> <span style="color:#000">y_1</span> = <span style="color:#3af">3</span>;
-</span></span><span style="display:flex;"><span><span style="color:#00f">int</span> <span style="color:#000">r_1</span> = <span style="color:#3af">4</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#00f">int</span> <span style="color:#000">g_2</span> = <span style="color:#3af">8</span>;
-</span></span><span style="display:flex;"><span><span style="color:#00f">int</span> <span style="color:#000">y_2</span> = <span style="color:#3af">7</span>;
-</span></span><span style="display:flex;"><span><span style="color:#00f">int</span> <span style="color:#000">r_2</span> = <span style="color:#3af">5</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#00f">void</span> <span style="color:#000">setup</span>() {
-</span></span><span style="display:flex;"><span>	<span style="color:#000">pinMode</span>(<span style="color:#000">g_1</span>, <span style="color:#000">OUTPUT</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#000">pinMode</span>(<span style="color:#000">y_1</span>, <span style="color:#000">OUTPUT</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#000">pinMode</span>(<span style="color:#000">r_1</span>, <span style="color:#000">OUTPUT</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#000">pinMode</span>(<span style="color:#000">g_2</span>, <span style="color:#000">OUTPUT</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#000">pinMode</span>(<span style="color:#000">y_2</span>, <span style="color:#000">OUTPUT</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#000">pinMode</span>(<span style="color:#000">r_2</span>, <span style="color:#000">OUTPUT</span>);
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#00f">void</span> <span style="color:#000">loop</span>(){
-</span></span><span style="display:flex;"><span>	<span style="color:#000">digitalWrite</span>(<span style="color:#000">r_1</span>, <span style="color:#000">HIGH</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#000">digitalWrite</span>(<span style="color:#000">g_2</span>, <span style="color:#000">HIGH</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#000">delay</span>(<span style="color:#3af">5000</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#000">blink</span>(<span style="color:#000">g_2</span>, <span style="color:#3af">4</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#000">digitalWrite</span>(<span style="color:#000">g_2</span>, <span style="color:#000">LOW</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#000">digitalWrite</span>(<span style="color:#000">y_2</span>, <span style="color:#000">HIGH</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#000">delay</span>(<span style="color:#3af">1000</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#000">digitalWrite</span>(<span style="color:#000">y_2</span>, <span style="color:#000">LOW</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#000">digitalWrite</span>(<span style="color:#000">r_2</span>, <span style="color:#000">HIGH</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#000">delay</span>(<span style="color:#3af">1000</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#000">digitalWrite</span>(<span style="color:#000">y_1</span>, <span style="color:#000">HIGH</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#000">delay</span>(<span style="color:#3af">1000</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#000">digitalWrite</span>(<span style="color:#000">r_1</span>, <span style="color:#000">LOW</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#000">digitalWrite</span>(<span style="color:#000">y_1</span>, <span style="color:#000">LOW</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#000">digitalWrite</span>(<span style="color:#000">g_1</span>, <span style="color:#000">HIGH</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#000">delay</span>(<span style="color:#3af">5000</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#000">blink</span>(<span style="color:#000">g_1</span>, <span style="color:#3af">4</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#000">digitalWrite</span>(<span style="color:#000">g_1</span>, <span style="color:#000">LOW</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#000">digitalWrite</span>(<span style="color:#000">y_1</span>, <span style="color:#000">HIGH</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#000">delay</span>(<span style="color:#3af">1000</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#000">digitalWrite</span>(<span style="color:#000">y_1</span>, <span style="color:#000">LOW</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#000">digitalWrite</span>(<span style="color:#000">r_1</span>, <span style="color:#000">HIGH</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#000">delay</span>(<span style="color:#3af">1000</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#000">digitalWrite</span>(<span style="color:#000">y_2</span>, <span style="color:#000">HIGH</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#000">delay</span>(<span style="color:#3af">1000</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#000">digitalWrite</span>(<span style="color:#000">r_2</span>, <span style="color:#000">LOW</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#000">digitalWrite</span>(<span style="color:#000">y_2</span>, <span style="color:#000">LOW</span>);
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#00f">void</span> <span style="color:#000">blink</span>(<span style="color:#00f">int</span> <span style="color:#000">pin</span>, <span style="color:#00f">int</span> <span style="color:#000">times</span>){
-</span></span><span style="display:flex;"><span>	<span style="color:#00f">for</span>(<span style="color:#00f">int</span> <span style="color:#000">i</span> = <span style="color:#3af">0</span>; <span style="color:#000">i</span> &lt; <span style="color:#000">times</span>; <span style="color:#000">i</span>++){
-</span></span><span style="display:flex;"><span>		<span style="color:#000">digitalWrite</span>(<span style="color:#000">pin</span>, <span style="color:#000">LOW</span>);
-</span></span><span style="display:flex;"><span>		<span style="color:#000">delay</span>(<span style="color:#3af">500</span>);
-</span></span><span style="display:flex;"><span>		<span style="color:#000">digitalWrite</span>(<span style="color:#000">pin</span>, <span style="color:#000">HIGH</span>);
-</span></span><span style="display:flex;"><span>		<span style="color:#000">delay</span>(<span style="color:#3af">500</span>);
-</span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Natürlich kann man das typisch österreichische Ampelblinken auch weglassen und das Programm objektorient neu schreiben, aber an diesem Beispiel sieht man recht deutlich wie einfach und schnell sich so eine eigentlich komplexe Schaltung mittels Arduino verwirklichen lässt.</p>
-<p>Der gesamte Code dieses Beispiels steht unter der <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>-Lizenz.</p>
-</p>
+            <p>Da ich mich jetzt im Besitz eines Arduino Mikrocontroller-Boardes befinde, nun ein erster Artikel über dieses faszinierende Stück Technik. Mit einem Arduino kann man einfach Elektronik ansteuern, wie zum Beispiel LEDs, Servos, Temperatursensoren usw., indem man ein Programm am Computer programmiert und dann über ein USB-Kabel auf das Board überträgt.
+Für meinen ersten Artikel über dieses Thema habe ich mich für eine Ampelschaltung entschieden. Zwei Seiten einer Ampel, zum Beispiel bei einer Baustelle, sollen gesteuert werden.</p>
         </div>
+
+        <a href="/artikel/2012/07/ampelschaltung-mit-arduino/">mehr</a>
     </article>
     
 </div>

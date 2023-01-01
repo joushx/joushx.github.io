@@ -94,13 +94,12 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Auf der Seite <a href="http://instantserver.io">instantserver.io</a> kann man einen Ubuntu-Server für eine halbe Stunde über SSH benutzen. Dieser Service ist kostenlos und funktioniert ohne Registrierung.</p>
-<p><img src="/img/picture_61.png" alt="Website von &amp;ldquo;Instant Server&amp;rdquo;"></p>
-<p>Der Dienst ist vor allem dazu gedacht, die Funktion des eigenen Dienstes zu testen, ein Tool zu testen oder etwas auf einem frischem System testen zu können.</p>
-<p>Natürlich würde ich nicht empfehlen private Informationen damit zu nutzen, aber zum Zwecke des Testens erscheint mir dieses Angebot durchaus nützlich.</p>
-<p>Eine Verlängerung der Server-Zeit lässt sich übrigens gegen eine Bezahlung erreichen.</p>
-</p>
+            <p>Auf der Seite instantserver.io kann man einen Ubuntu-Server für eine halbe Stunde über SSH benutzen. Dieser Service ist kostenlos und funktioniert ohne Registrierung.
+Der Dienst ist vor allem dazu gedacht, die Funktion des eigenen Dienstes zu testen, ein Tool zu testen oder etwas auf einem frischem System testen zu können.
+Natürlich würde ich nicht empfehlen private Informationen damit zu nutzen, aber zum Zwecke des Testens erscheint mir dieses Angebot durchaus nützlich.</p>
         </div>
+
+        <a href="/artikel/2013/06/ein-kostenloser-ubuntu-server-f%C3%BCr-eine-halbe-stunde/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -121,18 +120,13 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Zurzeit sind Fernseher groß in Mode, die sich mit dem Internet verbinden können und die reine Verwendung als Fernseher um weitere Dienste erweitern.</p>
-<p>Auch Apps kann man auf diesen Geräten installieren und so zum Beispiel Videos aus Mediatheken abrufen oder auf Online-Konten zugreifen.</p>
-<p>Doch, was machen diese Apps eigentlich genau? Senden sie gar Informationen über mich im Hintergrund an der Hersteller? Ist es sogar Malware?</p>
-<p><img src="/img/picture_62.jpeg" alt="Ein Samsung Smart TV"></p>
-<p>In so einem Fall analysiert man normalerweise die Anwendung per Reverse-Engineering, doch das ist in diesem Fall, zumindest beim Hersteller Samsung, nicht nötig, denn diese Anwendung werden mit HTML und Javascript erstellt.</p>
-<p>Das Problem stellt eher dar, an die Anwendung selbst zu kommen. Normalerweiße lädt sie der TV automatisch herunter und installiert sie, ohne dass man Zugriff darauf hat.</p>
-<p>Ich habe kurzerhand den Netzwerkverkehr auf einem Linux-Router mitgeschnitten. Dazu habe ich mich per SSH verbunden und folgenden Befehl laufen lassen:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>tcpdump -i br0 -s 65535 -w smarttv.dump
-</span></span></code></pre></div><p>Am Fernseher habe ich die App ausgewählt und <em>Tools &gt; Erneut installieren</em> ausgeführt.</p>
-<p>Dannach kann man in Wireshark den Abbruf der App beobachten und über den Link die zugehörige  zip-Datei für einen begrenzten Zeitraum downloaden, die man dann bequem am Computer durchsehen kann.</p>
-</p>
+            <p>Zurzeit sind Fernseher groß in Mode, die sich mit dem Internet verbinden können und die reine Verwendung als Fernseher um weitere Dienste erweitern.
+Auch Apps kann man auf diesen Geräten installieren und so zum Beispiel Videos aus Mediatheken abrufen oder auf Online-Konten zugreifen.
+Doch, was machen diese Apps eigentlich genau? Senden sie gar Informationen über mich im Hintergrund an der Hersteller? Ist es sogar Malware?
+In so einem Fall analysiert man normalerweise die Anwendung per Reverse-Engineering, doch das ist in diesem Fall, zumindest beim Hersteller Samsung, nicht nötig, denn diese Anwendung werden mit HTML und Javascript erstellt.</p>
         </div>
+
+        <a href="/artikel/2013/06/apps-f%C3%BCr-samsung-smart-tvs-analysieren/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -153,12 +147,12 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Ein weiterer Versuch den Google-Reader zu ersetzen: <a href="http://tt-rss.org">Tiny Tiny RSS</a>.</p>
-<p>Dieser Feedreader lässt sich sehr genau auf seine Wünsche einstellen und hat zudem den Vorteil selbgehostet zu sein. Außerdem ist eine JSON-API vorhanden, die es möglich macht selbst Anwendungen zu entwickeln.</p>
-<p><img src="/img/picture_63.png" alt="TTRSS Oberfläche"></p>
-<p>Die Installation ist zwar etwas langwierig, weil ein Daemon eingerichtet werden muss, wird aber <a href="https://uberspace.de/dokuwiki/cool:ttrss">hier</a> von den fleißigen Uberspace-Leuten ausführlich beschrieben.</p>
-</p>
+            <p>Ein weiterer Versuch den Google-Reader zu ersetzen: Tiny Tiny RSS.
+Dieser Feedreader lässt sich sehr genau auf seine Wünsche einstellen und hat zudem den Vorteil selbgehostet zu sein. Außerdem ist eine JSON-API vorhanden, die es möglich macht selbst Anwendungen zu entwickeln.
+Die Installation ist zwar etwas langwierig, weil ein Daemon eingerichtet werden muss, wird aber hier von den fleißigen Uberspace-Leuten ausführlich beschrieben.</p>
         </div>
+
+        <a href="/artikel/2013/05/ein-weiterer-versuch-tiny-tiny-rss/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -179,11 +173,12 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Da die Abschaltung des <a href="http://reader.google.com">Google-Readers</a> immer näher kommt, habe ich mich auch nach einer Alternative dafür umgesehen und <a href="http://theoldreader.com/">The Old Reader</a> entdeckt.</p>
-<p>Dieser Service versucht die Funktionen des Google-Reader nachzuahmen, wodurch keine große Umgewöhnung nötig ist. Bis ich etwas besseres gefunden habe, ist das nun mein aktueller Feedreader.</p>
-<p>Tipps zu Feedreadern werden übrigens per Kommentar akzeptiert!</p>
-</p>
+            <p>Da die Abschaltung des Google-Readers immer näher kommt, habe ich mich auch nach einer Alternative dafür umgesehen und The Old Reader entdeckt.
+Dieser Service versucht die Funktionen des Google-Reader nachzuahmen, wodurch keine große Umgewöhnung nötig ist. Bis ich etwas besseres gefunden habe, ist das nun mein aktueller Feedreader.
+Tipps zu Feedreadern werden übrigens per Kommentar akzeptiert!</p>
         </div>
+
+        <a href="/artikel/2013/05/the-old-reader-alternative-zu-google-reader/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -204,35 +199,11 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Um die Programmiersprache <a href="http://golang.org">Go</a> zu erlernen, habe ich versucht die sogenannte <a href="https://de.wikipedia.org/wiki/Fibonacci-Folge">Fibonacci-Folge</a> zu programmieren. Und hier ist das Ergebnis:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#00f">package</span> <span style="color:#000">main</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#00f">import</span> <span style="color:#5a2">&#34;fmt&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#00f">func</span> <span style="color:#000">main</span>() {
-</span></span><span style="display:flex;"><span>	<span style="color:#000">fmt</span>.<span style="color:#000">Println</span>(<span style="color:#000">fibonacci</span>(<span style="color:#3af">20</span>))
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#00f">func</span> <span style="color:#000">fibonacci</span>(<span style="color:#000">count</span> <span style="color:#00f">int</span>) []<span style="color:#00f">int</span>{
-</span></span><span style="display:flex;"><span>	
-</span></span><span style="display:flex;"><span>	<span style="color:#888;font-style:italic">// Leeres Slice erzeugen
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>	<span style="color:#000">data</span> := []<span style="color:#00f">int</span>{<span style="color:#3af">0</span>,<span style="color:#3af">1</span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#888;font-style:italic">// For-Schleife
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>	<span style="color:#00f">for</span> <span style="color:#000">i</span> := <span style="color:#3af">2</span>; <span style="color:#000">i</span> &lt; <span style="color:#000">count</span>; <span style="color:#000">i</span>++ {
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		<span style="color:#888;font-style:italic">// Vorhergehende Elemente aufrufen
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>        <span style="color:#00f">var</span> <span style="color:#000">x</span>,<span style="color:#000">y</span> <span style="color:#00f">int</span> = <span style="color:#000">data</span>[<span style="color:#000">i</span>-<span style="color:#3af">2</span>], <span style="color:#000">data</span>[<span style="color:#000">i</span>-<span style="color:#3af">1</span>]
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#888;font-style:italic">// Elemente addieren und zum Slice hinzufügen
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>        <span style="color:#000">data</span> = <span style="color:#000">append</span>(<span style="color:#000">data</span>, <span style="color:#000">x</span>+<span style="color:#000">y</span>)
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#00f">return</span> <span style="color:#000">data</span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Anfangs ist dieses Programmiersprache etwas gewöhnungsbedürftig, aber nach kuzer Zeit erkennt man die nützlichen Besonderheiten.</p>
-</p>
+            <p>Um die Programmiersprache Go zu erlernen, habe ich versucht die sogenannte Fibonacci-Folge zu programmieren. Und hier ist das Ergebnis:
+package main import &#34;fmt&#34; func main() { fmt.Println(fibonacci(20)) } func fibonacci(count int) []int{ // Leeres Slice erzeugen data := []int{0,1} // For-Schleife for i := 2; i &lt; count; i++ { // Vorhergehende Elemente aufrufen var x,y int = data[i-2], data[i-1] // Elemente addieren und zum Slice hinzufügen data = append(data, x+y) } return data } Anfangs ist dieses Programmiersprache etwas gewöhnungsbedürftig, aber nach kuzer Zeit erkennt man die nützlichen Besonderheiten.</p>
         </div>
+
+        <a href="/artikel/2013/05/fibonacci-folge-in-go/">mehr</a>
     </article>
     
 </div>

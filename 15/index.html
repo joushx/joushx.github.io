@@ -94,16 +94,12 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Samsung Smart TVs besitzen ein Interface zur Steuerung des Fernseher über UPnP. Zahlreiche Befehle wie Steuerung der Aufnahme, Änderung der Lautstärke und Abrufen der Programmliste lässt sich darüber bewerkstelligen.</p>
-<p>Beim erstmaligen Abrufen einer Information muss der Zugriff am Fernseher mit einem Tastendruck auf &ldquo;Zulassen&rdquo; bestätigt werden.</p>
-<h2 id="funktionen-testen">Funktionen testen</h2>
-<p>Am einfachsten lassen sich die verschiedenen Information mit dem Linux-Paket <code>upnp-tools</code> und dem darin enthaltenen <code>UPnP Universal Control Point</code> durchsuchen und testen.</p>
-<p><img src="/img/picture_78.png" alt="UPnP Console"></p>
-<h2 id="sicherheit">Sicherheit</h2>
-<p>Womöglich ist es machbar die IP-Adresse im lokalen Netzwerk zu fälschen und die Geräte anstatt des urprünglichen Clients darüber zu steuern. Eine weitere Sicherheitsstufe außer der Bestätigung mit der Fernbedienung existiert nicht. In manchen Fällen wird nur eine URL zu einer XML-Datei am Fernseher zurückgegeben, die dann für einige Zeit ungesichert im Netzwerk zu erreichen ist. Dieser gesamte Datenverkehr passiert unverschlüsselt.</p>
-<p>Sollte sich jemand Zugang zum Dienst verschaffen, so kann dieser viele, zum Teil eher persönliche, Informationen abrufen, wie zum Beispiel eine Liste der Aufnahmen, der aktuelle Fernsehkanal und auch die Lautstärke.</p>
-</p>
+            <p>Samsung Smart TVs besitzen ein Interface zur Steuerung des Fernseher über UPnP. Zahlreiche Befehle wie Steuerung der Aufnahme, Änderung der Lautstärke und Abrufen der Programmliste lässt sich darüber bewerkstelligen.
+Beim erstmaligen Abrufen einer Information muss der Zugriff am Fernseher mit einem Tastendruck auf &ldquo;Zulassen&rdquo; bestätigt werden.
+Funktionen testen Am einfachsten lassen sich die verschiedenen Information mit dem Linux-Paket upnp-tools und dem darin enthaltenen UPnP Universal Control Point durchsuchen und testen.</p>
         </div>
+
+        <a href="/artikel/2013/02/samsung-smart-tvs-%C3%BCber-upnp-steuern/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -124,14 +120,13 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Auch das XFS-Dateisystem kann kaputt gehen. Doch Linux wäre nicht Linux, wenn es nicht für jeden möglichen Fall mindestens ein Paket gäbe, mit dem sich alles wieder in den Normalzustand versetzen ließe. In diesem Fall hilft <code>xfs_replair</code> aus dem Paket <code>xfsprogs</code>.</p>
-<p>Um es zu installieren öffnet man das Terminal und schreibt:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>sudo apt-get install xfsprogs
-</span></span></code></pre></div><p>Anschließend lässt sich die Festplatte mittels folgendem Befehl reparieren:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>xfs_repair -n /dev/sdb1
-</span></span></code></pre></div><p>Natürlich sollte dazu der Pfad zum Datenträger angepasst werden. Innerhalb weniger Sekunden hatte ich damit wieder eine funktionierende Festplatte in den Händen.</p>
-</p>
+            <p>Auch das XFS-Dateisystem kann kaputt gehen. Doch Linux wäre nicht Linux, wenn es nicht für jeden möglichen Fall mindestens ein Paket gäbe, mit dem sich alles wieder in den Normalzustand versetzen ließe. In diesem Fall hilft xfs_replair aus dem Paket xfsprogs.
+Um es zu installieren öffnet man das Terminal und schreibt:
+sudo apt-get install xfsprogs Anschließend lässt sich die Festplatte mittels folgendem Befehl reparieren:
+xfs_repair -n /dev/sdb1 Natürlich sollte dazu der Pfad zum Datenträger angepasst werden.</p>
         </div>
+
+        <a href="/artikel/2013/02/xfs-dateisysteme-reparieren/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -152,86 +147,11 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Mit <a href="http://backbonejs.org/">Backbone.js</a> ist es möglich JavaScript-Web-Apps nach dem MVC-Prinzip aufzubauen. Dadurch kann die komplette Verwaltung der Daten von diesem Framework erledigt werden und es kümmert sich zudem auch darum #-URLs (Fragmentbezeichner heißt das Ding) auszuliefern.</p>
-<h2 id="model">Model</h2>
-<p>Über das Model wird die Struktur der Daten definiert. Außerdem wird die Adresse festgelegt, an die die Ajax-Anfragen gerichtet werden. Im Objekt <code>defaults</code> werden die Standardwerte, oder, wenn diese leer bleiben, die Existenz der Felder definiert.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#00f">var</span> <span style="color:#000">UserModel</span> = <span style="color:#000">Backbone</span>.<span style="color:#000">Model</span>.<span style="color:#000">extend</span>({
-</span></span><span style="display:flex;"><span>    <span style="color:#000">urlRoot</span>: <span style="color:#5a2">&#39;data/users&#39;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#000">defaults</span>: {
-</span></span><span style="display:flex;"><span>        <span style="color:#000">username</span>: <span style="color:#5a2">&#39;&#39;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#000">name</span>: <span style="color:#5a2">&#39;&#39;</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>});
-</span></span></code></pre></div><h2 id="collection">Collection</h2>
-<p>Mit Sammlungen (Collections) werden mehrere Einheiten eines Models gespeichert. Hierbei wird das Model der Daten angegeben und wiederum die URL, unter der mit Ajax die Liste der Daten abgerufen werden können.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#00f">var</span> <span style="color:#000">UsersCollection</span> = <span style="color:#000">Backbone</span>.<span style="color:#000">Collection</span>.<span style="color:#000">extend</span>({
-</span></span><span style="display:flex;"><span>    <span style="color:#000">model</span>: <span style="color:#000">UserModel</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#000">url</span>: <span style="color:#5a2">&#39;data/users&#39;</span>
-</span></span><span style="display:flex;"><span>});
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#00f">var</span> <span style="color:#000">users</span> = <span style="color:#00f">new</span> <span style="color:#000">UsersCollection</span>();
-</span></span></code></pre></div><p>Über die <code>fetch</code> - Funktion können die Daten abgerufen werden.Die Daten können dann in der <code>success</code> - Funktion verarbeitet werden.Über <code>.get(&quot;&lt;feld&gt;&quot;)</code>
-lässt sich der Wert eines Feldes abrufen.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#000">users</span>.<span style="color:#000">fetch</span>({
-</span></span><span style="display:flex;"><span>    <span style="color:#000">success</span>: <span style="color:#00f">function</span>(<span style="color:#000">items</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#000">items</span>.<span style="color:#000">each</span>(<span style="color:#00f">function</span>(<span style="color:#000">item</span>) {
-</span></span><span style="display:flex;"><span>            <span style="color:#000">alert</span>(<span style="color:#000">item</span>.<span style="color:#000">get</span>(<span style="color:#5a2">&#34;username&#34;</span>));
-</span></span><span style="display:flex;"><span>        });
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>});
-</span></span></code></pre></div><h2 id="router">Router</h2>
-<p>Über so genannte Router lassen sich die verschiedenen URLs definieren und mit dem gewünschten JavaScript-Code verbinden. Mit <code>Backbone.history.start()</code> stellt man sicher, dass die URLs auch im Verlauf des Browsers auftauchen.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#00f">var</span> <span style="color:#000">AppRouter</span> = <span style="color:#000">Backbone</span>.<span style="color:#000">Router</span>.<span style="color:#000">extend</span>({
-</span></span><span style="display:flex;"><span>    <span style="color:#000">routes</span>: {
-</span></span><span style="display:flex;"><span>        <span style="color:#5a2">&#34;:user&#34;</span>: <span style="color:#5a2">&#34;user&#34;</span>, <span style="color:#888;font-style:italic">// Ein Benutzer (/muster)
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>        <span style="color:#5a2">&#34;&#34;</span>: <span style="color:#5a2">&#34;users&#34;</span> <span style="color:#888;font-style:italic">// Alle Benutzer (/)
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>    },
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#000">user</span>: <span style="color:#00f">function</span>() {
-</span></span><span style="display:flex;"><span>        <span style="color:#888;font-style:italic">// magic
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>    },
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#000">users</span>: <span style="color:#00f">function</span>() {
-</span></span><span style="display:flex;"><span>        <span style="color:#888;font-style:italic">// other magic
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>    }
-</span></span><span style="display:flex;"><span>});
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#000">Backbone</span>.<span style="color:#000">history</span>.<span style="color:#000">start</span>();
-</span></span></code></pre></div><h2 id="views">Views</h2>
-<p>Backbone.js ermöglicht es Views mit Templates zu laden. Dazu definiert man einen <code>script</code>-Tag mit dem <code>type</code>-Attribut <code>text/template</code>. Darin kann man Platzhalter für Variablen einfügen, die zwischen <code>&lt;%=</code> und <code>%&gt;</code> stehen.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>&lt;<span style="color:#000">script</span> <span style="color:#000">type</span>=<span style="color:#5a2">&#34;text/template&#34;</span> <span style="color:#000">id</span>=<span style="color:#5a2">&#34;template-user&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#000">h1</span>&gt;&lt;%= <span style="color:#000">username</span> %&gt;&lt;/<span style="color:#000">h1</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#000">script</span>&gt;
-</span></span></code></pre></div><p>Den eigentlichen View erzeugt man wie folgt:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#00f">var</span> <span style="color:#000">UserView</span> = <span style="color:#000">Backbone</span>.<span style="color:#000">View</span>.<span style="color:#000">extend</span>({
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#000">initialize</span>: <span style="color:#00f">function</span>() {
-</span></span><span style="display:flex;"><span>        <span style="color:#00f">this</span>.<span style="color:#000">template</span> = <span style="color:#000">_</span>.<span style="color:#000">template</span>(<span style="color:#000">$</span>(<span style="color:#5a2">&#34;#template-user&#34;</span>).<span style="color:#000">html</span>());
-</span></span><span style="display:flex;"><span>    },
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#000">render</span>: <span style="color:#00f">function</span>(<span style="color:#000">eventName</span>) {
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00f">var</span> <span style="color:#000">data</span> = {
-</span></span><span style="display:flex;"><span>            <span style="color:#000">test</span>: <span style="color:#5a2">&#34;abc&#34;</span>
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#000">$</span>(<span style="color:#00f">this</span>.<span style="color:#000">el</span>).<span style="color:#000">html</span>(<span style="color:#00f">this</span>.<span style="color:#000">template</span>(<span style="color:#000">data</span>));
-</span></span><span style="display:flex;"><span>        <span style="color:#00f">return</span> <span style="color:#00f">this</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>});
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#00f">var</span> <span style="color:#000">user</span> = <span style="color:#00f">new</span> <span style="color:#000">UserView</span>({
-</span></span><span style="display:flex;"><span>    <span style="color:#000">model</span>: <span style="color:#000">User</span>
-</span></span><span style="display:flex;"><span>});
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#000">user</span>.<span style="color:#000">render</span>();
-</span></span></code></pre></div><p>Dabei wird in der <code>initialize</code>-Funktion das Template aus dem Script-Tag geladen und in der Variable <code>this.template</code> gespeichert. In der Funktion <code>render</code> wird das Template befüllt und anschließend zur Seite hinzugefügt. Die Daten werden direkt aus dem Model geholt, das auch bei der Konstruktion des Views angegeben wird.</p>
-<p>Es können jedoch auch erst in der Render-Funktion Template-Variablen deklariert werden, die in als Objekt, in diesem Beispiel <code>data</code>, das der <code>this.template()</code>-Funktion übergeben wird.</p>
-<h2 id="fazit">Fazit</h2>
-<p>Das Backbone.js Framework stellt eine große Erleichterung dar und macht es möglich sich auf die eigentliche Entwicklung einer App zu konzentrieren, anstatt sich mit wiederkehrenden Aufgaben und Problemen befassen zu müssen. Vor allem der Umgang mit den Daten ist so klar strukturiert und macht keine Programmierung der oft umfangreichen Ajax-Anfragen nötig.</p>
-<p>Als Voraussetzung ist die jQuery-Bibliothek vonnöten, die jedoch in vielen Fällen bereits verwendet wird und sich bereits zu einem Quasi-Standard etabliert hat.</p>
-</p>
+            <p>Mit Backbone.js ist es möglich JavaScript-Web-Apps nach dem MVC-Prinzip aufzubauen. Dadurch kann die komplette Verwaltung der Daten von diesem Framework erledigt werden und es kümmert sich zudem auch darum #-URLs (Fragmentbezeichner heißt das Ding) auszuliefern.
+Model Über das Model wird die Struktur der Daten definiert. Außerdem wird die Adresse festgelegt, an die die Ajax-Anfragen gerichtet werden. Im Objekt defaults werden die Standardwerte, oder, wenn diese leer bleiben, die Existenz der Felder definiert.</p>
         </div>
+
+        <a href="/artikel/2013/02/web-apps-strukturieren-mit-backbone.js/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -252,12 +172,12 @@ lässt sich der Wert eines Feldes abrufen.</p>
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Vor einiger Zeit bin ich auf einen großartigen Code-Editor für Windows, Linux und Mac gestoßen: <a href="http://www.sublimetext.com">Sublime Text 2</a>. Der Editor ist einfach zu bedienen, enthält aber einen große Auswahl von nützlichen Funktionen.</p>
-<p><img src="/img/picture_70.png" alt="Sublime Text 2"></p>
-<p>Besonders gefällt mir das Design, die große Auswahl an Syntaxhervorhebung und der einfache Umgang mit Tabs anstelle von gedit.</p>
-<p>Am besten testet man den Editor selbst, denn die Demo-Version hat augenscheinlich keine Einschränkungen. Nur ein Fenster mit der Aufforderung den Editor zu kaufen wird von Zeit zu Zeit geöffnet.</p>
-</p>
+            <p>Vor einiger Zeit bin ich auf einen großartigen Code-Editor für Windows, Linux und Mac gestoßen: Sublime Text 2. Der Editor ist einfach zu bedienen, enthält aber einen große Auswahl von nützlichen Funktionen.
+Besonders gefällt mir das Design, die große Auswahl an Syntaxhervorhebung und der einfache Umgang mit Tabs anstelle von gedit.
+Am besten testet man den Editor selbst, denn die Demo-Version hat augenscheinlich keine Einschränkungen. Nur ein Fenster mit der Aufforderung den Editor zu kaufen wird von Zeit zu Zeit geöffnet.</p>
         </div>
+
+        <a href="/artikel/2013/02/empfehlung-sublime-text-2/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -278,18 +198,11 @@ lässt sich der Wert eines Feldes abrufen.</p>
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Gelegentlich findet man in irgendwelchen Ordnern und auf Datenträgern alten Quellcode, den man in seiner Frühzeit als Entwickler geschrieben hat. Nicht selten, eigentlich immer, schämt man sich im Nachhinein für diese Zeilen voll Ressourcenverschwendung und ineffizienter und unsicherer Programmierung.</p>
-<p>Gefunden habe ich jetzt diesen ausgesprochen performanten Codeausschnitt aus einem Projekt aus der Frühzeit meiner PHP-Kenntnisse, als ich gerade etwas MySQL gelernt hatte. Hier wird der Wert eines Eintrages ausgelesen, hochgezählt und wieder abgespeichert.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#000">$res</span> = <span style="color:#000">mysql_query</span>(<span style="color:#5a2">&#34;SELECT count from users WHERE id=&#34;</span> . <span style="color:#000">$id</span>);
-</span></span><span style="display:flex;"><span><span style="color:#000">$data</span> = <span style="color:#000">mysql_fetch_object</span>(<span style="color:#000">$res</span>);
-</span></span><span style="display:flex;"><span><span style="color:#000">$count</span> = <span style="color:#000">$data</span>-&gt;<span style="color:#000">count</span>;
-</span></span><span style="display:flex;"><span><span style="color:#000">$count</span>++;
-</span></span><span style="display:flex;"><span><span style="color:#000">mysql_query</span>(<span style="color:#5a2">&#34;UPDATE users SET count=&#34;</span> . <span style="color:#000">$count</span> . <span style="color:#5a2">&#34; WHERE id=&#34;</span> . <span style="color:#000">$id</span>);
-</span></span></code></pre></div><p>Heute würde ich das natürlich so machen:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#000">mysql_query</span>(<span style="color:#5a2">&#34;UPDATE users SET count = count+1 WHERE id=&#34;</span> . <span style="color:#000">$id</span>);
-</span></span></code></pre></div><p>(SQL-Injection. Ja, ja, aber darum geht es jetzt nicht)</p>
-</p>
+            <p>Gelegentlich findet man in irgendwelchen Ordnern und auf Datenträgern alten Quellcode, den man in seiner Frühzeit als Entwickler geschrieben hat. Nicht selten, eigentlich immer, schämt man sich im Nachhinein für diese Zeilen voll Ressourcenverschwendung und ineffizienter und unsicherer Programmierung.
+Gefunden habe ich jetzt diesen ausgesprochen performanten Codeausschnitt aus einem Projekt aus der Frühzeit meiner PHP-Kenntnisse, als ich gerade etwas MySQL gelernt hatte. Hier wird der Wert eines Eintrages ausgelesen, hochgezählt und wieder abgespeichert.</p>
         </div>
+
+        <a href="/artikel/2013/02/code-von-fr%C3%BCher-wie-konnte-ich-nur/">mehr</a>
     </article>
     
 </div>

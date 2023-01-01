@@ -94,9 +94,10 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Die Steuerprogramme für digitale Spiegelreflexkameras sind oftmals nur für Windows und Mac verfügbar. Für den Linux-Benutzer gibt es aber, wie von mir vor kurzem entdeckt, <a href="http://www.gphoto.org/proj/gphoto2/">gphoto2</a>.</p>
-</p>
+            <p>Die Steuerprogramme für digitale Spiegelreflexkameras sind oftmals nur für Windows und Mac verfügbar. Für den Linux-Benutzer gibt es aber, wie von mir vor kurzem entdeckt, gphoto2.</p>
         </div>
+
+        <a href="/artikel/2014/03/dslr-steuerung-f%C3%BCr-linux/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -117,38 +118,13 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Assembler ist gar nicht so schwer. Vorausgesetzt natürlich man hat es einmal verstanden. Und genau das soll dieser Artikel leisten: Verständlich machen, wie es grundsätzlich geht.</p>
-<p>In diesem Beispiel verwende ich <em>GNU Assembler</em> mit der <em>AT&amp;T-Syntax</em>.</p>
-<p>Ein Programm besteht immer aus zwei Teilen: Dem data- und dem text-Bereich:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gas" data-lang="gas"><span style="display:flex;"><span><span style="color:#000">.section</span> <span style="color:#000">.data</span>
-</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"># hier kommt was hin
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>
-</span></span><span style="display:flex;"><span><span style="color:#000">.section</span> <span style="color:#000">.text</span>
-</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"># hier auch
-</span></span></span></code></pre></div><p>Im data-Bereich werden die Variablen definiert und im text-Bereich steht das eigentliche Programm.</p>
-<h2 id="variablen">Variablen</h2>
-<p>Wie jedes andere Programm braucht auch ein Assemblerprogramm (in Normalfall) Variablen. Diese werden mit Namen, Datentyp und Wert im data-Bereich definiert. Das Programm mit einer Variable sieht zum Beispiel so aus:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gas" data-lang="gas"><span style="display:flex;"><span><span style="color:#000">.section</span> <span style="color:#000">.data</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000">msg:</span> <span style="color:#000">.ascii</span> <span style="color:#5a2">&#34;Ende!\r\n&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#000">.section</span> <span style="color:#000">.text</span>
-</span></span></code></pre></div><p>Zuerst wird der Name der Variable angegeben, in diesem Beispiel <code>msg</code>. Danach folgt der Datentyp und der Wert der Variable. In diesem Fall ist es ein String, angegeben durch <code>.ascii</code>.</p>
-<h2 id="programmlogik">Programmlogik</h2>
-<p>Eine Variable zu definieren ist schön, aber bringt alleine noch nicht viel. Deshalb kommt jetzt die eigentliche Programmlogik. Es gibt verschiene Befehle, die auf einer sehr niedrigen Systemebene Befehle ausführen. Eine einfache Anfangsübung ist die Textausgabe in der Konsole über stdout.</p>
-<p>Wer jetzt mit einem einzelnen Befehl rechnet, der wird enttäuscht werden: Es braucht gleich fünf (!) davon.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gas" data-lang="gas"><span style="display:flex;"><span><span style="color:#000">.section</span> <span style="color:#000">.data</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000">msg:</span> <span style="color:#000">.ascii</span> <span style="color:#5a2">&#34;Ende!\r\n&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#000">.section</span> <span style="color:#000">.text</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000">movl</span> <span style="color:#000">$4</span>, <span style="color:#000">%eax</span>  <span style="color:#888;font-style:italic"># 4 = Ausgabe
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>  <span style="color:#000">movl</span> <span style="color:#000">$1</span>, <span style="color:#000">%ebx</span>  <span style="color:#888;font-style:italic"># 1 = stdout
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>  <span style="color:#000">movl</span> <span style="color:#000">$msg</span>, <span style="color:#000">%ecx</span>  <span style="color:#888;font-style:italic"># String übergeben
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>  <span style="color:#000">movl</span> <span style="color:#000">$7</span>, <span style="color:#000">%edx</span>  <span style="color:#888;font-style:italic"># Länge des Strings (\r = 1 | \n = 1)
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>  <span style="color:#000">int</span> <span style="color:#000">$0x80</span>
-</span></span></code></pre></div><p>Die benötigten Werte werden in die Speicher <code>%eax</code> bis <code>%edx</code> gelegt und dann das Betriebssystem mittels <code>int $0x80</code> aufgefordert den Befehl auszuführen.</p>
-<p>An dieser Stelle muss ich zugeben, dass ich auch noch nicht sehr viel mehr kann. Aber wer sich dafür interessiert, der dürfte bei <a href="http://en.wikibooks.org/wiki/X86_Assembly/GAS_Syntax">Wikibooks</a> weitere Informationen dazu finden.</p>
-</p>
+            <p>Assembler ist gar nicht so schwer. Vorausgesetzt natürlich man hat es einmal verstanden. Und genau das soll dieser Artikel leisten: Verständlich machen, wie es grundsätzlich geht.
+In diesem Beispiel verwende ich GNU Assembler mit der AT&amp;T-Syntax.
+Ein Programm besteht immer aus zwei Teilen: Dem data- und dem text-Bereich:
+.section .data # hier kommt was hin .section .text # hier auch Im data-Bereich werden die Variablen definiert und im text-Bereich steht das eigentliche Programm.</p>
         </div>
+
+        <a href="/artikel/2014/02/wie-man-assembler-schreibt/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -169,14 +145,11 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Due to the well-known problems with the RC4 cipher i recently disabled all ciphers that use RC4 in my web browser. I have not experienced any problems until a week ago. Maybe some old websites will not support ciphers without it. That is what i thought.</p>
-<p>So days ago one of these short videos from <a href="http://vine.co">vine</a>, a service of Twitter, showed up in my Twitter timeline. I clicked it and got this:</p>
-<p><img src="/img/picture_102.png" alt="Fehlermeldung"></p>
-<p>(This means the SSL handshake failed as a result of lack of common ciphers.)</p>
-<p>To be more precise: vine.co does not support <strong>any</strong> cipher without RC4 (<a href="https://sslcheck.globalsign.com/en/sslcheck?host=vine.co">SSL-Check</a>). Twitter itself even supports <a href="https://blog.twitter.com/2013/forward-secrecy-at-twitter-0">elliptic curve crypto</a>. So why not vine?</p>
-<p>Twitter, please explain me that.</p>
-</p>
+            <p>Due to the well-known problems with the RC4 cipher i recently disabled all ciphers that use RC4 in my web browser. I have not experienced any problems until a week ago. Maybe some old websites will not support ciphers without it. That is what i thought.
+So days ago one of these short videos from vine, a service of Twitter, showed up in my Twitter timeline. I clicked it and got this:</p>
         </div>
+
+        <a href="/artikel/2014/02/vine.co-only-supports-rc4-ciphers/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -197,11 +170,12 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Heute wurde meiner erster Beitrag zum Quellcode von Firefox in den Source-Baum eingefügt.</p>
-<p><a href="http://hg.mozilla.org/integration/fx-team/rev/77d90521f46f">Bug 956678 - Replace TaskUtils.spawn() by Task.spawn() in Session Restore. r=yoric</a></p>
-<p>Dadurch habe zu meinem Lieblingsbrowser auch etwas beigetragen!</p>
-</p>
+            <p>Heute wurde meiner erster Beitrag zum Quellcode von Firefox in den Source-Baum eingefügt.
+Bug 956678 - Replace TaskUtils.spawn() by Task.spawn() in Session Restore. r=yoric
+Dadurch habe zu meinem Lieblingsbrowser auch etwas beigetragen!</p>
         </div>
+
+        <a href="/artikel/2014/01/mein-erster-beitrag-zum-firefox-quellcode/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -222,11 +196,12 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Seit heute ist die neue elektronische Gesundheitsakte, kurz ELGA, in Betrieb. Auch wenn noch keine Gesundheitsdaten gespeichert werden (können), kann man sich ab heute davon abmelden.</p>
-<p>Gerade in Zeiten der Totalüberwachung durch die NSA und ständiger Hackerangriffe sollte jeder von uns überlegen, ob er Daten zu seiner Gesundheit dort ablegen lassen will. Ich jedenfalls habe mich heute abgemeldet.</p>
-<p>Dazu nötig ist eine Bürgerkarte oder Handysignatur und der Besuch von <a href="http://gesundheit.gv.at">http://gesundheit.gv.at</a>. Alternativ kann man die Verwendung auch schriftlich sperren lassen. Weitere Informationen dazu befinden sich <a href="http://www.elga.gv.at/index.php?id=55">hier</a>.</p>
-</p>
+            <p>Seit heute ist die neue elektronische Gesundheitsakte, kurz ELGA, in Betrieb. Auch wenn noch keine Gesundheitsdaten gespeichert werden (können), kann man sich ab heute davon abmelden.
+Gerade in Zeiten der Totalüberwachung durch die NSA und ständiger Hackerangriffe sollte jeder von uns überlegen, ob er Daten zu seiner Gesundheit dort ablegen lassen will. Ich jedenfalls habe mich heute abgemeldet.
+Dazu nötig ist eine Bürgerkarte oder Handysignatur und der Besuch von http://gesundheit.gv.at. Alternativ kann man die Verwendung auch schriftlich sperren lassen.</p>
         </div>
+
+        <a href="/artikel/2014/01/elga-am-start/">mehr</a>
     </article>
     
 </div>

@@ -94,16 +94,12 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Auf ein sehr fragwürdiges Geschäftsmodell bin ich heute gestoßen: Es gibt doch tatsächlich eine Website, die die verpflichtend eingetragenen Email-Adressen für Domains aufsammelt und auf ihrer Website ungeschützt anzeigt. Das sieht dann so aus:</p>
-<p><img src="/img/picture_105.png" alt="Startseite"></p>
-<p>Alleine das ist schon sehr komisch, aber es wird noch besser wenn man den Link klickt, hinter dem man angeblich seine Email verbergern lassen kann:</p>
-<p><img src="/img/picture_106.png" alt="Zahlungsaufforderung"></p>
-<p>Diese Ach-so-tolle-Website erlaubt es für nur 9,95 USD meine Email-Adresse nicht mehr bei Ihnen anzuzeigen! Das ist schon ein <!-- raw HTML omitted -->gutes<!-- raw HTML omitted --> tolles Angebot!</p>
-<p>Aber Spaß beiseite: Man muss eine Email-Adresse angeben, wenn man eine Domain registriert. Diese ist jedoch in den Domain-Informationen gespeichert und wird so nicht irgendwelchen Email-Bots vorgeworfen.</p>
-<p>Dürfen die das? Ich bin kein Jurist, aber ich schätze schon, wenn auch das ganze Angebot doch sehr fragwürdig ist.</p>
-<p>Das ganze passiert auf <a href="https://www.ipaddressden.com">www.ipaddressden.com</a> (Absichtlich kein Link)</p>
-</p>
+            <p>Auf ein sehr fragwürdiges Geschäftsmodell bin ich heute gestoßen: Es gibt doch tatsächlich eine Website, die die verpflichtend eingetragenen Email-Adressen für Domains aufsammelt und auf ihrer Website ungeschützt anzeigt. Das sieht dann so aus:
+Alleine das ist schon sehr komisch, aber es wird noch besser wenn man den Link klickt, hinter dem man angeblich seine Email verbergern lassen kann:
+Diese Ach-so-tolle-Website erlaubt es für nur 9,95 USD meine Email-Adresse nicht mehr bei Ihnen anzuzeigen!</p>
         </div>
+
+        <a href="/artikel/2014/04/ein-fragw%C3%BCrdiges-gesch%C3%A4ftsmodell-mit-email-adressen/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -124,104 +120,11 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Auch wenn es sich bei Linux um ein monolithisches Betriebssystem handelt, sind viele Teile davon in Modulen aufgebaut. Diese Kernelmodule können zur Laufzeit geladen und auch wieder entladen werden. Wie man so ein Modul entwickelt und zum Laufen bringt möchte ich hier kurz zeigen.</p>
-<h2 id="c-code">C-Code</h2>
-<p>Linux wird in C entwickelt und darum werden auch Kernel-Module in C geschrieben. Sie bestehen im Grunde aus zwei Funktionen: Eine, die beim Laden ausgeführt wird und eine, die beim Entladen ausgeführt wird.</p>
-<p>Beginnen wir mit einem einfachen Hello-World-Beispiel:</p>
-<p>Zuerst brauchen wir eine Bibliothek, die wir brauchen um ein Modul laden zu können:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#888;font-style:italic">#include</span> <span style="color:#888;font-style:italic">&lt;linux/module.h&gt;</span><span style="color:#888;font-style:italic">
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">#include</span> <span style="color:#888;font-style:italic">&lt;linux/init.h&gt;</span><span style="color:#888;font-style:italic">
-</span></span></span></code></pre></div><p>Die Header-Datei <code>module.h</code> wird von jedem Modul benötigt und die Datei <code>init.h</code> stellt Makros zur Verfügung, die wir brauchen um die Funktionen zu registrieren, was wir jetzt auch machen:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#888;font-style:italic">#include</span> <span style="color:#888;font-style:italic">&lt;linux/module.h&gt;</span><span style="color:#888;font-style:italic">
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">#include</span> <span style="color:#888;font-style:italic">&lt;linux/init.h&gt;</span><span style="color:#888;font-style:italic">
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>
-</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">// Methode, die beim Laden ausgeführt wird
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#00f">static</span> <span style="color:#00f">int</span> <span style="color:#000">__init</span> <span style="color:#000">hello_init</span>(<span style="color:#00f">void</span>)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#00f">return</span> <span style="color:#3af">0</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">// Methode, die beim Entladen ausgeführt wird
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#00f">static</span> <span style="color:#00f">void</span> <span style="color:#000">__exit</span> <span style="color:#000">hello_exit</span>(<span style="color:#00f">void</span>)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">// Registrieren der Methoden
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#000">module_init</span>(<span style="color:#000">hello_init</span>);
-</span></span><span style="display:flex;"><span><span style="color:#000">module_exit</span>(<span style="color:#000">hello_exit</span>);
-</span></span></code></pre></div><p>An dieser Stellen wurden zwei Funktionen eingebaut, die jeweils entweder beim Laden oder Entladen ausgeführt werden. Mit <code>module_init</code> und <code>module_exit</code> wird dem Betriebssystem mitgeteilt, welche es sind.</p>
-<p>Das alles sieht zwar nett aus, tut aber noch nichts. Darum soll das Modul das berühmte &ldquo;Hello world&rdquo; ins syslog schreiben:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#888;font-style:italic">#include</span> <span style="color:#888;font-style:italic">&lt;linux/module.h&gt;</span><span style="color:#888;font-style:italic">
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">#include</span> <span style="color:#888;font-style:italic">&lt;linux/init.h&gt;</span><span style="color:#888;font-style:italic">
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">#include</span> <span style="color:#888;font-style:italic">&lt;linux/kernel.h&gt;</span><span style="color:#888;font-style:italic">
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>
-</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">// Methode, die beim Laden ausgeführt wird
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#00f">static</span> <span style="color:#00f">int</span> <span style="color:#000">__init</span> <span style="color:#000">hello_init</span>(<span style="color:#00f">void</span>)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#000">printk</span>(<span style="color:#000">KERN_DEBUG</span>  <span style="color:#5a2">&#34;Hello World!&#34;</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#00f">return</span> <span style="color:#3af">0</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">// Methode, die beim Entladen ausgeführt wird
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#00f">static</span> <span style="color:#00f">void</span> <span style="color:#000">__exit</span> <span style="color:#000">hello_exit</span>(<span style="color:#00f">void</span>)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#000">printk</span>(<span style="color:#000">KERN_DEBUG</span>  <span style="color:#5a2">&#34;Bye World!&#34;</span>);
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">// Registrieren der Methoden
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#000">module_init</span>(<span style="color:#000">hello_init</span>);
-</span></span><span style="display:flex;"><span><span style="color:#000">module_exit</span>(<span style="color:#000">hello_exit</span>);
-</span></span></code></pre></div><p>Mit <code>printk(&lt;loglevel&gt;,&lt;text&gt;)</code> lässt sich das bewerkstelligen. Um das Loglevel angeben zu können, benötigen wir aber noch zusätzlich die Datei <code>kernel.h</code>.</p>
-<p>Wenn man das Module so ausführt wird Linux übrigens sofort über die fehlende Lizenzangabe jammern. An dieser Stelle sollte man aber auch gleich noch Informationen über den Autor angeben:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#888;font-style:italic">#include</span> <span style="color:#888;font-style:italic">&lt;linux/module.h&gt;</span><span style="color:#888;font-style:italic">
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">#include</span> <span style="color:#888;font-style:italic">&lt;linux/init.h&gt;</span><span style="color:#888;font-style:italic">
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">#include</span> <span style="color:#888;font-style:italic">&lt;linux/kernel.h&gt;</span><span style="color:#888;font-style:italic">
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>
-</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">#define DRIVER_AUTHOR &#34;Johannes Mittendorfer &lt;...@... .com&gt;&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">#define DRIVER_DESC &#34;Hello world&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span>
-</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">// Methode, die beim Laden ausgeführt wird
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#00f">static</span> <span style="color:#00f">int</span> <span style="color:#000">__init</span> <span style="color:#000">hello_init</span>(<span style="color:#00f">void</span>)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#000">printk</span>(<span style="color:#000">KERN_DEBUG</span>  <span style="color:#5a2">&#34;Hello World!&#34;</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#00f">return</span> <span style="color:#3af">0</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">// Methode, die beim Entladen ausgeführt wird
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#00f">static</span> <span style="color:#00f">void</span> <span style="color:#000">__exit</span> <span style="color:#000">hello_exit</span>(<span style="color:#00f">void</span>)
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>	<span style="color:#000">printk</span>(<span style="color:#000">KERN_DEBUG</span>  <span style="color:#5a2">&#34;Bye World!&#34;</span>);
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic">// Registrieren der Methoden
-</span></span></span><span style="display:flex;"><span><span style="color:#888;font-style:italic"></span><span style="color:#000">module_init</span>(<span style="color:#000">hello_init</span>);
-</span></span><span style="display:flex;"><span><span style="color:#000">module_exit</span>(<span style="color:#000">hello_exit</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#000">MODULE_LICENSE</span>(<span style="color:#5a2">&#34;GPL&#34;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#000">MODULE_AUTHOR</span>(<span style="color:#000">DRIVER_AUTHOR</span>);
-</span></span><span style="display:flex;"><span><span style="color:#000">MODULE_DESCRIPTION</span>(<span style="color:#000">DRIVER_DESC</span>);
-</span></span></code></pre></div><p>In diesem Beispiel habe ich den Autor und den Titel oben definiert und unterhalb samt Lizenz, in diesem Fall GPL, angegeben.</p>
-<p>Jetzt kann man das Modul ausführen. Aber wie eigentlich? Dazu braucht man ein&hellip;</p>
-<h2 id="makefile">Makefile</h2>
-<p>Das Makefile gibt an, wie der Code kompiliert werden soll. Alles was man dazu braucht ist eine Datei namens <code>Makefile</code> mit folgendem Inhalt:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>obj-m += helloworld.o
-</span></span></code></pre></div><p>Wenn man jetzt im Verzeichnis <code>make</code> ausführt, dann sollte in etwa so etwas erscheinen:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>make -C /lib/modules/3.11.0-19-generic/build M=/home/johannes/Schreibtisch/kernel modules
-</span></span><span style="display:flex;"><span>make[1]: Betrete Verzeichnis &#39;/usr/src/linux-headers-3.11.0-19-generic&#39;
-</span></span><span style="display:flex;"><span>  CC [M]  /home/johannes/Schreibtisch/kernel/helloworld.o
-</span></span><span style="display:flex;"><span>  Building modules, stage 2.
-</span></span><span style="display:flex;"><span>  MODPOST 1 modules
-</span></span><span style="display:flex;"><span>  CC      /home/johannes/Schreibtisch/kernel/helloworld.mod.o
-</span></span><span style="display:flex;"><span>  LD [M]  /home/johannes/Schreibtisch/kernel/helloworld.ko
-</span></span><span style="display:flex;"><span>make[1]: Verlasse Verzeichnis &#39;/usr/src/linux-headers-3.11.0-19-generic&#39;
-</span></span></code></pre></div><p>Außerdem sollte im Verzeichnis eine Datei namens <code>helloworld.ko</code> entstanden sein. Das ist das fertige Modul. Das  muss aber jetzt noch an einen vorgesehenen Platz.</p>
-<h2 id="installation">Installation</h2>
-<p>Die ko-Datei muss unterhalb des Ordners <code>/lib/modules/&lt;kernel-version&gt;/kernel/</code> kopiert werden. Die Kernelversion lässt sich durch den Befehl <code>uname -r</code> herausfinden. Um die Module neu einzulesen braucht es dann den Befehl <code>sudo depmod -a</code> und schließlich zum Laden des Modules <code>modprobe helloworld</code>.</p>
-<p>Wenn alles geklappt hat, sollte man jetzt im Syslog ein &ldquo;Hello world&rdquo; sehen!</p>
-<p>(Das sieht man zum Beispiel durch <code>tail -f /var/log/syslog</code>)</p>
-<p>Teil 2 kommt dann irgendwann, wenn ich Zeit habe. ;)</p>
-</p>
+            <p>Auch wenn es sich bei Linux um ein monolithisches Betriebssystem handelt, sind viele Teile davon in Modulen aufgebaut. Diese Kernelmodule können zur Laufzeit geladen und auch wieder entladen werden. Wie man so ein Modul entwickelt und zum Laufen bringt möchte ich hier kurz zeigen.
+C-Code Linux wird in C entwickelt und darum werden auch Kernel-Module in C geschrieben. Sie bestehen im Grunde aus zwei Funktionen: Eine, die beim Laden ausgeführt wird und eine, die beim Entladen ausgeführt wird.</p>
         </div>
+
+        <a href="/artikel/2014/04/linux-kernelmodule-teil-1/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -242,11 +145,11 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Endlich ist es soweit: Meine erste Android-App <a href="https://play.google.com/store/apps/details?id=com.johannes_mittendorfer.abfahrt">Abfahrt</a> ist im Play Store!</p>
-<p><img src="/img/picture_104.png" alt="Screenshot"></p>
-<p>Damit soll das Benutzen von öffentlichen Verkehrsmittel leichter werden und das Verspassen des Zuges der Vergangenheit angehören. Weitere Informationen gibt es auf der <a href="http://abfahrtapp.at.tf">eigenen Website</a>.</p>
-</p>
+            <p>Endlich ist es soweit: Meine erste Android-App Abfahrt ist im Play Store!
+Damit soll das Benutzen von öffentlichen Verkehrsmittel leichter werden und das Verspassen des Zuges der Vergangenheit angehören. Weitere Informationen gibt es auf der eigenen Website.</p>
         </div>
+
+        <a href="/artikel/2014/04/abfahrt-meine-erste-android-app-ist-da/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -267,21 +170,12 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Die Aufregung war groß, als die Sicherheitslücke <a href="https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-0160">CVE-2014-0160</a>, genannt Heartbleed, am 7. April bekannt wurde. Nach Schätzungen von Experten sind oder waren bis zu 75% der Server im Internet betroffen.</p>
-<h2 id="wieso">Wieso?</h2>
-<p>Durch diesen Fehler in der Open Source Software OpenSSL war, und ist es zum Teil immer noch möglich, einen Teil des Arbeitsspeichers eines Servers, der diese Software verwendet, auszulesen und so die Anfragen anderer Benutzer zu sehen.</p>
-<p><img src="/img/picture_103.png" alt="Heartbleed-Logo"></p>
-<p>Diese Anfragen können auch den Benutzernamen und das Passwort beinhalten, die durch SSL eigentlich sicher übertragen werden sollen. Ein weiteres Problem ist zudem, dass man so auch an den privaten Schlüssel, also das Herzstück nahezu aller modernen Verschlüsselungen, kommen kann.</p>
-<p>Der Bug, der diese Sicherheitslücke ausgelöst hat, steckt in einem Stück Code, das für einen sogenannten <em>Heartbeat</em> zuständig ist. Es handelt sich dabei um eine Methode um festzustellen, ob der Client, der sich mit einem durch SSL geschützten Webserver verbunden hat, immer noch aktiv ist oder man die Verbindung trennen kann. Wenn hier der Client jedoch eine besondere Antwort schickt, antwortet der Server mit bis zu 64 kbyte seines Hauptspeichers.</p>
-<p>Betroffen waren unter anderem die Server großer Konzerne und stark frequentierte Webseiten wie yahoo.com, mail.de und sparkasse.at. Es ist also davon auszugehen, dass alle Logins seit Bekanntwerden der Lücke mitgelesen wurden. Bei Seiten, die keinen <a href="http://de.wikipedia.org/wiki/Elliptic_Curve_Cryptography">ECC</a>-Algorithmus verwenden, ist es zudem möglich alle bisherigen Verbindungen, wenn diese aufgezeichnet wurden, zu entschlüsseln.</p>
-<p>Auch meine Website war eine Zeit lang verwundbar, da mein Hoster <a href="http://uberspace.de">Uberspace</a> auch OpenSSL verwendet. Dieser hat jedoch vorbildlich mit umfangreicher Information <a href="http://twitter.com/ubernauten">reagiert</a>.</p>
-<h2 id="was-jetzt">Was jetzt?</h2>
-<p>Zunächst ist es jetzt wichtig zu wissen, ob ein Dienst den man verwendet für die Lücke anfällig ist oder war. Im Zweifel sollte man dazu den Betreiber kontaktieren. Wenn man nun festgestellt hat, dass dies so ist, sollte man umgehend das Passwort ändern. Wenn man das gleiche Passwort auch auf anderen Seiten verwendet, sollte es auch dort geändert werden.</p>
-<p>Ich denke, dass OpenSSL nicht schlecht ist. Bis jetzt hat es gut funktioniert, es ist gratis und open source. Natürlich ist es immer möglich, dass sich Fehler einschleichen, aber das ist bei einem kommerziellen Produkt auch möglich.</p>
-<p>Gerade weil es open source ist, war es überhaupt möglich die Lücke zu finden. Ich möchte lieber nicht wissen, wie viele derartiger Bugs sich in kommerzieller Software befinden, aber noch nicht gefunden wurden.</p>
-<p>Weitere Informationen über die Lücke gibt es übrigens auf <a href="http://heartbleed.com/">der eigens dafür eingerichteten Website</a>.</p>
-</p>
+            <p>Die Aufregung war groß, als die Sicherheitslücke CVE-2014-0160, genannt Heartbleed, am 7. April bekannt wurde. Nach Schätzungen von Experten sind oder waren bis zu 75% der Server im Internet betroffen.
+Wieso? Durch diesen Fehler in der Open Source Software OpenSSL war, und ist es zum Teil immer noch möglich, einen Teil des Arbeitsspeichers eines Servers, der diese Software verwendet, auszulesen und so die Anfragen anderer Benutzer zu sehen.
+Diese Anfragen können auch den Benutzernamen und das Passwort beinhalten, die durch SSL eigentlich sicher übertragen werden sollen.</p>
         </div>
+
+        <a href="/artikel/2014/04/heartbleed-oder-wie-das-internet-unsicher-wurde/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -302,11 +196,12 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Was tun, wenn <a href="http://gruntjs.com">grunt</a> nichts mehr tut, also keinerlei mehr Ausgabe liefert?</p>
-<p>Es liegt meist am Paket <code>node</code>. Es hat überhaupt nichts mit nodejs zu tun und kann weg. Das heißt: <code>sudo apt-get remove node</code> löst das Problem.</p>
-<p>Schon sollte dem fröhlichen Automatisieren nichts mehr im Wege stehen!</p>
-</p>
+            <p>Was tun, wenn grunt nichts mehr tut, also keinerlei mehr Ausgabe liefert?
+Es liegt meist am Paket node. Es hat überhaupt nichts mit nodejs zu tun und kann weg. Das heißt: sudo apt-get remove node löst das Problem.
+Schon sollte dem fröhlichen Automatisieren nichts mehr im Wege stehen!</p>
         </div>
+
+        <a href="/artikel/2014/03/wenn-grunt-nichts-mehr-tut/">mehr</a>
     </article>
     
 </div>

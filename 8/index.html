@@ -94,35 +94,12 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Schon vor einiger Zeit habe ich mich mit OAuth beschäftigt. Dabei ist eine kleine Python-Bibliothek entstanden, die als Open Source Projekt sicher besser aufgehoben ist, als auf meiner Festplatte.</p>
-<p>Darum habe ich sie heute auf Github gestellt: <a href="https://github.com/joushx/OAuth.py">OAuth.py</a></p>
-<h2 id="verwendung">Verwendung</h2>
-<p>Die Bibliothek besteht aus einem Kern und Erweiterungen. Der Kern wird durch die Klassen für die jeweiligen Anbieter erweitert und kann dann im Code verwendet werden. Einen einfachen API-Client kann man beispielsweise so realisieren:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#000">o</span> = <span style="color:#000">Twitter</span>(<span style="color:#5a2">&#34;your-consumer-key&#34;</span>,<span style="color:#5a2">&#34;your-consumer-secret&#34;</span>)
-</span></span><span style="display:flex;"><span><span style="color:#000">o</span>.<span style="color:#000">getRequestToken</span>()
-</span></span><span style="display:flex;"><span><span style="color:#000">print</span> <span style="color:#000">o</span>.<span style="color:#000">getAuthorizeUrl</span>()
-</span></span><span style="display:flex;"><span><span style="color:#000">verifier</span> = <span style="color:#000">raw_input</span>(<span style="color:#5a2">&#34;Verifier:&#34;</span>)
-</span></span><span style="display:flex;"><span><span style="color:#000">o</span>.<span style="color:#000">getAccessToken</span>(<span style="color:#000">verifier</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#00f">while</span>(<span style="color:#3af">1</span> == <span style="color:#3af">1</span>):
-</span></span><span style="display:flex;"><span>	<span style="color:#000">m</span> = <span style="color:#000">raw_input</span>(<span style="color:#5a2">&#34;Method:&#34;</span>)
-</span></span><span style="display:flex;"><span>	<span style="color:#000">u</span> = <span style="color:#000">raw_input</span>(<span style="color:#5a2">&#34;URL:&#34;</span>)
-</span></span><span style="display:flex;"><span>	<span style="color:#000">print</span> <span style="color:#000">o</span>.<span style="color:#000">get</span>(<span style="color:#000">m</span>,<span style="color:#000">u</span>)
-</span></span></code></pre></div><h2 id="erweiterungen">Erweiterungen</h2>
-<p>Die entsprechende Erweiterung (in diesem Fall für Twitter) sieht so aus:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#00f">from</span> <span style="color:#000">oauth</span> <span style="color:#00f">import</span> <span style="color:#000">OAuth</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#00f">class</span> <span style="color:#000">Twitter</span>(<span style="color:#000">OAuth</span>):
-</span></span><span style="display:flex;"><span>	<span style="color:#00f">def</span> <span style="color:#000">__init__</span>(<span style="color:#000">self</span>, <span style="color:#000">consumer_key</span>, <span style="color:#000">consumer_secret</span>):
-</span></span><span style="display:flex;"><span>		<span style="color:#000">self</span>.<span style="color:#000">request_token_url</span> = <span style="color:#5a2">&#34;https://api.twitter.com/oauth/request_token&#34;</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#000">self</span>.<span style="color:#000">authorize_url</span> = <span style="color:#5a2">&#34;https://api.twitter.com/oauth/authorize&#34;</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#000">self</span>.<span style="color:#000">access_token_url</span> = <span style="color:#5a2">&#34;https://api.twitter.com/oauth/access_token&#34;</span>
-</span></span><span style="display:flex;"><span>	
-</span></span><span style="display:flex;"><span>		<span style="color:#000">self</span>.<span style="color:#000">consumer_key</span> = <span style="color:#000">consumer_key</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#000">self</span>.<span style="color:#000">consumer_secret</span> = <span style="color:#000">consumer_secret</span>
-</span></span></code></pre></div><p>Entsprechende Methodenaufrufe müssen natürlich noch hinzugefügt werden.</p>
-</p>
+            <p>Schon vor einiger Zeit habe ich mich mit OAuth beschäftigt. Dabei ist eine kleine Python-Bibliothek entstanden, die als Open Source Projekt sicher besser aufgehoben ist, als auf meiner Festplatte.
+Darum habe ich sie heute auf Github gestellt: OAuth.py
+Verwendung Die Bibliothek besteht aus einem Kern und Erweiterungen. Der Kern wird durch die Klassen für die jeweiligen Anbieter erweitert und kann dann im Code verwendet werden. Einen einfachen API-Client kann man beispielsweise so realisieren:</p>
         </div>
+
+        <a href="/artikel/2013/10/oauth.py/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -143,15 +120,11 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Gestern, am 14. Oktober ist es beginnend ab 13 Uhr bis zum Abend zu einem Ausfall meiner gesamten Seite gekommen. Schuld daran war ein DDoS Angriff gegen meinen Hoster <a href="http://uberspace.de">Uberspace</a>. Zunächst war nicht klar, was eigentlich los ist. Auf ihrem Twitter Account (<a href="https://twitter.com/ubernauten">@ubernauten</a>) haben die Leuten von Uberspace dazu allerlei getwittert.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>Erst kurz nach 20:15, nach der Aussage der Uberspace-Mitarbeiter war das der längste DDoS auf ihre Server, wurde dann Entwarnung gegeben und die Server waren wieder erreichbar.</p>
-<!-- raw HTML omitted -->
-<p>Ich hoffe, dass niemand sehr enttäuscht davon war, meine Seite nicht erreichen zu können. Auf jeden Fall hat mein Hoster großartige Arbeit bei der Kundeninformation geleistet!</p>
-</p>
+            <p>Gestern, am 14. Oktober ist es beginnend ab 13 Uhr bis zum Abend zu einem Ausfall meiner gesamten Seite gekommen. Schuld daran war ein DDoS Angriff gegen meinen Hoster Uberspace. Zunächst war nicht klar, was eigentlich los ist. Auf ihrem Twitter Account (@ubernauten) haben die Leuten von Uberspace dazu allerlei getwittert.
+Erst kurz nach 20:15, nach der Aussage der Uberspace-Mitarbeiter war das der längste DDoS auf ihre Server, wurde dann Entwarnung gegeben und die Server waren wieder erreichbar.</p>
         </div>
+
+        <a href="/artikel/2013/10/ausfall-wegen-ddos/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -172,11 +145,11 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Seit dem 1. Oktober bin ich nun offiziell Student an der Johannes Kepler Universität Linz und habe dort ein Bachelor-Informatikstudium begonnen.</p>
-<p><img src="/img/picture_97.jpeg" alt="JKU Campus"></p>
-<p>Ich bin schon gespannt, was das Stundentenleben Neues bringt!</p>
-</p>
+            <p>Seit dem 1. Oktober bin ich nun offiziell Student an der Johannes Kepler Universität Linz und habe dort ein Bachelor-Informatikstudium begonnen.
+Ich bin schon gespannt, was das Stundentenleben Neues bringt!</p>
         </div>
+
+        <a href="/artikel/2013/10/student-an-der-jku-linz/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -197,11 +170,11 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Mit dem Linux-Programm <code>gpsbabel</code> ist es möglich gpx-Dateien schnell zusammenzufügen. Einfach folgenden Befehl eintippen:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>gpsbabel -i gpx -f Track1.gpx -i gpx -f Track2.gpx -o gpx -F out.gpx
-</span></span></code></pre></div><p>Das funktioniert übrigens auch mit anderen Formaten als gpx.</p>
-</p>
+            <p>Mit dem Linux-Programm gpsbabel ist es möglich gpx-Dateien schnell zusammenzufügen. Einfach folgenden Befehl eintippen:
+gpsbabel -i gpx -f Track1.gpx -i gpx -f Track2.gpx -o gpx -F out.gpx Das funktioniert übrigens auch mit anderen Formaten als gpx.</p>
         </div>
+
+        <a href="/artikel/2013/09/gps-tracks-zusammenf%C3%BCgen-mit-gpsbabel/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -222,13 +195,13 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Auf <a href="http://cnotmz.appspot.com/">dieser Seite</a> der Universität Bristol ist es möglich einen simulierten Quantenchip mit 2 Qubits zu programmieren.</p>
-<p><img src="/img/picture_96.png" alt="User Interface der App"></p>
-<p>Diese Programme können an die Forscher geschickt werden, die diese dann ab 20. September auf einem echten Quantenchip ausführen.</p>
-<p>Sollte jemand eine Erklärung zur Bedienung des Simulators haben, nur her damit! Ich verstehe im Moment nicht wirklich, was meine Eingaben bewirken und wie das Ergebnis entsteht.</p>
-<p><strong>Update:</strong> <a href="https://twitter.com/tantopa/status/379243561385857025">Man hat mir</a> einen <a href="http://www.bristol.ac.uk/physics/research/quantum/qcloud/project/tutorial.pdf">Link zur Anleitung</a> geschickt.</p>
-</p>
+            <p>Auf dieser Seite der Universität Bristol ist es möglich einen simulierten Quantenchip mit 2 Qubits zu programmieren.
+Diese Programme können an die Forscher geschickt werden, die diese dann ab 20. September auf einem echten Quantenchip ausführen.
+Sollte jemand eine Erklärung zur Bedienung des Simulators haben, nur her damit! Ich verstehe im Moment nicht wirklich, was meine Eingaben bewirken und wie das Ergebnis entsteht.
+Update: Man hat mir einen Link zur Anleitung geschickt.</p>
         </div>
+
+        <a href="/artikel/2013/09/einen-quantenchip-selbst-programmieren/">mehr</a>
     </article>
     
 </div>

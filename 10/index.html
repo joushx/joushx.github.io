@@ -94,29 +94,12 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Da ich kürzlich auf einen PgSQL-Server umgestiegen bin, stand ich vor dem Problem, dass die laufende PHP-Version auf meinen <a href="http://uberspace.de">Uberspace</a> nicht mit der Option <code>--with-pgsql</code> kompiliert worden ist.</p>
-<p>Dabei stehen die Funktionen, die nötig sind, um sich mit der Datenbank zu verbinden in PHP nicht zur Verfügung, was sich in dieser Fehlermeldung äußert:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Call to undefined function: pg_connect()
-</span></span></code></pre></div><p>Da der Uberspace-Support aber auch das Unmögliche möglich machen kann, habe ich mich an <a href="mailto:hallo@uberspace.de">hallo@uberspace.de</a> gewannt. <a href="http://jonaspasche.de">Jonas</a> hat mir dann tatsächlich eine Anleitung dazu geben können, deren Umsetung ich an dieser Stelle beschreiben möchte.</p>
-<h2 id="quellcode-downloaden">Quellcode downloaden</h2>
-<p>Als Erstes muss man den Quellcode der Erweiterung downloaden. Da diese bereits in PHP enthalten ist, gibt es diesen im <a href="https://github.com/php/php-src">Github-Repository</a> von PHP, welches man am besten gleich als zip-Datei herunterlädt.</p>
-<p>Das kann man gleich auf dem Uberspace mittels <code>wget</code> erledigen.</p>
-<h2 id="kompilieren">Kompilieren</h2>
-<p>Als Nächstes entpackt man den Inhalt der Datei in ein beliebiges Verzeichnis auf dem Server.</p>
-<p>Nach dem Wechsel in das Verzeichnis <code>ext/pgsql</code> führt man die folgenden Befehle nacheinander aus:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>phpize
-</span></span><span style="display:flex;"><span>./configure
-</span></span><span style="display:flex;"><span>make
-</span></span></code></pre></div><p>Nun sollte sich im Unterordner <code>lib</code> eine Datei namens <code>pgsql.so</code> befinden.</p>
-<h2 id="installation">Installation</h2>
-<p>Ich habe diese Datei einfach in meinem Homeverzeichnis in den Ordner <code>pecl</code> verschoben und in der <code>php.ini</code> unter <code>/etc</code> Folgendes ergänzt:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>extension=pgsql.so
-</span></span></code></pre></div><p>Nach einem Neustart des PHP-Intepreters mittels</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>killall -u $USER php-cgi
-</span></span></code></pre></div><p>sollte alles für die Benützung eingerichtet sein.</p>
-<p>An dieser Stelle möchte ich nocheinmal darauf hinweisen, dass die Jungs von Uberspace einfach &ldquo;awesome&rdquo; sind!</p>
-</p>
+            <p>Da ich kürzlich auf einen PgSQL-Server umgestiegen bin, stand ich vor dem Problem, dass die laufende PHP-Version auf meinen Uberspace nicht mit der Option --with-pgsql kompiliert worden ist.
+Dabei stehen die Funktionen, die nötig sind, um sich mit der Datenbank zu verbinden in PHP nicht zur Verfügung, was sich in dieser Fehlermeldung äußert:
+Call to undefined function: pg_connect() Da der Uberspace-Support aber auch das Unmögliche möglich machen kann, habe ich mich an hallo@uberspace.</p>
         </div>
+
+        <a href="/artikel/2013/08/uberspace--php--pgsql/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -137,11 +120,12 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Wie ich selbst auch erst jetzt gelesen habe, ist das HTML-Element <code>address</code> <a href="http://html5doctor.com/the-address-element/">nicht für die Darstellung einer Postadresse geeignet</a>.</p>
-<p>Viel besser ist diese in einem <a href="http://microformats.org/code/hcard/creator">Mikroformat</a> aufgehoben.</p>
-<p>Man kann ja nicht alles wissen!</p>
-</p>
+            <p>Wie ich selbst auch erst jetzt gelesen habe, ist das HTML-Element address nicht für die Darstellung einer Postadresse geeignet.
+Viel besser ist diese in einem Mikroformat aufgehoben.
+Man kann ja nicht alles wissen!</p>
         </div>
+
+        <a href="/artikel/2013/08/address-ist-nichts-f%C3%BCr-postadressen/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -162,13 +146,12 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Die IETF hat jetzt einen ersten <a href="http://tools.ietf.org/html/draft-ietf-httpbis-http2-04">benutzbaren Entwurf</a> für den Nachfolger von HTTP 1.1 vorgelegt.</p>
-<p>Im neuen Protokoll HTTP/2.0, das vormals auf den Namen SPDY hörte und von Google entwickelt wurde, sind eine Reihe von nützlichen Neuheiten enthalten, um HTTP auf den neuesten Stand seit der Veröffentlichung von Version 1.1 im Jahr 1999 zu bringen.</p>
-<p>Die Übertragung soll dadurch beschleunigt und optimiert werden. Dies wird unter anderem durch das Multiplexen der Verbindung, also dem Senden von mehreren Dokumenten über eine TCP-Verbindung, erreicht.</p>
-<p>Die Notwendigkeit einer Verschlüsselung für alle Verbindungen wurde jedoch gegenüber SPDY in dieser Version des Entwurfs fallen gelassen.</p>
-<p>Auf jeden Fall freue ich mich schon auf den Produktiveinsatz des Protokolls!</p>
-</p>
+            <p>Die IETF hat jetzt einen ersten benutzbaren Entwurf für den Nachfolger von HTTP 1.1 vorgelegt.
+Im neuen Protokoll HTTP/2.0, das vormals auf den Namen SPDY hörte und von Google entwickelt wurde, sind eine Reihe von nützlichen Neuheiten enthalten, um HTTP auf den neuesten Stand seit der Veröffentlichung von Version 1.1 im Jahr 1999 zu bringen.
+Die Übertragung soll dadurch beschleunigt und optimiert werden. Dies wird unter anderem durch das Multiplexen der Verbindung, also dem Senden von mehreren Dokumenten über eine TCP-Verbindung, erreicht.</p>
         </div>
+
+        <a href="/artikel/2013/07/entwurf-f%C3%BCr-http-2.0/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -189,9 +172,10 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Das im Moment angesagte Designprinzip des &ldquo;Flat-Design&rdquo; lässt sich jetzt auch einfach mit Twitter Bootstrap verwenden: <a href="http://twitter.github.io/bootstrap/">Bootstrap 3</a></p>
-</p>
+            <p>Das im Moment angesagte Designprinzip des &ldquo;Flat-Design&rdquo; lässt sich jetzt auch einfach mit Twitter Bootstrap verwenden: Bootstrap 3</p>
         </div>
+
+        <a href="/artikel/2013/07/bootstrap-3-mit-flat-design/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -212,10 +196,11 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>&hellip;<a href="https://www.djangoproject.com/">Django</a>!</p>
-<p>(Der Geschwindigkeitsvorteil ist schon zu spüren.)</p>
-</p>
+            <p>&hellip;Django!
+(Der Geschwindigkeitsvorteil ist schon zu spüren.)</p>
         </div>
+
+        <a href="/artikel/2013/07/und-dann-war-das-cms-pl%C3%B6tzlich.../">mehr</a>
     </article>
     
 </div>

@@ -94,12 +94,11 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Auf der Seite <a href="http://zugradar.oebb.at">zugradar.oebb.at</a> ist es ab jetzt möglich die aktuelle Position jedes Zuges der Österreichischen Bundesbahnen auf einer Karte zu verfolgen. Auch wenn hierbei nur die aktuelle Verspätung (wenn vorhanden) verwendet und daraus die Position berechnet wird, so ist es doch angenehm zu sehen, wo sich der Zug befindet.</p>
-<p><img src="/img/picture_64.png" alt="Überblick"></p>
-<p>Außerdem lassen sich die Züge &ldquo;verfolgen&rdquo;, dadurch wird der Kartenausschnitt mitbewegt, und auch die Route des Zuges lässt sich anzeigen.</p>
-<p><img src="/img/picture_65.png" alt="Verfolgen eines Zuges"></p>
-</p>
+            <p>Auf der Seite zugradar.oebb.at ist es ab jetzt möglich die aktuelle Position jedes Zuges der Österreichischen Bundesbahnen auf einer Karte zu verfolgen. Auch wenn hierbei nur die aktuelle Verspätung (wenn vorhanden) verwendet und daraus die Position berechnet wird, so ist es doch angenehm zu sehen, wo sich der Zug befindet.
+Außerdem lassen sich die Züge &ldquo;verfolgen&rdquo;, dadurch wird der Kartenausschnitt mitbewegt, und auch die Route des Zuges lässt sich anzeigen.</p>
         </div>
+
+        <a href="/artikel/2013/05/neues-%C3%B6bb-zugradar/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -120,64 +119,12 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Heute hat Mozilla die Betaversion auf Firefox 22 veröffentlicht und stellt mit dieser Version <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/22">eine große Anzahl von Neuheiten</a> bereit. Unter anderem unterstützt der Browser nun auch WebRTC komplett. Außerdem sind WebNotifications, Clipboard API und asm.js-Unterstützung in den Fuchs eingezogen.</p>
-<p>Im Folgenden möchte ich kurz die wichtigsten Neuerungen mit einem kurzen Beispiel vorstellen:</p>
-<h2 id="webrtc">WebRTC</h2>
-<p>WebRTC ermöglicht den Zugriff auf Kamera und Mikrofon und macht es möglich direkte Verbindungen zwischen Browsern herzustellen, um zum Beispiel einen Videochat zu realisieren.</p>
-<!-- raw HTML omitted -->
-<p>button.addEventListener(&ldquo;click&rdquo;, function(){
-navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;</p>
-<p>navigator.getUserMedia({video: true, audio: true}, function(stream) {
-video.src = window.URL.createObjectURL(stream);
-}, function(){
-alert(&ldquo;Fehler! Womöglich wird Ihr Browser (noch) nicht unterstützt!&rdquo;);
-});</p>
-<p>}, false);
-<!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
-<p>Das geschieht durch folgenden Code:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>&lt;<span style="color:#000">video</span> <span style="color:#000">width</span>=<span style="color:#5a2">&#34;300&#34;</span> <span style="color:#000">height</span>=<span style="color:#5a2">&#34;200&#34;</span> <span style="color:#000">autoplay</span> <span style="color:#000">id</span>=<span style="color:#5a2">&#34;video-webrtc&#34;</span>&gt;&lt;/<span style="color:#000">video</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#000">br</span>/&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#000">button</span> <span style="color:#000">id</span>=<span style="color:#5a2">&#34;button-webrtc&#34;</span>&gt;<span style="color:#000">Zugriff</span> <span style="color:#000">auf</span> <span style="color:#000">Kamera</span> <span style="color:#000">testen</span>&lt;/<span style="color:#000">button</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#000">script</span> <span style="color:#000">type</span>=<span style="color:#5a2">&#34;text/javascript&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>  <span style="color:#000">var</span> <span style="color:#000">button</span> = <span style="color:#000">document</span>.<span style="color:#000">getElementById</span>(<span style="color:#5a2">&#34;button-webrtc&#34;</span>);
-</span></span><span style="display:flex;"><span>  <span style="color:#000">var</span> <span style="color:#000">video</span> = <span style="color:#000">document</span>.<span style="color:#000">getElementById</span>(<span style="color:#5a2">&#34;video-webrtc&#34;</span>);
-</span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>  <span style="color:#000">button</span>.<span style="color:#000">addEventListener</span>(<span style="color:#5a2">&#34;click&#34;</span>, <span style="color:#000">function</span>(){
-</span></span><span style="display:flex;"><span>  <span style="color:#f00">navigator.getUserMedia</span> <span style="color:#f00">=</span> <span style="color:#f00">navigator.getUserMedia</span> <span style="color:#f00">||</span> <span style="color:#f00">navigator.webkitGetUserMedia</span> <span style="color:#f00">||</span> <span style="color:#f00">navigator.mozGetUserMedia</span> <span style="color:#f00">||</span> <span style="color:#f00">navigator.msGetUserMedia</span>;
-</span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>  <span style="color:#f00">navigator.getUserMedia({</span><span style="color:#000">video</span>: <span style="color:#000">true</span>, <span style="color:#000">audio</span>: <span style="color:#000">true</span>}, <span style="color:#000">function</span>(<span style="color:#000">stream</span>) {
-</span></span><span style="display:flex;"><span>      <span style="color:#f00">video.src</span> <span style="color:#f00">=</span> <span style="color:#f00">window.URL.createObjectURL(stream)</span>;
-</span></span><span style="display:flex;"><span>    }, <span style="color:#000">function</span>(){
-</span></span><span style="display:flex;"><span>      <span style="color:#f00">alert(&#34;Fehler!</span> <span style="color:#f00">Womöglich</span> <span style="color:#f00">wird</span> <span style="color:#f00">Ihr</span> <span style="color:#f00">Browser</span> <span style="color:#f00">(noch)</span> <span style="color:#f00">nicht</span> <span style="color:#f00">unterstützt!&#34;)</span>;
-</span></span><span style="display:flex;"><span>    });
-</span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>  <span style="color:#f00">}</span>, <span style="color:#000">false</span>);
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#000">script</span>&gt;
-</span></span></code></pre></div><h2 id="webnotifications">WebNotifications</h2>
-<p>Durch diese API ist es möglich Benachrichtigungen auf dem Desktop des Benutzers auszugeben, auch wenn dieser die Webseite in einem anderen Tab oder Fenster geöffnet hat. Gedacht ist es vor allem für das Anzeigen von neuen Nachrichten oder Ähnlichem.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>Dazu bedarf es folgendem Code:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>&lt;<span style="color:#000">button</span> <span style="color:#000">id</span>=<span style="color:#5a2">&#34;button-webnotifications-allow&#34;</span>&gt;<span style="color:#000">erlauben</span>&lt;/<span style="color:#000">button</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#000">button</span> <span style="color:#000">id</span>=<span style="color:#5a2">&#34;button-webnotifications-show&#34;</span>&gt;<span style="color:#000">anzeigen</span>&lt;/<span style="color:#000">button</span>&gt;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#000">script</span> <span style="color:#000">type</span>=<span style="color:#5a2">&#34;text/javascript&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>  <span style="color:#000">var</span> <span style="color:#000">button_allow</span> = <span style="color:#000">document</span>.<span style="color:#000">getElementById</span>(<span style="color:#5a2">&#34;button-webnotifications-allow&#34;</span>);
-</span></span><span style="display:flex;"><span>  <span style="color:#000">var</span> <span style="color:#000">button_show</span> = <span style="color:#000">document</span>.<span style="color:#000">getElementById</span>(<span style="color:#5a2">&#34;button-webnotifications-show&#34;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000">button_allow</span>.<span style="color:#000">addEventListener</span>(<span style="color:#5a2">&#34;click&#34;</span>, <span style="color:#000">function</span>(){
-</span></span><span style="display:flex;"><span>  <span style="color:#f00">window.Notification.requestPermission()</span>;
-</span></span><span style="display:flex;"><span>  }, <span style="color:#000">false</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000">button_show</span>.<span style="color:#000">addEventListener</span>(<span style="color:#5a2">&#34;click&#34;</span>, <span style="color:#000">function</span>(){
-</span></span><span style="display:flex;"><span>  <span style="color:#f00">new</span> <span style="color:#f00">window.Notification(&#34;Hallo&#34;,</span> <span style="color:#f00">{&#34;body&#34;:&#34;Welt!&#34;</span>});
-</span></span><span style="display:flex;"><span>  <span style="color:#f00">}</span>, <span style="color:#000">false</span>);
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#000">script</span>&gt;
-</span></span></code></pre></div></p>
+            <p>Heute hat Mozilla die Betaversion auf Firefox 22 veröffentlicht und stellt mit dieser Version eine große Anzahl von Neuheiten bereit. Unter anderem unterstützt der Browser nun auch WebRTC komplett. Außerdem sind WebNotifications, Clipboard API und asm.js-Unterstützung in den Fuchs eingezogen.
+Im Folgenden möchte ich kurz die wichtigsten Neuerungen mit einem kurzen Beispiel vorstellen:
+WebRTC WebRTC ermöglicht den Zugriff auf Kamera und Mikrofon und macht es möglich direkte Verbindungen zwischen Browsern herzustellen, um zum Beispiel einen Videochat zu realisieren.</p>
         </div>
+
+        <a href="/artikel/2013/05/firefox-22-beta-was-geht-damit/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -198,9 +145,10 @@ alert(&ldquo;Fehler! Womöglich wird Ihr Browser (noch) nicht unterstützt!&rdqu
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Um eine realistische Darstellung von Glas zu erreichen ist es nötig den richtigen IOR-Wert zu wählen. Eine praktische Liste dazu gibt es hier: <a href="http://blenderartists.org/forum/archive/index.php/t-71202.html">http://blenderartists.org/forum/archive/index.php/t-71202.html</a></p>
-</p>
+            <p>Um eine realistische Darstellung von Glas zu erreichen ist es nötig den richtigen IOR-Wert zu wählen. Eine praktische Liste dazu gibt es hier: http://blenderartists.org/forum/archive/index.php/t-71202.html</p>
         </div>
+
+        <a href="/artikel/2013/05/ior-werte-f%C3%BCr-glas-mit-der-blender-cycles-engine/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -221,13 +169,12 @@ alert(&ldquo;Fehler! Womöglich wird Ihr Browser (noch) nicht unterstützt!&rdqu
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Auch auf die Gefahr hin, dass Sie so etwas schon einmal gelesen haben: <a href="http://uberspace.de">Uberspace</a> begeistert mich!</p>
-<p><img src="/img/picture_66.png" alt="Uberspace Logo"></p>
-<p>Dieser Hosting-Provider bietet eine sehr gut Ausstattung zu einem unvergleichlichen Preis an. Mit einem Mindestpreis von nur einem Euro, den man aber beliebig erhöhen kann, erhält man dort 10GB Webspace. Eine Domain dazu, wie meine hier, erhöht den Mindestpreis auf 1,50€.</p>
-<p>Von PHP, Ruby, Python, Node.js bis MySQL, MongoDB, CouchDB ist alles vorhanden und lässt sich kinderleicht einrichten. (Und noch <a href="https://uberspace.de/tech">mehr</a>)</p>
-<p>Der Service ist sehr empfehlenswert, auch wenn man etwas technisches Verständnis mitbringen muss, denn die gesamte Konfiguration läuft über eine Linux-Shell, auf die man per SSH zugreift.</p>
-</p>
+            <p>Auch auf die Gefahr hin, dass Sie so etwas schon einmal gelesen haben: Uberspace begeistert mich!
+Dieser Hosting-Provider bietet eine sehr gut Ausstattung zu einem unvergleichlichen Preis an. Mit einem Mindestpreis von nur einem Euro, den man aber beliebig erhöhen kann, erhält man dort 10GB Webspace. Eine Domain dazu, wie meine hier, erhöht den Mindestpreis auf 1,50€.
+Von PHP, Ruby, Python, Node.js bis MySQL, MongoDB, CouchDB ist alles vorhanden und lässt sich kinderleicht einrichten.</p>
         </div>
+
+        <a href="/artikel/2013/05/empfehlung-uberspace/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -248,11 +195,12 @@ alert(&ldquo;Fehler! Womöglich wird Ihr Browser (noch) nicht unterstützt!&rdqu
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Ab heute ist meine Homepage unter der Adresse</p>
-<p><strong>johannes-mittendorfer.com</strong></p>
-<p>erreichbar. Womöglich kommt es in nächster Zeit noch zu kleineren Problemen durch den Server und/oder Domainumzug. Ich bitte, das zu entschuldigen.</p>
-</p>
+            <p>Ab heute ist meine Homepage unter der Adresse
+johannes-mittendorfer.com
+erreichbar. Womöglich kommt es in nächster Zeit noch zu kleineren Problemen durch den Server und/oder Domainumzug. Ich bitte, das zu entschuldigen.</p>
         </div>
+
+        <a href="/artikel/2013/05/umzug/">mehr</a>
     </article>
     
 </div>

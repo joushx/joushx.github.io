@@ -94,125 +94,12 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Am Freitag, den 19. Oktober habe ich wieder am Catalysts Coding Contest, dem, nach eigenen Angaben härtesten Programmierwettbewerb Österreichs, teilgenommen. Zum ersten Mal war ich beim Herbsttermin in Wien dabei. Der Wettbewerb fand dieses Mal in der Volkshalle im Rathaus statt.</p>
-<p>Wie man auch der <a href="http://www.it-press.at/presseaussendung/IKT_20121020_IKT0001/lippenlesende-roboter-eine-herausforderung-fuer-die-besten-programmierer">offizielle Presseaussendung</a> entnehmen kann, ging es dieses Mal um das &ldquo;Lippenlesen&rdquo;. Genauer gesagt war verlangt vom Computer bereits erkannte Bewegungen den Buchstaben zuzuordnen.</p>
-<p>Bei mir hat es leider nur für das Level 2 gereicht, aber da ich mit dem Studium noch nicht begonnen habe, ist das nicht so schlimm. Genau genommen bin ich auf Platz 101 von 126 gelandet, wie der folgende Screenshot beweist:</p>
-<p><img src="/img/picture_49.jpeg" alt="Mein Ergebnis"></p>
-<p>Ich möchte im Folgenden kurz die Aufgabenstellungen und meine Lösung erläutern:</p>
-<h2 id="level-1">Level 1</h2>
-<p>Hier wurde eine Trainingsdatei mit den Buchstaben und den zugehörigen Bewegungen bereitgestellt:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>26 a I U v o b I I i i c I ( i c d I ( i c e I U i c f I I i u g I ( i c h S S i ...
-</span></span></code></pre></div><p>Am Anfang steht die Anzahl der Buchstaben und dahinter stehen Buchstaben mit den zugehörigen vier Zeichen, die die Bewegung darstellen. In diesem Beispiel gibt es 26 Buchstaben des Alphabetes und ein &ldquo;a&rdquo; bedeutet als Bewegung &ldquo;I U v o&rdquo;, &ldquo;b&rdquo; bedeutet &ldquo;I I i i&rdquo;, usw&hellip;</p>
-<p>Hier musste man also zuerst die Übersetzungen einlesen, was ich mit folgendem Code erledigt habe:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#000">$data</span> = <span style="color:#000">CCCHelper</span>::<span style="color:#000">stringToArray</span>(<span style="color:#5a2">&#34;26 a I U v o b I I i i c I ( i c d I ( i c e I U i c f I I i u g I ( i c h S S i c i I U v o j S S i c k I ( i c l D H v o m I I i i n I ( i c o - C i o p I I i i q o - i i r I ( i c s I ( i c t S S i c u - C i c v I I i u w o - i i x S S i c y I ( i c z I ( i c&#34;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#000">$dict</span> = <span style="color:#00f">Array</span>();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#00f">for</span>(<span style="color:#000">$i</span> = <span style="color:#3af">1</span>; <span style="color:#000">$i</span> &lt; (<span style="color:#000">$data</span>[<span style="color:#3af">0</span>]*<span style="color:#3af">5</span>); <span style="color:#000">$i</span> = <span style="color:#000">$i</span>+<span style="color:#3af">5</span>){
-</span></span><span style="display:flex;"><span>	<span style="color:#000">$dict</span>[<span style="color:#000">$data</span>[<span style="color:#000">$i</span>]] = <span style="color:#000">$data</span>[<span style="color:#000">$i</span>+<span style="color:#3af">1</span>] . <span style="color:#5a2">&#34; &#34;</span> . <span style="color:#000">$data</span>[<span style="color:#000">$i</span>+<span style="color:#3af">2</span>] . <span style="color:#5a2">&#34; &#34;</span> . <span style="color:#000">$data</span>[<span style="color:#000">$i</span>+<span style="color:#3af">3</span>] . <span style="color:#5a2">&#34; &#34;</span> . <span style="color:#000">$data</span>[<span style="color:#000">$i</span>+<span style="color:#3af">4</span>];
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Zum Aufspalten der Buchstaben habe ich eine kleine, selbst geschriebene, Hilfsklasse namens <code>CCCHelper</code> verwendet, in der die folgende Funktion definiert ist:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00f">public</span> <span style="color:#00f">static</span> <span style="color:#00f">function</span> <span style="color:#000">stringToArray</span>(<span style="color:#000">$input</span>){
-</span></span><span style="display:flex;"><span>  <span style="color:#00f">return</span> <span style="color:#000">explode</span>(<span style="color:#5a2">&#34; &#34;</span>, <span style="color:#000">$input</span>);
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Dadurch erhielt ich eine Auflistung der Buchstaben:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Array
-</span></span><span style="display:flex;"><span>(
-</span></span><span style="display:flex;"><span>    [a] =&gt; I U v o
-</span></span><span style="display:flex;"><span>    [b] =&gt; I I i i
-</span></span><span style="display:flex;"><span>    [c] =&gt; I ( i c
-</span></span><span style="display:flex;"><span>    [d] =&gt; I ( i c
-</span></span><span style="display:flex;"><span>    [e] =&gt; I U i c
-</span></span><span style="display:flex;"><span>    [f] =&gt; I I i u
-</span></span><span style="display:flex;"><span>    [g] =&gt; I ( i c
-</span></span><span style="display:flex;"><span>    [h] =&gt; S S i c
-</span></span><span style="display:flex;"><span>    [i] =&gt; I U v o
-</span></span><span style="display:flex;"><span>    [j] =&gt; S S i c
-</span></span><span style="display:flex;"><span>    [k] =&gt; I ( i c
-</span></span><span style="display:flex;"><span>    [l] =&gt; D H v o
-</span></span><span style="display:flex;"><span>    [m] =&gt; I I i i
-</span></span><span style="display:flex;"><span>    [n] =&gt; I ( i c
-</span></span><span style="display:flex;"><span>    [o] =&gt; - C i o
-</span></span><span style="display:flex;"><span>    [p] =&gt; I I i i
-</span></span><span style="display:flex;"><span>    [q] =&gt; o - i i
-</span></span><span style="display:flex;"><span>    [r] =&gt; I ( i c
-</span></span><span style="display:flex;"><span>    [s] =&gt; I ( i c
-</span></span><span style="display:flex;"><span>    [t] =&gt; S S i c
-</span></span><span style="display:flex;"><span>    [u] =&gt; - C i c
-</span></span><span style="display:flex;"><span>    [v] =&gt; I I i u
-</span></span><span style="display:flex;"><span>    [w] =&gt; o - i i
-</span></span><span style="display:flex;"><span>    [x] =&gt; S S i c
-</span></span><span style="display:flex;"><span>    [y] =&gt; I ( i c
-</span></span><span style="display:flex;"><span>    [z] =&gt; I ( i c
-</span></span><span style="display:flex;"><span>)
-</span></span></code></pre></div><p>Wie man hier sieht, kommt die gleiche Abfolge bei mehreren Buchstaben vor.</p>
-<p>Nun ging um die Erkennung der Buchstaben in mehreren Beispielen.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>21 - C i o I ( i c - C i o o - i i S S i c I ...
-</span></span></code></pre></div><p>Auch hier wurde an erster Stelle wieder die Anzahl der Buchstaben angegeben und dahinter befinden sich in Vierer-Gruppen die erkannten Bewegungen. &ldquo;- C i o&rdquo; bedeutet zum Beispiel ein &ldquo;o&rdquo;.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#000">$speech</span> = <span style="color:#000">CCCHelper</span>::<span style="color:#000">stringToArray</span>(<span style="color:#5a2">&#34;21 - C i o I ( i c - C i o o - i i S S i c I ( i c I ( i c I I i u o - i i S S i c I I i u I ( i c I U i c I ( i c - C i c o - i i S S i c - C i o I ( i c S S i c S S i c&#34;</span>);
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span><span style="color:#00f">for</span>(<span style="color:#000">$i</span> = <span style="color:#3af">1</span>; <span style="color:#000">$i</span> &lt; (<span style="color:#000">$speech</span>[<span style="color:#3af">0</span>]*<span style="color:#3af">4</span>)+<span style="color:#3af">1</span>; <span style="color:#000">$i</span>=<span style="color:#000">$i</span>+<span style="color:#3af">4</span>){
-</span></span><span style="display:flex;"><span>	<span style="color:#000">$res</span>[] = <span style="color:#000">array_keys</span>(<span style="color:#000">$dict</span>, <span style="color:#000">$speech</span>[<span style="color:#000">$i</span>] . <span style="color:#5a2">&#34; &#34;</span> . <span style="color:#000">$speech</span>[<span style="color:#000">$i</span>+<span style="color:#3af">1</span>] . <span style="color:#5a2">&#34; &#34;</span> . <span style="color:#000">$speech</span>[<span style="color:#000">$i</span>+<span style="color:#3af">2</span>] . <span style="color:#5a2">&#34; &#34;</span> . <span style="color:#000">$speech</span>[<span style="color:#000">$i</span>+<span style="color:#3af">3</span>]);
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Dieser Code sucht bei jeder Vierer-Gruppe nach Vorkommen in den Übersetzungen und schreibt diese in ein Array. Dieses sieht dann so auch:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Array
-</span></span><span style="display:flex;"><span>(
-</span></span><span style="display:flex;"><span>    [0] =&gt; Array
-</span></span><span style="display:flex;"><span>        (
-</span></span><span style="display:flex;"><span>            [0] =&gt; o
-</span></span><span style="display:flex;"><span>        )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    [1] =&gt; Array
-</span></span><span style="display:flex;"><span>        (
-</span></span><span style="display:flex;"><span>            [0] =&gt; c
-</span></span><span style="display:flex;"><span>            [1] =&gt; d
-</span></span><span style="display:flex;"><span>            [2] =&gt; g
-</span></span><span style="display:flex;"><span>            [3] =&gt; k
-</span></span><span style="display:flex;"><span>            [4] =&gt; n
-</span></span><span style="display:flex;"><span>            [5] =&gt; r
-</span></span><span style="display:flex;"><span>            [6] =&gt; s
-</span></span><span style="display:flex;"><span>            [7] =&gt; y
-</span></span><span style="display:flex;"><span>            [8] =&gt; z
-</span></span><span style="display:flex;"><span>        )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    [2] =&gt; Array
-</span></span><span style="display:flex;"><span>        (
-</span></span><span style="display:flex;"><span>            [0] =&gt; o
-</span></span><span style="display:flex;"><span>        )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    ...
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    [20] =&gt; Array
-</span></span><span style="display:flex;"><span>        (
-</span></span><span style="display:flex;"><span>            [0] =&gt; h
-</span></span><span style="display:flex;"><span>            [1] =&gt; j
-</span></span><span style="display:flex;"><span>            [2] =&gt; t
-</span></span><span style="display:flex;"><span>            [3] =&gt; x
-</span></span><span style="display:flex;"><span>        )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>)
-</span></span></code></pre></div><p>Verlangt war diese Buchstaben so auszugeben, dass zuerst die Anzahl der möglichen Übersetzungen und dann die Buchstaben für jede Bewegung angegeben werden. Bei einem Buchstaben, der zum Beispiel entweder &ldquo;a&rdquo; oder &ldquo;i&rdquo; ist, wird &ldquo;2 a i&rdquo; ausgegeben. Diese müssen auch aufsteigend sortiert sein.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#00f">foreach</span>(<span style="color:#000">$res</span> <span style="color:#00f">as</span> <span style="color:#000">$char</span>){
-</span></span><span style="display:flex;"><span>	<span style="color:#00f">echo</span> <span style="color:#000">count</span>(<span style="color:#000">$char</span>) . <span style="color:#5a2">&#34; &#34;</span>;
-</span></span><span style="display:flex;"><span>	<span style="color:#000">sort</span>(<span style="color:#000">$char</span>);
-</span></span><span style="display:flex;"><span>	<span style="color:#00f">foreach</span>(<span style="color:#000">$char</span> <span style="color:#00f">as</span> <span style="color:#000">$item</span>){
-</span></span><span style="display:flex;"><span>		<span style="color:#00f">echo</span> <span style="color:#000">$item</span> . <span style="color:#5a2">&#34; &#34;</span>;
-</span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Durch diesen Code habe ich bei jedem Eintrag die Anzahl und die möglichen Buchstaben ausgeben lassen, was zu folgendem Ergebnis führte:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>1 o 9 c d g k n r s y z 1 o 2 q w 4 h j t x 9 c d g k n r s y z ...
-</span></span></code></pre></div><h2 id="level-2">Level 2</h2>
-<p>Bei Level 2, das ich leider nicht mehr fertigstellen konnte, was wohl an der schon zunehmenden Erschöpfung lag, mussten aus diesen Buchstaben alle möglichen Kombinationen aus einer ~18000 Wörter langen Wörterbuchdatei ausgegeben werden.</p>
-<p>Wer sich selbst an den Beispielen versuchen will, der kann dies <a href="https://catcoder.catalysts.cc/#Game:169">hier</a> tun. Catalysts hat auch eine Infografik des Wettbewerbs veröffentlicht:</p>
-<!-- raw HTML omitted -->
-<p>Ich freue mich schon wieder auf den nächsten Wettbewerb und hoffe, dass ich wieder dabei sein kann!</p>
-<h2 id="links">Links</h2>
-<ul>
-<li><a href="http://www.catalysts.cc/contest">Infos auf der Website von Catalysts</a></li>
-<li><a href="https://picasaweb.google.com/108323968029313496932/CCCWien2012">Fotos der Veranstaltung</a></li>
-</ul>
-</p>
+            <p>Am Freitag, den 19. Oktober habe ich wieder am Catalysts Coding Contest, dem, nach eigenen Angaben härtesten Programmierwettbewerb Österreichs, teilgenommen. Zum ersten Mal war ich beim Herbsttermin in Wien dabei. Der Wettbewerb fand dieses Mal in der Volkshalle im Rathaus statt.
+Wie man auch der offizielle Presseaussendung entnehmen kann, ging es dieses Mal um das &ldquo;Lippenlesen&rdquo;. Genauer gesagt war verlangt vom Computer bereits erkannte Bewegungen den Buchstaben zuzuordnen.
+Bei mir hat es leider nur für das Level 2 gereicht, aber da ich mit dem Studium noch nicht begonnen habe, ist das nicht so schlimm.</p>
         </div>
+
+        <a href="/artikel/2012/10/catalysts-coding-contest-wien-2012/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -233,16 +120,12 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Da ich erst jetzt dazu kam das neue Visual Studio Express 2012 for Desktop zu installieren, nun eine kurze Erklärung der Schlüsselwörter <code>async</code> und <code>await</code>, wie sie im .NET-Framework 4.5 vorkommen.</p>
-<p>Bis jetzt musste immer eine Callback-Funktion verwendet werden, wenn man beispielsweise Netzwerkanfragen senden will, um die Benutzeroberfläche nicht einfrieren zu lassen. Mit den beiden Schlüsselwörtern ist es nun endlich möglich auf die Antwort der Anfrage zu warten.</p>
-<p>Beispielsweise funktioniert es mit dem folgenden Code einen String asynchron herunterzuladen:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#00f">private</span> <span style="color:#00f">async</span> <span style="color:#000">String</span> <span style="color:#000">getData</span>(){
-</span></span><span style="display:flex;"><span>	<span style="color:#000">WebClient</span> <span style="color:#000">client</span> = <span style="color:#00f">new</span> <span style="color:#000">WebClient</span>();
-</span></span><span style="display:flex;"><span>	<span style="color:#00f">return</span> <span style="color:#00f">await</span> <span style="color:#000">client</span>.<span style="color:#000">DownloadStringAsync</span>(<span style="color:#5a2">&#34;http://example.org&#34;</span>);
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Mit dem Schlüsselwort <code>async</code> deklariert man die Funktion als asynchron und stellt das Wort <code>await</code> vor die Aktion, auf die gewartet werden soll.</p>
-</p>
+            <p>Da ich erst jetzt dazu kam das neue Visual Studio Express 2012 for Desktop zu installieren, nun eine kurze Erklärung der Schlüsselwörter async und await, wie sie im .NET-Framework 4.5 vorkommen.
+Bis jetzt musste immer eine Callback-Funktion verwendet werden, wenn man beispielsweise Netzwerkanfragen senden will, um die Benutzeroberfläche nicht einfrieren zu lassen. Mit den beiden Schlüsselwörtern ist es nun endlich möglich auf die Antwort der Anfrage zu warten.
+Beispielsweise funktioniert es mit dem folgenden Code einen String asynchron herunterzuladen:</p>
         </div>
+
+        <a href="/artikel/2012/10/async-und-await-in-.net-4.5/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -263,9 +146,10 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p><img src="/img/picture_44.jpeg" alt="Klammer Versuche"></p>
-</p>
+            <p></p>
         </div>
+
+        <a href="/artikel/2012/10/was-sonst-noch-war-wieso-der-mensch-nicht-f%C3%BCr-das-zeichen-gemacht-wurde/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -286,22 +170,12 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Vor ein paar Tagen habe ich eine von mir programmierte Bibliothek für jQuery zur Erstellung von EAN13 Barcodes auf <a href="http://github.com">Github</a> veröffentlicht. Mit <a href="https://github.com/joushx/jQuery.EAN13">jQuery.EAN13</a> ist es möglich aus einer Nummer einen Barcode als HTML5-Canvas zu erstellen.</p>
-<p><img src="/img/picture_50.png" alt="Barcode"></p>
-<!-- raw HTML omitted -->
-<h2 id="einbindung-des-plugin">Einbindung des Plugin</h2>
-<p>Zur Einbindung in eine HTML-Seite fügt man folgendes dem <code>head</code>-Bereich <strong>nach</strong> der Einbindung von jQuery ein:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>&lt;<span style="color:#000">script</span> <span style="color:#000">type</span>=<span style="color:#5a2">&#34;text/javascript&#34;</span> <span style="color:#000">src</span>=<span style="color:#5a2">&#34;js/jQuery.EAN13.min.js&#34;</span>&gt;&lt;/<span style="color:#000">script</span>&gt;
-</span></span></code></pre></div><h2 id="verwendung">Verwendung</h2>
-<p>Im <code>body</code>-Bereich muss an der gewünschten Stelle ein Canvas-Element mit der passenden Größe eingefügt werden:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>&lt;<span style="color:#000">canvas</span> <span style="color:#000">id</span>=<span style="color:#5a2">&#34;ean&#34;</span> <span style="color:#000">width</span>=<span style="color:#5a2">&#34;200&#34;</span> <span style="color:#000">height</span>=<span style="color:#5a2">&#34;100&#34;</span>&gt;
-</span></span><span style="display:flex;"><span><span style="color:#000">Your</span> <span style="color:#000">browser</span> <span style="color:#000">does</span> <span style="color:#000">not</span> <span style="color:#000">support</span> <span style="color:#000">canvas-elements</span>.
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#000">canvas</span>&gt;
-</span></span></code></pre></div><p>Nun kann man im JavaScript am Ende des <code>body</code>-Bereiches folgendes eintragen, um den Barcode anzuzeigen:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#000">$</span>(<span style="color:#5a2">&#34;#ean&#34;</span>).<span style="color:#000">EAN13</span>(<span style="color:#5a2">&#34;9002236311036&#34;</span>);
-</span></span></code></pre></div><p>Weitere funktionen sind im Readme auf der Github-Seite des Projektes zu finden.</p>
-</p>
+            <p>Vor ein paar Tagen habe ich eine von mir programmierte Bibliothek für jQuery zur Erstellung von EAN13 Barcodes auf Github veröffentlicht. Mit jQuery.EAN13 ist es möglich aus einer Nummer einen Barcode als HTML5-Canvas zu erstellen.
+Einbindung des Plugin Zur Einbindung in eine HTML-Seite fügt man folgendes dem head-Bereich nach der Einbindung von jQuery ein:
+&lt;script type=&#34;text/javascript&#34; src=&#34;js/jQuery.EAN13.min.js&#34;&gt;&lt;/script&gt; Verwendung Im body-Bereich muss an der gewünschten Stelle ein Canvas-Element mit der passenden Größe eingefügt werden:</p>
         </div>
+
+        <a href="/artikel/2012/10/ean13-plugin-f%C3%BCr-jquery/">mehr</a>
     </article>
     
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -322,70 +196,13 @@
             
         </header>
         <div itemprop="articleBody">
-            <p><p>Mit iOS 6 wurde eine neue Kartenapp eingeführt. Diese kommt erstmals ganz ohne Google aus und verwendet jetzt Vektorkarten, die Apple eingekauft hat. Auch diese Daten werden jedoch aus dem Internet nachgeladen.</p>
-<p><img src="/img/picture_52.png" alt="Screenshots"></p>
-<p>Eine Anfrage nach einer Kartenkachel sieht zum Beispiel so aus: (Ich habe die IDs gekürzt.)</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>http://gspa23.ls.apple.com/tile?style=13&amp;size=2&amp;scale=0&amp;v=46&amp;z=14&amp;x=8820&amp;y=5700&amp;lang=de&amp;sid=1628527042778230930310178...&amp;tk=fb6f3cfbfcf47c40b20a44aacb...&amp;mapkey=1348503588_3e8f1cd028503e1be44950cf0...
-</span></span></code></pre></div><p>Ich habe versucht die Parameter richtig einzuordnen:</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Bedeutung</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>style</td>
-<td>Art der Karte. Hier ist es &ldquo;13&rdquo;. Vergleichbar zu iPhoto-Karten mit dem Style &ldquo;slideshow&rdquo;</td>
-</tr>
-<tr>
-<td>size</td>
-<td>Größe der Kachel?</td>
-</tr>
-<tr>
-<td>scale</td>
-<td>Skalierung</td>
-</tr>
-<tr>
-<td>v</td>
-<td>?</td>
-</tr>
-<tr>
-<td>z</td>
-<td>Zoom</td>
-</tr>
-<tr>
-<td>x</td>
-<td>X-Koordinate. (Große Zahl ?)</td>
-</tr>
-<tr>
-<td>y</td>
-<td>Y-Koordinate</td>
-</tr>
-<tr>
-<td>lang</td>
-<td>Sprache</td>
-</tr>
-<tr>
-<td>sid</td>
-<td>? (ändert sich nicht)</td>
-</tr>
-<tr>
-<td>tk</td>
-<td>? (ändert sich)</td>
-</tr>
-<tr>
-<td>mapkey</td>
-<td>Womöglich Hash der Anfrage (Teil nach Unterstrich ändert sich)</td>
-</tr>
-</tbody>
-</table>
-<p>Auf solche Anfragen antwortet der Apple-Server mit den Kartendaten mit dem Mimetype <code>x-protobuf</code>. Es handelt sich dabei um das <a href="http://code.google.com/p/protobuf">Protocol-Buffers-Format</a>, das von Google entwickelt wurde.</p>
-<p><img src="/img/picture_51.jpeg" alt="Daten"></p>
-<p>Bis jetzt noch nicht gelungen diese Daten lesabar zu machen, da es sich um ein binäres Format mit benutzerdefiniertem Aufbau handelt.</p>
-</p>
+            <p>Mit iOS 6 wurde eine neue Kartenapp eingeführt. Diese kommt erstmals ganz ohne Google aus und verwendet jetzt Vektorkarten, die Apple eingekauft hat. Auch diese Daten werden jedoch aus dem Internet nachgeladen.
+Eine Anfrage nach einer Kartenkachel sieht zum Beispiel so aus: (Ich habe die IDs gekürzt.)
+http://gspa23.ls.apple.com/tile?style=13&amp;size=2&amp;scale=0&amp;v=46&amp;z=14&amp;x=8820&amp;y=5700&amp;lang=de&amp;sid=1628527042778230930310178...&amp;tk=fb6f3cfbfcf47c40b20a44aacb...&amp;mapkey=1348503588_3e8f1cd028503e1be44950cf0... Ich habe versucht die Parameter richtig einzuordnen:
+Parameter Bedeutung style Art der Karte. Hier ist es &ldquo;13&rdquo;. Vergleichbar zu iPhoto-Karten mit dem Style &ldquo;slideshow&rdquo; size Größe der Kachel?</p>
         </div>
+
+        <a href="/artikel/2012/09/wie-funktionieren-die-ios-6-maps/">mehr</a>
     </article>
     
 </div>
