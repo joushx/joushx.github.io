@@ -2,57 +2,57 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Johannes Mittendorfer</title>
-    <link>https://blog.johannes-mittendorfer.com/posts/</link>
+    <link>https://blog.jmittendorfer.at/posts/</link>
     <description>Recent content in Posts on Johannes Mittendorfer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de-AT</language>
-    <lastBuildDate>Sat, 17 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.johannes-mittendorfer.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 17 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.jmittendorfer.at/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My toothbrush streams gyroscope data</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2020/10/my-toothbrush-streams-gyroscope-data/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2020/10/my-toothbrush-streams-gyroscope-data/</link>
       <pubDate>Sat, 17 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2020/10/my-toothbrush-streams-gyroscope-data/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2020/10/my-toothbrush-streams-gyroscope-data/</guid>
       <description>Since a few month I own an electrical toothbrush from Phillips called Sonicare HX992B. It connects to an mobile App using Bluetooth that tells you how well you brushed your teeth, shows the orientation in real-time, and also notifies you when to change the brush for a new one.
 I was curious how this exactly works. Since the application uses Bluetooth Low Energy (BLE), I used the nRF Connect app for Android to get a list of advertised services.</description>
     </item>
     
     <item>
       <title>Die komische Geschichte mit der &#34;privaten Vorratsdatenspeicherung&#34;</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2016/07/die-komische-geschichte-mit-der-privaten-vorratsdatenspeicherung/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2016/07/die-komische-geschichte-mit-der-privaten-vorratsdatenspeicherung/</link>
       <pubDate>Sun, 03 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2016/07/die-komische-geschichte-mit-der-privaten-vorratsdatenspeicherung/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2016/07/die-komische-geschichte-mit-der-privaten-vorratsdatenspeicherung/</guid>
       <description>mobilsicher.de hat einen Artikel veröffentlicht, über den auch heise online berichtet. Darin wird berichtet, dass Mobiltelefone mit dem Android Betriebssystem von Google bei Anrufen Daten an einen Google-Server übertragen.
 Sogleich wird darüber spekuliert, ob Google eine Art &amp;ldquo;private Vorratsdatenspeicherung&amp;rdquo; durchführt, also speichert wer wen wann anruft. In der Datenschutzerklärung weißt Google zwar darauf hin, dass das Unternehmen diese Daten speichern kann, die Redakteure konnten jedoch nicht überprüfen, ob eine solche Übertragung auch tatsächlich stattfindet.</description>
     </item>
     
     <item>
       <title>TensorFlow im Browser ausprobieren</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2016/04/tensorflow-im-browser-ausprobieren/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2016/04/tensorflow-im-browser-ausprobieren/</link>
       <pubDate>Sun, 17 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2016/04/tensorflow-im-browser-ausprobieren/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2016/04/tensorflow-im-browser-ausprobieren/</guid>
       <description>TensorFlow, die machine learning Bibliothek von Google kann man jetzt auch direkt im Browser probieren. Ohne Expertenwissen ist es möglich mit mehreren Beispielen zu experimentieren und dabei die Parameter des Netzwerkes zu ändern oder Features hinzuzufügen oder wegzulassen.
 Die Seite steht zudem als Open Source auf github bereit.</description>
     </item>
     
     <item>
       <title>Was die NSA im HTTP/2 connection preface macht</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2015/12/was-die-nsa-im-http/2-connection-preface-macht/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2015/12/was-die-nsa-im-http/2-connection-preface-macht/</link>
       <pubDate>Tue, 08 Dec 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2015/12/was-die-nsa-im-http/2-connection-preface-macht/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2015/12/was-die-nsa-im-http/2-connection-preface-macht/</guid>
       <description>Der Verbindungaufbau mit HTTP/2 unterscheidet sich in großen Teilen von dem bisher mit HTTP/1.1 verwendeten Vorgang. Bei cleartext Verbindungen wird das HTTP upgrade Verfahren benutzt und bei verschlüsselten Verbindungen werden bestimmte Werte innerhalb des TLS Handshakes übertragen.
 Was beide Arten der Verbindung gemeinsam haben: Bevor wirklich Anwendungsdaten fließen können, muss von jedem der Teilnehmer ein sogenannter Preface verschickt werden. Ein kleines Datenpaket, das Parameter für die Verbindung festlegt. Und genau in diesem Preface findet sich Kritik an den Überwachungsprogrammen der NSA.</description>
     </item>
     
     <item>
       <title>Wieso mein Feedreader jetzt selbst denken kann</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2015/07/wieso-mein-feedreader-jetzt-selbst-denken-kann/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2015/07/wieso-mein-feedreader-jetzt-selbst-denken-kann/</link>
       <pubDate>Mon, 20 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2015/07/wieso-mein-feedreader-jetzt-selbst-denken-kann/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2015/07/wieso-mein-feedreader-jetzt-selbst-denken-kann/</guid>
       <description>Anmerkung: Ich habe seit diesem Artikel Vieles dazu gelernt. Die damalige Herangehesweise konnte aus verschiedenen Gründen nicht funktionieren. Ich habe mich entschieden, den originalen Artikel trotzdem online zu lassen.
 Will ich mir das wirklich antun? Aber was, wenn ich die interessanten Dinge dabei verpasse? Könnte nicht ein Computer die Themen auswählen, die ich lesen will? - Kann er.
 Möglich ist das zum Beispiel mit einem Filter, der nach dem Satz von Bayes arbeitet und mit statistischen Methoden die Wahrscheinlichkeit berechnet.</description>
@@ -60,10 +60,10 @@ Möglich ist das zum Beispiel mit einem Filter, der nach dem Satz von Bayes arbe
     
     <item>
       <title>Die Verschwörung der Woche: Curiosity hat Wasser gefunden</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2015/05/die-verschw%C3%B6rung-der-woche-curiosity-hat-wasser-gefunden/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2015/05/die-verschw%C3%B6rung-der-woche-curiosity-hat-wasser-gefunden/</link>
       <pubDate>Thu, 07 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2015/05/die-verschw%C3%B6rung-der-woche-curiosity-hat-wasser-gefunden/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2015/05/die-verschw%C3%B6rung-der-woche-curiosity-hat-wasser-gefunden/</guid>
       <description>Curiosity hat Wasser gefunden aber die Nasa verschweigt es!!11!!!
 Und ist zudem zu blöd dazu, das entsprechende Bild verschwinden zu lassen. Oder so. Das behauptet zumindest der Autor dieses höchst seriösen Videos.
 Der Uploader schreibt, er habe viele Bilder von Bohrungen am Mars angeschaut, aber dieses Mal ist es wirklich Wasser, das aus dem Loch geflossen ist. Es geht um folgendes Bild:
@@ -73,10 +73,10 @@ Davon abgesehen, dass man schon auf diesem Bild sieht, dass es sich um Staub aus
     
     <item>
       <title>Die Verschwörung der Woche: Wieso die ISS nicht existiert</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2015/02/die-verschw%C3%B6rung-der-woche-wieso-die-iss-nicht-existiert/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2015/02/die-verschw%C3%B6rung-der-woche-wieso-die-iss-nicht-existiert/</link>
       <pubDate>Sun, 22 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2015/02/die-verschw%C3%B6rung-der-woche-wieso-die-iss-nicht-existiert/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2015/02/die-verschw%C3%B6rung-der-woche-wieso-die-iss-nicht-existiert/</guid>
       <description>In einem einstündigen (!) Video erklärt jemand, wieso die Internationale Raumstation nicht existiert und sowieso die gesammte Weltraumaktivität des Menschen Fake ist. Alle Aufnahmen sind angeblich von der NASA bei Hyperbelflügen produziert und durch Greenscreen-Technik mit einem Hintergrund versehen worden.
 Ich halte das alles für sehr seriös und zudem einleuchtend, denn erst gestern habe ich die Raumstation mit eigenen Augen als heller Lichtpunkt am Himmel gesehen und APRS-Signale empfangen.
 Wer nicht mehr als ein paar Minuten von diesem Irrsinn verkraftet, dem sei vergeben, aber immerhin ist es ein großer Spaß, wenn man sieht welche angeblichen Beweise angeführt werden!</description>
@@ -84,10 +84,10 @@ Wer nicht mehr als ein paar Minuten von diesem Irrsinn verkraftet, dem sei verge
     
     <item>
       <title>Die Android Actionbar mit Material Design</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2015/01/die-android-actionbar-mit-material-design/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2015/01/die-android-actionbar-mit-material-design/</link>
       <pubDate>Thu, 08 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2015/01/die-android-actionbar-mit-material-design/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2015/01/die-android-actionbar-mit-material-design/</guid>
       <description>Um die alte Actionbar in einer ActionbarActivity auszublenden, bietet sich an, folgendes als Style zum Beispiel in der themes.xml anzugeben:
 &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt; &amp;lt;resources&amp;gt; &amp;lt;style name=&amp;#34;BaseTheme&amp;#34; parent=&amp;#34;Theme.AppCompat.Light&amp;#34;&amp;gt; &amp;lt;item name=&amp;#34;windowActionBar&amp;#34;&amp;gt;false&amp;lt;/item&amp;gt; &amp;lt;/style&amp;gt; &amp;lt;/resources&amp;gt; Die Toolbar muss natürlich anschließend in jeder Activity eingebaut werden:
 &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt; &amp;lt;LinearLayout xmlns:android=&amp;#34;http://schemas.android.com/apk/res/android&amp;#34; xmlns:tools=&amp;#34;http://schemas.android.com/tools&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34; tools:context=MainActivity&amp;#34;&amp;gt; &amp;lt;include layout=&amp;#34;@layout/toolbar_transparent&amp;#34;/&amp;gt; &amp;lt;/LinearLayout&amp;gt; &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt; &amp;lt;android.support.v7.widget.Toolbar xmlns:android=&amp;#34;http://schemas.android.com/apk/res/android&amp;#34; android:id=&amp;#34;@+id/toolbar&amp;#34; android:theme=&amp;#34;@style/Exoplanets.Actionbar.Color&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;wrap_content&amp;#34;/&amp;gt; Die aktuell benutzte Toolbar muss dann noch in der Activity gesetzt werden:</description>
@@ -95,10 +95,10 @@ Wer nicht mehr als ein paar Minuten von diesem Irrsinn verkraftet, dem sei verge
     
     <item>
       <title>Wie Großbritannien mal schnell das Internet zensiert</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2014/12/wie-gro%C3%9Fbritannien-mal-schnell-das-internet-zensiert/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2014/12/wie-gro%C3%9Fbritannien-mal-schnell-das-internet-zensiert/</link>
       <pubDate>Fri, 05 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2014/12/wie-gro%C3%9Fbritannien-mal-schnell-das-internet-zensiert/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2014/12/wie-gro%C3%9Fbritannien-mal-schnell-das-internet-zensiert/</guid>
       <description>Das Argument war, dass damit auch leicht andere, unbedenkliche Internetinhalte gesperrt werden, was einer Zensur entspricht. Der Filter lässt sich jedoch auf Wunsch des Kunden entfernen.
 Mitte November dann er erwartete Schritt: Auch Terrorpropaganda wird gefiltert. Wohl als Reaktion auf die Terrororganisation Islamischer Staat sollte damit verhindert werden, dass Jugendliche als Kämpfer ins Kampfgebiet kommen.
 Und seit heute wird auch der Chaos Computer Club gesperrt. Ein Hackerverein, der sich für die Informationsfreiheit und gegen staatliche Überwachung einsetzt.</description>
@@ -106,10 +106,10 @@ Und seit heute wird auch der Chaos Computer Club gesperrt. Ein Hackerverein, der
     
     <item>
       <title>Nur noch 6 Tage bis zur Landung auf einem Kometen!</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2014/11/nur-noch-6-tage-bis-zur-landung-auf-einem-kometen/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2014/11/nur-noch-6-tage-bis-zur-landung-auf-einem-kometen/</link>
       <pubDate>Thu, 06 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2014/11/nur-noch-6-tage-bis-zur-landung-auf-einem-kometen/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2014/11/nur-noch-6-tage-bis-zur-landung-auf-einem-kometen/</guid>
       <description>Wir wissen, ob der Lander Philae der Rosetta-Mission der ESA erfolgreich auf dem Kometen 67P/Churyumov-Gerasimenko gelandet ist.
 Der KometCC-BY-SA IGO 3.0 ESA/Rosetta/NAVCAM
 Seit 2004 ist die Mission unterwegs, um unter anderem zu erforschen, ob das Wasser der Erde oder sogar das Leben oder dessen Bestandteile mit Kometen auf die Erde gekommen sind. 67P-C ist ein kurzperiodischer Komet, der vermutlich aus dem Kuipergürtel stammt und durch den Einfluss der äußeren Gasplaneten Neptun und Uranus in eine stärker exzentrische Bahn um die Sonne gelenkt wurde.</description>
@@ -117,39 +117,39 @@ Seit 2004 ist die Mission unterwegs, um unter anderem zu erforschen, ob das Wass
     
     <item>
       <title>Debuggen mit gdb</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2014/10/debuggen-mit-gdb/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2014/10/debuggen-mit-gdb/</link>
       <pubDate>Fri, 17 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2014/10/debuggen-mit-gdb/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2014/10/debuggen-mit-gdb/</guid>
       <description>Der GNU Debugger, oder kurz gdb, der bereits in den meisten Linux-Distributionen enthalten ist, bietet eine einfache Möglichkeit in der Kommandozeile Programme zu debuggen. Gerade für Assembler-Anwendungen ist es damit einfach die Registerwerte auszulesen, den Speicher und den Stack zu begutachten.
 Dazu sollten Debug-Informationen in die ausführbare Datei gespeichert werden. Für den Assembler as ist zum Beispiel die Option -g nötig. Dann kann man gdb mit gdb &amp;lt;executable&amp;gt; starten. Es öffnet sich die gdb shell.</description>
     </item>
     
     <item>
       <title>Sammlung von Radiosignalen</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2014/08/sammlung-von-radiosignalen/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2014/08/sammlung-von-radiosignalen/</link>
       <pubDate>Sat, 23 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2014/08/sammlung-von-radiosignalen/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2014/08/sammlung-von-radiosignalen/</guid>
       <description>Was empfange ich eigentlich? Wer sich das fragt, dem sei diese Seite empfohlen: Signal Identification Guide</description>
     </item>
     
     <item>
       <title>1,2 Milliarden Passwörter gestohlen, oder nicht?</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2014/08/12-milliarden-passw%C3%B6rter-gestohlen-oder-nicht/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2014/08/12-milliarden-passw%C3%B6rter-gestohlen-oder-nicht/</link>
       <pubDate>Thu, 07 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2014/08/12-milliarden-passw%C3%B6rter-gestohlen-oder-nicht/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2014/08/12-milliarden-passw%C3%B6rter-gestohlen-oder-nicht/</guid>
       <description>Vermutlich haben Sie es schon gehört: Russische Hacker sollen 1,2 Milliarden Zugangsdaten gestohlen haben. Das behauptet zumindest eine Sicherheitsfirma namens Hold Security. Auch große Portale seien betroffen.
 Ein weiteres dummes Symbolbild Die Medien sind sich nicht einig, ob es sich um Benutzernamen und Passwort handelt, Profildaten oder Einwahldaten (?). Auch über die Quelle hört man verschiedene Dinge: Von gehackten Websites aber auch von Botnetzen ist die Rede. So genau weiß es niemand.</description>
     </item>
     
     <item>
       <title>Satellitenbilder mit RTL-SDR</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2014/07/satellitenbilder-mit-rtl-sdr/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2014/07/satellitenbilder-mit-rtl-sdr/</link>
       <pubDate>Thu, 17 Jul 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2014/07/satellitenbilder-mit-rtl-sdr/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2014/07/satellitenbilder-mit-rtl-sdr/</guid>
       <description>Ich habe soeben mit meinem RTL-SDR Stick zum ersten Mal ein Satellitenbild empfangen.
 Mit Hilfe einer alten Fernsehantenne und dem Programm wxtoimg habe ich folgendes Bild erhalten:
 Der Satellit NOAA 19 hat es mit Hilfe des APT-Protokolls auf 137,9125 MHz gesendet.
@@ -158,68 +158,68 @@ Update: Später habe ich auch noch eines von Westeuropa empfangen:</description>
     
     <item>
       <title>Ferien!</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2014/07/ferien/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2014/07/ferien/</link>
       <pubDate>Tue, 15 Jul 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2014/07/ferien/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2014/07/ferien/</guid>
       <description>Das Semester ist aus und jetzt geht es erst mal in die wohlverdienten Ferien! Vielleicht gibt es hier auch wieder den ein oder anderen Artikel zu lesen.</description>
     </item>
     
     <item>
       <title>Flugzeuge mit einem billigen DVB-T Stick verfolgen</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2014/07/flugzeuge-mit-einem-billigen-dvb-t-stick-verfolgen/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2014/07/flugzeuge-mit-einem-billigen-dvb-t-stick-verfolgen/</link>
       <pubDate>Tue, 15 Jul 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2014/07/flugzeuge-mit-einem-billigen-dvb-t-stick-verfolgen/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2014/07/flugzeuge-mit-einem-billigen-dvb-t-stick-verfolgen/</guid>
       <description>Bei der Benützung eines DVB-T Sticks hat man festgestellt, dass sich dieser auch als Software Defined Radio verwenden lässt, da die Rohdaten auf das angeschlossene Gerät übertragen werden. Es lassen sich mit Sticks mit dem Chip RTL2832U alle Frequenzen in einem bestimmten Bereich empfangen und verschiedenste Dinge damit anstellen.
 Eine interessante Verwendung ist zum Beispiel der Empfang von ADS-B Daten. Flugzeuge senden in der Regel jede Sekunde ihre aktuelle Position, Höhe und Kurs ungerichtet auf 1090 MHz ab.</description>
     </item>
     
     <item>
       <title>Die VDS in Österreich ist Geschichte!</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2014/06/die-vds-in-%C3%B6sterreich-ist-geschichte/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2014/06/die-vds-in-%C3%B6sterreich-ist-geschichte/</link>
       <pubDate>Fri, 27 Jun 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2014/06/die-vds-in-%C3%B6sterreich-ist-geschichte/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2014/06/die-vds-in-%C3%B6sterreich-ist-geschichte/</guid>
       <description>Der österreichische Verfassungsgerichtshof hat vor ein paar Minuten das Gesetz zur Vorratsdatenspeicherung für verfassungswidrig erklärt!
 Endlich ist es vorbei mit der massenhaften Überwachung von Bürgern, die damit unter Generalverdacht gestellt wurden. In der Begründung wird die Regierung aufgefordert so schnell wie möglich dieses Gesetz außer Kraft zu setzen. Außerdem sind die Telekomanbieter verpflichtet die Daten binnen Ablaufs des Tages des Inkrafttretens zu löschen.</description>
     </item>
     
     <item>
       <title>Post von Mozilla</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2014/06/post-von-mozilla/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2014/06/post-von-mozilla/</link>
       <pubDate>Wed, 25 Jun 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2014/06/post-von-mozilla/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2014/06/post-von-mozilla/</guid>
       <description>Ich habe vor kurzem eine E-Mail von Mike Hoye, dem &amp;ldquo;Engineering community manager&amp;rdquo; von Mozilla bekommen, in der es heißt:
 I&amp;rsquo;m contacting you because you&amp;rsquo;ve made a contribution to Firefox that&amp;rsquo;s gone into production in the last few months. You&amp;rsquo;ve helped make Firefox and the Web better for millions of people, and we&amp;rsquo;d like to send you - in the mail, for real - a note to thank you for your efforts.</description>
     </item>
     
     <item>
       <title>Was man heute unbedingt tun sollte</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2014/05/was-man-heute-unbedingt-tun-sollte/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2014/05/was-man-heute-unbedingt-tun-sollte/</link>
       <pubDate>Sun, 25 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2014/05/was-man-heute-unbedingt-tun-sollte/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2014/05/was-man-heute-unbedingt-tun-sollte/</guid>
       <description>Firefox für MS-DOS kompilieren wählen!</description>
     </item>
     
     <item>
       <title>Auch Firefox bekommt die DRM-API</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2014/05/auch-firefox-bekommt-die-drm-api/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2014/05/auch-firefox-bekommt-die-drm-api/</link>
       <pubDate>Thu, 15 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2014/05/auch-firefox-bekommt-die-drm-api/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2014/05/auch-firefox-bekommt-die-drm-api/</guid>
       <description>Lange hat man sich dagegen gewährt, aber in einem Blogbeitrag hat der Technik-Chef von Mozilla jetzt verlautbart doch mit Encrypted Media Extensions eine API für das Abspielen von DRM-geschützten Material umsetzen zu wollen.
 Dass die anderen großen Browser diese API bereits unterstützen und dadurch ein Nachteil für Firefox entstehen könnte, hat die Verantwortlichen dazu getrieben, heißt es in einem Artikel auf heise.de. Ich bedauere diesen Schritt, kann ihn zugleich aber verstehen.</description>
     </item>
     
     <item>
       <title>Ein fragwürdiges Geschäftsmodell mit Email-Adressen</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2014/04/ein-fragw%C3%BCrdiges-gesch%C3%A4ftsmodell-mit-email-adressen/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2014/04/ein-fragw%C3%BCrdiges-gesch%C3%A4ftsmodell-mit-email-adressen/</link>
       <pubDate>Fri, 25 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2014/04/ein-fragw%C3%BCrdiges-gesch%C3%A4ftsmodell-mit-email-adressen/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2014/04/ein-fragw%C3%BCrdiges-gesch%C3%A4ftsmodell-mit-email-adressen/</guid>
       <description>Auf ein sehr fragwürdiges Geschäftsmodell bin ich heute gestoßen: Es gibt doch tatsächlich eine Website, die die verpflichtend eingetragenen Email-Adressen für Domains aufsammelt und auf ihrer Website ungeschützt anzeigt. Das sieht dann so aus:
 Alleine das ist schon sehr komisch, aber es wird noch besser wenn man den Link klickt, hinter dem man angeblich seine Email verbergern lassen kann:
 Diese Ach-so-tolle-Website erlaubt es für nur 9,95 USD meine Email-Adresse nicht mehr bei Ihnen anzuzeigen!</description>
@@ -227,30 +227,30 @@ Diese Ach-so-tolle-Website erlaubt es für nur 9,95 USD meine Email-Adresse nich
     
     <item>
       <title>Linux-Kernelmodule - Teil 1</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2014/04/linux-kernelmodule-teil-1/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2014/04/linux-kernelmodule-teil-1/</link>
       <pubDate>Tue, 22 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2014/04/linux-kernelmodule-teil-1/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2014/04/linux-kernelmodule-teil-1/</guid>
       <description>Auch wenn es sich bei Linux um ein monolithisches Betriebssystem handelt, sind viele Teile davon in Modulen aufgebaut. Diese Kernelmodule können zur Laufzeit geladen und auch wieder entladen werden. Wie man so ein Modul entwickelt und zum Laufen bringt möchte ich hier kurz zeigen.
 C-Code Linux wird in C entwickelt und darum werden auch Kernel-Module in C geschrieben. Sie bestehen im Grunde aus zwei Funktionen: Eine, die beim Laden ausgeführt wird und eine, die beim Entladen ausgeführt wird.</description>
     </item>
     
     <item>
       <title>Abfahrt - Meine erste Android-App ist da!</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2014/04/abfahrt-meine-erste-android-app-ist-da/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2014/04/abfahrt-meine-erste-android-app-ist-da/</link>
       <pubDate>Sat, 12 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2014/04/abfahrt-meine-erste-android-app-ist-da/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2014/04/abfahrt-meine-erste-android-app-ist-da/</guid>
       <description>Endlich ist es soweit: Meine erste Android-App Abfahrt ist im Play Store!
 Damit soll das Benutzen von öffentlichen Verkehrsmittel leichter werden und das Verspassen des Zuges der Vergangenheit angehören. Weitere Informationen gibt es auf der eigenen Website.</description>
     </item>
     
     <item>
       <title>Heartbleed - Oder wie das Internet unsicher wurde</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2014/04/heartbleed-oder-wie-das-internet-unsicher-wurde/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2014/04/heartbleed-oder-wie-das-internet-unsicher-wurde/</link>
       <pubDate>Thu, 10 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2014/04/heartbleed-oder-wie-das-internet-unsicher-wurde/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2014/04/heartbleed-oder-wie-das-internet-unsicher-wurde/</guid>
       <description>Die Aufregung war groß, als die Sicherheitslücke CVE-2014-0160, genannt Heartbleed, am 7. April bekannt wurde. Nach Schätzungen von Experten sind oder waren bis zu 75% der Server im Internet betroffen.
 Wieso? Durch diesen Fehler in der Open Source Software OpenSSL war, und ist es zum Teil immer noch möglich, einen Teil des Arbeitsspeichers eines Servers, der diese Software verwendet, auszulesen und so die Anfragen anderer Benutzer zu sehen.
 Diese Anfragen können auch den Benutzernamen und das Passwort beinhalten, die durch SSL eigentlich sicher übertragen werden sollen.</description>
@@ -258,10 +258,10 @@ Diese Anfragen können auch den Benutzernamen und das Passwort beinhalten, die d
     
     <item>
       <title>Wenn grunt nichts mehr tut</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2014/03/wenn-grunt-nichts-mehr-tut/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2014/03/wenn-grunt-nichts-mehr-tut/</link>
       <pubDate>Sun, 16 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2014/03/wenn-grunt-nichts-mehr-tut/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2014/03/wenn-grunt-nichts-mehr-tut/</guid>
       <description>Was tun, wenn grunt nichts mehr tut, also keinerlei mehr Ausgabe liefert?
 Es liegt meist am Paket node. Es hat überhaupt nichts mit nodejs zu tun und kann weg. Das heißt: sudo apt-get remove node löst das Problem.
 Schon sollte dem fröhlichen Automatisieren nichts mehr im Wege stehen!</description>
@@ -269,19 +269,19 @@ Schon sollte dem fröhlichen Automatisieren nichts mehr im Wege stehen!</descrip
     
     <item>
       <title>DSLR-Steuerung für Linux</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2014/03/dslr-steuerung-f%C3%BCr-linux/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2014/03/dslr-steuerung-f%C3%BCr-linux/</link>
       <pubDate>Tue, 11 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2014/03/dslr-steuerung-f%C3%BCr-linux/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2014/03/dslr-steuerung-f%C3%BCr-linux/</guid>
       <description>Die Steuerprogramme für digitale Spiegelreflexkameras sind oftmals nur für Windows und Mac verfügbar. Für den Linux-Benutzer gibt es aber, wie von mir vor kurzem entdeckt, gphoto2.</description>
     </item>
     
     <item>
       <title>Wie man Assembler schreibt</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2014/02/wie-man-assembler-schreibt/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2014/02/wie-man-assembler-schreibt/</link>
       <pubDate>Sun, 16 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2014/02/wie-man-assembler-schreibt/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2014/02/wie-man-assembler-schreibt/</guid>
       <description>Assembler ist gar nicht so schwer. Vorausgesetzt natürlich man hat es einmal verstanden. Und genau das soll dieser Artikel leisten: Verständlich machen, wie es grundsätzlich geht.
 In diesem Beispiel verwende ich GNU Assembler mit der AT&amp;amp;T-Syntax.
 Ein Programm besteht immer aus zwei Teilen: Dem data- und dem text-Bereich:
@@ -290,20 +290,20 @@ Ein Programm besteht immer aus zwei Teilen: Dem data- und dem text-Bereich:
     
     <item>
       <title>vine.co only supports RC4 ciphers</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2014/02/vine.co-only-supports-rc4-ciphers/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2014/02/vine.co-only-supports-rc4-ciphers/</link>
       <pubDate>Sat, 08 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2014/02/vine.co-only-supports-rc4-ciphers/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2014/02/vine.co-only-supports-rc4-ciphers/</guid>
       <description>Due to the well-known problems with the RC4 cipher i recently disabled all ciphers that use RC4 in my web browser. I have not experienced any problems until a week ago. Maybe some old websites will not support ciphers without it. That is what i thought.
 So days ago one of these short videos from vine, a service of Twitter, showed up in my Twitter timeline. I clicked it and got this:</description>
     </item>
     
     <item>
       <title>Mein erster Beitrag zum Firefox-Quellcode</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2014/01/mein-erster-beitrag-zum-firefox-quellcode/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2014/01/mein-erster-beitrag-zum-firefox-quellcode/</link>
       <pubDate>Wed, 08 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2014/01/mein-erster-beitrag-zum-firefox-quellcode/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2014/01/mein-erster-beitrag-zum-firefox-quellcode/</guid>
       <description>Heute wurde meiner erster Beitrag zum Quellcode von Firefox in den Source-Baum eingefügt.
 Bug 956678 - Replace TaskUtils.spawn() by Task.spawn() in Session Restore. r=yoric
 Dadurch habe zu meinem Lieblingsbrowser auch etwas beigetragen!</description>
@@ -311,10 +311,10 @@ Dadurch habe zu meinem Lieblingsbrowser auch etwas beigetragen!</description>
     
     <item>
       <title>ELGA am Start</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2014/01/elga-am-start/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2014/01/elga-am-start/</link>
       <pubDate>Thu, 02 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2014/01/elga-am-start/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2014/01/elga-am-start/</guid>
       <description>Seit heute ist die neue elektronische Gesundheitsakte, kurz ELGA, in Betrieb. Auch wenn noch keine Gesundheitsdaten gespeichert werden (können), kann man sich ab heute davon abmelden.
 Gerade in Zeiten der Totalüberwachung durch die NSA und ständiger Hackerangriffe sollte jeder von uns überlegen, ob er Daten zu seiner Gesundheit dort ablegen lassen will. Ich jedenfalls habe mich heute abgemeldet.
 Dazu nötig ist eine Bürgerkarte oder Handysignatur und der Besuch von http://gesundheit.gv.at. Alternativ kann man die Verwendung auch schriftlich sperren lassen.</description>
@@ -322,10 +322,10 @@ Dazu nötig ist eine Bürgerkarte oder Handysignatur und der Besuch von http://g
     
     <item>
       <title>Zeit sparen mit Grunt</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/12/zeit-sparen-mit-grunt/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/12/zeit-sparen-mit-grunt/</link>
       <pubDate>Sat, 28 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/12/zeit-sparen-mit-grunt/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/12/zeit-sparen-mit-grunt/</guid>
       <description>Mit dem Tool Grunt ist es möglich wiederkehrende Aufgaben beim Entwickeln von JavaScript-Bibliotheken zu automatisieren.
 Beim Entwickeln meiner Strichcode-Bibliothek bin ich auf Grunt gestoßen und will es jetzt nicht mehr missen.
 Installation Unter der Voraussetzung von Node.js kann man Grunt einfach mit dem folgenden Befehl installieren:
@@ -334,10 +334,10 @@ npm install -g grunt-cli Konfigurationsdatei Zur Konfiguration wird eine Datei n
     
     <item>
       <title>Technische Probleme</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/12/technische-probleme/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/12/technische-probleme/</link>
       <pubDate>Sun, 08 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/12/technische-probleme/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/12/technische-probleme/</guid>
       <description>Wegen eines Updatevorgangs kommt es zurzeit auf dieser Seite zu technischen Problemen.
 Ich bitte, das zu entschuldigen!
 Update: Alles läuft wieder einwandfrei!</description>
@@ -345,10 +345,10 @@ Update: Alles läuft wieder einwandfrei!</description>
     
     <item>
       <title>Graphen mit LaTeX zeichnen</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/12/graphen-mit-latex-zeichnen/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/12/graphen-mit-latex-zeichnen/</link>
       <pubDate>Mon, 02 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/12/graphen-mit-latex-zeichnen/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/12/graphen-mit-latex-zeichnen/</guid>
       <description>Vor kurzem musste ich zu einer Aufgabe zur Graphentheorie einen Graphen mit LaTeX zeichen.
 Das ist relativ einfach mit dem Paket tikzpicture möglich:
 \begin{tikzpicture}[scale=2] % Knoten \node (A) at (1,0) [circle,draw] {A}; \node (B) at (1,1.2) [circle,draw] {B}; \node (C) at (2,1.1) [circle,draw] {C}; \node (D) at (0.5,1) [circle,draw] {D}; \node (E) at (2,0) [circle,draw] {E}; % Kanten \draw[-] (B) to (D); \draw[-] (A) to (D); \draw[-] (E) to (D); \draw[-] (E) to (B); \draw[-] (E) to (A); \draw[-] (E) to (C); \draw[-] (C) to (B); \end{tikzpicture} Das Ergebnis sieht dann so aus:</description>
@@ -356,20 +356,20 @@ Das ist relativ einfach mit dem Paket tikzpicture möglich:
     
     <item>
       <title>Wie ich nun doch einen Laptop gewonnen habe</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/11/wie-ich-nun-doch-einen-laptop-gewonnen-habe/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/11/wie-ich-nun-doch-einen-laptop-gewonnen-habe/</link>
       <pubDate>Tue, 12 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/11/wie-ich-nun-doch-einen-laptop-gewonnen-habe/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/11/wie-ich-nun-doch-einen-laptop-gewonnen-habe/</guid>
       <description>Die Geschichte mit dem Laptop hat eine überraschende Wendung genommen!
 Ich habe eine Email erhalten, wonach ich als Ergebnis einer internen Besprechung des Vereins nun doch einen Laptop bekomme! Ich freue mich darüber, dass meine Bemühungen nun doch belohnt werden und für mich ist die ganze Sache jetzt natürlich aus der Welt. :)</description>
     </item>
     
     <item>
       <title>Wie ich beinahe einen Laptop gewonnen hätte</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/11/wie-ich-beinahe-einen-laptop-gewonnen-h%C3%A4tte/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/11/wie-ich-beinahe-einen-laptop-gewonnen-h%C3%A4tte/</link>
       <pubDate>Tue, 05 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/11/wie-ich-beinahe-einen-laptop-gewonnen-h%C3%A4tte/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/11/wie-ich-beinahe-einen-laptop-gewonnen-h%C3%A4tte/</guid>
       <description>Hinweis: Es gibt Neuigkeiten
 Das ist die Geschichte, wie ich bei einem Hacker-Wettbewerb fast einen Laptop gewonnen hätte, ihn dann aber nicht bekommen habe.
 Eine Chronologie:
@@ -378,20 +378,20 @@ Alles beginnt damit, dass ich diesen Artikel lese. Zu gewinnen gibt es dabei lau
     
     <item>
       <title>Ausfall wegen DDoS</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/10/ausfall-wegen-ddos/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/10/ausfall-wegen-ddos/</link>
       <pubDate>Tue, 15 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/10/ausfall-wegen-ddos/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/10/ausfall-wegen-ddos/</guid>
       <description>Gestern, am 14. Oktober ist es beginnend ab 13 Uhr bis zum Abend zu einem Ausfall meiner gesamten Seite gekommen. Schuld daran war ein DDoS Angriff gegen meinen Hoster Uberspace. Zunächst war nicht klar, was eigentlich los ist. Auf ihrem Twitter Account (@ubernauten) haben die Leuten von Uberspace dazu allerlei getwittert.
 Erst kurz nach 20:15, nach der Aussage der Uberspace-Mitarbeiter war das der längste DDoS auf ihre Server, wurde dann Entwarnung gegeben und die Server waren wieder erreichbar.</description>
     </item>
     
     <item>
       <title>OAuth.py</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/10/oauth.py/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/10/oauth.py/</link>
       <pubDate>Tue, 15 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/10/oauth.py/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/10/oauth.py/</guid>
       <description>Schon vor einiger Zeit habe ich mich mit OAuth beschäftigt. Dabei ist eine kleine Python-Bibliothek entstanden, die als Open Source Projekt sicher besser aufgehoben ist, als auf meiner Festplatte.
 Darum habe ich sie heute auf Github gestellt: OAuth.py
 Verwendung Die Bibliothek besteht aus einem Kern und Erweiterungen. Der Kern wird durch die Klassen für die jeweiligen Anbieter erweitert und kann dann im Code verwendet werden. Einen einfachen API-Client kann man beispielsweise so realisieren:</description>
@@ -399,30 +399,30 @@ Verwendung Die Bibliothek besteht aus einem Kern und Erweiterungen. Der Kern wir
     
     <item>
       <title>Student an der JKU Linz</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/10/student-an-der-jku-linz/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/10/student-an-der-jku-linz/</link>
       <pubDate>Wed, 02 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/10/student-an-der-jku-linz/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/10/student-an-der-jku-linz/</guid>
       <description>Seit dem 1. Oktober bin ich nun offiziell Student an der Johannes Kepler Universität Linz und habe dort ein Bachelor-Informatikstudium begonnen.
 Ich bin schon gespannt, was das Stundentenleben Neues bringt!</description>
     </item>
     
     <item>
       <title>GPS-Tracks zusammenfügen mit gpsbabel</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/09/gps-tracks-zusammenf%C3%BCgen-mit-gpsbabel/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/09/gps-tracks-zusammenf%C3%BCgen-mit-gpsbabel/</link>
       <pubDate>Mon, 23 Sep 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/09/gps-tracks-zusammenf%C3%BCgen-mit-gpsbabel/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/09/gps-tracks-zusammenf%C3%BCgen-mit-gpsbabel/</guid>
       <description>Mit dem Linux-Programm gpsbabel ist es möglich gpx-Dateien schnell zusammenzufügen. Einfach folgenden Befehl eintippen:
 gpsbabel -i gpx -f Track1.gpx -i gpx -f Track2.gpx -o gpx -F out.gpx Das funktioniert übrigens auch mit anderen Formaten als gpx.</description>
     </item>
     
     <item>
       <title>Einen Quantenchip selbst programmieren!</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/09/einen-quantenchip-selbst-programmieren/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/09/einen-quantenchip-selbst-programmieren/</link>
       <pubDate>Sun, 15 Sep 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/09/einen-quantenchip-selbst-programmieren/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/09/einen-quantenchip-selbst-programmieren/</guid>
       <description>Auf dieser Seite der Universität Bristol ist es möglich einen simulierten Quantenchip mit 2 Qubits zu programmieren.
 Diese Programme können an die Forscher geschickt werden, die diese dann ab 20. September auf einem echten Quantenchip ausführen.
 Sollte jemand eine Erklärung zur Bedienung des Simulators haben, nur her damit! Ich verstehe im Moment nicht wirklich, was meine Eingaben bewirken und wie das Ergebnis entsteht.
@@ -431,29 +431,29 @@ Update: Man hat mir einen Link zur Anleitung geschickt.</description>
     
     <item>
       <title>Kostenloser Github „micro plan“ für Studenten</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/09/kostenloser-github-micro-plan-f%C3%BCr-studenten/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/09/kostenloser-github-micro-plan-f%C3%BCr-studenten/</link>
       <pubDate>Fri, 13 Sep 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/09/kostenloser-github-micro-plan-f%C3%BCr-studenten/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/09/kostenloser-github-micro-plan-f%C3%BCr-studenten/</guid>
       <description>Unter dieser Adresse kann man sich mit seiner Universitäts-Email-Adresse anmelden und erhält dann von Github einen kostenlosen „micro plan“, mit dem man bis zu fünf private Repositories anlegen kann.</description>
     </item>
     
     <item>
       <title>Schnelle Markdown-Präsentationen mit Cleaver</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/08/schnelle-markdown-pr%C3%A4sentationen-mit-cleaver/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/08/schnelle-markdown-pr%C3%A4sentationen-mit-cleaver/</link>
       <pubDate>Sat, 31 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/08/schnelle-markdown-pr%C3%A4sentationen-mit-cleaver/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/08/schnelle-markdown-pr%C3%A4sentationen-mit-cleaver/</guid>
       <description>Mit Cleaver kann man aus einem speziell formatierten Markdown-Text schnell eine HTML-Präsentation erstellen.
 title: Basic Example author: name: &amp;#34;Jordan Scales&amp;#34; twitter: &amp;#34;@jdan&amp;#34; url: &amp;#34;http://jordanscales.com&amp;#34; output: basic.html controls: true -- # Cleaver 101 ## A first look at quick HTML presentations -- ### A textual example Content can be written in **Markdown!** New lines no longer need two angle brackets. This will be in a separate paragraph -- ### A list of things * Item 1 * Item B * Item gamma No need for multiple templates!</description>
     </item>
     
     <item>
       <title>Verschlüsselung für die Massen?</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/08/verschl%C3%BCsselung-f%C3%BCr-die-massen/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/08/verschl%C3%BCsselung-f%C3%BCr-die-massen/</link>
       <pubDate>Tue, 20 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/08/verschl%C3%BCsselung-f%C3%BCr-die-massen/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/08/verschl%C3%BCsselung-f%C3%BCr-die-massen/</guid>
       <description>Vielleicht hat der NSA-Skandal doch auch positive Auswirkungen: Verschlüsselung ist wieder &amp;ldquo;in&amp;rdquo;.
 Die große Mehrheit der Internetbenutzer hat traditionell von Verschlüsselung keine oder nur wenig Ahnung. Jedoch habe ich im Zuge des Abhörskandals festgestellt, dass bei vielen der Wille zur Verschlüsselung der Daten vorhanden ist, diese jedoch zu wenig Wissen und Werkzeuge zur Verfügung haben, um es auch umzusetzen.
 Vielleicht ist dies ein wichtiger Zeitpunkt, um auch weniger technisch interessierten Benutzern die Mittel dazu bereit zu stellen und so die Daten von Millionen Internetbenutzern zu schützen.</description>
@@ -461,10 +461,10 @@ Vielleicht ist dies ein wichtiger Zeitpunkt, um auch weniger technisch interessi
     
     <item>
       <title>Vektor-Icons mit &#34;Font Awesome&#34;</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/08/vektor-icons-mit-font-awesome/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/08/vektor-icons-mit-font-awesome/</link>
       <pubDate>Sat, 17 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/08/vektor-icons-mit-font-awesome/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/08/vektor-icons-mit-font-awesome/</guid>
       <description>Auf dieser Seite habe ich auch nun einige Icons eingebaut, die mit Font Awesome dargestellt werden.
 Eigentlich handelt es sich bei den Icons um Schriftzeichen, die mittels einer CSS-Datei zu den kleinen Bildchen werden.
 Um Font Awesome zu benutzen, muss man nur Folgendes einbinden:
@@ -474,10 +474,10 @@ Um Font Awesome zu benutzen, muss man nur Folgendes einbinden:
     
     <item>
       <title>Firefox 23 kann kein &lt;blink&gt; mehr</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/08/firefox-23-kann-kein-blink-mehr/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/08/firefox-23-kann-kein-blink-mehr/</link>
       <pubDate>Thu, 08 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/08/firefox-23-kann-kein-blink-mehr/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/08/firefox-23-kann-kein-blink-mehr/</guid>
       <description>Und das ist auch gut so. Endlich hat das lästige Geblinke aus Geocities-Zeiten ein Ende.
 Danke Mozilla!
 PS: Schießt doch auch endlich marquee ab!</description>
@@ -485,10 +485,10 @@ PS: Schießt doch auch endlich marquee ab!</description>
     
     <item>
       <title>&#34;address&#34; ist nichts für Postadressen</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/08/address-ist-nichts-f%C3%BCr-postadressen/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/08/address-ist-nichts-f%C3%BCr-postadressen/</link>
       <pubDate>Sat, 03 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/08/address-ist-nichts-f%C3%BCr-postadressen/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/08/address-ist-nichts-f%C3%BCr-postadressen/</guid>
       <description>Wie ich selbst auch erst jetzt gelesen habe, ist das HTML-Element address nicht für die Darstellung einer Postadresse geeignet.
 Viel besser ist diese in einem Mikroformat aufgehoben.
 Man kann ja nicht alles wissen!</description>
@@ -496,10 +496,10 @@ Man kann ja nicht alles wissen!</description>
     
     <item>
       <title>Uberspace &#43; PHP &#43; PgSQL</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/08/uberspace--php--pgsql/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/08/uberspace--php--pgsql/</link>
       <pubDate>Sat, 03 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/08/uberspace--php--pgsql/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/08/uberspace--php--pgsql/</guid>
       <description>Da ich kürzlich auf einen PgSQL-Server umgestiegen bin, stand ich vor dem Problem, dass die laufende PHP-Version auf meinen Uberspace nicht mit der Option --with-pgsql kompiliert worden ist.
 Dabei stehen die Funktionen, die nötig sind, um sich mit der Datenbank zu verbinden in PHP nicht zur Verfügung, was sich in dieser Fehlermeldung äußert:
 Call to undefined function: pg_connect() Da der Uberspace-Support aber auch das Unmögliche möglich machen kann, habe ich mich an hallo@uberspace.</description>
@@ -507,10 +507,10 @@ Call to undefined function: pg_connect() Da der Uberspace-Support aber auch das 
     
     <item>
       <title>Entwurf für HTTP 2.0</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/07/entwurf-f%C3%BCr-http-2.0/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/07/entwurf-f%C3%BCr-http-2.0/</link>
       <pubDate>Tue, 30 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/07/entwurf-f%C3%BCr-http-2.0/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/07/entwurf-f%C3%BCr-http-2.0/</guid>
       <description>Die IETF hat jetzt einen ersten benutzbaren Entwurf für den Nachfolger von HTTP 1.1 vorgelegt.
 Im neuen Protokoll HTTP/2.0, das vormals auf den Namen SPDY hörte und von Google entwickelt wurde, sind eine Reihe von nützlichen Neuheiten enthalten, um HTTP auf den neuesten Stand seit der Veröffentlichung von Version 1.1 im Jahr 1999 zu bringen.
 Die Übertragung soll dadurch beschleunigt und optimiert werden. Dies wird unter anderem durch das Multiplexen der Verbindung, also dem Senden von mehreren Dokumenten über eine TCP-Verbindung, erreicht.</description>
@@ -518,29 +518,29 @@ Die Übertragung soll dadurch beschleunigt und optimiert werden. Dies wird unter
     
     <item>
       <title>Bootstrap 3 mit Flat Design</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/07/bootstrap-3-mit-flat-design/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/07/bootstrap-3-mit-flat-design/</link>
       <pubDate>Sat, 27 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/07/bootstrap-3-mit-flat-design/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/07/bootstrap-3-mit-flat-design/</guid>
       <description>Das im Moment angesagte Designprinzip des &amp;ldquo;Flat-Design&amp;rdquo; lässt sich jetzt auch einfach mit Twitter Bootstrap verwenden: Bootstrap 3</description>
     </item>
     
     <item>
       <title>Und dann war das CMS plötzlich...</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/07/und-dann-war-das-cms-pl%C3%B6tzlich.../</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/07/und-dann-war-das-cms-pl%C3%B6tzlich.../</link>
       <pubDate>Mon, 15 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/07/und-dann-war-das-cms-pl%C3%B6tzlich.../</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/07/und-dann-war-das-cms-pl%C3%B6tzlich.../</guid>
       <description>&amp;hellip;Django!
 (Der Geschwindigkeitsvorteil ist schon zu spüren.)</description>
     </item>
     
     <item>
       <title>Ein kostenloser Ubuntu-Server für eine halbe Stunde</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/06/ein-kostenloser-ubuntu-server-f%C3%BCr-eine-halbe-stunde/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/06/ein-kostenloser-ubuntu-server-f%C3%BCr-eine-halbe-stunde/</link>
       <pubDate>Wed, 12 Jun 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/06/ein-kostenloser-ubuntu-server-f%C3%BCr-eine-halbe-stunde/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/06/ein-kostenloser-ubuntu-server-f%C3%BCr-eine-halbe-stunde/</guid>
       <description>Auf der Seite instantserver.io kann man einen Ubuntu-Server für eine halbe Stunde über SSH benutzen. Dieser Service ist kostenlos und funktioniert ohne Registrierung.
 Der Dienst ist vor allem dazu gedacht, die Funktion des eigenen Dienstes zu testen, ein Tool zu testen oder etwas auf einem frischem System testen zu können.
 Natürlich würde ich nicht empfehlen private Informationen damit zu nutzen, aber zum Zwecke des Testens erscheint mir dieses Angebot durchaus nützlich.</description>
@@ -548,10 +548,10 @@ Natürlich würde ich nicht empfehlen private Informationen damit zu nutzen, abe
     
     <item>
       <title>Apps für Samsung Smart TVs analysieren</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/06/apps-f%C3%BCr-samsung-smart-tvs-analysieren/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/06/apps-f%C3%BCr-samsung-smart-tvs-analysieren/</link>
       <pubDate>Thu, 06 Jun 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/06/apps-f%C3%BCr-samsung-smart-tvs-analysieren/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/06/apps-f%C3%BCr-samsung-smart-tvs-analysieren/</guid>
       <description>Zurzeit sind Fernseher groß in Mode, die sich mit dem Internet verbinden können und die reine Verwendung als Fernseher um weitere Dienste erweitern.
 Auch Apps kann man auf diesen Geräten installieren und so zum Beispiel Videos aus Mediatheken abrufen oder auf Online-Konten zugreifen.
 Doch, was machen diese Apps eigentlich genau? Senden sie gar Informationen über mich im Hintergrund an der Hersteller? Ist es sogar Malware?
@@ -560,10 +560,10 @@ In so einem Fall analysiert man normalerweise die Anwendung per Reverse-Engineer
     
     <item>
       <title>Ein weiterer Versuch: Tiny Tiny RSS</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/05/ein-weiterer-versuch-tiny-tiny-rss/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/05/ein-weiterer-versuch-tiny-tiny-rss/</link>
       <pubDate>Tue, 28 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/05/ein-weiterer-versuch-tiny-tiny-rss/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/05/ein-weiterer-versuch-tiny-tiny-rss/</guid>
       <description>Ein weiterer Versuch den Google-Reader zu ersetzen: Tiny Tiny RSS.
 Dieser Feedreader lässt sich sehr genau auf seine Wünsche einstellen und hat zudem den Vorteil selbgehostet zu sein. Außerdem ist eine JSON-API vorhanden, die es möglich macht selbst Anwendungen zu entwickeln.
 Die Installation ist zwar etwas langwierig, weil ein Daemon eingerichtet werden muss, wird aber hier von den fleißigen Uberspace-Leuten ausführlich beschrieben.</description>
@@ -571,10 +571,10 @@ Die Installation ist zwar etwas langwierig, weil ein Daemon eingerichtet werden 
     
     <item>
       <title>The old Reader: Alternative zu Google Reader</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/05/the-old-reader-alternative-zu-google-reader/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/05/the-old-reader-alternative-zu-google-reader/</link>
       <pubDate>Mon, 27 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/05/the-old-reader-alternative-zu-google-reader/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/05/the-old-reader-alternative-zu-google-reader/</guid>
       <description>Da die Abschaltung des Google-Readers immer näher kommt, habe ich mich auch nach einer Alternative dafür umgesehen und The Old Reader entdeckt.
 Dieser Service versucht die Funktionen des Google-Reader nachzuahmen, wodurch keine große Umgewöhnung nötig ist. Bis ich etwas besseres gefunden habe, ist das nun mein aktueller Feedreader.
 Tipps zu Feedreadern werden übrigens per Kommentar akzeptiert!</description>
@@ -582,30 +582,30 @@ Tipps zu Feedreadern werden übrigens per Kommentar akzeptiert!</description>
     
     <item>
       <title>Fibonacci-Folge in Go</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/05/fibonacci-folge-in-go/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/05/fibonacci-folge-in-go/</link>
       <pubDate>Sun, 26 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/05/fibonacci-folge-in-go/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/05/fibonacci-folge-in-go/</guid>
       <description>Um die Programmiersprache Go zu erlernen, habe ich versucht die sogenannte Fibonacci-Folge zu programmieren. Und hier ist das Ergebnis:
 package main import &amp;#34;fmt&amp;#34; func main() { fmt.Println(fibonacci(20)) } func fibonacci(count int) []int{ // Leeres Slice erzeugen data := []int{0,1} // For-Schleife for i := 2; i &amp;lt; count; i++ { // Vorhergehende Elemente aufrufen var x,y int = data[i-2], data[i-1] // Elemente addieren und zum Slice hinzufügen data = append(data, x+y) } return data } Anfangs ist dieses Programmiersprache etwas gewöhnungsbedürftig, aber nach kuzer Zeit erkennt man die nützlichen Besonderheiten.</description>
     </item>
     
     <item>
       <title>Neues ÖBB-Zugradar</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/05/neues-%C3%B6bb-zugradar/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/05/neues-%C3%B6bb-zugradar/</link>
       <pubDate>Tue, 21 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/05/neues-%C3%B6bb-zugradar/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/05/neues-%C3%B6bb-zugradar/</guid>
       <description>Auf der Seite zugradar.oebb.at ist es ab jetzt möglich die aktuelle Position jedes Zuges der Österreichischen Bundesbahnen auf einer Karte zu verfolgen. Auch wenn hierbei nur die aktuelle Verspätung (wenn vorhanden) verwendet und daraus die Position berechnet wird, so ist es doch angenehm zu sehen, wo sich der Zug befindet.
 Außerdem lassen sich die Züge &amp;ldquo;verfolgen&amp;rdquo;, dadurch wird der Kartenausschnitt mitbewegt, und auch die Route des Zuges lässt sich anzeigen.</description>
     </item>
     
     <item>
       <title>Firefox 22 Beta: Was geht damit?</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/05/firefox-22-beta-was-geht-damit/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/05/firefox-22-beta-was-geht-damit/</link>
       <pubDate>Thu, 16 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/05/firefox-22-beta-was-geht-damit/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/05/firefox-22-beta-was-geht-damit/</guid>
       <description>Heute hat Mozilla die Betaversion auf Firefox 22 veröffentlicht und stellt mit dieser Version eine große Anzahl von Neuheiten bereit. Unter anderem unterstützt der Browser nun auch WebRTC komplett. Außerdem sind WebNotifications, Clipboard API und asm.js-Unterstützung in den Fuchs eingezogen.
 Im Folgenden möchte ich kurz die wichtigsten Neuerungen mit einem kurzen Beispiel vorstellen:
 WebRTC WebRTC ermöglicht den Zugriff auf Kamera und Mikrofon und macht es möglich direkte Verbindungen zwischen Browsern herzustellen, um zum Beispiel einen Videochat zu realisieren.</description>
@@ -613,19 +613,19 @@ WebRTC WebRTC ermöglicht den Zugriff auf Kamera und Mikrofon und macht es mögl
     
     <item>
       <title>IOR-Werte für Glas mit der Blender Cycles-Engine</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/05/ior-werte-f%C3%BCr-glas-mit-der-blender-cycles-engine/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/05/ior-werte-f%C3%BCr-glas-mit-der-blender-cycles-engine/</link>
       <pubDate>Sat, 11 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/05/ior-werte-f%C3%BCr-glas-mit-der-blender-cycles-engine/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/05/ior-werte-f%C3%BCr-glas-mit-der-blender-cycles-engine/</guid>
       <description>Um eine realistische Darstellung von Glas zu erreichen ist es nötig den richtigen IOR-Wert zu wählen. Eine praktische Liste dazu gibt es hier: http://blenderartists.org/forum/archive/index.php/t-71202.html</description>
     </item>
     
     <item>
       <title>Empfehlung: Uberspace</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/05/empfehlung-uberspace/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/05/empfehlung-uberspace/</link>
       <pubDate>Fri, 10 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/05/empfehlung-uberspace/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/05/empfehlung-uberspace/</guid>
       <description>Auch auf die Gefahr hin, dass Sie so etwas schon einmal gelesen haben: Uberspace begeistert mich!
 Dieser Hosting-Provider bietet eine sehr gut Ausstattung zu einem unvergleichlichen Preis an. Mit einem Mindestpreis von nur einem Euro, den man aber beliebig erhöhen kann, erhält man dort 10GB Webspace. Eine Domain dazu, wie meine hier, erhöht den Mindestpreis auf 1,50€.
 Von PHP, Ruby, Python, Node.js bis MySQL, MongoDB, CouchDB ist alles vorhanden und lässt sich kinderleicht einrichten.</description>
@@ -633,10 +633,10 @@ Von PHP, Ruby, Python, Node.js bis MySQL, MongoDB, CouchDB ist alles vorhanden u
     
     <item>
       <title>Umzug</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/05/umzug/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/05/umzug/</link>
       <pubDate>Tue, 07 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/05/umzug/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/05/umzug/</guid>
       <description>Ab heute ist meine Homepage unter der Adresse
 johannes-mittendorfer.com
 erreichbar. Womöglich kommt es in nächster Zeit noch zu kleineren Problemen durch den Server und/oder Domainumzug. Ich bitte, das zu entschuldigen.</description>
@@ -644,10 +644,10 @@ erreichbar. Womöglich kommt es in nächster Zeit noch zu kleineren Problemen du
     
     <item>
       <title>Netcat und wget für Pirelli AV4202N</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/05/netcat-und-wget-f%C3%BCr-pirelli-av4202n/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/05/netcat-und-wget-f%C3%BCr-pirelli-av4202n/</link>
       <pubDate>Fri, 03 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/05/netcat-und-wget-f%C3%BCr-pirelli-av4202n/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/05/netcat-und-wget-f%C3%BCr-pirelli-av4202n/</guid>
       <description>Manchmal wünscht man sich nützliche Tools wie netcat und wget auf seinem Pirelli-Modem, um Dienste im Netzwerk zu testen. Da sich aber sicher nicht jeder eine Toolchain besorgen und sich Arbeit mit dem Kompilieren machen will, habe ich beide Programme cross-kompiliert und stelle sie hier als Download zur Verfügung:
 Download (zip, 118kB)
 Um sie ausführen zu können, kopiert man die Dateien zum Beispiel auf eine Nertzwerkfreigabe des Pirelli-Modems und führt über dem SSH-Zugang folgende Befehle aus:</description>
@@ -655,39 +655,39 @@ Um sie ausführen zu können, kopiert man die Dateien zum Beispiel auf eine Nert
     
     <item>
       <title>Schöne iOS-Alerts mit TSMessages</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/04/sch%C3%B6ne-ios-alerts-mit-tsmessages/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/04/sch%C3%B6ne-ios-alerts-mit-tsmessages/</link>
       <pubDate>Tue, 16 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/04/sch%C3%B6ne-ios-alerts-mit-tsmessages/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/04/sch%C3%B6ne-ios-alerts-mit-tsmessages/</guid>
       <description>Mit dem Projekt TSMessages kann man schöne Fehler- und Hinweismeldungen in seine App einbauen.</description>
     </item>
     
     <item>
       <title>Turmrechner</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/03/turmrechner/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/03/turmrechner/</link>
       <pubDate>Wed, 20 Mar 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/03/turmrechner/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/03/turmrechner/</guid>
       <description>In den Anfangszeiten meiner Schulausbildung musste ich das ein oder andere Mal auch einen sogenannten Turm (oder auch Zapfen) rechnen. Da das mit dem Computer heute viel schneller geht, habe ich ein kleines Programm dazu geschrieben.
 Download: Turm.jar (10,8 kB, Windows, Linux, Mac)</description>
     </item>
     
     <item>
       <title>Windows, Linux und ein USB-zu-Serial-Kabel</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/03/windows-linux-und-ein-usb-zu-serial-kabel/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/03/windows-linux-und-ein-usb-zu-serial-kabel/</link>
       <pubDate>Tue, 19 Mar 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/03/windows-linux-und-ein-usb-zu-serial-kabel/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/03/windows-linux-und-ein-usb-zu-serial-kabel/</guid>
       <description>Wie man ein USB-zu-RS232 Kabel installiert: Eine Geschichte aus der Realität:
 Windows Kabel anschließen Mitgelieferte CD einlegen Treiber installieren (etwa 20 Minuten) Feststellen, dass es nicht funktioniert Durch Google erfahren, dass es sich um den falschen Treiber handelt Richtigen Treiber auf chinesischen Seiten suchen Treiber installieren (wieder 20 Minuten) Fertig Linux Kabel anschließen Fertig </description>
     </item>
     
     <item>
       <title>Brüche addieren mit vedischer Mathematik</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/02/br%C3%BCche-addieren-mit-vedischer-mathematik/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/02/br%C3%BCche-addieren-mit-vedischer-mathematik/</link>
       <pubDate>Wed, 27 Feb 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/02/br%C3%BCche-addieren-mit-vedischer-mathematik/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/02/br%C3%BCche-addieren-mit-vedischer-mathematik/</guid>
       <description>Dieser Beitrag holt im Thema etwas weit aus, aber ich finde, diese Methode hat Ihren Platz auf dieser Seite verdient.
 Wieso sollte man sich das Leben schwer machen, wenn es auch einfach geht? Ein Beispiel ist die sogenannte Vedische Mathematik
 Damit lässt sich zum Beispiel die Addition von Brüchen sehr viel leichter und ohne Suchen einens gemeinsamen Nenners durchführen.
@@ -696,10 +696,10 @@ Beispiel Um folgende Rechnnung zu lösen muss normalerweise erst ein gemeinsamer
     
     <item>
       <title>Muss wirklich jeder programmieren können?</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/02/muss-wirklich-jeder-programmieren-k%C3%B6nnen/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/02/muss-wirklich-jeder-programmieren-k%C3%B6nnen/</link>
       <pubDate>Wed, 27 Feb 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/02/muss-wirklich-jeder-programmieren-k%C3%B6nnen/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/02/muss-wirklich-jeder-programmieren-k%C3%B6nnen/</guid>
       <description>Die Seite Golem.de berichtet über ein Video, das die Organisation Code.org veröffentlicht hat. Darin sprechen unter anderem Bill Gates und Jack Dorsey darüber, wie wichtig es ist programmieren zu lernen.
 Im Video wird auch erwähnt, dass man sich diese Fähigkeiten auch aneignen soll, wenn man einen ganz anderen Beruf erlernen will. Aber wieso? Ich kann mir nicht vorstellen, dass man das wirklich in so vielen Sparten brauchen kann.
 Wozu brauchen Ärzte, Altenpfleger, Sportler, Polizisten,&amp;hellip; diese Fähigkeiten?</description>
@@ -707,10 +707,10 @@ Wozu brauchen Ärzte, Altenpfleger, Sportler, Polizisten,&amp;hellip; diese Fäh
     
     <item>
       <title>Schöne Formeln mit MathJax</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/02/sch%C3%B6ne-formeln-mit-mathjax/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/02/sch%C3%B6ne-formeln-mit-mathjax/</link>
       <pubDate>Wed, 27 Feb 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/02/sch%C3%B6ne-formeln-mit-mathjax/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/02/sch%C3%B6ne-formeln-mit-mathjax/</guid>
       <description>Die Darstellung von mathematischen Formeln im Internet stellt schon immer ein Problem dar. Meist werden diese als eine Art Code, nein es ist oftmals kein wirkliches LaTeX, zum Beispiel a^2+b^2=c^2 von Benutzern eingegeben oder gleich als Bild dargestellt. In modernen Browsern lässt sich das aber viel schöner bewerkstelligen.
 Mit MathJax ist es möglich nach der Einbindung einer JavaScript-Datei diese Formel und auch anderen LaTeX-Code viel schöner darzustellen:
 &amp;lt;script type=&amp;#34;text/javascript&amp;#34; src=&amp;#34;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;#34;&amp;gt; &amp;lt;/script&amp;gt; $$a^2+b^2=c^2$$</description>
@@ -718,10 +718,10 @@ Mit MathJax ist es möglich nach der Einbindung einer JavaScript-Datei diese For
     
     <item>
       <title>IDA Pro unter Wine laufen lassen</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/02/ida-pro-unter-wine-laufen-lassen/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/02/ida-pro-unter-wine-laufen-lassen/</link>
       <pubDate>Mon, 25 Feb 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/02/ida-pro-unter-wine-laufen-lassen/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/02/ida-pro-unter-wine-laufen-lassen/</guid>
       <description>Beim Start von IDA Pro unter Wine steht man vor einer Fehlermeldung, mit der man nicht wirklich etwas anfangen kann:
 &amp;#34;Keyboard layout error: Failed to get the scan code of &amp;#39;~&amp;#39; (VkKeySca­n failure)&amp;#34; Umgehen lässt sich dieser Fehler, indem man in der Date ~/.wine/drive_c/Program Files/IDA Free/cfg/idagui.cfg die Zeile
 &amp;#34;BitwiseNegate&amp;#34; = &amp;#39;~&amp;#39; auskommentiert.</description>
@@ -729,20 +729,20 @@ Mit MathJax ist es möglich nach der Einbindung einer JavaScript-Datei diese For
     
     <item>
       <title>Konsole für die Skype Desktop API</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/02/konsole-f%C3%BCr-die-skype-desktop-api/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/02/konsole-f%C3%BCr-die-skype-desktop-api/</link>
       <pubDate>Sun, 17 Feb 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/02/konsole-f%C3%BCr-die-skype-desktop-api/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/02/konsole-f%C3%BCr-die-skype-desktop-api/</guid>
       <description>Da ich mich etwas mit der Skype Desktop API beschäftigt habe, suchte ich nach einem Programm, in das man nur mehr die Befehle eingeben muss. Gefunden habe ich allerdings nur eines für Windows, mit meinem benutzten Linux ging ich leer aus.
 Als Entwickler macht man das natürlich einfach selbst: Skype Desktop API Console (Github)</description>
     </item>
     
     <item>
       <title>Download: Open Source Wallpaper</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/02/download-open-source-wallpaper/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/02/download-open-source-wallpaper/</link>
       <pubDate>Sat, 16 Feb 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/02/download-open-source-wallpaper/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/02/download-open-source-wallpaper/</guid>
       <description>Ich habe aus einer Idee heraus, die ich vor einiger Zeit hatte, ein Wallpaper über Open Source gebastelt:
 Download (jpg)
 Download (Gimp-Datei)
@@ -752,10 +752,10 @@ from random import choice dna = [&amp;#34;A&amp;#34;,&amp;#34;C&amp;#34;,&amp;#3
     
     <item>
       <title>Samsung Smart TVs über UPnP steuern</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/02/samsung-smart-tvs-%C3%BCber-upnp-steuern/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/02/samsung-smart-tvs-%C3%BCber-upnp-steuern/</link>
       <pubDate>Wed, 06 Feb 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/02/samsung-smart-tvs-%C3%BCber-upnp-steuern/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/02/samsung-smart-tvs-%C3%BCber-upnp-steuern/</guid>
       <description>Samsung Smart TVs besitzen ein Interface zur Steuerung des Fernseher über UPnP. Zahlreiche Befehle wie Steuerung der Aufnahme, Änderung der Lautstärke und Abrufen der Programmliste lässt sich darüber bewerkstelligen.
 Beim erstmaligen Abrufen einer Information muss der Zugriff am Fernseher mit einem Tastendruck auf &amp;ldquo;Zulassen&amp;rdquo; bestätigt werden.
 Funktionen testen Am einfachsten lassen sich die verschiedenen Information mit dem Linux-Paket upnp-tools und dem darin enthaltenen UPnP Universal Control Point durchsuchen und testen.</description>
@@ -763,10 +763,10 @@ Funktionen testen Am einfachsten lassen sich die verschiedenen Information mit d
     
     <item>
       <title>Empfehlung: Sublime Text 2</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/02/empfehlung-sublime-text-2/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/02/empfehlung-sublime-text-2/</link>
       <pubDate>Sat, 02 Feb 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/02/empfehlung-sublime-text-2/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/02/empfehlung-sublime-text-2/</guid>
       <description>Vor einiger Zeit bin ich auf einen großartigen Code-Editor für Windows, Linux und Mac gestoßen: Sublime Text 2. Der Editor ist einfach zu bedienen, enthält aber einen große Auswahl von nützlichen Funktionen.
 Besonders gefällt mir das Design, die große Auswahl an Syntaxhervorhebung und der einfache Umgang mit Tabs anstelle von gedit.
 Am besten testet man den Editor selbst, denn die Demo-Version hat augenscheinlich keine Einschränkungen. Nur ein Fenster mit der Aufforderung den Editor zu kaufen wird von Zeit zu Zeit geöffnet.</description>
@@ -774,20 +774,20 @@ Am besten testet man den Editor selbst, denn die Demo-Version hat augenscheinlic
     
     <item>
       <title>Web-Apps strukturieren mit Backbone.js</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/02/web-apps-strukturieren-mit-backbone.js/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/02/web-apps-strukturieren-mit-backbone.js/</link>
       <pubDate>Sat, 02 Feb 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/02/web-apps-strukturieren-mit-backbone.js/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/02/web-apps-strukturieren-mit-backbone.js/</guid>
       <description>Mit Backbone.js ist es möglich JavaScript-Web-Apps nach dem MVC-Prinzip aufzubauen. Dadurch kann die komplette Verwaltung der Daten von diesem Framework erledigt werden und es kümmert sich zudem auch darum #-URLs (Fragmentbezeichner heißt das Ding) auszuliefern.
 Model Über das Model wird die Struktur der Daten definiert. Außerdem wird die Adresse festgelegt, an die die Ajax-Anfragen gerichtet werden. Im Objekt defaults werden die Standardwerte, oder, wenn diese leer bleiben, die Existenz der Felder definiert.</description>
     </item>
     
     <item>
       <title>XFS-Dateisysteme reparieren</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/02/xfs-dateisysteme-reparieren/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/02/xfs-dateisysteme-reparieren/</link>
       <pubDate>Sat, 02 Feb 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/02/xfs-dateisysteme-reparieren/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/02/xfs-dateisysteme-reparieren/</guid>
       <description>Auch das XFS-Dateisystem kann kaputt gehen. Doch Linux wäre nicht Linux, wenn es nicht für jeden möglichen Fall mindestens ein Paket gäbe, mit dem sich alles wieder in den Normalzustand versetzen ließe. In diesem Fall hilft xfs_replair aus dem Paket xfsprogs.
 Um es zu installieren öffnet man das Terminal und schreibt:
 sudo apt-get install xfsprogs Anschließend lässt sich die Festplatte mittels folgendem Befehl reparieren:
@@ -796,30 +796,30 @@ xfs_repair -n /dev/sdb1 Natürlich sollte dazu der Pfad zum Datenträger angepas
     
     <item>
       <title>Code von früher: Wie konnte ich nur?</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/02/code-von-fr%C3%BCher-wie-konnte-ich-nur/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/02/code-von-fr%C3%BCher-wie-konnte-ich-nur/</link>
       <pubDate>Fri, 01 Feb 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/02/code-von-fr%C3%BCher-wie-konnte-ich-nur/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/02/code-von-fr%C3%BCher-wie-konnte-ich-nur/</guid>
       <description>Gelegentlich findet man in irgendwelchen Ordnern und auf Datenträgern alten Quellcode, den man in seiner Frühzeit als Entwickler geschrieben hat. Nicht selten, eigentlich immer, schämt man sich im Nachhinein für diese Zeilen voll Ressourcenverschwendung und ineffizienter und unsicherer Programmierung.
 Gefunden habe ich jetzt diesen ausgesprochen performanten Codeausschnitt aus einem Projekt aus der Frühzeit meiner PHP-Kenntnisse, als ich gerade etwas MySQL gelernt hatte. Hier wird der Wert eines Eintrages ausgelesen, hochgezählt und wieder abgespeichert.</description>
     </item>
     
     <item>
       <title>Instagram für Quellcode</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/01/instagram-f%C3%BCr-quellcode/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/01/instagram-f%C3%BCr-quellcode/</link>
       <pubDate>Thu, 31 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/01/instagram-f%C3%BCr-quellcode/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/01/instagram-f%C3%BCr-quellcode/</guid>
       <description>Für den, der schon immer darauf gewartet hat, Quellcode mit Effekten zu versehen und als Bild zu speichern, (oder auch nicht) gibt es jetzt Instacode! Auf dieser Internetseite kann man Quellcode eingeben, der sich anschließend mit ein paar Effekten, die man wie bei Instagram auswählen kann, verschönern. Als Ergebnis erhält man ein Bild, das in sozialen Netzwerken geteilt werden kann.
 Ob das Tool einen praktischen Nutzen hat, sei dahingestellt, aber schön anzuschauen ist das Ergebnis alle mal.</description>
     </item>
     
     <item>
       <title>Schnelle Textsuche in Linux</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/01/schnelle-textsuche-in-linux/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/01/schnelle-textsuche-in-linux/</link>
       <pubDate>Thu, 31 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/01/schnelle-textsuche-in-linux/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/01/schnelle-textsuche-in-linux/</guid>
       <description>Mit dem folgenden Linux-Befehl lassen sich die Dateien in einem Ordner schnell nach Text durchsuchen
 grep -r &amp;#34;Text&amp;#34; /pfad/ Die einzelnen Teiles des Ausdrucks bedeuten das Folgende:
 Beispiel Folgendes Beispiel zeigt den Einsatz bei der Suche nach dem Text &amp;ldquo;Welt&amp;rdquo; in einem Ordner:
@@ -828,20 +828,20 @@ johannes@johannes-Ubuntu:~$ grep -r &amp;#34;Welt&amp;#34; /home/johannes test /
     
     <item>
       <title>Kostenlose e-books für Oberösterreicher</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/01/kostenlose-e-books-f%C3%BCr-ober%C3%B6sterreicher/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/01/kostenlose-e-books-f%C3%BCr-ober%C3%B6sterreicher/</link>
       <pubDate>Wed, 30 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/01/kostenlose-e-books-f%C3%BCr-ober%C3%B6sterreicher/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/01/kostenlose-e-books-f%C3%BCr-ober%C3%B6sterreicher/</guid>
       <description>Für Oberösterreicher, die bei einer der teilnehmenden Bibliotheken einen Leserausweis besitzen, ist es jetzt möglich eine große Anzahl von e-books kostenlos für eine begrenzte Zeit online auszuleihen. Möglich macht das Media2go - Digitale Bibliothek OÖ, das vom Land Oberösterreich, der Stadt Linz und der Linzer Stadtbibliothek finanziert wird.
 Es gibt dort Bücher aus den unterschiedlichsten Kategorien, von Belletristik bis Kinderbücher. Auch eine große Auswahl von Computerbüchern (Zurzeit 471 an der Zahl) steht bereit.</description>
     </item>
     
     <item>
       <title>Objektorientierung in JavaScript</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/01/objektorientierung-in-javascript/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/01/objektorientierung-in-javascript/</link>
       <pubDate>Wed, 30 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/01/objektorientierung-in-javascript/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/01/objektorientierung-in-javascript/</guid>
       <description>In vielen Programmiersprachen ist die Objektorientierung weit verbreitet, so werden zum Beispiel in C# oder PHP ständig Klassen und deren Instanzen verwendet. Ganz anders sieht es in JavaScript aus: Hier werden zwar Funktionen verwendet, aber Klassen bzw. Objekte finden kaum Anwendung.
 Mit gewissen Tricks ist es aber auch in JavaScript möglich einen an Klassen angenäherten Aufbau zu verwenden. Am einfachsten erklärt das aber immer noch ein Beispiel:
 var dataProvider = { message: &amp;#34;hello world&amp;#34;, // Eigenschaft echo: function(){ // Funktion alert(this.</description>
@@ -849,10 +849,10 @@ var dataProvider = { message: &amp;#34;hello world&amp;#34;, // Eigenschaft echo
     
     <item>
       <title>Statusbar-Indikator für Ubuntu mit Python</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/01/statusbar-indikator-f%C3%BCr-ubuntu-mit-python/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/01/statusbar-indikator-f%C3%BCr-ubuntu-mit-python/</link>
       <pubDate>Wed, 30 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/01/statusbar-indikator-f%C3%BCr-ubuntu-mit-python/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/01/statusbar-indikator-f%C3%BCr-ubuntu-mit-python/</guid>
       <description>Ubuntu erlaubt es über eine API eigene Symbole und damit verbundene Menüs der Statusbar oben rechts auf dem Bildschirm hinzuzufügen. Dieser werden &amp;ldquo;Indikator&amp;rdquo; genannt.
 Über den folgenden Code kann ein neues Symbol hinzugefügt, sowie der Status und die Icons dafür festgelegt werden:
 from gi.repository import AppIndicator3 as appindicator ind = appindicator.Indicator.new (&amp;#34;myapp&amp;#34;, &amp;#34;/usr/share/.../icon.png&amp;#34;, appindicator.IndicatorCategory.OTHER) ind.set_status (appindicator.IndicatorStatus.ACTIVE) ind.set_attention_icon(&amp;#34;/usr/share/.../icon-red.png&amp;#34;); </description>
@@ -860,30 +860,30 @@ from gi.repository import AppIndicator3 as appindicator ind = appindicator.Indic
     
     <item>
       <title>Neues Design</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2013/01/neues-design/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2013/01/neues-design/</link>
       <pubDate>Tue, 29 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2013/01/neues-design/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2013/01/neues-design/</guid>
       <description>Meine Homepage besitzt ab sofort ein neues Design. Es ist einfacher zu lesen und stellt einen Anspruch an einen seriösen und klaren Auftritt im Internet.
 Ich hoffe, es gefällt.</description>
     </item>
     
     <item>
       <title>Google Earth auf Ubuntu 12.10</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2012/12/google-earth-auf-ubuntu-12.10/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2012/12/google-earth-auf-ubuntu-12.10/</link>
       <pubDate>Tue, 18 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2012/12/google-earth-auf-ubuntu-12.10/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2012/12/google-earth-auf-ubuntu-12.10/</guid>
       <description>Seit dem Update auf Ubuntu 12.10 ist es nicht mehr möglich Google Earth aus dem offiziellen Downloadpaket zu öffnen. Nach dem Splashscreen stürzt das Programm sofort ab.
 Da die Google-Entwickler noch nicht auf die Hinweise reagiert haben, bzw. noch nicht fertig sind, steht eine korrigiertes Version noch nicht offiziell zu Verfügung, aber sie wurde bereits an einige betroffene Benutzer verschickt. Zum Download steht diese Vorabversion zum Beispiel auf dieser Seite.</description>
     </item>
     
     <item>
       <title>Linux-Systemzeit über NTP einstellen</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2012/12/linux-systemzeit-%C3%BCber-ntp-einstellen/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2012/12/linux-systemzeit-%C3%BCber-ntp-einstellen/</link>
       <pubDate>Tue, 18 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2012/12/linux-systemzeit-%C3%BCber-ntp-einstellen/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2012/12/linux-systemzeit-%C3%BCber-ntp-einstellen/</guid>
       <description>Manchmal ist es notwendig die Systemzeit eines Computers genau einzustellen. Am einfachsten geht das mit NTP, dem Network Time Protocol, und dem Programm ntpdate über das Internet.
 Um die Uhr zum Beispiel mit der Atomuhr der physikalisch technischen Bundesanstalt Deutschlands in Braunschweig zu synchronisieren, lautet der Befehl:
 ntpdate ptbtime1.ptb.de Möglicherweiße ist dazu ein root-Zugriff notwendig.</description>
@@ -891,10 +891,10 @@ ntpdate ptbtime1.ptb.de Möglicherweiße ist dazu ein root-Zugriff notwendig.</d
     
     <item>
       <title>Captchas sind auch dekorativ</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2012/12/captchas-sind-auch-dekorativ/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2012/12/captchas-sind-auch-dekorativ/</link>
       <pubDate>Thu, 06 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2012/12/captchas-sind-auch-dekorativ/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2012/12/captchas-sind-auch-dekorativ/</guid>
       <description>Captchas sollen eigentlich automatische Computersysteme davon abhalten eine bestimmte Aktion auf einer Webseite durchzuführen. Darum ist es wichtig, dass nur Menschen den enthaltenen Text lesen können.
 Auf so manchen Internetpräsenzen sind Captchas aber wohl nur zur Dekoration eingebaut. So auch bei einem Gewinnspiel von Kellogs, bei dem man Codes von den Packungen ihrer Produkte eingeben soll und damit Preise gewinnen kann.
 Auch auf dieser Seite befindet sich so ein Captcha. Aber wohl nur zur Dekoration, denn der Code wird dem Aufruf des Bildes mitgegeben:</description>
@@ -902,20 +902,20 @@ Auch auf dieser Seite befindet sich so ein Captcha. Aber wohl nur zur Dekoration
     
     <item>
       <title>R interaktiv lernen</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2012/12/r-interaktiv-lernen/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2012/12/r-interaktiv-lernen/</link>
       <pubDate>Thu, 06 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2012/12/r-interaktiv-lernen/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2012/12/r-interaktiv-lernen/</guid>
       <description>Auf der Seite Code School ist es seit Kurzem möglich, das Statistikprogramm R interaktiv zu lernen und sich so grundlegende Fähigkeiten in dessen Benützung zuzulegen.
 Zum Kurs</description>
     </item>
     
     <item>
       <title>Entfernung zu Proxima Centauri</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2012/12/entfernung-zu-proxima-centauri/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2012/12/entfernung-zu-proxima-centauri/</link>
       <pubDate>Tue, 04 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2012/12/entfernung-zu-proxima-centauri/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2012/12/entfernung-zu-proxima-centauri/</guid>
       <description>Dieser Beitrag befindet sich zwar etwas abseits der anderen Themen auf dieser Seite, aber ich finde, dass dieses Bild gut die Entfernungen im Weltraum darstellen kann.
 Folgendes Bild stellt die Entferung zwischen der Erde und dem nächsten Stern, gennant Proxima Centauri, im Vergleich zur Entfernung zum Mars dar:
 Achtung: Im Bild sind nur die Entfernungen Maßstabsgetreu, nicht die Größe der Himmelkörper.
@@ -924,20 +924,20 @@ Im Vergleich mit dem Abstand zum Mars ist der Abstand zu Proxima Centauri mit et
     
     <item>
       <title>Spam-Mails, die gar nicht an mich gehen</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2012/12/spam-mails-die-gar-nicht-an-mich-gehen/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2012/12/spam-mails-die-gar-nicht-an-mich-gehen/</link>
       <pubDate>Tue, 04 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2012/12/spam-mails-die-gar-nicht-an-mich-gehen/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2012/12/spam-mails-die-gar-nicht-an-mich-gehen/</guid>
       <description>Heute habe ich eine komische Email erhalten. Der Betreff und der Text sind typisch für einen Spam-Email:
 Subject: hey To: [entfernt]@gmail.com To all of my friends who didnt have the opportunity to view me on the channel-20 news the previous Monday discussing my blog, and financial accomplishments. I&amp;#39;m forwarding you the News Article, so you can read the entire story on how I became financially independent and wealthy. google.com/search?btnI=I%27m+Feeling+Lucky&amp;amp;q=[entfernt]&amp;amp;sourceid=navclient Wie hat es die Nachricht also in meinen Posteingang geschafft?</description>
     </item>
     
     <item>
       <title>Mit „syncevolution“ Handys über Linux synchronisieren</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2012/12/mit-syncevolution-handys-%C3%BCber-linux-synchronisieren/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2012/12/mit-syncevolution-handys-%C3%BCber-linux-synchronisieren/</link>
       <pubDate>Sun, 02 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2012/12/mit-syncevolution-handys-%C3%BCber-linux-synchronisieren/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2012/12/mit-syncevolution-handys-%C3%BCber-linux-synchronisieren/</guid>
       <description>Mit dem Paket „syncevolution“ ist es möglich sein Mobiltelefon über Linux mit verschienden Anbiertern von SyncML, wie den Google Kontakten, zu synchronisieren. Über Bluetooth können so zum Beispiel diese Kontakte im Adressbuch des Gerätes gespeichert werden.
 Installation Um das Paket zu installieren klicken Sie auf den folgenden Button:
 Alternativ kann ins Terminal folgender Befehl eingegeben werden:
@@ -946,10 +946,10 @@ sudo apt-get install syncevolution Konfiguration des Handys Um ein Gerät synchr
     
     <item>
       <title>Github for Windows außerhalb Github verwenden</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2012/11/github-for-windows-au%C3%9Ferhalb-github-verwenden/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2012/11/github-for-windows-au%C3%9Ferhalb-github-verwenden/</link>
       <pubDate>Fri, 23 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2012/11/github-for-windows-au%C3%9Ferhalb-github-verwenden/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2012/11/github-for-windows-au%C3%9Ferhalb-github-verwenden/</guid>
       <description>Github for Windows ist ein git-Client mit einem ansprechendem und einfachem Erscheinungsbild. Er kann jedoch nicht nur für Github, sondern auch für alle anderen git-Repositories verwendet werden.
 Über einen Protokoll-Handler ist es möglich diese direkt im Client zu öffnen. Aus einer git-Adresse wie
 https://mustermann@bitbucket.org/mustermann/projekt.git macht man einfach
@@ -959,10 +959,10 @@ Nach der optionalen Eingabe der Anmeldedaten wird die Repository geöffnet und a
     
     <item>
       <title>Ein „Paket-Virus“ analysiert</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2012/11/ein-paket-virus-analysiert/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2012/11/ein-paket-virus-analysiert/</link>
       <pubDate>Sat, 03 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2012/11/ein-paket-virus-analysiert/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2012/11/ein-paket-virus-analysiert/</guid>
       <description>Alles beginnt mit einer Email, die ich angeblich von „USPS“, der US-amerikanischen Post, erhalten habe. Darin werde ich aufgefordert auf ein Bild zu klicken:
 Da ich solchen Emails, GMail hat diese schon in den Spam-Ordner befördert, nie vertraue habe ich mir die Nachricht etwas genauer angesehen:
 ... Received: from emplenaf by ns1.icontrole14.net with local (Exim 4.80) (envelope-from ) id 1TTchm-00082A-AN for [meine Email-Adresse]; Wed, 31 Oct 2012 16:07:54 -0200 ... Subject: USPS delivery refuse ID#83469 From: &amp;#34;USPS Express Services&amp;#34; X-Mailer: Achi-KochiMailLitever1.</description>
@@ -970,10 +970,10 @@ Da ich solchen Emails, GMail hat diese schon in den Spam-Ordner befördert, nie 
     
     <item>
       <title>Catalysts Coding Contest Wien 2012</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2012/10/catalysts-coding-contest-wien-2012/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2012/10/catalysts-coding-contest-wien-2012/</link>
       <pubDate>Tue, 23 Oct 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2012/10/catalysts-coding-contest-wien-2012/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2012/10/catalysts-coding-contest-wien-2012/</guid>
       <description>Am Freitag, den 19. Oktober habe ich wieder am Catalysts Coding Contest, dem, nach eigenen Angaben härtesten Programmierwettbewerb Österreichs, teilgenommen. Zum ersten Mal war ich beim Herbsttermin in Wien dabei. Der Wettbewerb fand dieses Mal in der Volkshalle im Rathaus statt.
 Wie man auch der offizielle Presseaussendung entnehmen kann, ging es dieses Mal um das &amp;ldquo;Lippenlesen&amp;rdquo;. Genauer gesagt war verlangt vom Computer bereits erkannte Bewegungen den Buchstaben zuzuordnen.
 Bei mir hat es leider nur für das Level 2 gereicht, aber da ich mit dem Studium noch nicht begonnen habe, ist das nicht so schlimm.</description>
@@ -981,10 +981,10 @@ Bei mir hat es leider nur für das Level 2 gereicht, aber da ich mit dem Studium
     
     <item>
       <title>async und await in .NET 4.5</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2012/10/async-und-await-in-.net-4.5/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2012/10/async-und-await-in-.net-4.5/</link>
       <pubDate>Tue, 16 Oct 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2012/10/async-und-await-in-.net-4.5/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2012/10/async-und-await-in-.net-4.5/</guid>
       <description>Da ich erst jetzt dazu kam das neue Visual Studio Express 2012 for Desktop zu installieren, nun eine kurze Erklärung der Schlüsselwörter async und await, wie sie im .NET-Framework 4.5 vorkommen.
 Bis jetzt musste immer eine Callback-Funktion verwendet werden, wenn man beispielsweise Netzwerkanfragen senden will, um die Benutzeroberfläche nicht einfrieren zu lassen. Mit den beiden Schlüsselwörtern ist es nun endlich möglich auf die Antwort der Anfrage zu warten.
 Beispielsweise funktioniert es mit dem folgenden Code einen String asynchron herunterzuladen:</description>
@@ -992,19 +992,19 @@ Beispielsweise funktioniert es mit dem folgenden Code einen String asynchron her
     
     <item>
       <title>Was sonst noch war: Wieso der Mensch nicht für das }-Zeichen gemacht wurde</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2012/10/was-sonst-noch-war-wieso-der-mensch-nicht-f%C3%BCr-das-zeichen-gemacht-wurde/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2012/10/was-sonst-noch-war-wieso-der-mensch-nicht-f%C3%BCr-das-zeichen-gemacht-wurde/</link>
       <pubDate>Sun, 07 Oct 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2012/10/was-sonst-noch-war-wieso-der-mensch-nicht-f%C3%BCr-das-zeichen-gemacht-wurde/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2012/10/was-sonst-noch-war-wieso-der-mensch-nicht-f%C3%BCr-das-zeichen-gemacht-wurde/</guid>
       <description></description>
     </item>
     
     <item>
       <title>EAN13-Plugin für jQuery</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2012/10/ean13-plugin-f%C3%BCr-jquery/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2012/10/ean13-plugin-f%C3%BCr-jquery/</link>
       <pubDate>Fri, 05 Oct 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2012/10/ean13-plugin-f%C3%BCr-jquery/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2012/10/ean13-plugin-f%C3%BCr-jquery/</guid>
       <description>Vor ein paar Tagen habe ich eine von mir programmierte Bibliothek für jQuery zur Erstellung von EAN13 Barcodes auf Github veröffentlicht. Mit jQuery.EAN13 ist es möglich aus einer Nummer einen Barcode als HTML5-Canvas zu erstellen.
 Einbindung des Plugin Zur Einbindung in eine HTML-Seite fügt man folgendes dem head-Bereich nach der Einbindung von jQuery ein:
 &amp;lt;script type=&amp;#34;text/javascript&amp;#34; src=&amp;#34;js/jQuery.EAN13.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; Verwendung Im body-Bereich muss an der gewünschten Stelle ein Canvas-Element mit der passenden Größe eingefügt werden:</description>
@@ -1012,20 +1012,20 @@ Einbindung des Plugin Zur Einbindung in eine HTML-Seite fügt man folgendes dem 
     
     <item>
       <title>Firefox mit click-to-play absichern</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2012/09/firefox-mit-click-to-play-absichern/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2012/09/firefox-mit-click-to-play-absichern/</link>
       <pubDate>Tue, 25 Sep 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2012/09/firefox-mit-click-to-play-absichern/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2012/09/firefox-mit-click-to-play-absichern/</guid>
       <description>Immer wieder wird von Sicherheitslücken in den Plugins Flash und Java berichtet. Darüber können Internetseiten oft Schadcode in den Computer einschleusen und das System so mit eier bösartigen Software infizieren. Zumeist sind diese Angriffe auf der Webseite versteckt und nicht zu entdecken.
 Wäre es nicht sinnvoll diese Elemente erst zu laden, wenn man sie wirklich braucht und das auch aktiv zulässt? Genau das ist in Mozilla Firefox bereits eingebaut. Mit der Einstellung click_to_play wird ein Inhalt, der normalerweiße sofort über ein Plugin dargestellt wird, erst aktiviert, wenn man darauf geklickt hat.</description>
     </item>
     
     <item>
       <title>Was sonst noch war: GMX und die Hacker</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2012/09/was-sonst-noch-war-gmx-und-die-hacker/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2012/09/was-sonst-noch-war-gmx-und-die-hacker/</link>
       <pubDate>Tue, 25 Sep 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2012/09/was-sonst-noch-war-gmx-und-die-hacker/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2012/09/was-sonst-noch-war-gmx-und-die-hacker/</guid>
       <description>Vor langer Zeit habe ich mir eine Konto bei GMX angelegt, jedoch benutze ich dieses Konto schon seit Jahren nicht mehr. Ich lasse mir aber Email von dort noch weiterleiten, um nicht doch etwas zu verpassen.
 Heute habe ich eine Email von GMX erhalten, die augenscheinlich an alle Benutzer des Dienstes ging:
 Darin wird erwähnt, dass sich Hacker Zugang zu den Benutzerkonten verschaffen konnten und man darum besser das Passswort ändern sollte.</description>
@@ -1033,10 +1033,10 @@ Darin wird erwähnt, dass sich Hacker Zugang zu den Benutzerkonten verschaffen k
     
     <item>
       <title>Wie funktionieren die iOS 6 Maps?</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2012/09/wie-funktionieren-die-ios-6-maps/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2012/09/wie-funktionieren-die-ios-6-maps/</link>
       <pubDate>Tue, 25 Sep 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2012/09/wie-funktionieren-die-ios-6-maps/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2012/09/wie-funktionieren-die-ios-6-maps/</guid>
       <description>Mit iOS 6 wurde eine neue Kartenapp eingeführt. Diese kommt erstmals ganz ohne Google aus und verwendet jetzt Vektorkarten, die Apple eingekauft hat. Auch diese Daten werden jedoch aus dem Internet nachgeladen.
 Eine Anfrage nach einer Kartenkachel sieht zum Beispiel so aus: (Ich habe die IDs gekürzt.)
 http://gspa23.ls.apple.com/tile?style=13&amp;amp;size=2&amp;amp;scale=0&amp;amp;v=46&amp;amp;z=14&amp;amp;x=8820&amp;amp;y=5700&amp;amp;lang=de&amp;amp;sid=1628527042778230930310178...&amp;amp;tk=fb6f3cfbfcf47c40b20a44aacb...&amp;amp;mapkey=1348503588_3e8f1cd028503e1be44950cf0... Ich habe versucht die Parameter richtig einzuordnen:
@@ -1045,69 +1045,69 @@ Parameter Bedeutung style Art der Karte. Hier ist es &amp;ldquo;13&amp;rdquo;. V
     
     <item>
       <title>Kein Artikel über das neue iPhone</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2012/09/kein-artikel-%C3%BCber-das-neue-iphone/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2012/09/kein-artikel-%C3%BCber-das-neue-iphone/</link>
       <pubDate>Thu, 13 Sep 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2012/09/kein-artikel-%C3%BCber-das-neue-iphone/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2012/09/kein-artikel-%C3%BCber-das-neue-iphone/</guid>
       <description>Es folgt kein Artikel über das neue iPhone:</description>
     </item>
     
     <item>
       <title>SQL-Injections vermeiden - Das kann doch nicht so schwer sein</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2012/08/sql-injections-vermeiden-das-kann-doch-nicht-so-schwer-sein/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2012/08/sql-injections-vermeiden-das-kann-doch-nicht-so-schwer-sein/</link>
       <pubDate>Thu, 30 Aug 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2012/08/sql-injections-vermeiden-das-kann-doch-nicht-so-schwer-sein/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2012/08/sql-injections-vermeiden-das-kann-doch-nicht-so-schwer-sein/</guid>
       <description>mysql_query(&amp;#34;SELECT * FROM table WHERE id = &amp;#34; . $_GET[&amp;#34;id&amp;#34;]); Das ist schlichtweg der Albtraum für jeden, der sich schonmal mit Sicherheit in Datenbankanwendungen beschäftigt hat.
 Die unsichere Verwendung von HTTP-Paramtern, oder generell von Daten, die vom Benutzer kommen, stellt eine große Gefahr für die Sicherheit eines ganzen Systems dar. Mittels eines SQL-Injection Angriffes kann meist auf die gesamten Daten der Datenbank zugegriffen und dort zum Beispiel Passwörter gestohlen werden.</description>
     </item>
     
     <item>
       <title>Erlagscheindrucker für Österreich</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2012/08/erlagscheindrucker-f%C3%BCr-%C3%B6sterreich/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2012/08/erlagscheindrucker-f%C3%BCr-%C3%B6sterreich/</link>
       <pubDate>Wed, 22 Aug 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2012/08/erlagscheindrucker-f%C3%BCr-%C3%B6sterreich/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2012/08/erlagscheindrucker-f%C3%BCr-%C3%B6sterreich/</guid>
       <description>Da ich auch nach längerem Suchen keine passende und kostenlose Lösung dafür gefunden habe, habe ich mich selbst ans Werk gemacht und einen Erlagscheindrucker für neue österreischische Erlagscheine programmiert.
 Das Programm wird einfach mit den erforderlichen Daten gefüttert und druckt diese dann auf einen Erlagschein, der im Drucker plaziert wird. Zudem ist es möglich die eigenen Daten, wie Namen, Anschrift und Kontonummer für weitere Verwendungen zu speichern. Felder, die nicht beschriftet werden sollen, weil sie zum Beispiel schon ausgefüllt sind, kann man einfach leer lassen.</description>
     </item>
     
     <item>
       <title>Objektorientierte Programmierung für Anfänger am Beispiel PHP</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2012/08/objektorientierte-programmierung-f%C3%BCr-anf%C3%A4nger-am-beispiel-php/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2012/08/objektorientierte-programmierung-f%C3%BCr-anf%C3%A4nger-am-beispiel-php/</link>
       <pubDate>Sun, 19 Aug 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2012/08/objektorientierte-programmierung-f%C3%BCr-anf%C3%A4nger-am-beispiel-php/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2012/08/objektorientierte-programmierung-f%C3%BCr-anf%C3%A4nger-am-beispiel-php/</guid>
       <description>Da viele immer wieder Probleme beim Verständnis der objektorientierten Programmierung haben, habe ich eine kleine Erklärung dazu verfasst:
 Objektorientierte Programmierung für Anfänger am Beispiel PHP (PDF, 127 kB)</description>
     </item>
     
     <item>
       <title>Das Model-View-Controller-Modell am Beispiel CakePHP</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2012/08/das-model-view-controller-modell-am-beispiel-cakephp/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2012/08/das-model-view-controller-modell-am-beispiel-cakephp/</link>
       <pubDate>Sun, 12 Aug 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2012/08/das-model-view-controller-modell-am-beispiel-cakephp/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2012/08/das-model-view-controller-modell-am-beispiel-cakephp/</guid>
       <description>Model, View und Controller: Begriffe, mit denen man nicht sofort etwas anfangen kann. Auch trotz vieler Erklärungen schreckt das, auf den ersten Blick komplizierte, Modell viele Menschen davon ab sich daran zu versuchen. Auch ich habe es erst nach drei Versuchen geschafft, was jedoch wahrscheinlich vorher an meiner Ungeduld scheiterte.
 CakePHP Ich habe für diese Erklärung das Framework CakePHP benutzt, um einen Praxisbezug herzustellen und weil ich es gerade ausgiebig benutze.</description>
     </item>
     
     <item>
       <title>Was sonst noch war: Wieso DRM ein Unding ist</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2012/07/was-sonst-noch-war-wieso-drm-ein-unding-ist/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2012/07/was-sonst-noch-war-wieso-drm-ein-unding-ist/</link>
       <pubDate>Mon, 30 Jul 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2012/07/was-sonst-noch-war-wieso-drm-ein-unding-ist/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2012/07/was-sonst-noch-war-wieso-drm-ein-unding-ist/</guid>
       <description>Was ist DRM? Digital Rights Management, abgekürzt DRM, was soviel heißt wie Digitale Rechtverwaltung, ist ein Verfahren mit dem man die Nutzung und Weitergabe digitaler Medien kontrollieren kann. Man kann damit zum Beispiel festlegen, dass ein digital vorliegendes Musikstück nicht kopiert werden oder nur eine bestimmte Zeit wiedergegeben werden darf.
 Jetzt werden Sie sich denken: &amp;ldquo;Gut, die Künstler müssen ja schließlich auch Geld verdienen!&amp;rdquo;, aber Musik ist leider nicht der einzige Einsatzort.</description>
     </item>
     
     <item>
       <title>RGB-LED Bibliothek für Arduino</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2012/07/rgb-led-bibliothek-f%C3%BCr-arduino/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2012/07/rgb-led-bibliothek-f%C3%BCr-arduino/</link>
       <pubDate>Thu, 26 Jul 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2012/07/rgb-led-bibliothek-f%C3%BCr-arduino/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2012/07/rgb-led-bibliothek-f%C3%BCr-arduino/</guid>
       <description>Während meiner Arbeit mit meinem neuen Arduino-Microcontroller habe ich eine Bibliothek für die Verwendung einer RGB-Led erstellt. Damit ist es möglich die Farbe der LED zu setzen und in einer bestimmten Zeitspanne die Farbe der LED langsam zu ändern.
 Zur Verwendung muss man nur das zip-Paket herunterladen und im Arduino-Verzeichnis unter libraries abspeichern.
 Farbe setzen Um die Farbe zu ändern verwendet man die Methode setColor() wie folgt:
@@ -1116,30 +1116,30 @@ Farbe setzen Um die Farbe zu ändern verwendet man die Methode setColor() wie fo
     
     <item>
       <title>Ampelschaltung mit Arduino</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2012/07/ampelschaltung-mit-arduino/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2012/07/ampelschaltung-mit-arduino/</link>
       <pubDate>Wed, 04 Jul 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2012/07/ampelschaltung-mit-arduino/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2012/07/ampelschaltung-mit-arduino/</guid>
       <description>Da ich mich jetzt im Besitz eines Arduino Mikrocontroller-Boardes befinde, nun ein erster Artikel über dieses faszinierende Stück Technik. Mit einem Arduino kann man einfach Elektronik ansteuern, wie zum Beispiel LEDs, Servos, Temperatursensoren usw., indem man ein Programm am Computer programmiert und dann über ein USB-Kabel auf das Board überträgt.
 Für meinen ersten Artikel über dieses Thema habe ich mich für eine Ampelschaltung entschieden. Zwei Seiten einer Ampel, zum Beispiel bei einer Baustelle, sollen gesteuert werden.</description>
     </item>
     
     <item>
       <title>Die Twitter-Anleitung für Einsteiger</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2012/05/die-twitter-anleitung-f%C3%BCr-einsteiger/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2012/05/die-twitter-anleitung-f%C3%BCr-einsteiger/</link>
       <pubDate>Fri, 11 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2012/05/die-twitter-anleitung-f%C3%BCr-einsteiger/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2012/05/die-twitter-anleitung-f%C3%BCr-einsteiger/</guid>
       <description>Ich habe in diesem Dokument einmal kurz zusammengefasst, was für Neulinge auf Twitter wichtig ist und was zu beachten ist. (Download als PDF)
 Anregungen und Fragen dazu nehme ich natürlich über die Kommentare entgegen.</description>
     </item>
     
     <item>
       <title>Kleine Helferlein: Der Kreuzproduktrechner</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2012/05/kleine-helferlein-der-kreuzproduktrechner/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2012/05/kleine-helferlein-der-kreuzproduktrechner/</link>
       <pubDate>Thu, 10 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2012/05/kleine-helferlein-der-kreuzproduktrechner/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2012/05/kleine-helferlein-der-kreuzproduktrechner/</guid>
       <description>Kreuzprodukt.exe
 Das Kreuzprodukt gibt einen Normalvektor auf die beiden angegebenen Vektoren an. Zur Berechnung geben Sie die ersten beiden Vektoren ein und klicken Sie auf berechnen.
 Kreuzproduktrechner auf Github</description>
@@ -1147,78 +1147,78 @@ Kreuzproduktrechner auf Github</description>
     
     <item>
       <title>Openstreetmap-API zur Suche</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2012/05/openstreetmap-api-zur-suche/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2012/05/openstreetmap-api-zur-suche/</link>
       <pubDate>Thu, 10 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2012/05/openstreetmap-api-zur-suche/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2012/05/openstreetmap-api-zur-suche/</guid>
       <description>Gerade seit Google bei der intensiven Benutzung seines Kartendienstes Bezahlung fordert ist ein Aufschwung in der Benutzung von Openstreetmap zu spüren. Die Vorteile sind klar und überzeugend:
 Offenes Kartenmaterial zur Verwendung für alle erdenklichen Zwecke Möglichkeit zur Abfrage von Polygonen besseres Kartenmaterial als kommerzielle Anbieter Möglichkeit zur eigenen Bearbeitung Als Schnittstelle zur Abfrage von Kartendaten ist der Nominatim-Dienst gedacht. Damit sind Suchanfragen nach Orten möglich, die dann als Punkt oder Polygon zurückgegeben werden.</description>
     </item>
     
     <item>
       <title>Eine Android-App entwickeln - Erste Schritte</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2012/05/eine-android-app-entwickeln-erste-schritte/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2012/05/eine-android-app-entwickeln-erste-schritte/</link>
       <pubDate>Wed, 09 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2012/05/eine-android-app-entwickeln-erste-schritte/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2012/05/eine-android-app-entwickeln-erste-schritte/</guid>
       <description>Eine Smartphone-App ist meist ein sehr umfangreiches Projekt, das sich über lange Zeit hinziehen kann und eine große Menge an Zeit für die Entwicklung beansprucht. Genau das kann Ihnen dieser Artikel auch nicht abnehmen, aber ich möchte beim Einstieg in die Entwicklungsumgebung und die Erstellung einer ersten, einfachen Anwendung helfen.
 Von Google selbst wird die Verwendung der Eclipse-IDE empfohlen. In Verbindung dem Android-SDK vom Suchmaschinenriesen selbst ist damit die nahtlose Entwicklung innerhalb der IDE von der ersten Programmzeile bis zur fertig kompillierten App möglich.</description>
     </item>
     
     <item>
       <title>Die Möwe auf dem Fensterbrett</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2012/04/die-m%C3%B6we-auf-dem-fensterbrett/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2012/04/die-m%C3%B6we-auf-dem-fensterbrett/</link>
       <pubDate>Wed, 18 Apr 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2012/04/die-m%C3%B6we-auf-dem-fensterbrett/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2012/04/die-m%C3%B6we-auf-dem-fensterbrett/</guid>
       <description> </description>
     </item>
     
     <item>
       <title>HbbTV: CE-HTML im Fernseher</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2012/04/hbbtv-ce-html-im-fernseher/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2012/04/hbbtv-ce-html-im-fernseher/</link>
       <pubDate>Mon, 09 Apr 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2012/04/hbbtv-ce-html-im-fernseher/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2012/04/hbbtv-ce-html-im-fernseher/</guid>
       <description>Der Teletext (oder auch Videotext) mit seinen 23 Zeilen ist schon etwas in die Jahre gekommen und soll in den nächsten Jahren durch HbbTV ersetzt werden. Mit Hybrid Broadcast Broadband TV soll die Zukunft in die textbasierte Information am Fernseher Einzug halten. Nicht mehr über die Satelliten-Ausstrahlung, sondern über die Internetverbindungen sollen so Informationen abgerufen werden.
 Mit dieser Technik ist es erstmals möglich hochaufgelöste Informationsseiten mit Videos und Interaktivität zur Verfügung zu stellen.</description>
     </item>
     
     <item>
       <title>Was sonst noch war: Werbeanzeigen für Österreicher</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2012/03/was-sonst-noch-war-werbeanzeigen-f%C3%BCr-%C3%B6sterreicher/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2012/03/was-sonst-noch-war-werbeanzeigen-f%C3%BCr-%C3%B6sterreicher/</link>
       <pubDate>Wed, 28 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2012/03/was-sonst-noch-war-werbeanzeigen-f%C3%BCr-%C3%B6sterreicher/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2012/03/was-sonst-noch-war-werbeanzeigen-f%C3%BCr-%C3%B6sterreicher/</guid>
       <description>Langsam aber sicher wird diese Länderspezifische Werbung wirklich lästig. ;)</description>
     </item>
     
     <item>
       <title>Webtexte schreiben mit Markdown</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2012/03/webtexte-schreiben-mit-markdown/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2012/03/webtexte-schreiben-mit-markdown/</link>
       <pubDate>Fri, 23 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2012/03/webtexte-schreiben-mit-markdown/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2012/03/webtexte-schreiben-mit-markdown/</guid>
       <description>Wenn Sie selbst einen Blog betreiben, oder regelmäßig eine Seite im Internet mit redaktionellen Texten bestücken kennen Sie das Problem womöglich bereits: Der Schreibfluss mag nicht so recht zusammenkommen, da er durch die Handhabung des WYSIWYG-Editors, oder noch schlimmer durch das Schreiben von reinem HTML-Code gestört wird. In diese Bresche springt das, unter der BSD-Lizenz verfügbare, Tool Markdown von John Gruber.
 Vorteile Markdown ist für eine Vielzahl von Anwendungsgebieten verfügbar. So steht zum Beispiel mit MarkdownPad auch ein Stand-alone Editor für Windows bereit.</description>
     </item>
     
     <item>
       <title>Erste Schritte in Processing</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2012/03/erste-schritte-in-processing/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2012/03/erste-schritte-in-processing/</link>
       <pubDate>Thu, 01 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2012/03/erste-schritte-in-processing/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2012/03/erste-schritte-in-processing/</guid>
       <description>Processing stellt eine einfache Entwicklungsumgebung für den Einstieg in die Programmierung dar. Auch für fortgeschrittene Programmieren hält die IDE eine Möglichkeit für die rasche und einfache Umsetzung einer Idee bereit.
 Übersicht Processing verwendet eine vereinfachte Syntax von Java und beeinhaltet eine simple IDE für die Entwicklung in dieser Sprache. Seine Stärken spielt die Sprache vor allem beim Erstellen von grafischen Programmen, also vor allem bei Zeichnungen und (auch interaktiven) Grafiken.</description>
     </item>
     
     <item>
       <title>Spambots mit Sonderzeichen im Captcha täuschen</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2012/02/spambots-mit-sonderzeichen-im-captcha-t%C3%A4uschen/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2012/02/spambots-mit-sonderzeichen-im-captcha-t%C3%A4uschen/</link>
       <pubDate>Fri, 17 Feb 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2012/02/spambots-mit-sonderzeichen-im-captcha-t%C3%A4uschen/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2012/02/spambots-mit-sonderzeichen-im-captcha-t%C3%A4uschen/</guid>
       <description>Sie sind die wohl nervigsten Nebenerscheinungen beim Betrieb einer Homepage bzw. eines Blogs: Spambots.
 Was sind Spambots? Spambots sind Computerprogramme die mehr oder weniger automatisch Formulare im Internet finden und diese mit vordefinierten Text befüllen. Meist werden in den Nachrichten in den Kommentaren oder bei Kontaktformularen Tabletten und/oder Potenzmittel angeboten. Mit der Zeit kann die Überprüfung von solchen Kommentaren und ihrer Freischaltung eine große Menge Zeit in Anspruch nehmen.
 Captchas Lange Zeit waren mehr oder weniger komplizierte Captchas (Completely Automated Public Turing test to tell Computers and Humans Apart) das Mittel der Wahl um eine automatische Absendung von Formularen zu verhindern.</description>
@@ -1226,10 +1226,10 @@ Captchas Lange Zeit waren mehr oder weniger komplizierte Captchas (Completely Au
     
     <item>
       <title>Das WhatsApp-Registrierungsprotokoll</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2012/02/das-whatsapp-registrierungsprotokoll/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2012/02/das-whatsapp-registrierungsprotokoll/</link>
       <pubDate>Thu, 09 Feb 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2012/02/das-whatsapp-registrierungsprotokoll/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2012/02/das-whatsapp-registrierungsprotokoll/</guid>
       <description>Da ich aus den Suchanfragen die auf meiner Homepage landen schließe, dass hier Interesse besteht, möchte ich hiermit nocheinmal kurz den Registrierungsvorgang bei WhatsApp mit den dafür verwendeten REST Urls beschreiben.
 Überprüfen, ob schon registriert Beim Starten der App und nach der Eingabe der Rufnummer wird zunächst überprüft, ob diese Nummer bereits bei WhatsApp registriert ist.
 https://r.whatsapp.net/v1/exist.php?cc=43&amp;amp;in=664XXXXXXX&amp;amp;udid=d59d27f4d300d595.. Bestätigungs-SMS verschicken Um die Rufnummer zu bestätigen wird im nächsten Schritt eine SMS an die angegebene Nummer verschickt.</description>
@@ -1237,10 +1237,10 @@ https://r.whatsapp.net/v1/exist.php?cc=43&amp;amp;in=664XXXXXXX&amp;amp;udid=d59
     
     <item>
       <title>Elektronik über den LPT-Port steuern</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2012/01/elektronik-%C3%BCber-den-lpt-port-steuern/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2012/01/elektronik-%C3%BCber-den-lpt-port-steuern/</link>
       <pubDate>Thu, 05 Jan 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2012/01/elektronik-%C3%BCber-den-lpt-port-steuern/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2012/01/elektronik-%C3%BCber-den-lpt-port-steuern/</guid>
       <description>Öfters möchte man einen kleinen oder auch größeren Schaltkreis über den PC steuern, wäre da nicht die komplizierte Umsetzung mit einem geeigneten Mikrocontroller und der benötigten Software.
 Doch es geht viel einfacher: Der parellele Port, auch LPT-Port genannt, steht auf den meisten PC zur Verfügung und kann Kinderleicht dazu verwendet werden verschiedenen Pins einzeln mit Spannung zu versorgen.
 Hardware Dieser Anschluss, der vormals DER Standard für den Anschluss eines Druckers war, lässt sich für die Steuerung eines Schaltkreises verwenden indem man einen Draht in einen der Pins 2-9 und einen Draht in einen Pin von 18 bis 25 steckt.</description>
@@ -1248,10 +1248,10 @@ Hardware Dieser Anschluss, der vormals DER Standard für den Anschluss eines Dru
     
     <item>
       <title>WhatsApp erlaubt Bruteforce auf Telefonnummern</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2011/12/whatsapp-erlaubt-bruteforce-auf-telefonnummern/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2011/12/whatsapp-erlaubt-bruteforce-auf-telefonnummern/</link>
       <pubDate>Sat, 03 Dec 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2011/12/whatsapp-erlaubt-bruteforce-auf-telefonnummern/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2011/12/whatsapp-erlaubt-bruteforce-auf-telefonnummern/</guid>
       <description>Eine Telefonnummer möchte man meist gerne für sich behalten, um nicht von Personen belästigt zu werden und einfach seine Ruhe zu haben. Mit der Nutzung der weitverbreiteten WhatsApp-Anwendung auf seinem Mobiltelefon macht man jedoch möglich die Rufnummern der angemeldeten Benutzer zu durchsuchen. In der App wird angezeigt welche seiner Kontakte bereits für WhatsApp registriert sind.
 Dazu wird eine Anfrage mit den Telefonnummern seiner Kontakte an den WhatsApp-Server sro.whatsapp.net geschickt:
 POST /client/iphone/iq.</description>
@@ -1259,10 +1259,10 @@ POST /client/iphone/iq.</description>
     
     <item>
       <title>CSS3 Animationen - Ein erster Einstieg</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2011/10/css3-animationen-ein-erster-einstieg/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2011/10/css3-animationen-ein-erster-einstieg/</link>
       <pubDate>Wed, 19 Oct 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2011/10/css3-animationen-ein-erster-einstieg/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2011/10/css3-animationen-ein-erster-einstieg/</guid>
       <description>Vielleicht haben Sie schon einmal davon gehört: CSS3-Animationen. Es soll also möglich sein nur mit CSS eine kleine Animation zu erstellen. Doch wie geht das? Am Besten probieren wir es einmal an einem kleinen Beispiel, um die Grundzüge zu verstehen.
 Wir nehmen an, wir wollen einen einfachen Text rotieren lassen:
 Demo
@@ -1272,10 +1272,10 @@ Zuerst wird die Animation im CSS der Seite definiert:
     
     <item>
       <title>C# und Ich</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2011/09/c#-und-ich/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2011/09/c#-und-ich/</link>
       <pubDate>Tue, 20 Sep 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2011/09/c#-und-ich/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2011/09/c#-und-ich/</guid>
       <description>Mit der Zeit muss man sich auch wieder einmal an etwas Neuem versuchen. Genau das habe ich jetzt gemacht und somit habe ich angefangen C# zu lernen. Zu empfehlen ist dazu eine IDE, also eine integrierte Entwicklungsumgebung. Ich habe Microsoft Visual C# Express von Microsoft verwendet, das man hier downloaden kann. Der Download und die Installation kann hierbei jedoch eine Weile dauern.
 Was man also dazu braucht:
 Microsoft Visual C# Geduld Wenn man, so wie ich, von PHP kommt ist erst einmal zu beachten, dass man genau angeben muss welcher Typ in einer Variable abgespeichert wird.</description>
@@ -1283,20 +1283,20 @@ Microsoft Visual C# Geduld Wenn man, so wie ich, von PHP kommt ist erst einmal z
     
     <item>
       <title>Windows 8 - Der Browser</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2011/09/windows-8-der-browser/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2011/09/windows-8-der-browser/</link>
       <pubDate>Thu, 15 Sep 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2011/09/windows-8-der-browser/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2011/09/windows-8-der-browser/</guid>
       <description>Der Standardbrowser in Windows 8 ist, wie sollte es denn auch sonst sein, der Internet Explorer. Microsoft hat hier aber gleich eine weitere Neuerung versteckt und so läuft dort bereits die Version 10 des Microsoft-Browsers.
 Der Internet Explorer kann in Windows 8 über zweierlei Wege aufgerufen werden und verhält sich angepasst an seine Verwendung. Über den normalen Windows-Desktop aufgerufen erhält man die Standardoberfläche, die schon im IE 9 zu sehen ist.</description>
     </item>
     
     <item>
       <title>Windows 8 - Wetter</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2011/09/windows-8-wetter/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2011/09/windows-8-wetter/</link>
       <pubDate>Thu, 15 Sep 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2011/09/windows-8-wetter/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2011/09/windows-8-wetter/</guid>
       <description>Auch das aktuelle Wetter wurde in Windows 8, dem neuen Microsoft Betriebssystem, in einer eigenen App integriert. Diese zeigt übersichtlich und unübersehbar das Wetter an.
 Im Hintergrund läuft dabei eine Animation von Wolken ab, die meinen Test-PC in einer virtuellen Maschine fast zum Abstürzen brachte.
 Wie auch im Browser werden durch einen Rechtsklick die Bedienelemente aufgerufen. Hierbei kann man eine Stadt anpinnen, entfernen, den aktuellen Standort hinzufügen, eine beliebige Stadt hinzufügen, oder sich eine Übersicht oder den stündlichen Verlauf anzeigen lassen.</description>
@@ -1304,49 +1304,49 @@ Wie auch im Browser werden durch einen Rechtsklick die Bedienelemente aufgerufen
     
     <item>
       <title>Windows 8 - Installation in Virtual Box</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2011/09/windows-8-installation-in-virtual-box/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2011/09/windows-8-installation-in-virtual-box/</link>
       <pubDate>Wed, 14 Sep 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2011/09/windows-8-installation-in-virtual-box/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2011/09/windows-8-installation-in-virtual-box/</guid>
       <description>Endlich ist es da: Windows 8. Monatelang drangen immer nur spärliche Informationen über das neue Betriebssystem aus Redmond an die Öffentlichkeit, doch jetzt hat man überraschend eine Developer-Preview Version herausgegeben. Die Vorschau steht seit heute als Download auf den Microsoft Servern bereit.
 Lange Rede, kurzer Sinn: Natürlich musste ich mir das iso-Image sofort herunterladen, was aber durch die Größe von 2,82 GB einige Zeit in Anspruch nahm. Am besten sucht man sich ein Plätzchen an einer Glasfaserleitung an einem Ort, an dem man sowieso die Zeit verbringen muss.</description>
     </item>
     
     <item>
       <title>A1 oder Sicherheit, was ist das nochmal?</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2011/08/a1-oder-sicherheit-was-ist-das-nochmal/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2011/08/a1-oder-sicherheit-was-ist-das-nochmal/</link>
       <pubDate>Thu, 25 Aug 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2011/08/a1-oder-sicherheit-was-ist-das-nochmal/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2011/08/a1-oder-sicherheit-was-ist-das-nochmal/</guid>
       <description>Ich schreibe mir in diesem Artikel einmal vom Herzen was mich schon lange stört und immer wieder ärgert. Und ja: Damit könnte man auch Andere ziemlich ärgern. Es geht um die Mailserver vom österreichischen ISP A1 (ehemals Telekom Austria). Anderswo Pflicht beim Abrufen und Versenden per POP (IMAP gibt es bei der Telekom erst gar nicht) und SMTP, doch bei A1 scheint es wohl ein Fremdwort zu sein: Verschlüsselung. Der gesamte Mailverkehr für Kunden und auch den Support der Domains @aon.</description>
     </item>
     
     <item>
       <title>Was sonst noch war: Spammer kehren aus Urlaub zurück</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2011/08/was-sonst-noch-war-spammer-kehren-aus-urlaub-zur%C3%BCck/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2011/08/was-sonst-noch-war-spammer-kehren-aus-urlaub-zur%C3%BCck/</link>
       <pubDate>Sun, 21 Aug 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2011/08/was-sonst-noch-war-spammer-kehren-aus-urlaub-zur%C3%BCck/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2011/08/was-sonst-noch-war-spammer-kehren-aus-urlaub-zur%C3%BCck/</guid>
       <description>Und da sind sie schon wieder: Die Spammer. Wie jedes Jahr geht dieser Datenmüll in den Sommermonaten zurück, weil auch diese, pardon, unnötigen Deppen Urlaub machen. Leider ist aber auch anzunehmen, dass sie in Wirklichkeit neue Kraft gesammelt haben, um uns in unseren Email-Postfächern und Blogs wieder mit nicht all zu kreativen und sinnlosen Sätzen zu bombardieren.
 Die meisten Vorgehensweisen kennt man ja eigentlich schon ziemlich gut, aber zurzeit wird im Internet Kommentarspam verbreitet, der sich meinem Verständnis entzieht.</description>
     </item>
     
     <item>
       <title>WLAN an jeder Ecke, oder: Österreich, das gelobte Land</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2011/08/wlan-an-jeder-ecke-oder-%C3%B6sterreich-das-gelobte-land/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2011/08/wlan-an-jeder-ecke-oder-%C3%B6sterreich-das-gelobte-land/</link>
       <pubDate>Thu, 04 Aug 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2011/08/wlan-an-jeder-ecke-oder-%C3%B6sterreich-das-gelobte-land/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2011/08/wlan-an-jeder-ecke-oder-%C3%B6sterreich-das-gelobte-land/</guid>
       <description>Vielleicht haben Sie es schon mitbekommen: In Österreich gib es jede Menge unsichere Drahtlosnetzwerke von Geräten, die von A1 (vormals Telekom Austria) für Ihre Internetzugänge an Kunden ausgegeben werden. Einen Bericht darüber gibt es zum Beispiel hier.
 Von geschätzten 99%, sage ich jetzt einmal, kann man anhand der SSID einfach und schnell den Netzwerkschlüssel ausrechnen, weil die Besitzer weder die SSID, noch das Passwort geändert haben. Ich habe dies schon an meinem eigenen Netzwerk getestet, und ich muss sagen: Es geht wirklich schnell.</description>
     </item>
     
     <item>
       <title>Reguläre Ausdrücke - Eine Einführung</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2011/07/regul%C3%A4re-ausdr%C3%BCcke-eine-einf%C3%BChrung/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2011/07/regul%C3%A4re-ausdr%C3%BCcke-eine-einf%C3%BChrung/</link>
       <pubDate>Sun, 17 Jul 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2011/07/regul%C3%A4re-ausdr%C3%BCcke-eine-einf%C3%BChrung/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2011/07/regul%C3%A4re-ausdr%C3%BCcke-eine-einf%C3%BChrung/</guid>
       <description>Man braucht sie immer wieder und man ist froh wenn man sie einfach kann: Reguläre Ausdrücke (auch RegEx genannt). Einsatz finden Sie praktisch überall.
 Ob man jetzt Formulareingaben überprüfen will, Apache mod_rewrite benutzen oder beim Programmieren etwas in einer Zeichenkette erkennen will: Man braucht sie überall. Ich weiß, dass es eine &amp;ldquo;zache&amp;rdquo; Sache ist, aber wenn man es einmal kann ist es nicht mehr so schlimm.
 Beginnen wir einfach einmal mit den vorkommenden Zeichen und einem Beispiel:</description>
@@ -1354,60 +1354,60 @@ Beginnen wir einfach einmal mit den vorkommenden Zeichen und einem Beispiel:</de
     
     <item>
       <title>Wie man den &#43;1 Button einbaut</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2011/07/wie-man-den-1-button-einbaut/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2011/07/wie-man-den-1-button-einbaut/</link>
       <pubDate>Sun, 17 Jul 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2011/07/wie-man-den-1-button-einbaut/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2011/07/wie-man-den-1-button-einbaut/</guid>
       <description>Auch bei mir macht sich das Sommerloch langsam breit und zerrt an den Kräften, die man braucht um einen anständigen Artikel zu schreiben, doch ich habe mich noch einmal aufegrafft und schreibe eine kleine Anleitung zum Einbau des +1 Button für Google+. Ich weiß, dass das keine sehr anspruchsvolle Aufgabe ist, aber&amp;hellip; na, ja.
 Als erstes wird eine Javascript-Datei von Googles Servern in den Head-Bereich der Webseite eingebunden. Um den Button auf Deutsch zu bekommen kann man auch noch einen Parameter übergeben:</description>
     </item>
     
     <item>
       <title>Unbequem aber sicher: Das seitenspezifische Passwort</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2011/06/unbequem-aber-sicher-das-seitenspezifische-passwort/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2011/06/unbequem-aber-sicher-das-seitenspezifische-passwort/</link>
       <pubDate>Fri, 17 Jun 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2011/06/unbequem-aber-sicher-das-seitenspezifische-passwort/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2011/06/unbequem-aber-sicher-das-seitenspezifische-passwort/</guid>
       <description>Gerade jetzt, wo die Hackergruppe lulzsecurity tausende Email-, Passwort-Kombinationen im Internet verbreitet, wäre es doch gerade recht einmal über die Sicherheit der Passwörter nachzudenken. Ich möchte jetzt nicht darüber schreiben wie Sie im Idealfall Ihr Passwort mit Zahlen und Sonderzeichnen möglichst sicher machen, sondern darüber, dass die meisten unter uns dieses eine Passwort dann auf jeder Website auf der man angemeldet ist verwenden.
 Stellen Sie sich vor: Hacker knacken eine Website auf der Sie angemeldet sind.</description>
     </item>
     
     <item>
       <title>Der Apple-Zwang zum Neukauf</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2011/03/der-apple-zwang-zum-neukauf/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2011/03/der-apple-zwang-zum-neukauf/</link>
       <pubDate>Wed, 16 Mar 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2011/03/der-apple-zwang-zum-neukauf/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2011/03/der-apple-zwang-zum-neukauf/</guid>
       <description>Als ich vor einiger Zeit einen Artikel über iOS 4.3 las stellte ich verblüffend fest, dass Apple für meinen iPod touch 2G keine Updates mehr zur Verfügung stellen wird. Durch diese Maßnahme wird mir iOS 4.3 von Apple einfach verweigert.
 Denken wir doch einmal an Windows XP. Diese Versions des Betriebssystems aus Redmond wurde (laut Wikipedia) im Oktober 2001 veröffentlicht, jedoch gibt es dafür noch Support und Updates bis zum Jahr 2014.</description>
     </item>
     
     <item>
       <title>In Japan droht ein Super-GAU, darum kaufe ich mir einen Geigerzähler?!</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2011/03/in-japan-droht-ein-super-gau-darum-kaufe-ich-mir-einen-geigerz%C3%A4hler/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2011/03/in-japan-droht-ein-super-gau-darum-kaufe-ich-mir-einen-geigerz%C3%A4hler/</link>
       <pubDate>Wed, 16 Mar 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2011/03/in-japan-droht-ein-super-gau-darum-kaufe-ich-mir-einen-geigerz%C3%A4hler/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2011/03/in-japan-droht-ein-super-gau-darum-kaufe-ich-mir-einen-geigerz%C3%A4hler/</guid>
       <description>Sucht man auf amazon.de nach den Aufsteigern der Woche des Tages in der Kategorie Elektronik stößt man auf Platz eins auf einen Geigerzähler. Wer sind diese Leute, die wahrscheinlich keinerlei Ahnung davon haben, was der Geigerzähler überhaupt anzeigt und ihn gar nicht bedienen können?
 Muss man sich in Ländern wie Deutschland uns Österreich wirklich ein Messgerät kaufen um Radioaktivität zu messen, wo doch zum Beispiel Österreich eines der dichtesten Netze von Sensoren für radioaktive Strahlung besitzt?</description>
     </item>
     
     <item>
       <title>Homepage wieder voll Einsatzbereit</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2011/03/homepage-wieder-voll-einsatzbereit/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2011/03/homepage-wieder-voll-einsatzbereit/</link>
       <pubDate>Mon, 14 Mar 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2011/03/homepage-wieder-voll-einsatzbereit/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2011/03/homepage-wieder-voll-einsatzbereit/</guid>
       <description>Meine Homepage ist jetzt gerade aus dem Entwicklungsordner in den Produktivordner umgezogen und ist jetzt voll Einsatzbereit.
 Für weitere Fragen und Anregungen steht Ihnen natürlich das Kontaktformular zur Verfügung.</description>
     </item>
     
     <item>
       <title>Website Relaunch</title>
-      <link>https://blog.johannes-mittendorfer.com/artikel/2011/03/website-relaunch/</link>
+      <link>https://blog.jmittendorfer.at/artikel/2011/03/website-relaunch/</link>
       <pubDate>Sun, 13 Mar 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.johannes-mittendorfer.com/artikel/2011/03/website-relaunch/</guid>
+      <guid>https://blog.jmittendorfer.at/artikel/2011/03/website-relaunch/</guid>
       <description>Endlich ist es soweit: Meine Homepage geht ab sofort mit neuem Design online. Zuletzt verwendete ich Joomla für die Verwaltung der Seite, bin aber jetzt zu Drupal gewechselt, da dies von der Bedienung und der Performance bzw. auch der Übersichtlichkeit mehr meinem Geschmack entspricht. Außerdem nehme ich mir vor zukünftig wieder öfter neue Beiträge zu verfassen, da es auf der alten Seite schon zum 2-monatigen Abständen gekommen ist. Das Design der Seite kommt diesmal von mir selbst.</description>
     </item>
     

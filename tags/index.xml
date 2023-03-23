@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Johannes Mittendorfer</title>
-    <link>https://blog.johannes-mittendorfer.com/tags/</link>
+    <link>https://blog.jmittendorfer.at/tags/</link>
     <description>Recent content in Tags on Johannes Mittendorfer</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>de-AT</language><atom:link href="https://blog.johannes-mittendorfer.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>de-AT</language><atom:link href="https://blog.jmittendorfer.at/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
